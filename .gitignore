@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Raw/downloaded data - reproducible via data_prep.py
+data/raw/
+
+# HuggingFace cache if it ever lands inside the project
+.cache/
+
+# OS junk
+.DS_Store
