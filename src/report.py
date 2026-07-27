@@ -1,8 +1,3 @@
-"""
-Step 5: Turn phase1_results.csv into the summary table you bring back to your
-supervisor: Qwen vs. baselines, per granularity, on the new metrics + latency.
-"""
-
 import csv
 from collections import defaultdict
 

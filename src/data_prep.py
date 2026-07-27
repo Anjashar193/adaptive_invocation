@@ -1,11 +1,10 @@
-
 import re
 import random
 from datasets import load_dataset
 
 random.seed(42)
 
-SPLIT_RATIOS = [0.15, 0.3, 0.5, 0.7, 0.85]  
+SPLIT_RATIOS = [0.15, 0.3, 0.5, 0.7, 0.85]
 
 
 def load_oasst2_prompter_en(split="validation", max_messages=500):
@@ -13,7 +12,7 @@ def load_oasst2_prompter_en(split="validation", max_messages=500):
     filtered = [
         row["text"] for row in ds
         if row.get("role") == "prompter" and row.get("lang") == "en"
-        and row["text"] and len(row["text"].split()) >= 6  
+        and row["text"] and len(row["text"].split()) >= 6
     ]
     random.shuffle(filtered)
     return filtered[:max_messages]
@@ -22,7 +21,7 @@ def load_oasst2_prompter_en(split="validation", max_messages=500):
 def word_split(text, ratio):
     words = text.split()
     cut = max(1, int(len(words) * ratio))
-    cut = min(cut, len(words) - 1)  
+    cut = min(cut, len(words) - 1)
     prefix = " ".join(words[:cut])
     continuation = " ".join(words[cut:])
     return prefix, continuation
@@ -34,7 +33,7 @@ def make_partial_word_example(text, ratio):
     cut = min(cut, len(words) - 1)
     target_word = words[cut]
     if len(target_word) < 3:
-        return None  
+        return None
     split_point = random.randint(1, len(target_word) - 1)
     partial = target_word[:split_point]
     remainder = target_word[split_point:]

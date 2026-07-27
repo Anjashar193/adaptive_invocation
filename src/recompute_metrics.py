@@ -1,9 +1,3 @@
-"""
-Recompute metrics (especially `usefulness`) from an existing phase1_results.csv,
-using the fixed trim-aware scoring logic in metrics.py - without re-running the
-model. The raw predictions are already saved, so this just re-scores them.
-"""
-
 import csv
 from metrics import score_example
 

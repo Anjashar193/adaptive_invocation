@@ -40,7 +40,6 @@ class NgramBaseline:
         context = tuple(toks[-(self.n - 1):]) if self.n > 1 else ()
         if context in self.context_counts:
             return self.context_counts[context].most_common(1)[0][0]
-        # backoff to unigram
         return self.fallback[0] if self.fallback else "the"
 
     def predict_top_k(self, prefix, k=5):
@@ -65,18 +64,3 @@ class RandomBaseline:
 
     def predict_top_k(self, prefix, k=5):
         return self._random.sample(self.vocab, min(k, len(self.vocab))) if self.vocab else ["the"]
-
-
-if __name__ == "__main__":
-    train_texts = [
-        "can you help me write a short essay about climate change",
-        "can you make a list of the best places to visit in italy",
-        "what is the capital of france and why is it important",
-    ]
-    freq = FrequencyBaseline(); freq.fit(train_texts)
-    ngram = NgramBaseline(); ngram.fit(train_texts)
-    rnd = RandomBaseline(); rnd.fit(train_texts)
-
-    print("Frequency baseline top-5:", freq.predict_top_k("can you"))
-    print("Bigram baseline predict:", ngram.predict_next_word("can you"))
-    print("Random baseline predict:", rnd.predict_next_word("can you"))
