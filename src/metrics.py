@@ -7,11 +7,8 @@ _ST_MODEL = None
 def _get_embedding_model():
     global _ST_MODEL
     if _ST_MODEL is None:
-        try:
-            from sentence_transformers import SentenceTransformer
-            _ST_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-        except Exception:
-            _ST_MODEL = False
+        from sentence_transformers import SentenceTransformer
+        _ST_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
     return _ST_MODEL
 
 
@@ -47,8 +44,6 @@ def sequence_overlap(prediction, reference):
 
 def semantic_similarity(prediction, reference):
     model = _get_embedding_model()
-    if not model:
-        return sequence_overlap(prediction, reference)
     import numpy as np
     emb = model.encode([prediction, reference])
     a, b = emb[0], emb[1]

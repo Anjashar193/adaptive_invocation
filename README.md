@@ -40,12 +40,14 @@ itself is Phase 2/3.
 
 ## Results
 
-| Granularity | Qwen usefulness | Best baseline | Latency |
+Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-representative — see Phase 3.
+
+| Granularity | Qwen usefulness | Best baseline | Latency (MPS) |
 |---|---|---|---|
-| next_word | 0.806 | 0.456 | 230ms |
-| partial_word | 0.568 | 0.447 | 232ms |
-| phrase | 0.211 | 0.011 | 622ms |
-| sentence | 0.172 | 0.014 | 1870ms |
+| next_word | 0.806 | 0.456 | 108ms |
+| partial_word | 0.568 | 0.447 | 115ms |
+| phrase | 0.211 | 0.011 | 313ms |
+| sentence | 0.172 | 0.014 | 800ms |
 
 Qwen beats the baseline at every granularity. Gap is largest at phrase/sentence
 (15-20x), but absolute quality there is still low — longer completions aren't
@@ -56,10 +58,10 @@ keystroke.
 ## Run it
 
 ```bash
-pip install -r requirements.txt
-python src/run_eval.py
-python -c "from src.recompute_metrics import recompute; recompute('phase1_results.csv', 'phase1_results_v2.csv')"
-python -c "from src.report import load_results, summarize; summarize(load_results('phase1_results_v2.csv'))"
+uv sync
+uv run python src/run_eval.py
+uv run python -c "from src.recompute_metrics import recompute; recompute('phase1_results.csv', 'phase1_results_v2.csv')"
+uv run python -c "from src.report import load_results, summarize; summarize(load_results('phase1_results_v2.csv'))"
 ```
 
 ## Still missing / next

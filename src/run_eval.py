@@ -13,7 +13,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 
-FORCE_CPU = True
+FORCE_CPU = False
 if FORCE_CPU:
     _device = "cpu"
 else:
