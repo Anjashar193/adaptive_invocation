@@ -47,16 +47,21 @@ def generate_topk(prefix, granularity, k=TOP_K):
         output_ids = _model.generate(
             **inputs,
             max_new_tokens=max_tokens,
-            num_beams=k,
+            do_sample=True,
             num_return_sequences=k,
-            do_sample=False,
-            early_stopping=True,
+            temperature=0.8,
+            top_k=50,
+            top_p=0.95,
             pad_token_id=_tokenizer.eos_token_id,
         )
     candidates = []
+    seen = set()
     for seq in output_ids:
         new_tokens = seq[inputs["input_ids"].shape[1]:]
-        candidates.append(_tokenizer.decode(new_tokens, skip_special_tokens=True))
+        text = _tokenizer.decode(new_tokens, skip_special_tokens=True)
+        if text not in seen:
+            seen.add(text)
+            candidates.append(text)
     return candidates
 
 
