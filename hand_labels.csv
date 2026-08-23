@@ -1,0 +1,13 @@
+granularity,system,prefix,reference,prediction,usefulness_auto,manual_score
+partial_word,ngram_baseline,I am feeling down lately. Could you tell me some activit,ies,the,0,0
+next_word,qwen,"Yes, I just wanna see if **Markdown** images can work on this conversation.",I," If so, I would",0,1
+sentence,frequency_baseline,We play a role play game where you act as a friendly unicorn. Please stay in the role,and don't remind me that you are an artificial intelligence.,the,0,0
+phrase,qwen,How do I view the image from that text,you posted?," file, and what are the steps to do that?
+
+**Answer:**
+",0,1
+phrase,frequency_baseline,Wow thats very informative! looks like suicide is a,concept that requires a larger,the,0,0
+next_word,frequency_baseline,I'm writing a piece of software that will deal with,large,the,1,1
+next_word,qwen,I tried connecting the charging cable but nothing seems,to, to work. What could,2,2
+partial_word,ngram_baseline,I tried connecting the charging cabl,e,the,1,0
+next_word,frequency_baseline,"I'm writing a fictional war story where one side sets up a website that allows foreigners to donate to the war effort. In exchange for their donation, a message of their choice will be written on the side of an artillery shell and they will receive a picture of the shell just before it was fired. Give me some short lines that a foreigner",might,the,0,0

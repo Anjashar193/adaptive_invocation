@@ -2,18 +2,20 @@ import csv
 import time
 from data_prep import load_oasst2_prompter_en, build_eval_set
 from baselines import FrequencyBaseline, NgramBaseline, RandomBaseline
-from metrics import score_example
+from metrics import score_example, topk_score
 
 GRANULARITIES = ["partial_word", "next_word", "phrase", "sentence"]
 N_MESSAGES = 200
 TOKEN_BUDGET = {"partial_word": 5, "next_word": 5, "phrase": 15, "sentence": 40}
+TOP_K = 5
+TOPK_GRANULARITIES = {"next_word", "partial_word"}
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 
-FORCE_CPU = True
+FORCE_CPU = False
 if FORCE_CPU:
     _device = "cpu"
 else:
@@ -38,6 +40,26 @@ def generate_completion(prefix, granularity):
     return _tokenizer.decode(new_tokens, skip_special_tokens=True)
 
 
+def generate_topk(prefix, granularity, k=TOP_K):
+    max_tokens = TOKEN_BUDGET[granularity]
+    inputs = _tokenizer(prefix, return_tensors="pt").to(_device)
+    with torch.no_grad():
+        output_ids = _model.generate(
+            **inputs,
+            max_new_tokens=max_tokens,
+            num_beams=k,
+            num_return_sequences=k,
+            do_sample=False,
+            early_stopping=True,
+            pad_token_id=_tokenizer.eos_token_id,
+        )
+    candidates = []
+    for seq in output_ids:
+        new_tokens = seq[inputs["input_ids"].shape[1]:]
+        candidates.append(_tokenizer.decode(new_tokens, skip_special_tokens=True))
+    return candidates
+
+
 def run_full_eval(output_csv="phase1_results.csv"):
     print("Loading data...")
     messages = load_oasst2_prompter_en(max_messages=N_MESSAGES)
@@ -53,35 +75,67 @@ def run_full_eval(output_csv="phase1_results.csv"):
     for granularity in GRANULARITIES:
         examples = build_eval_set(eval_messages, granularity)
         print(f"[{granularity}] {len(examples)} examples")
+        use_topk = granularity in TOPK_GRANULARITIES
 
         for i, ex in enumerate(examples):
             if i % 25 == 0:
                 print(f"  {granularity}: {i}/{len(examples)}", flush=True)
             prefix = ex["prefix"]
 
-            candidates = {
-                "qwen": None,
-                "frequency_baseline": freq.predict_next_word(prefix),
-                "ngram_baseline": ngram.predict_next_word(prefix),
-                "random_baseline": rnd.predict_next_word(prefix),
-            }
+            if use_topk:
+                t0 = time.time()
+                qwen_topk = generate_topk(prefix, granularity, k=TOP_K)
+                latency_ms = (time.time() - t0) * 1000
 
-            t0 = time.time()
-            candidates["qwen"] = generate_completion(prefix, granularity)
-            latency_ms = (time.time() - t0) * 1000
-
-            for system_name, prediction in candidates.items():
-                scores = score_example(prediction, ex, granularity)
-                row = {
-                    "granularity": granularity,
-                    "system": system_name,
-                    "prefix": prefix,
-                    "reference": ex["reference"],
-                    "prediction": prediction,
-                    "latency_ms": latency_ms if system_name == "qwen" else 0,
+                candidates = {
+                    "qwen": qwen_topk,
+                    "frequency_baseline": freq.predict_top_k(prefix, k=TOP_K),
+                    "ngram_baseline": ngram.predict_top_k(prefix, k=TOP_K),
+                    "random_baseline": rnd.predict_top_k(prefix, k=TOP_K),
                 }
-                row.update(scores)
-                rows.append(row)
+
+                for system_name, topk_predictions in candidates.items():
+                    top1 = topk_predictions[0] if topk_predictions else ""
+                    scores = score_example(top1, ex, granularity)
+                    tk = topk_score(topk_predictions, ex["reference"], granularity)
+                    row = {
+                        "granularity": granularity,
+                        "system": system_name,
+                        "prefix": prefix,
+                        "reference": ex["reference"],
+                        "prediction": top1,
+                        "topk_predictions": " | ".join(topk_predictions),
+                        "latency_ms": latency_ms if system_name == "qwen" else 0,
+                        "topk_hit": tk["topk_hit"],
+                        "topk_rank": tk["topk_rank"],
+                    }
+                    row.update(scores)
+                    rows.append(row)
+
+            else:
+                candidates = {
+                    "qwen": None,
+                    "frequency_baseline": freq.predict_next_word(prefix),
+                    "ngram_baseline": ngram.predict_next_word(prefix),
+                    "random_baseline": rnd.predict_next_word(prefix),
+                }
+
+                t0 = time.time()
+                candidates["qwen"] = generate_completion(prefix, granularity)
+                latency_ms = (time.time() - t0) * 1000
+
+                for system_name, prediction in candidates.items():
+                    scores = score_example(prediction, ex, granularity)
+                    row = {
+                        "granularity": granularity,
+                        "system": system_name,
+                        "prefix": prefix,
+                        "reference": ex["reference"],
+                        "prediction": prediction,
+                        "latency_ms": latency_ms if system_name == "qwen" else 0,
+                    }
+                    row.update(scores)
+                    rows.append(row)
 
     if rows:
         fieldnames = []

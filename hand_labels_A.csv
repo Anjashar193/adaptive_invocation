@@ -1,0 +1,27 @@
+granularity,system,prefix,reference,prediction,usefulness_auto,manual_score,labeler
+next_word,random_baseline,Ok. I found,mold,similar,0,1,A
+next_word,frequency_baseline,Are there more detailed,diagnostics,the,0,0,A
+next_word,frequency_baseline,Thanks. Can you write me,a,the,1,1,A
+sentence,qwen,Nice. Let's do it again. The square,root of my new number is 64., has a side length of 10 units. The square is divided into smaller squares of 1 unit by 1 unit. How many squares are there in total? The answer is 10,0,1,A
+partial_word,qwen,Can you elaborate on the limitation in additi,ve,"ional information, and how",0,0,A
+phrase,frequency_baseline,Are there more detailed,diagnostics I can run?,the,0,0,A
+sentence,ngram_baseline,"Make the answer more compact. First, give a max. 2 sentence description of the algorithm, then give a few bullet points",outlining the major parts of the algorithm and only then give an implementation that includes 3 unit tests at the end.,the,0,0,A
+partial_word,frequency_baseline,What I mean is that is it possible to use a mirror as a tool in either t,he,the,1,0,A
+sentence,random_baseline,Ok. I found,mold in my apartment.,relates,0,0,A
+next_word,frequency_baseline,Thanks so much for the suggestions! This really helps. I may watch a movie. Any good,ones,the,1,0,A
+partial_word,frequency_baseline,Could you w,rite,the,0,0,A
+sentence,ngram_baseline,Thanks so much for the suggestions! This really helps. I may watch a movie. Any good,ones you recommend?,the,0,0,A
+partial_word,random_baseline,What were the motivations/inspirations for Rachmaninoff's 2n,d,problem,1,0,A
+sentence,qwen,Thank you for the recommendations and resources! I'll definitely check out U.S. News Travel and the other websites you mentioned. I'm excited,to explore some new destinations and have a relaxing time.," to explore the city and see what I can find. I'm also looking forward to the next steps in the process. Thank you again for your support and help! 
+
+What is the main purpose of",1,1,A
+phrase,random_baseline,Write a web,scraping program in pyhton capable,sensors,0,0,A
+next_word,ngram_baseline,Please write,me,a,0,1,A
+next_word,frequency_baseline,"The provided script functions properly. There was no error and everything worked straight out of the box. However, your explanation of what the script is doing is not entirely correct. Actually all points are correct except point 3. Point 3 is completely unrelated to the script you have",provided.,the,0,0,A
+partial_word,qwen,how do yo,u, get the number of elements,1,0,A
+partial_word,frequency_baseline,Thank you for the recommendations and re,sources!,the,0,0,A
+phrase,qwen,I have 1000$ budget to build,a pc that I want, a house. I want to build a house with a 100,0,1,A
+phrase,ngram_baseline,"Make the answer more compact. First, give a max. 2 sentence description of the algorithm, then give a few bullet points",outlining the major parts of,the,0,0,A
+phrase,qwen,I need to know if there is a python package that lets me easily calculate the expected value of a game. I will be needing to use a large number of dice rolls.,I know I will need," How can I do this?
+Answer:
+The expected value of a game can",0,1,A

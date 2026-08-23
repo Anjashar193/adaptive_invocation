@@ -7,11 +7,8 @@ _ST_MODEL = None
 def _get_embedding_model():
     global _ST_MODEL
     if _ST_MODEL is None:
-        try:
-            from sentence_transformers import SentenceTransformer
-            _ST_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-        except Exception:
-            _ST_MODEL = False
+        from sentence_transformers import SentenceTransformer
+        _ST_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
     return _ST_MODEL
 
 
@@ -47,8 +44,6 @@ def sequence_overlap(prediction, reference):
 
 def semantic_similarity(prediction, reference):
     model = _get_embedding_model()
-    if not model:
-        return sequence_overlap(prediction, reference)
     import numpy as np
     emb = model.encode([prediction, reference])
     a, b = emb[0], emb[1]
@@ -81,6 +76,21 @@ def trim_prediction(prediction, reference, granularity):
     return prediction
 
 
+def is_hit(prediction, reference, granularity):
+    if granularity == "next_word":
+        return first_word_match(prediction, reference) == 1.0
+    elif granularity == "partial_word":
+        return partial_word_char_match(prediction, reference) >= 0.8
+    return False
+
+
+def topk_score(predictions, reference, granularity):
+    for rank, prediction in enumerate(predictions, start=1):
+        if is_hit(prediction, reference, granularity):
+            return {"topk_hit": 1, "topk_rank": rank}
+    return {"topk_hit": 0, "topk_rank": ""}
+
+
 def score_example(prediction, example, granularity):
     reference = example["reference"]
     result = {}
@@ -96,6 +106,30 @@ def score_example(prediction, example, granularity):
     trimmed = trim_prediction(prediction, reference, granularity)
     result["usefulness"] = usefulness_score(trimmed, reference, example["full_text"])
     return result
+
+
+def best_of_k_score(predictions, example, granularity):
+    """
+    Score a ranked list of k candidate predictions (best/most-likely first).
+    Returns the metrics for the single best-scoring candidate, plus
+    hit_rank: the 1-based position of the first candidate that scored
+    usefulness >= 2, or None if no candidate did.
+    """
+    best_result = None
+    best_usefulness = -1
+    hit_rank = None
+
+    for rank, prediction in enumerate(predictions, start=1):
+        result = score_example(prediction, example, granularity)
+        if result["usefulness"] > best_usefulness:
+            best_usefulness = result["usefulness"]
+            best_result = result
+        if hit_rank is None and result["usefulness"] >= 2:
+            hit_rank = rank
+
+    best_result = dict(best_result) if best_result else {"usefulness": 0}
+    best_result["hit_rank"] = hit_rank if hit_rank is not None else 0
+    return best_result
 
 
 if __name__ == "__main__":
