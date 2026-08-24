@@ -47,7 +47,8 @@ def load_existing_labels(output_csv):
 def save_label(output_csv, row, manual_score, labeler):
     file_exists = os.path.exists(output_csv)
     fieldnames = ["granularity", "system", "prefix", "reference", "prediction",
-                  "usefulness_auto", "manual_score", "labeler"]
+                  "topk_predictions", "usefulness_auto", "topk_hit_auto",
+                  "manual_score", "labeler"]
     with open(output_csv, "a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         if not file_exists:
@@ -58,7 +59,9 @@ def save_label(output_csv, row, manual_score, labeler):
             "prefix": row["prefix"],
             "reference": row["reference"],
             "prediction": row["prediction"],
+            "topk_predictions": row.get("topk_predictions", ""),
             "usefulness_auto": row["usefulness"],
+            "topk_hit_auto": row.get("topk_hit", ""),
             "manual_score": manual_score,
             "labeler": labeler,
         })
@@ -83,13 +86,23 @@ def main():
 
     print(f"\nLabeler {labeler}: {len(done)} already labeled, {len(remaining)} left.\n")
     print("For each example: type 0 (irrelevant), 1 (close), or 2 (relevant).")
+    print("If a top-5 list is shown, score based on the BEST candidate in that list.")
     print("Type 's' to skip, 'q' to save and quit.\n")
 
     for i, row in enumerate(remaining):
         print("-" * 70)
         print(f"[{i + 1}/{len(remaining)}]  granularity: {row['granularity']}  |  system: {row['system']}")
         print(f"PREFIX:     ...{row['prefix'][-100:]}")
-        print(f"PREDICTION: {row['prediction']}")
+
+        topk = row.get("topk_predictions", "")
+        if topk:
+            candidates = [c.strip() for c in topk.split("|")]
+            print("TOP-5 CANDIDATES:")
+            for rank, candidate in enumerate(candidates, start=1):
+                print(f"    {rank}. {candidate}")
+        else:
+            print(f"PREDICTION: {row['prediction']}")
+
         print(f"REFERENCE:  {row['reference']}")
 
         while True:
