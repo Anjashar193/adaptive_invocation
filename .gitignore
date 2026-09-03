@@ -15,3 +15,7 @@ data/raw/
 .DS_Store
 .idea
 src/recompute_metrics.py
+pick_example.py
+check_predictions.py
+recompute_topk.py
+recompute_metrics.py
