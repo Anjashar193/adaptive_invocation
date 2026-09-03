@@ -8,8 +8,8 @@ METRIC_COLUMNS = {
     "sentence": ["semantic_sim", "overlap"],
 }
 
-TOPK_GRANULARITIES = {"next_word", "partial_word"}
-MIN_REFERENCE_LEN_FOR_TOPK = 3  # below this, partial_word "hits" are often coincidental (e.g. ref="y" matches "you")
+TOPK_GRANULARITIES = {"next_word", "partial_word", "phrase", "sentence"}
+MIN_REFERENCE_LEN_FOR_TOPK = 3  # partial_word only: short remainders like "y" cause coincidental hits
 
 
 def load_results(path="phase1_results.csv"):
@@ -42,7 +42,6 @@ def summarize(rows):
             topk_rows = [r for r in group if r.get("topk_hit") not in (None, "")]
             if topk_rows:
                 top5_acc = f"{_avg(topk_rows, 'topk_hit'):.3f}"
-
                 if granularity == "partial_word":
                     filtered = [r for r in topk_rows if len(r["reference"]) >= MIN_REFERENCE_LEN_FOR_TOPK]
                     if filtered:

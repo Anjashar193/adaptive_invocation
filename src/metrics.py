@@ -3,6 +3,13 @@ import re
 
 _ST_MODEL = None
 
+FILLER_WORDS = {
+    "the", "a", "an", "and", "or", "but", "of", "to", "in",
+    "is", "it", "i", "that", "this", "was", "are", "be",
+    "as", "at", "by", "for", "on", "with", "he", "she",
+    "they", "we", "you", "so", "if", "from", "not", "what"
+}
+
 
 def _get_embedding_model():
     global _ST_MODEL
@@ -14,6 +21,13 @@ def _get_embedding_model():
 
 def normalize(text):
     return re.sub(r"[^a-z0-9' ]", "", text.lower()).strip()
+
+
+def filter_fillers(predictions):
+    first_word = lambda p: normalize(p).split()[0] if normalize(p).split() else ""
+    non_fillers = [p for p in predictions if first_word(p) not in FILLER_WORDS]
+    fillers = [p for p in predictions if first_word(p) in FILLER_WORDS]
+    return non_fillers + fillers
 
 
 def first_word_match(prediction, reference):
@@ -81,10 +95,14 @@ def is_hit(prediction, reference, granularity):
         return first_word_match(prediction, reference) == 1.0
     elif granularity == "partial_word":
         return partial_word_char_match(prediction, reference) >= 0.8
+    elif granularity in ("phrase", "sentence"):
+        trimmed = trim_prediction(prediction, reference, granularity)
+        return usefulness_score(trimmed, reference, "") >= 1
     return False
 
 
 def topk_score(predictions, reference, granularity):
+    predictions = filter_fillers(predictions)
     for rank, prediction in enumerate(predictions, start=1):
         if is_hit(prediction, reference, granularity):
             return {"topk_hit": 1, "topk_rank": rank}
@@ -109,12 +127,7 @@ def score_example(prediction, example, granularity):
 
 
 def best_of_k_score(predictions, example, granularity):
-    """
-    Score a ranked list of k candidate predictions (best/most-likely first).
-    Returns the metrics for the single best-scoring candidate, plus
-    hit_rank: the 1-based position of the first candidate that scored
-    usefulness >= 2, or None if no candidate did.
-    """
+    predictions = filter_fillers(predictions)
     best_result = None
     best_usefulness = -1
     hit_rank = None
@@ -138,3 +151,10 @@ if __name__ == "__main__":
     print(partial_word_char_match("keen", "ke"))
     print(sequence_overlap("the weather is nice today", "the weather looks nice today"))
     print(sequence_overlap("the weather is nice today", "can you write me a poem"))
+    # test filler filtering
+    preds = ["the", "a", "weather", "forecast", "is"]
+    print("before filter:", preds)
+    print("after filter:", filter_fillers(preds))
+    # test is_hit for phrase/sentence
+    print("phrase hit (usefulness>=1):", is_hit("weather looks nice today", "weather is nice", "phrase"))
+    print("phrase miss:", is_hit("the quick brown fox", "weather is nice", "phrase"))
