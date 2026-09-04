@@ -32,7 +32,7 @@ itself is Phase 2/3.
 
 | | |
 |---|---|
-| Symptom | Exact-match scoring returned 0% everywhere |
+| **Bug 1:** | Exact-match scoring returned 0% everywhere |
 | Cause 1 | Exact-match too strict for open-ended text (also noted in ChaI-TeA, 2025) → switched to first-word match, char overlap, semantic similarity |
 | Cause 2 | Usefulness score compared full model output to a short reference, unfairly penalizing longer predictions → fixed by trimming prediction to reference length first |
 | Effect | Same predictions, corrected grading — numbers below are post-fix |
