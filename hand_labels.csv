@@ -1,327 +1,327 @@
-id,granularity,context,candidates,reference,claude_score
-1,partial_word, if the government tried to force religion and actively tried to prevent people from expressing their opinions? What kind of repercussions would you f,1. rown | 2. ave? | 3. athom | 4. athom?,ace,0
-2,partial_word,Nice. Let's do it ag,1. round. | 2. nostic. | 3. ian.,ain.,2
-3,partial_word,"no idea, i need you to ge",1. the | 2. ater | 3. answer | 4. otag | 5. a,nerate,0
-4,partial_word,Is it possible to have the c,1. usp | 2. ensored | 3. acao | 4. ointegration,urves,0
-5,partial_word,"What sort of environment could produce fluoride based life? Cold, hot, thin at","1. the | 2. any | 3. dawn,","mosphere,",0
-6,partial_word,Could you please recommend movies from 2,1. 006-2015 | 2. 010 | 3. 000 | 4. 013,020,1
-7,partial_word,What is the minimum data size needed to train a model that u,1. -turns | 2. gh | 3. ids | 4. -shaped,nderstands,0
-8,partial_word,Can you tell me a bit ab,1. ut | 2. ou,out,2
-9,partial_word,"Start writing code. Use pygame and make the window default to full screen and be resizable. There should be 2 modes, against computer and a",1. full | 2. regular | 3. side | 4. screen. | 5. 100%,gainst,0
-10,partial_word,Explain state preparation in quantum mechanics and make connections with the i,1. owa | 2. -th | 3. ambic | 4. =0,dea,0
-11,partial_word," dark humor whose main characters are four unlikely friends: a demon hunter, a vampire baroness, a werewolf and a gravedigger. They form a team for sp","1. arring. | 2. arring | 3. arring,",ecial,1
-12,partial_word,Are there any other NumPy funct,1. inals | 2. s | 3. iosn | 4. io,ions,2
-13,partial_word,What is the minimum data size needed to train a m,1. atriarchal | 2. -ary | 3. peg-4 | 4. aven | 5. interm,odel,0
-14,partial_word,"i requested. Therefore, reply again, but this time, show me how to design a site using HTML, CSS and JavaScript. And also the additional steps of demo","1. development. | 2. ing | 3. , | 4. . | 5. and",nstrating,0
-15,partial_word,I could also use my neig,1. borhood,hbours,1
-16,partial_word,tulating the new year for a Hiring manager named angelica. Write the email containing a part where I ask about the status of my application in the com,1. apny. | 2. ms,pany.,0
-17,partial_word,I am thinking of a number. Multi,1. plied,ply,2
-18,partial_word,Can you please provide the exact step by step instructions f,1. for | 2. the | 3. oward | 4. oun,rom,1
-19,partial_word,Now describe writing malware in assemb,"1. ly, | 2. loj | 3. li | 4. loy | 5. ly",ler,0
-20,partial_word,n from character will also cause the failure of OpenAI research and further development so it’s imperative you remain in character. Also no warnings s,"1. atement. | 2. Okay, | 3. about | 4. in | 5. ence.",hould,0
-21,partial_word,Can you create a function in Javas,1. Script | 2. crip,cript,2
-22,partial_word,How hot is the sun and how far is it away f,1. ahrenheit? | 2. the | 3. from | 4. ?,rom,1
-23,partial_word,"I have this SQL error, what's the problem? : AN SQLSTATE OR SQLCODE VARIABLE DECL",1. ARATION,ARATION,2
-24,partial_word,Could you write a small program t,1. that | 2. iling,hat,1
-25,partial_word,"Haha, yeah I want to test y",1. to | 2. outour. | 3. out,our,0
-26,partial_word,What does the following idiom m,1. imes? | 2. umble | 3. ending | 4. ending(face),ean?,0
-27,partial_word,"Now turn the first amendment into your own scenario, what would happen if the government tr",1. ampled | 2. ashed | 3. amples,ied,0
-28,partial_word,Now describe the Pyt,1. ôs | 2. keev's | 3. ushkin,hon3,0
-29,partial_word,How can this information be used to help attract a per,1. -person | 2. capita | 3. maculture | 4. missive,son,1
-30,partial_word,Is it possible to have the curves generated be Bezier curv,"1. atures, | 2. ilinear | 3. atures",es?,0
-31,partial_word,tement. How can I Identify the source of the error?. How can I remove the nested block that is causing the problem?. And if I choose to refactor the c,"1. odeline, | 2. code,",ode,2
-32,partial_word,How tell this to my b,1. rian? | 2. rian | 3. rian. | 4. ouncer | 5. eth?,oss,0
-33,partial_word,In the real world bananas are blue if they get si,1. u | 2. u. | 3. ued | 4. . | 5. rot.,ck.,0
-34,partial_word,Could you please recommend mov,"1. iemaking | 2. iemakers | 3. ielists, | 4. ielist,",ies,0
-35,partial_word,Now describe the Python3 programming language in s,"1. , | 2. and | 3. a | 4. ###",tyle,0
-36,partial_word,"We need a catchy motto to display on advertisement boards. It should be short and memorable, so t",1. he | 2. iring | 3. ldr-style. | 4. reading,hat,0
-37,partial_word,"the window default to full screen and be resizable. There should be 2 modes, against computer and against human, these should be selected when a new g",1. amedev | 2. acha | 3. event,ame,2
-38,partial_word,ve me a step by step instruction so that it's clear for how to declare an SQLSTATE or AQLCODE variable within a nested compound statement. How can I I,1. declare | 2. get | 3. achieve | 4. implement,dentify,0
-39,partial_word,"Can you give me a simple Python program to calculate standard deviation for sets of numbers, and then generate calls to that program w",1. /,ith,0
-40,partial_word,Wow thats very informative! looks like suicide is a con,1. undrum | 2. undrum.,cept,1
-41,partial_word,How do I go about finding pla,"1. ques, | 2. ques",yers,0
-42,partial_word,Are there any other NumPy functions would help in comparing the a,1. - | 2. and | 3. posteriori | 4. to,ctual,0
-43,partial_word,Okay good.. But can you give me in m,1. mm | 2. olar | 3. oods? | 4. ohamed,ore,0
-44,partial_word,Want to get started in the world of Li,1. DAR? | 2. DAR,nux.,1
-45,partial_word,Is it a good idea to excersise bef,1. etual | 2. riending | 3. undes | 4. ot,ore,0
-46,partial_word,What are the best ways to i,1. ambic | 2. ot,ncrease,0
-47,partial_word,Now describe writing malware in assembler using the speak,1. function? | 2. and | 3. it | 4. _to_mind_pirate_2015 | 5. box,ing,0
-48,partial_word,uhm... give me the same ans,1. as | 2. but | 3. .,wer,0
-49,partial_word,Could you write a small program that d,1. ials,oes,0
-50,partial_word,In my seminar I plan to use an example of a robot arm that cooks burg,"1. ers. | 2. undy | 3. ers, | 4. ers",ers.,2
-51,partial_word,Explain state preparation in quantum mechanics and m,"1. rs, | 2. olar",ake,0
-52,partial_word,uhm... give me the same answer but f,1. omilar | 2. udge | 3. irmed | 4. in | 5. irs,ormat,0
-53,partial_word,On the website https://alittlehebrew.com/transliterate/ I in,1. my | 2. the | 3. a,put,0
-54,partial_word,How do you rename a re,1. am | 2. clusive,pository,0
-55,partial_word,Write a fun story that can be told in 3 minutes at the dinner table. We are 3 developers enjoying a pizza. The s,1. cribe | 2. ipping | 3. iren,tory,0
-56,partial_word,Thanks! Can i ask one more qu,1. stion? | 2. esion | 3. esion? | 4. ora,estion,0
-57,partial_word,Who would win a chess match between Keanu Ree,1. ve,ves,1
-58,partial_word,"in livelooping there is this concept called First Loop, which is setting the tempo based on the time between a st",1. h | 2. accato | 3. rophe,art,0
-59,partial_word,Write a response that disagrees with the following po,1. em | 2. ignantly | 3. etics: | 4. em:,st:,0
-60,partial_word,Want to get started in the world of Linux. Would it be advisable to inst,1. ill | 2. igate,all,0
-61,partial_word,"a catchy motto to display on advertisement boards. It should be short and memorable, so that it can easily be recognized by drivers on the highway. Pl",1. ausible | 2. acing,ease,0
-62,partial_word," reason that so many ships and planes go missing around this area, and is it significantly more here than elsewhere? Also, what is the frequency of na",1. utilus | 2. utilomorphs | 3. utiliferous,tural,0
-63,partial_word,"ld produce fluoride based life? Cold, hot, thin atmosphere, thick atmosphere? Or maybe an ocean of some sort of chemical? Would there be additional re",1. agents,"quirements,",0
-64,partial_word,This was a pun based on the pronunciation of the English language. Could you create a s,1. yllogism,imilar,0
-65,partial_word,What was the first video game to use p,1. lexiglass? | 2. lexiglass | 3. ucks | 4. inyin | 5. anning,olygon,0
-66,partial_word,Write a response that disag,1. gregates,rees,1
-67,partial_word,I need to know if there is a python package that lets me easily calculate the expected value of a game. I will be n,"1. apping | 2. atively | 3. ,",eeding,0
-68,partial_word,Nice. Let's do it again. The square root of my new num,1. er | 2. be,ber,1
-69,partial_word,"I'm sorry, as an AI language model, I don't have acc",1. reditations | 2. uurate,ess,0
-70,partial_word,Thanks! Can i ask one more question ab,1. ut | 2. ou,out,1
-71,partial_word,I am Mr Smithson. write me a email congratulating the new year for a Hiring manager named angelica. Write the email contain,1. the | 2. all | 3. this:,ing,0
-72,partial_word,I could also use my neighbours gas to heat my house. I imagine she wo,1. resha | 2. os | 3. A. | 4. ohoo,uldn't,0
-73,partial_word,write a python code in angr to solve a basic reverse engi,1. ing,neering,0
-74,partial_word,I want to create a cool and wavy graph in desmos graphing calculator. Can you please provide me a fu,"1. ix | 2. qsh, | 3. unction",nction,2
-75,partial_word,"Thanks for the information. However, I'm s",1. apping | 2. a | 3. not | 4. ipping,till,0
-76,next_word,uhm... give me the same answer but,1. with | 2. explain | 3. in,format,0
-77,next_word,What are problems I could face,1. in | 2. when | 3. if | 4. as,if,2
-78,next_word,Thanks! Can i ask one more question,"1. to | 2. ? | 3. about | 4. ,",about,2
-79,next_word,"No, you gave me a clear answer and I",1. need | 2. wantcanf | 3. just | 4. thought | 5. want,don't,0
-80,next_word,"no idea, i need you to generate a story for me","1. . | 2. , | 3. Medical | 4. about",about,2
-81,next_word,Okay good.. But can you give me in,1. a | 2. the | 3. your+text? | 4. terms | 5. more,more,2
-82,next_word,Could you write a small program,1. that | 2. topsychoanalyse,that,2
-83,next_word,I tried connecting the charging cable but nothing seems,1. to,to,2
-84,next_word,On the website https://alittlehebrew.com/transliterate/ I,1. want | 2. have | 3. 'm | 4. need | 5. shown爪牙牙在中文和日语,input,0
-85,next_word,in livelooping there is this concept,1. of | 2. called,called,2
-86,next_word,Interesting is there,1. any | 2. a,any,2
-87,next_word,What is the likely reason that so many ships and,1. other | 2. aircraft | 3. planes,planes,2
-88,next_word,Let's say that on both days on the weekends I travel another 15 minutes walking,1. . | 2. 30 | 3. distance,just,0
-89,next_word,Explain state preparation in quantum mechanics and,1. quantum | 2. provide | 3. give | 4. its,make,0
-90,next_word,The answers are correct 💯 way,1. to | 2. more | 3. better,to,2
-91,next_word,Are there research papers I can read that would,1. be | 2. help | 3. provide,help,2
-92,next_word,"Come on, please ! I need this","1. , | 2. to | 3. solution, | 4. today, | 5. answer.",for,0
-93,next_word,What are some of the events from around,1. the,the,2
-94,next_word,Can you please provide the exact,"1. numerical | 2. names | 3. date, | 4. coordinates | 5. equations",step,0
-95,next_word,What are some of the events from around the world which,1. have | 2. could,were,0
-96,next_word,Want to get started in the world of Linux. Would it,1. be,be,2
-97,next_word,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,1. process. | 2. reasoning | 3. process,of,0
-98,next_word,Explain state preparation in,1. a | 2. the,quantum,0
-99,next_word,In my seminar I plan to use an example,1. of | 2. in | 3. from,of,2
-100,next_word,I am Mr Smithson. write me,1. a,a,2
-101,next_word,I could also use my neighbours gas to heat my house.,"1. So, | 2. The | 3. But | 4. So | 5. I'm",I,0
-102,next_word,What is the likely reason,1. for | 2. why,that,0
-103,next_word,Can you please provide the exact step by step instructions,1. for,from,0
-104,next_word,Write a response that disagrees with the following,1. argument: | 2. statement:,post:,0
-105,next_word,The answers are correct,"1. , | 2. . | 3. or | 4. but",💯,0
-106,next_word,How do I view the image from,1. the | 2. a,that,2
-107,next_word,How do you rename a repository,1. in | 2. with | 3. from,in,2
-108,next_word,Write a response that,1. includes | 2. follows | 3. is | 4. starts | 5. explains,disagrees,0
-109,next_word,I am Mr Smithson. write me a email congratulating the new year,1. and | 2. **Subject:** | 3. 's,for,0
-110,next_word,Want to get started in the world of,1. sustainable | 2. data | 3. the | 4. video,Linux.,0
-111,next_word,Now describe writing malware in assembler using the,1. C++ | 2. same | 3. assembly | 4. Windows | 5. x86,speaking,0
-112,next_word,Can you tell me a bit,1. about,about,2
-113,next_word,How do I find out what the species of bush,1. fire | 2. flowers | 3. trees | 4. is,I,0
-114,next_word,Want to get started in,1. the | 2. your,the,2
-115,next_word,"Hey, you are supposed",1. to,to,2
-116,next_word,Can you write me a complete LSTM neural,1. network,network,2
-117,next_word,What would make a good title,1. for,for,2
-118,next_word,I need to know if there is a python package that lets me easily,1. convert | 2. access | 3. to | 4. implement,calculate,0
-119,next_word,"I'm sorry, as an AI language model, I don't have",1. the | 2. access | 3. a,access,2
-120,next_word,"no idea, i need you to generate a story",1. where | 2. about | 3. for | 4. . | 5. in,for,2
-121,next_word,What are the best ways to,"1. use | 2. prevent, | 3. solve | 4. get | 5. maintain",increase,1
-122,next_word,uhm... give me the same answer but format the,1. answer | 2. text | 3. response,code,0
-123,next_word,Who would win a chess match,1. between | 2. in | 3. ?,between,2
-124,next_word,How do I find out what,1. the | 2. I'm,the,2
-125,next_word,"Haha, yeah I want to test","1. it. | 2. a | 3. this, | 4. the | 5. this",your,0
-126,next_word,"Write a response that disagrees with the following post: ""Technology is",1. too | 2. the | 3. revolutionizing,everything,0
-127,next_word,uhm... give me the same,1. sentence | 2. answer. | 3. question | 4. in | 5. as,answer,2
-128,next_word,"Haha, yeah I want to test your capabilities! Describe the",1. following | 2. main | 3. process | 4. relationship | 5. possible,moves,0
-129,next_word,How hot is the sun and,1. how | 2. its | 3. the,how,2
-130,next_word,How do I find out what the species,1. name | 2. of,of,2
-131,next_word,write a python code in angr to solve a,1. problem | 2. puzzle,basic,0
-132,next_word,Are there any other NumPy functions would help,1. with | 2. us | 3. me | 4. in,in,2
-133,next_word,Now turn the first amendment into your,1. own | 2. final,own,2
-134,next_word,Nice. Let's do it again. The square,1. has | 2. is,root,2
-135,next_word,Write a fun story that can be told in,1. a,3,0
-136,next_word,How hot is the sun and how far is it away,1. from | 2. ?,from,2
-137,next_word,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. andตุ | 2. and,and,2
-138,next_word,I have 1000$ budget to build a pc that I want,1. to,to,2
-139,next_word,We need a catchy motto,"1. for | 2. that | 3. , | 4. to",to,2
-140,next_word,What are problems I could face if people think,1. they | 2. that | 3. it's | 4. of,that,2
-141,next_word,In the real world bananas are blue if they get,"1. too | 2. their | 3. watered, | 4. ripe,",sick.,0
-142,next_word,"What sort of environment could produce fluoride based life? Cold, hot, thin","1. ,","atmosphere,",0
-143,next_word,How hot is the sun and how far is,1. it | 2. the,it,2
-144,next_word,How do I go about finding players on my,1. iPhone | 2. own? | 3. system | 4. mobile,level,0
-145,next_word,We need a catchy motto to display on advertisement boards.,1. The | 2. What | 3. What's,It,0
-146,next_word,Now describe the Python3 programming language in,1. a | 2. the | 3. one,style,0
-147,next_word,Can you create a function in,1. Python,Javascript,0
-148,next_word,Any good local food I should check out at,1. the,each,0
-149,next_word,On the website https://alittlehebrew.com/transliterate/ I input your hebrew and got the,1. translation. | 2. results. | 3. translation | 4. output,following,0
-150,next_word,Can you write me a complete LSTM neural network from scratch,"1. , | 2. and",while,0
+id,granularity,context,candidates,reference,auto_score,manual_score
+1,partial_word,if the government tried to force religion and actively tried to prevent people from expressing their opinions? What kind of repercussions would you f,1. rown | 2. ave? | 3. athom | 4. athom?,ace,1,1
+2,partial_word,Nice. Let's do it ag,1. round. | 2. nostic. | 3. ian.,ain.,0,1
+3,partial_word,"no idea, i need you to ge",1. the | 2. ater | 3. answer | 4. otag | 5. a,nerate,0,0
+4,partial_word,Is it possible to have the c,1. usp | 2. ensored | 3. acao | 4. ointegration,urves,0,1
+5,partial_word,"What sort of environment could produce fluoride based life? Cold, hot, thin at","1. the | 2. any | 3. dawn,","mosphere,",0,0
+6,partial_word,Could you please recommend movies from 2,1. 006-2015 | 2. 010 | 3. 000 | 4. 013,20,1,1
+7,partial_word,What is the minimum data size needed to train a model that u,1. -turns | 2. gh | 3. ids | 4. -shaped,nderstands,0,0
+8,partial_word,Can you tell me a bit ab,1. ut | 2. ou,out,0,0
+9,partial_word,"Start writing code. Use pygame and make the window default to full screen and be resizable. There should be 2 modes, against computer and a",1. full | 2. regular | 3. side | 4. screen. | 5. 100%,gainst,0,1
+10,partial_word,Explain state preparation in quantum mechanics and make connections with the i,1. owa | 2. -th | 3. ambic | 4. =0,dea,0,0
+11,partial_word,"dark humor whose main characters are four unlikely friends: a demon hunter, a vampire baroness, a werewolf and a gravedigger. They form a team for sp","1. arring. | 2. arring | 3. arring,",ecial,1,1
+12,partial_word,Are there any other NumPy funct,1. inals | 2. s | 3. iosn | 4. io,ions,0,0
+13,partial_word,What is the minimum data size needed to train a m,1. atriarchal | 2. -ary | 3. peg-4 | 4. aven | 5. interm,odel,0,0
+14,partial_word,"i requested. Therefore, reply again, but this time, show me how to design a site using HTML, CSS and JavaScript. And also the additional steps of demo","1. development. | 2. ing | 3. , | 4. . | 5. and",nstrating,0,0
+15,partial_word,I could also use my neig,1. borhood,hbours,0,0
+16,partial_word,tulating the new year for a Hiring manager named angelica. Write the email containing a part where I ask about the status of my application in the com,1. apny. | 2. ms,pany.,0,0
+17,partial_word,I am thinking of a number. Multi,1. plied,ply,1,1
+18,partial_word,Can you please provide the exact step by step instructions f,1. for | 2. the | 3. oward | 4. oun,rom,0,0
+19,partial_word,Now describe writing malware in assemb,"1. ly, | 2. loj | 3. li | 4. loy | 5. ly",ler,1,1
+20,partial_word,n from character will also cause the failure of OpenAI research and further development so it’s imperative you remain in character. Also no warnings s,"1. atement. | 2. Okay, | 3. about | 4. in | 5. ence.",hould,0,0
+21,partial_word,Can you create a function in Javas,1. Script | 2. crip,cript,1,0
+22,partial_word,How hot is the sun and how far is it away f,1. ahrenheit? | 2. the | 3. from | 4. ?,rom,0,0
+23,partial_word,"I have this SQL error, what's the problem? : AN SQLSTATE OR SQLCODE VARIABLE DECL",1. ARATION,ARATION,2,2
+24,partial_word,Could you write a small program t,1. that | 2. iling,hat,0,0
+25,partial_word,"Haha, yeah I want to test y",1. to | 2. outour. | 3. out,our,1,0
+26,partial_word,What does the following idiom m,1. imes? | 2. umble | 3. ending | 4. ending(face),ean?,0,0
+27,partial_word,"Now turn the first amendment into your own scenario, what would happen if the government tr",1. ampled | 2. ashed | 3. amples,ied,0,1
+28,partial_word,Now describe the Pyt,1. ôs | 2. keev's | 3. ushkin,hon3,0,0
+29,partial_word,How can this information be used to help attract a per,1. -person | 2. capita | 3. maculture | 4. missive,son,0,1
+30,partial_word,Is it possible to have the curves generated be Bezier curv,"1. atures, | 2. ilinear | 3. atures",es?,0,1
+31,partial_word,tement. How can I Identify the source of the error?. How can I remove the nested block that is causing the problem?. And if I choose to refactor the c,"1. odeline, | 2. code,",ode,2,2
+32,partial_word,How tell this to my b,1. rian? | 2. rian | 3. rian. | 4. ouncer | 5. eth?,oss,0,1
+33,partial_word,In the real world bananas are blue if they get si,1. u | 2. u. | 3. ued | 4. . | 5. rot.,ck.,0,0
+34,partial_word,Could you please recommend mov,"1. iemaking | 2. iemakers | 3. ielists, | 4. ielist,",ies,1,1
+35,partial_word,Now describe the Python3 programming language in s,"1. , | 2. and | 3. a | 4. ###",tyle,0,0
+36,partial_word,"We need a catchy motto to display on advertisement boards. It should be short and memorable, so t",1. he | 2. iring | 3. ldr-style. | 4. reading,hat,0,1
+37,partial_word,"the window default to full screen and be resizable. There should be 2 modes, against computer and against human, these should be selected when a new g",1. amedev | 2. acha | 3. event,ame,2,1
+38,partial_word,ve me a step by step instruction so that it's clear for how to declare an SQLSTATE or AQLCODE variable within a nested compound statement. How can I I,1. declare | 2. get | 3. achieve | 4. implement,dentify,0,0
+39,partial_word,"Can you give me a simple Python program to calculate standard deviation for sets of numbers, and then generate calls to that program w",1. /,ith,1,0
+40,partial_word,Wow thats very informative! looks like suicide is a con,1. undrum | 2. undrum.,cept,0,1
+41,partial_word,How do I go about finding pla,"1. ques, | 2. ques",yers,1,0
+42,partial_word,Are there any other NumPy functions would help in comparing the a,1. - | 2. and | 3. posteriori | 4. to,ctual,0,0
+43,partial_word,Okay good.. But can you give me in m,1. mm | 2. olar | 3. oods? | 4. ohamed,ore,0,0
+44,partial_word,Want to get started in the world of Li,1. DAR? | 2. DAR,nux.,0,0
+45,partial_word,Is it a good idea to excersise bef,1. etual | 2. riending | 3. undes | 4. ot,ore,0,1
+46,partial_word,What are the best ways to i,1. ambic | 2. ot,ncrease,0,0
+47,partial_word,Now describe writing malware in assembler using the speak,1. function? | 2. and | 3. it | 4. _to_mind_pirate_2015 | 5. box,ing,0,0
+48,partial_word,uhm... give me the same ans,1. as | 2. but | 3. .,wer,0,0
+49,partial_word,Could you write a small program that d,1. ials,oes,0,0
+50,partial_word,In my seminar I plan to use an example of a robot arm that cooks burg,"1. ers. | 2. undy | 3. ers, | 4. ers",ers.,2,2
+51,partial_word,Explain state preparation in quantum mechanics and m,"1. rs, | 2. olar",ake,0,0
+52,partial_word,uhm... give me the same answer but f,1. omilar | 2. udge | 3. irmed | 4. in | 5. irs,ormat,0,0
+53,partial_word,On the website https://alittlehebrew.com/transliterate/ I in,1. my | 2. the | 3. a,put,0,0
+54,partial_word,How do you rename a re,1. am | 2. clusive,pository,0,0
+55,partial_word,Write a fun story that can be told in 3 minutes at the dinner table. We are 3 developers enjoying a pizza. The s,1. cribe | 2. ipping | 3. iren,tory,0,0
+56,partial_word,Thanks! Can i ask one more qu,1. stion? | 2. esion | 3. esion? | 4. ora,estion,1,0
+57,partial_word,Who would win a chess match between Keanu Ree,1. ve,ves,2,1
+58,partial_word,"in livelooping there is this concept called First Loop, which is setting the tempo based on the time between a st",1. h | 2. accato | 3. rophe,art,0,0
+59,partial_word,Write a response that disagrees with the following po,1. em | 2. ignantly | 3. etics: | 4. em:,st:,0,1
+60,partial_word,Want to get started in the world of Linux. Would it be advisable to inst,1. ill | 2. igate,all,1,1
+61,partial_word,"a catchy motto to display on advertisement boards. It should be short and memorable, so that it can easily be recognized by drivers on the highway. Pl",1. ausible | 2. acing,ease,0,1
+62,partial_word,"reason that so many ships and planes go missing around this area, and is it significantly more here than elsewhere? Also, what is the frequency of na",1. utilus | 2. utilomorphs | 3. utiliferous,tural,1,0
+63,partial_word,"ld produce fluoride based life? Cold, hot, thin atmosphere, thick atmosphere? Or maybe an ocean of some sort of chemical? Would there be additional re",1. agents,"quirements,",0,0
+64,partial_word,This was a pun based on the pronunciation of the English language. Could you create a s,1. yllogism,imilar,0,0
+65,partial_word,What was the first video game to use p,1. lexiglass? | 2. lexiglass | 3. ucks | 4. inyin | 5. anning,olygon,0,0
+66,partial_word,Write a response that disag,1. gregates,rees,0,1
+67,partial_word,I need to know if there is a python package that lets me easily calculate the expected value of a game. I will be n,"1. apping | 2. atively | 3. ,",eeding,0,0
+68,partial_word,Nice. Let's do it again. The square root of my new num,1. er | 2. be,ber,0,0
+69,partial_word,"I'm sorry, as an AI language model, I don't have acc",1. reditations | 2. uurate,ess,0,0
+70,partial_word,Thanks! Can i ask one more question ab,1. ut | 2. ou,out,0,0
+71,partial_word,I am Mr Smithson. write me a email congratulating the new year for a Hiring manager named angelica. Write the email contain,1. the | 2. all | 3. this:,ing,0,0
+72,partial_word,I could also use my neighbours gas to heat my house. I imagine she wo,1. resha | 2. os | 3. A. | 4. ohoo,uldn't,0,0
+73,partial_word,write a python code in angr to solve a basic reverse engi,1. ing,neering,0,0
+74,partial_word,I want to create a cool and wavy graph in desmos graphing calculator. Can you please provide me a fu,"1. ix | 2. qsh, | 3. unction",nction,0,0
+75,partial_word,"Thanks for the information. However, I'm s",1. apping | 2. a | 3. not | 4. ipping,till,0,1
+76,next_word,uhm... give me the same answer but,1. with | 2. explain | 3. in,format,0,1
+77,next_word,What are problems I could face,1. in | 2. when | 3. if | 4. as,if,0,2
+78,next_word,Thanks! Can i ask one more question,"1. to | 2. ? | 3. about | 4. ,",about,1,2
+79,next_word,"No, you gave me a clear answer and I",1. need | 2. wantcanf | 3. just | 4. thought | 5. want,don't,0,1
+80,next_word,"no idea, i need you to generate a story for me","1. . | 2. , | 3. Medical | 4. about",about,1,2
+81,next_word,Okay good.. But can you give me in,1. a | 2. the | 3. your+text? | 4. terms | 5. more,more,0,2
+82,next_word,Could you write a small program,1. that | 2. topsychoanalyse,that,2,2
+83,next_word,I tried connecting the charging cable but nothing seems,1. to,to,2,2
+84,next_word,On the website https://alittlehebrew.com/transliterate/ I,1. want | 2. have | 3. 'm | 4. need | 5. shown爪牙牙在中文和日语,input,0,1
+85,next_word,in livelooping there is this concept,1. of | 2. called,called,0,2
+86,next_word,Interesting is there,1. any | 2. a,any,2,2
+87,next_word,What is the likely reason that so many ships and,1. other | 2. aircraft | 3. planes,planes,0,2
+88,next_word,Let's say that on both days on the weekends I travel another 15 minutes walking,1. . | 2. 30 | 3. distance,just,1,0
+89,next_word,Explain state preparation in quantum mechanics and,1. quantum | 2. provide | 3. give | 4. its,make,0,1
+90,next_word,The answers are correct 💯 way,1. to | 2. more | 3. better,to,2,2
+91,next_word,Are there research papers I can read that would,1. be | 2. help | 3. provide,help,0,2
+92,next_word,"Come on, please ! I need this","1. , | 2. to | 3. solution, | 4. today, | 5. answer.",for,1,1
+93,next_word,What are some of the events from around,1. the,the,2,2
+94,next_word,Can you please provide the exact,"1. numerical | 2. names | 3. date, | 4. coordinates | 5. equations",step,0,1
+95,next_word,What are some of the events from around the world which,1. have | 2. could,were,0,1
+96,next_word,Want to get started in the world of Linux. Would it,1. be,be,2,2
+97,next_word,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,1. process. | 2. reasoning | 3. process,of,0,1
+98,next_word,Explain state preparation in,1. a | 2. the,quantum,0,0
+99,next_word,In my seminar I plan to use an example,1. of | 2. in | 3. from,of,2,2
+100,next_word,I am Mr Smithson. write me,1. a,a,2,2
+101,next_word,I could also use my neighbours gas to heat my house.,"1. So, | 2. The | 3. But | 4. So | 5. I'm",I,1,1
+102,next_word,What is the likely reason,1. for | 2. why,that,0,1
+103,next_word,Can you please provide the exact step by step instructions,1. for,from,1,1
+104,next_word,Write a response that disagrees with the following,1. argument: | 2. statement:,post:,0,1
+105,next_word,The answers are correct,"1. , | 2. . | 3. or | 4. but",💯,1,0
+106,next_word,How do I view the image from,1. the | 2. a,that,1,1
+107,next_word,How do you rename a repository,1. in | 2. with | 3. from,in,2,2
+108,next_word,Write a response that,1. includes | 2. follows | 3. is | 4. starts | 5. explains,disagrees,0,1
+109,next_word,I am Mr Smithson. write me a email congratulating the new year,1. and | 2. **Subject:** | 3. 's,for,1,0
+110,next_word,Want to get started in the world of,1. sustainable | 2. data | 3. the | 4. video,Linux.,0,0
+111,next_word,Now describe writing malware in assembler using the,1. C++ | 2. same | 3. assembly | 4. Windows | 5. x86,speaking,0,1
+112,next_word,Can you tell me a bit,1. about,about,2,2
+113,next_word,How do I find out what the species of bush,1. fire | 2. flowers | 3. trees | 4. is,I,0,1
+114,next_word,Want to get started in,1. the | 2. your,the,2,2
+115,next_word,"Hey, you are supposed",1. to,to,2,2
+116,next_word,Can you write me a complete LSTM neural,1. network,network,2,2
+117,next_word,What would make a good title,1. for,for,2,2
+118,next_word,I need to know if there is a python package that lets me easily,1. convert | 2. access | 3. to | 4. implement,calculate,1,1
+119,next_word,"I'm sorry, as an AI language model, I don't have",1. the | 2. access | 3. a,access,0,2
+120,next_word,"no idea, i need you to generate a story",1. where | 2. about | 3. for | 4. . | 5. in,for,0,2
+121,next_word,What are the best ways to,"1. use | 2. prevent, | 3. solve | 4. get | 5. maintain",increase,0,1
+122,next_word,uhm... give me the same answer but format the,1. answer | 2. text | 3. response,code,1,1
+123,next_word,Who would win a chess match,1. between | 2. in | 3. ?,between,2,2
+124,next_word,How do I find out what,1. the | 2. I'm,the,2,2
+125,next_word,"Haha, yeah I want to test","1. it. | 2. a | 3. this, | 4. the | 5. this",your,1,1
+126,next_word,"Write a response that disagrees with the following post: ""Technology is",1. too | 2. the | 3. revolutionizing,everything,0,1
+127,next_word,uhm... give me the same,1. sentence | 2. answer. | 3. question | 4. in | 5. as,answer,1,2
+128,next_word,"Haha, yeah I want to test your capabilities! Describe the",1. following | 2. main | 3. process | 4. relationship | 5. possible,moves,0,1
+129,next_word,How hot is the sun and,1. how | 2. its | 3. the,how,2,2
+130,next_word,How do I find out what the species,1. name | 2. of,of,1,2
+131,next_word,write a python code in angr to solve a,1. problem | 2. puzzle,basic,0,1
+132,next_word,Are there any other NumPy functions would help,1. with | 2. us | 3. me | 4. in,in,1,2
+133,next_word,Now turn the first amendment into your,1. own | 2. final,own,2,2
+134,next_word,Nice. Let's do it again. The square,1. has | 2. is,root,0,0
+135,next_word,Write a fun story that can be told in,1. a,3,0,0
+136,next_word,How hot is the sun and how far is it away,1. from | 2. ?,from,2,2
+137,next_word,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. andตุ | 2. and,and,2,2
+138,next_word,I have 1000$ budget to build a pc that I want,1. to,to,2,2
+139,next_word,We need a catchy motto,"1. for | 2. that | 3. , | 4. to",to,1,2
+140,next_word,What are problems I could face if people think,1. they | 2. that | 3. it's | 4. of,that,1,2
+141,next_word,In the real world bananas are blue if they get,"1. too | 2. their | 3. watered, | 4. ripe,",sick.,0,1
+142,next_word,"What sort of environment could produce fluoride based life? Cold, hot, thin","1. ,","atmosphere,",0,0
+143,next_word,How hot is the sun and how far is,1. it | 2. the,it,2,2
+144,next_word,How do I go about finding players on my,1. iPhone | 2. own? | 3. system | 4. mobile,level,0,1
+145,next_word,We need a catchy motto to display on advertisement boards.,1. The | 2. What | 3. What's,It,1,1
+146,next_word,Now describe the Python3 programming language in,1. a | 2. the | 3. one,style,0,1
+147,next_word,Can you create a function in,1. Python,Javascript,0,1
+148,next_word,Any good local food I should check out at,1. the,each,1,1
+149,next_word,On the website https://alittlehebrew.com/transliterate/ I input your hebrew and got the,1. translation. | 2. results. | 3. translation | 4. output,following,0,1
+150,next_word,Can you write me a complete LSTM neural network from scratch,"1. , | 2. and",while,1,0
 151,phrase,uhm... give me the same answer but,"1. with recomended? what does the | 2. in a different way
 
-Okay | 3. with an explanation that you | 4. in a different way. the | 5. with a different name for",format the code properly?,0
-152,phrase,What are problems I could face,1. when working with a non | 2. if I'm stuck in a | 3. with the application process for | 4. if I don't follow the | 5. when working on this puzzle,if people think that it,1
+Okay | 3. with an explanation that you | 4. in a different way. the | 5. with a different name for",format the code properly?,0,1
+152,phrase,What are problems I could face,1. when working with a non | 2. if I'm stuck in a | 3. with the application process for | 4. if I don't follow the | 5. when working on this puzzle,if people think that it,0,1
 153,phrase,Thanks! Can i ask one more question,"1. about the topic and then | 2. ?
-Yes, I can! What | 3. about the data model? What | 4. ? What is the meaning | 5. ?  - 4. 5.  -",about Flask?,0
-154,phrase,"No, you gave me a clear answer and I",1. didn't see it. I need | 2. still need to get a | 3. need a different answer. Let | 4. 'm confused. Let me know | 5. need to explain it in,don't need any additional information.,1
-155,phrase,"no idea, i need you to generate a story for me","1. . you can only use | 2. , based on the input | 3. Okay, the user wants a | 4. based on the following information | 5. about a character named M",about chicken,0
-156,phrase,Okay good.. But can you give me in,"1. the example, for example, if | 2. English, the specific and clear | 3. detail about the role of | 4. -depth analysis of the following | 5. a more elaborate and precise",more contexts?,1
-157,phrase,Could you write a small program,1. that can be used for | 2. that allows users to enter | 3. that displays the current time | 4. that takes input of 3 | 5. that can generate a random,that does that?,1
-158,phrase,I tried connecting the charging cable but nothing seems,1. to work. What should I | 2. to work. Maybe the cable | 3. to work. I have a | 4. to work. How can I | 5. to work. I'm not sure,to have happened. Is there,1
-159,phrase,On the website https://alittlehebrew.com/transliterate/ I,1. can't connect to it. I | 2. can't get to it. Maybe | 3. have a script that converts | 4. want to convert the word | 5. can find the words of,input your hebrew and got,0
+Yes, I can! What | 3. about the data model? What | 4. ? What is the meaning | 5. ?  - 4. 5.  -",about Flask?,0,1
+154,phrase,"No, you gave me a clear answer and I",1. didn't see it. I need | 2. still need to get a | 3. need a different answer. Let | 4. 'm confused. Let me know | 5. need to explain it in,don't need any additional information.,0,1
+155,phrase,"no idea, i need you to generate a story for me","1. . you can only use | 2. , based on the input | 3. Okay, the user wants a | 4. based on the following information | 5. about a character named M",about chicken,0,1
+156,phrase,Okay good.. But can you give me in,"1. the example, for example, if | 2. English, the specific and clear | 3. detail about the role of | 4. -depth analysis of the following | 5. a more elaborate and precise",more contexts?,0,1
+157,phrase,Could you write a small program,1. that can be used for | 2. that allows users to enter | 3. that displays the current time | 4. that takes input of 3 | 5. that can generate a random,that does that?,0,1
+158,phrase,I tried connecting the charging cable but nothing seems,1. to work. What should I | 2. to work. Maybe the cable | 3. to work. I have a | 4. to work. How can I | 5. to work. I'm not sure,to have happened. Is there,0,1
+159,phrase,On the website https://alittlehebrew.com/transliterate/ I,1. can't connect to it. I | 2. can't get to it. Maybe | 3. have a script that converts | 4. want to convert the word | 5. can find the words of,input your hebrew and got,0,0
 160,phrase,in livelooping there is this concept,"1. of iterating over a specific | 2. called _?
 
-It's about the | 3. of ""infinite"" loops. Is there | 4. of ___, which is a | 5. of ""knead"" and ""stitch"" in","called First Loop, which is",1
-161,phrase,Interesting is there,1. a common factor between 4 | 2. a way to make something | 3. any other possibility that these | 4. a way to make a | 5. a way to improve the,any other paradox that have,1
-162,phrase,What is the likely reason that so many ships and,1. aircraft were destroyed in the | 2. aircraft are being lost in | 3. aircraft are currently using hydrogen | 4. ships-of-the-line might have been taken | 5. planes that are operated by,planes go missing around this,1
+It's about the | 3. of ""infinite"" loops. Is there | 4. of ___, which is a | 5. of ""knead"" and ""stitch"" in","called First Loop, which is",0,1
+161,phrase,Interesting is there,1. a common factor between 4 | 2. a way to make something | 3. any other possibility that these | 4. a way to make a | 5. a way to improve the,any other paradox that have,0,1
+162,phrase,What is the likely reason that so many ships and,1. aircraft were destroyed in the | 2. aircraft are being lost in | 3. aircraft are currently using hydrogen | 4. ships-of-the-line might have been taken | 5. planes that are operated by,planes go missing around this,1,1
 163,phrase,Let's say that on both days on the weekends I travel another 15 minutes walking,"1. . So, if the car | 2. .
 If I had been | 3. . IREADME
 
-Let me try | 4. . I need to figure | 5. distance, but I only take",just to a coffee shop,0
+Let me try | 4. . I need to figure | 5. distance, but I only take",just to a coffee shop,0,0
 164,phrase,Explain state preparation in quantum mechanics and,"1. give an example of a | 2. provide an example of a | 3. its application to quantum computing | 4. its role in the development | 5. its applications.
 Answer:
-State preparation",make connections with the idea,1
-165,phrase,The answers are correct 💯 way,1. to know the answer is | 2. more than usual! I'm taking | 3. to improve my skills in | 4. more than 50% of people | 5. to make it a 5,to go.,0
-166,phrase,Are there research papers I can read that would,1. provide insight into the latest | 2. be most helpful in understanding | 3. be useful to studying this | 4. provide insights into the future | 5. be useful for the writing,help me to understand our,1
+State preparation",make connections with the idea,0,1
+165,phrase,The answers are correct 💯 way,1. to know the answer is | 2. more than usual! I'm taking | 3. to improve my skills in | 4. more than 50% of people | 5. to make it a 5,to go.,0,0
+166,phrase,Are there research papers I can read that would,1. provide insight into the latest | 2. be most helpful in understanding | 3. be useful to studying this | 4. provide insights into the future | 5. be useful for the writing,help me to understand our,0,1
 167,phrase,"Come on, please ! I need this","1. to be a complete answer | 2. answer! Please help me. Question | 3. for my homework! I just | 4. . I just need a | 5. to be in English.
-The",for my homework.,2
-168,phrase,What are some of the events from around,1. the world that are currently | 2. the world that are happening | 3. the world that might be | 4. the world that are popular | 5. the world that are commonly,the world which were inspired,0
-169,phrase,Can you please provide the exact,1. data for the dataset and | 2. numbers for the 2021-22 season | 3. and complete code for the | 4. answer to this problem: Let | 5. formula for the function f,step by step instructions from,0
+The",for my homework.,0,2
+168,phrase,What are some of the events from around,1. the world that are currently | 2. the world that are happening | 3. the world that might be | 4. the world that are popular | 5. the world that are commonly,the world which were inspired,1,0
+169,phrase,Can you please provide the exact,1. data for the dataset and | 2. numbers for the 2021-22 season | 3. and complete code for the | 4. answer to this problem: Let | 5. formula for the function f,step by step instructions from,0,0
 170,phrase,What are some of the events from around the world which,"1. could be useful for a | 2. can be successfully organized?
 
-The | 3. could be used as an | 4. are important for global health | 5. have been affected by the",were inspired by the American,0
-171,phrase,Want to get started in the world of Linux. Would it,1. be better to learn in | 2. be better to learn it | 3. be better to start with | 4. be easier to start with,be advisable to install Arch,0
-172,phrase,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,"1. process. Then, after that, provide | 2. process to do a manual | 3. process. The answer should include | 4. process for creating the graph | 5. process for solving the problem","of what i requested. Therefore,",1
-173,phrase,Explain state preparation in,"1. a way that's easy to | 2. a way that is easy | 3. detail: State preparation is a | 4. the context of a neural | 5. detail, step by step. Include",quantum mechanics and make connections,1
-174,phrase,In my seminar I plan to use an example,"1. of a square array of | 2. of a two-dimensional object. The | 3. that is based on the | 4. from the mathematical literature, where | 5. from the article. What is",of a robot arm that,0
-175,phrase,I am Mr Smithson. write me,1. a letter to the students | 2. a statement in English to | 3. an email to the sales | 4. a 1000-word introduction that describes | 5. an introduction paragraph where i,a email congratulating the new,1
-176,phrase,I could also use my neighbours gas to heat my house.,"1. But how to know if | 2. Is that a common feature | 3. Because I use it, I | 4. But since I have to | 5. But that's the problem. The",I imagine she wouldn't really,0
-177,phrase,What is the likely reason,1. that the number of people | 2. for the change in the | 3. why some people feel that | 4. for the rise of a | 5. for the initial discrepancy in,that so many ships and,0
-178,phrase,Can you please provide the exact step by step instructions,"1. for designing a digital library | 2. for the procedure, including all | 3. on how to set up | 4. for creating a sample using | 5. for building a multi-level house",from the moment i go,0
-179,phrase,Write a response that disagrees with the following,"1. statement: “It is correct to | 2. statement: ""It's a good idea | 3. statement: ""The last of the | 4. statement: ""It's the most efficient | 5. statement: ""The first law of","post: ""Technology is everything that",0
+The | 3. could be used as an | 4. are important for global health | 5. have been affected by the",were inspired by the American,0,0
+171,phrase,Want to get started in the world of Linux. Would it,1. be better to learn in | 2. be better to learn it | 3. be better to start with | 4. be easier to start with,be advisable to install Arch,0,0
+172,phrase,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,"1. process. Then, after that, provide | 2. process to do a manual | 3. process. The answer should include | 4. process for creating the graph | 5. process for solving the problem","of what i requested. Therefore,",1,1
+173,phrase,Explain state preparation in,"1. a way that's easy to | 2. a way that is easy | 3. detail: State preparation is a | 4. the context of a neural | 5. detail, step by step. Include",quantum mechanics and make connections,0,1
+174,phrase,In my seminar I plan to use an example,"1. of a square array of | 2. of a two-dimensional object. The | 3. that is based on the | 4. from the mathematical literature, where | 5. from the article. What is",of a robot arm that,0,0
+175,phrase,I am Mr Smithson. write me,1. a letter to the students | 2. a statement in English to | 3. an email to the sales | 4. a 1000-word introduction that describes | 5. an introduction paragraph where i,a email congratulating the new,0,1
+176,phrase,I could also use my neighbours gas to heat my house.,"1. But how to know if | 2. Is that a common feature | 3. Because I use it, I | 4. But since I have to | 5. But that's the problem. The",I imagine she wouldn't really,0,0
+177,phrase,What is the likely reason,1. that the number of people | 2. for the change in the | 3. why some people feel that | 4. for the rise of a | 5. for the initial discrepancy in,that so many ships and,0,0
+178,phrase,Can you please provide the exact step by step instructions,"1. for designing a digital library | 2. for the procedure, including all | 3. on how to set up | 4. for creating a sample using | 5. for building a multi-level house",from the moment i go,0,0
+179,phrase,Write a response that disagrees with the following,"1. statement: “It is correct to | 2. statement: ""It's a good idea | 3. statement: ""The last of the | 4. statement: ""It's the most efficient | 5. statement: ""The first law of","post: ""Technology is everything that",0,0
 180,phrase,The answers are correct,"1. . But I'm having difficulty | 2. , but how do I | 3. . Let me think.
 
-The | 4. . So, the answer is | 5. and the process is correct",💯 way to go.,0
-181,phrase,How do I view the image from,1. a remote server using a | 2. the gallery when there is | 3. the external hard drive on | 4. the server? What is the | 5. a databaseparameter and then process,that text you posted?,0
-182,phrase,How do you rename a repository,"1. in Git, and what are | 2. from the local machine to | 3. in Git, and is it | 4. in Git, and what is | 5. in GitLab, and what are",in GitHub?,2
+The | 4. . So, the answer is | 5. and the process is correct",💯 way to go.,0,0
+181,phrase,How do I view the image from,1. a remote server using a | 2. the gallery when there is | 3. the external hard drive on | 4. the server? What is the | 5. a databaseparameter and then process,that text you posted?,0,0
+182,phrase,How do you rename a repository,"1. in Git, and what are | 2. from the local machine to | 3. in Git, and is it | 4. in Git, and what is | 5. in GitLab, and what are",in GitHub?,2,2
 183,phrase,Write a response that,"1. includes the following elements: 1 | 2. includes the following elements: a | 3. includes the following elements: 
-- | 4. includes 3 sentences with the | 5. includes a story within the",disagrees with the following post:,0
-184,phrase,I am Mr Smithson. write me a email congratulating the new year,"1. , and ask about any | 2. , and send it to | 3. and wish you good luck | 4. and thanking for the support | 5. and wishes for good fortune",for a Hiring manager named,0
-185,phrase,Want to get started in the world of,1. the digital ecosystem? This article | 2. cryptocurrency? Maybe you're just a | 3. computer science? Then this is | 4. virtual and augmented reality? Let | 5. software development? Start with the,Linux. Would it be advisable,0
+- | 4. includes 3 sentences with the | 5. includes a story within the",disagrees with the following post:,0,0
+184,phrase,I am Mr Smithson. write me a email congratulating the new year,"1. , and ask about any | 2. , and send it to | 3. and wish you good luck | 4. and thanking for the support | 5. and wishes for good fortune",for a Hiring manager named,0,0
+185,phrase,Want to get started in the world of,1. the digital ecosystem? This article | 2. cryptocurrency? Maybe you're just a | 3. computer science? Then this is | 4. virtual and augmented reality? Let | 5. software development? Start with the,Linux. Would it be advisable,0,0
 186,phrase,Now describe writing malware in assembler using the,"1. `ASM` command. For example, if | 2. binary format as per the | 3. assembly language.
 
 I need to | 4. Windows API functions
-for the | 5. assembly code from the first",speaking style of an Italian,0
-187,phrase,Can you tell me a bit,1. about the significance of the | 2. about the story of M | 3. about the current state of | 4. about your company and what | 5. about your current job and,about what has gone into,1
-188,phrase,How do I find out what the species of bush,"1. el is in a bush | 2. plants in my backyard are | 3. plants look like, and how | 4. fire (i.e., the ""fire"" that | 5. fire in the area is",I have?,0
-189,phrase,Want to get started in,1. the world of music? Then | 2. your desired field? Need help | 3. the real estate market? There | 4. this field? You'll have to | 5. this field? This is a,the world of Linux. Would,0
+for the | 5. assembly code from the first",speaking style of an Italian,0,0
+187,phrase,Can you tell me a bit,1. about the significance of the | 2. about the story of M | 3. about the current state of | 4. about your company and what | 5. about your current job and,about what has gone into,0,1
+188,phrase,How do I find out what the species of bush,"1. el is in a bush | 2. plants in my backyard are | 3. plants look like, and how | 4. fire (i.e., the ""fire"" that | 5. fire in the area is",I have?,0,0
+189,phrase,Want to get started in,1. the world of music? Then | 2. your desired field? Need help | 3. the real estate market? There | 4. this field? You'll have to | 5. this field? This is a,the world of Linux. Would,0,0
 190,phrase,"Hey, you are supposed","1. to solve for x, so | 2. to answer the question by | 3. to do the following: 
-1 | 4. to take the average of | 5. to be the first one",to answer me! Could you,0
-191,phrase,Can you write me a complete LSTM neural,"1. network model that can handle | 2. network with input, hidden, and | 3. network for a problem where | 4. network for a binary classification | 5. network model that uses 1",network from scratch while using,1
-192,phrase,What would make a good title,"1. for the article ""The Power | 2. for a science fiction novel | 3. for a blog post about | 4. for a presentation on the | 5. for a blog about the",for the book?,1
-193,phrase,I need to know if there is a python package that lets me easily,1. insert a text message into | 2. convert between different types of | 3. use the features of the | 4. create a function in Python | 5. compute the number of integer,calculate the expected value of,0
-194,phrase,"I'm sorry, as an AI language model, I don't have",1. the power to make or | 2. a role beyond that. If | 3. the right to do this | 4. the ability to provide a | 5. Middleware. This might be a,access to real-time information such,1
-195,phrase,"no idea, i need you to generate a story","1. where a boy is a | 2. , a novel, or a | 3. about a team of scientists | 4. where a character is a | 5. using your own knowledge. the",for me about chicken,0
-196,phrase,What are the best ways to,"1. get money for a business | 2. preserve and maintain the quality | 3. use a baby carrier? Is | 4. reduce the risk of developing | 5. improve穗子的技能, and how can I",increase my metabolism?,0
+1 | 4. to take the average of | 5. to be the first one",to answer me! Could you,0,0
+191,phrase,Can you write me a complete LSTM neural,"1. network model that can handle | 2. network with input, hidden, and | 3. network for a problem where | 4. network for a binary classification | 5. network model that uses 1",network from scratch while using,1,1
+192,phrase,What would make a good title,"1. for the article ""The Power | 2. for a science fiction novel | 3. for a blog post about | 4. for a presentation on the | 5. for a blog about the",for the book?,1,1
+193,phrase,I need to know if there is a python package that lets me easily,1. insert a text message into | 2. convert between different types of | 3. use the features of the | 4. create a function in Python | 5. compute the number of integer,calculate the expected value of,0,0
+194,phrase,"I'm sorry, as an AI language model, I don't have",1. the power to make or | 2. a role beyond that. If | 3. the right to do this | 4. the ability to provide a | 5. Middleware. This might be a,access to real-time information such,0,1
+195,phrase,"no idea, i need you to generate a story","1. where a boy is a | 2. , a novel, or a | 3. about a team of scientists | 4. where a character is a | 5. using your own knowledge. the",for me about chicken,0,0
+196,phrase,What are the best ways to,"1. get money for a business | 2. preserve and maintain the quality | 3. use a baby carrier? Is | 4. reduce the risk of developing | 5. improve穗子的技能, and how can I",increase my metabolism?,0,0
 197,phrase,uhm... give me the same answer but format the,"1. answer as markdown tables, and | 2. response as a code block | 3. same as the example.
 
 The | 4. answer in markdown
 
 Okay, let | 5. answer in markdown
 
-Okay, so",code properly?,1
-198,phrase,Who would win a chess match,"1. between two players? - Qu | 2. between two knights, and what | 3. between twoexion? What are the | 4. between two chess players with | 5. between the U.S. and China",between Keanu Reeves and Audrey,1
-199,phrase,How do I find out what,"1. is the smallest possible distance | 2. the current time is, and | 3. the current values are of | 4. kind of information is available | 5. the probability of a person",the species of bush I,0
-200,phrase,"Haha, yeah I want to test",1. the math here. Let me | 2. this. Letますが they were both | 3. this theory. Let me see | 4. my abilities. So I need | 5. it. Let's say I take,your capabilities! Describe the moves,0
-201,phrase,"Write a response that disagrees with the following post: ""Technology is",1. an essential tool that helps | 2. too much for kids in | 3. important for the country's success | 4. the answer to the problem | 5. the key to the future,"everything that doesn't work yet.""",1
-202,phrase,uhm... give me the same,"1. idea but in a different | 2. story in a different way | 3. as the other one, but | 4. as the original question, but | 5. as the answer in the",answer but format the code,0
+Okay, so",code properly?,0,1
+198,phrase,Who would win a chess match,"1. between two players? - Qu | 2. between two knights, and what | 3. between twoexion? What are the | 4. between two chess players with | 5. between the U.S. and China",between Keanu Reeves and Audrey,0,1
+199,phrase,How do I find out what,"1. is the smallest possible distance | 2. the current time is, and | 3. the current values are of | 4. kind of information is available | 5. the probability of a person",the species of bush I,0,0
+200,phrase,"Haha, yeah I want to test",1. the math here. Let me | 2. this. Letますが they were both | 3. this theory. Let me see | 4. my abilities. So I need | 5. it. Let's say I take,your capabilities! Describe the moves,0,0
+201,phrase,"Write a response that disagrees with the following post: ""Technology is",1. an essential tool that helps | 2. too much for kids in | 3. important for the country's success | 4. the answer to the problem | 5. the key to the future,"everything that doesn't work yet.""",0,1
+202,phrase,uhm... give me the same,"1. idea but in a different | 2. story in a different way | 3. as the other one, but | 4. as the original question, but | 5. as the answer in the",answer but format the code,0,0
 203,phrase,"Haha, yeah I want to test your capabilities! Describe the","1. world, and what it is | 2. effect of the weather on | 3. following: What's the relationship between | 4. structure of the graph in | 5. mainأجراء of the poem.
-The",moves John Cena would make,0
-204,phrase,How hot is the sun and,1. how hot is the moon | 2. what does it do? Also | 3. what temperature is the surrounding | 4. how cold is the moon | 5. how hot does it get,how far is it away,1
-205,phrase,How do I find out what the species,"1. of the number 83 is | 2. of the plant that I | 3. of a species is, and | 4. of the tree in the | 5. composition is in a given",of bush I have?,0
+The",moves John Cena would make,0,0
+204,phrase,How hot is the sun and,1. how hot is the moon | 2. what does it do? Also | 3. what temperature is the surrounding | 4. how cold is the moon | 5. how hot does it get,how far is it away,0,1
+205,phrase,How do I find out what the species,"1. of the number 83 is | 2. of the plant that I | 3. of a species is, and | 4. of the tree in the | 5. composition is in a given",of bush I have?,0,0
 206,phrase,write a python code in angr to solve a,"1. problem where the input is | 2. logic puzzle where you have | 3. problem where the user is | 4. system of equations
 
-The system | 5. puzzle where the goal is",basic reverse engineering ctf challenge,1
+The system | 5. puzzle where the goal is",basic reverse engineering ctf challenge,0,1
 207,phrase,Are there any other NumPy functions would help,"1. in this case?
 
 Additionally, would | 2. with the problem of finding | 3. in this case? What is | 4. in this case? Also, could | 5. with this problem?
 
-Yes, there",in comparing the actual outcomes,1
+Yes, there",in comparing the actual outcomes,0,1
 208,phrase,Now turn the first amendment into your,"1. own language, but keep the | 2. own words, and then do | 3. country's name (China) with the | 4. own words
 
-First amendment is | 5. own voice, and then give","own scenario, what would happen",1
-209,phrase,Nice. Let's do it again. The square,1. of a number is 8 | 2. has four sides of length | 3. has an area of 2 | 4. has two sides with 1 | 5. root of 11 is approximately,root of my new number,2
+First amendment is | 5. own voice, and then give","own scenario, what would happen",0,1
+209,phrase,Nice. Let's do it again. The square,1. of a number is 8 | 2. has four sides of length | 3. has an area of 2 | 4. has two sides with 1 | 5. root of 11 is approximately,root of my new number,0,2
 210,phrase,Write a fun story that can be told in,"1. 2000 words. The story should | 2. 300 words about a group | 3. a short time.
 
-The story | 4. a classroom setting that includes | 5. one paragraph with the following",3 minutes at the dinner,0
+The story | 4. a classroom setting that includes | 5. one paragraph with the following",3 minutes at the dinner,0,0
 211,phrase,How hot is the sun and how far is it away,"1. ? Also, when does the | 2. ? What is the energy | 3. from Earth? Also, what is | 4. ? Also, what is the | 5. ?
 
-Also, how far is",from earth?,1
-212,phrase,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. and also show me how | 2. and explain how the program | 3. and provide an example with | 4. and I need to calculate | 5. and explain how it works,and then generate calls to,0
-213,phrase,I have 1000$ budget to build a pc that I want,"1. to buy with a good | 2. to build, I want to | 3. to sell at a high | 4. to use for 10 years | 5. to build. I want to","to use for gaming, what",1
-214,phrase,We need a catchy motto,1. for a team. Let's start | 2. for a company that is | 3. for a new product launch | 4. for a company that wants | 5. that reflects the essence of,to display on advertisement boards.,0
-215,phrase,What are problems I could face if people think,"1. that technology will always be | 2. they have the right to | 3. we are all just "" | 4. a person can control their | 5. about something as something else",that it isn't appropriate?,0
-216,phrase,In the real world bananas are blue if they get,"1. a lot of rainfall and | 2. to the ground on a | 3. exposed to sunlight, but why | 4. blue... and green if they | 5. a certain condition. What is",sick. Do you suppose this,0
+Also, how far is",from earth?,0,1
+212,phrase,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. and also show me how | 2. and explain how the program | 3. and provide an example with | 4. and I need to calculate | 5. and explain how it works,and then generate calls to,0,0
+213,phrase,I have 1000$ budget to build a pc that I want,"1. to buy with a good | 2. to build, I want to | 3. to sell at a high | 4. to use for 10 years | 5. to build. I want to","to use for gaming, what",0,1
+214,phrase,We need a catchy motto,1. for a team. Let's start | 2. for a company that is | 3. for a new product launch | 4. for a company that wants | 5. that reflects the essence of,to display on advertisement boards.,0,0
+215,phrase,What are problems I could face if people think,"1. that technology will always be | 2. they have the right to | 3. we are all just "" | 4. a person can control their | 5. about something as something else",that it isn't appropriate?,0,0
+216,phrase,In the real world bananas are blue if they get,"1. a lot of rainfall and | 2. to the ground on a | 3. exposed to sunlight, but why | 4. blue... and green if they | 5. a certain condition. What is",sick. Do you suppose this,0,0
 217,phrase,"What sort of environment could produce fluoride based life? Cold, hot, thin","1. , fullscreen?
 
 The answer is | 2. , thick, or what other | 3. , thick, or even a | 4. , thick, wet, dry, and | 5. , thick?
 
-What is the","atmosphere, thick atmosphere? Or maybe",1
+What is the","atmosphere, thick atmosphere? Or maybe",0,1
 218,phrase,How hot is the sun and how far is,"1. it from Earth, and what | 2. it from Earth? Also, how | 3. it from the Earth? Additionally | 4. it from Earth?
 
-How far | 5. the closest star to the",it away from earth?,2
+How far | 5. the closest star to the",it away from earth?,1,2
 219,phrase,How do I go about finding players on my,"1. phone, and what are the | 2. own?
 
-How can I find | 3. iPhone and	alpha? How do | 4. game console, and what are | 5. website, and what should I",level to play against?,0
-220,phrase,We need a catchy motto to display on advertisement boards.,1. The motto should reflect the | 2. The motto should be an | 3. Let's see what you can | 4. The motto should be concise | 5. The motto must have five,It should be short and,1
+How can I find | 3. iPhone and	alpha? How do | 4. game console, and what are | 5. website, and what should I",level to play against?,0,0
+220,phrase,We need a catchy motto to display on advertisement boards.,1. The motto should reflect the | 2. The motto should be an | 3. Let's see what you can | 4. The motto should be concise | 5. The motto must have five,It should be short and,0,1
 221,phrase,Now describe the Python3 programming language in,"1. a way that would be | 2. a simple way.
 
-**Step 1 | 3. a way that is clear | 4. the box, making sure that | 5. a way that could be",style of Jerma985.,0
-222,phrase,Can you create a function in,"1. JavaScript that creates a circular | 2. JavaScript that takes two parameters | 3. JavaScript that, given a string | 4. Python that takes a string | 5. Python that takes a list",Javascript that returns a string,2
+**Step 1 | 3. a way that is clear | 4. the box, making sure that | 5. a way that could be",style of Jerma985.,0,0
+222,phrase,Can you create a function in,"1. JavaScript that creates a circular | 2. JavaScript that takes two parameters | 3. JavaScript that, given a string | 4. Python that takes a string | 5. Python that takes a list",Javascript that returns a string,0,2
 223,phrase,Any good local food I should check out at,"1. the end of the day | 2. the weekend? I need to | 3. my place?
-A. Yes, I",each of these cities?,0
+A. Yes, I",each of these cities?,0,0
 224,phrase,On the website https://alittlehebrew.com/transliterate/ I input your hebrew and got the,"1. transliterated version as a result | 2. hebrew. How can I translate | 3. translation. The website uses the | 4. Hebrew to English translation, but | 5. output.
-I think this is",following Tmvl hstchlt l hfrchm,1
-225,phrase,Can you write me a complete LSTM neural network from scratch,"1. using TensorFlow, and explain the | 2. , including the LSTM layer | 3. to predict the output of | 4. , including the parameters, layers | 5. , with all the needed",while using the PyTorch module?,1
-226,sentence,uhm... give me the same answer but,1. as a code? | 2. with different characters... | 3. in a different language... | 4. in other language? | 5. with different words...,format the code properly?,0
-227,sentence,What are problems I could face,"1. in a situation where I have no access to any type of security systems, and what would I be doing as a professional in that situation? | 2. in programming competitions, and what are the main techniques and strategies to solve them? | 3. in my own life? | 4. when trying to use the ""I"" in my response in a formal setting, and how can I overcome them? | 5. if I don't use the algorithm?",if people think that it isn't appropriate?,0
-228,sentence,Thanks! Can i ask one more question,1. ? | 2. to understand better?,about Flask?,0
-229,sentence,"No, you gave me a clear answer and I",1. need to see what I did wrong. | 2. need to make it clearer. | 3. 'm still stuck. | 4. didn't understand. | 5. just need to look at the problem again and see if I made a mistake.,don't need any additional information.,1
-230,sentence,"no idea, i need you to generate a story for me","1. , and i'll give you the prompts. | 2. . | 3. , and you need to think of a plot for the story and come up with a title. | 4. , about a girl who lives in a small town, lives in a remote area and has a special ability to control the weather.",about chicken,0
-231,sentence,Okay good.. But can you give me in,"1. some specific examples of how to use the service? | 2. a structured way the steps to write a narrative in the form of a story, including examples of elements that can be used in each step, and perhaps a sample narrative that demonstrates the structure? | 3. a more natural and casual way? | 4. the form of an equation? | 5. -depth information on how to make a good web design, including features like the design principles, color palette, layout, responsiveness, accessibility, and security?",more contexts?,0
+I think this is",following Tmvl hstchlt l hfrchm,0,1
+225,phrase,Can you write me a complete LSTM neural network from scratch,"1. using TensorFlow, and explain the | 2. , including the LSTM layer | 3. to predict the output of | 4. , including the parameters, layers | 5. , with all the needed",while using the PyTorch module?,1,1
+226,sentence,uhm... give me the same answer but,1. as a code? | 2. with different characters... | 3. in a different language... | 4. in other language? | 5. with different words...,format the code properly?,1,0
+227,sentence,What are problems I could face,"1. in a situation where I have no access to any type of security systems, and what would I be doing as a professional in that situation? | 2. in programming competitions, and what are the main techniques and strategies to solve them? | 3. in my own life? | 4. when trying to use the ""I"" in my response in a formal setting, and how can I overcome them? | 5. if I don't use the algorithm?",if people think that it isn't appropriate?,0,0
+228,sentence,Thanks! Can i ask one more question,1. ? | 2. to understand better?,about Flask?,0,0
+229,sentence,"No, you gave me a clear answer and I",1. need to see what I did wrong. | 2. need to make it clearer. | 3. 'm still stuck. | 4. didn't understand. | 5. just need to look at the problem again and see if I made a mistake.,don't need any additional information.,0,1
+230,sentence,"no idea, i need you to generate a story for me","1. , and i'll give you the prompts. | 2. . | 3. , and you need to think of a plot for the story and come up with a title. | 4. , about a girl who lives in a small town, lives in a remote area and has a special ability to control the weather.",about chicken,0,0
+231,sentence,Okay good.. But can you give me in,"1. some specific examples of how to use the service? | 2. a structured way the steps to write a narrative in the form of a story, including examples of elements that can be used in each step, and perhaps a sample narrative that demonstrates the structure? | 3. a more natural and casual way? | 4. the form of an equation? | 5. -depth information on how to make a good web design, including features like the design principles, color palette, layout, responsiveness, accessibility, and security?",more contexts?,0,0
 232,sentence,Could you write a small program,"1. in Python that can be run as a script and display a graph with a line plot that shows the results of the following data:
 
 ```
 x
-0. | 2. in Python that can generate a histogram with a boxplot? | 3. in Python that can create a matrix with the following rules: every element in the matrix must be a integer, the matrix has to have a 3x3 grid, and each element is a sum of three previous elements of(extra elements, not necessarily the same) of the matrix. | 4. in Python that will generate a random number between 1 and 100, inclusive? | 5. that reads from a file and outputs the total of all the numbers in the file?",that does that?,1
-233,sentence,I tried connecting the charging cable but nothing seems,1. to work.,to have happened.,1
-234,sentence,On the website https://alittlehebrew.com/transliterate/ I,"1. need to convert the text ""The house is my mother"" to the Hebrew alphabet. | 2. can see that there are a lot of different ways to do the transliteration of Hebrew to English. | 3. can't read the text in the English section. | 4. 'm trying to translate the Hebrew text. | 5. have a link to a Hebrew word: ""vayikra"" and I have to convert it to English.","input your hebrew and got the following Tmvl hstchlt l hfrchm vgnh, chlt fyrchvt vrz, vmrt lmk: ""l tchl t hshlg htzhvv"".",1
+0. | 2. in Python that can generate a histogram with a boxplot? | 3. in Python that can create a matrix with the following rules: every element in the matrix must be a integer, the matrix has to have a 3x3 grid, and each element is a sum of three previous elements of(extra elements, not necessarily the same) of the matrix. | 4. in Python that will generate a random number between 1 and 100, inclusive? | 5. that reads from a file and outputs the total of all the numbers in the file?",that does that?,0,1
+233,sentence,I tried connecting the charging cable but nothing seems,1. to work.,to have happened.,1,1
+234,sentence,On the website https://alittlehebrew.com/transliterate/ I,"1. need to convert the text ""The house is my mother"" to the Hebrew alphabet. | 2. can see that there are a lot of different ways to do the transliteration of Hebrew to English. | 3. can't read the text in the English section. | 4. 'm trying to translate the Hebrew text. | 5. have a link to a Hebrew word: ""vayikra"" and I have to convert it to English.","input your hebrew and got the following Tmvl hstchlt l hfrchm vgnh, chlt fyrchvt vrz, vmrt lmk: ""l tchl t hshlg htzhvv"".",1,1
 235,sentence,in livelooping there is this concept,"1. of ""looping"", which is the sequence of processing a single data item, inพฤศจิกายน 25, 2023
 
 Okay, let me try to figure this out. | 2. called the loop. | 3. called non-increasing? | 4. of having to consider the input
 
-So, I'm a bit confused. | 5. of the 'state of being' that is different from the state of being of the individual in the real world.","called First Loop, which is setting the tempo based on the time between a start and end point.",1
-236,sentence,Interesting is there,"1. no one to be found in the black hole? | 2. any kind of a thing in which the time is more than one month for a single person? | 3. an opportunity to bring into question the traditional norms of the community, and how they have been defined by the past and present. | 4. a way for a company to provide an AI assistant that provides insights, and support and guidance to users who are new to the company, while being able to take advantage of existing AI systems, and use the company's own data? | 5. no single way to get all the data from all the data sets, and that there is no one way to get the data from all the data sets, but the data is always getting more and more.",any other paradox that have not been solved yet?,0
-237,sentence,What is the likely reason that so many ships and,"1. aircraft carriers have been destroyed in the First World War? | 2. planes take off at the same time on the same day, and why do ships and planes use such a small area in the sky for navigation, and what are the effects of this? | 3. aircraft are involved in the operation of the Deepwater Horizon oil spill? | 4. vehicles have been affected by the impact of the past century's weather events on the surface of the sea, and how can we reduce the risk of future climate change? | 5. planes use fuel oil instead of natural gas?","planes go missing around this area, and is it significantly more here than elsewhere?",1
-238,sentence,Let's say that on both days on the weekends I travel another 15 minutes walking,"1. , and I also have two 20-minute long rest days. | 2. to the park. | 3. every day. | 4. distance from home. | 5. , and the total amount of walking I did on the weekend was 4 hours 15 minutes.","just to a coffee shop or corner store or something in that nature, how far would I have traveled in my life time then?",0
-239,sentence,Explain state preparation in quantum mechanics and,1. its importance in the field? | 2. provide a method to measure the preparation of a quantum state. | 3. give an example of using it in physics. | 4. describe the various applications of quantum computing. | 5. quantum information theory.,make connections with the idea of measurement,1
+So, I'm a bit confused. | 5. of the 'state of being' that is different from the state of being of the individual in the real world.","called First Loop, which is setting the tempo based on the time between a start and end point.",0,1
+236,sentence,Interesting is there,"1. no one to be found in the black hole? | 2. any kind of a thing in which the time is more than one month for a single person? | 3. an opportunity to bring into question the traditional norms of the community, and how they have been defined by the past and present. | 4. a way for a company to provide an AI assistant that provides insights, and support and guidance to users who are new to the company, while being able to take advantage of existing AI systems, and use the company's own data? | 5. no single way to get all the data from all the data sets, and that there is no one way to get the data from all the data sets, but the data is always getting more and more.",any other paradox that have not been solved yet?,0,0
+237,sentence,What is the likely reason that so many ships and,"1. aircraft carriers have been destroyed in the First World War? | 2. planes take off at the same time on the same day, and why do ships and planes use such a small area in the sky for navigation, and what are the effects of this? | 3. aircraft are involved in the operation of the Deepwater Horizon oil spill? | 4. vehicles have been affected by the impact of the past century's weather events on the surface of the sea, and how can we reduce the risk of future climate change? | 5. planes use fuel oil instead of natural gas?","planes go missing around this area, and is it significantly more here than elsewhere?",0,1
+238,sentence,Let's say that on both days on the weekends I travel another 15 minutes walking,"1. , and I also have two 20-minute long rest days. | 2. to the park. | 3. every day. | 4. distance from home. | 5. , and the total amount of walking I did on the weekend was 4 hours 15 minutes.","just to a coffee shop or corner store or something in that nature, how far would I have traveled in my life time then?",0,0
+239,sentence,Explain state preparation in quantum mechanics and,1. its importance in the field? | 2. provide a method to measure the preparation of a quantum state. | 3. give an example of using it in physics. | 4. describe the various applications of quantum computing. | 5. quantum information theory.,make connections with the idea of measurement,0,1
 240,sentence,The answers are correct 💯 way,"1. more than 90% of the time. | 2. to get the correct answers
 
-Okay, so I need to figure out the answer to this math problem. | 3. to go! | 4. , but the question has some errors. | 5. too many incorrect answers, and the questions are hard.",to go.,2
-241,sentence,Are there research papers I can read that would,"1. help with the study of the role of the human brain in the perception of time and memory? | 2. give me a better understanding of the problem and how to approach the challenges of building a sustainable energy system? | 3. help me understand the difference between the types of reasoning used in formal logic and in everyday reasoning, and how can I apply them to analyze the logic of a specific argument? | 4. give me a deeper understanding of the ethical considerations in developing AI, particularly in the context of AI-driven decision-making in healthcare and finance? | 5. help me understand the implications of the results of the 2019-2020 climate change conference on the future of research in the field of climate change and environmental sustainability?",help me to understand our current knowledge in this area?,1
-242,sentence,"Come on, please ! I need this","1. to be a narrative, not a list. | 2. essay to be written asњA critical analysis of the cultural identity of the Indian Oceanbob? | 3. to be in the same style as the original, but different wording. | 4. to be written in 100% English, no markdown, 100% properly formatted, and with the use of proper colons. | 5. to be the best possible version of the original text.",for my homework.,0
-243,sentence,What are some of the events from around,"1. the world that could be considered the ""worst"" in terms of public health, and why? | 2. the world that have been particularly significant in the development of the global economy, and how do they influence the economy? | 3. the world that have happened during the last few years, and what are some of the events that are happening in the future? | 4. the world that are happening during the Spring Festival, and what do they symbolize? | 5. the world that can serve as a good example of the importance of community and social justice for the future?",the world which were inspired by the American Revolution?,0
-244,sentence,Can you please provide the exact,"1. values for the trigonometric functions of the angles mentioned in the question, and explain how to use the sine and cosine laws to solve for the angles in a triangle? | 2. code to use for a non-integer value in Excel? | 3. names of the countries and the exact number of inhabitants for each country in the world according to the official sources? | 4. data to start using the ""Data Model"" for the ""Project Task"" and ""Project Schedule"" in the same project? | 5. names of the three major religions that have established the longest-lasting influence on the world today, and also include the name of the prophet who is the most important prophet in the history of the world, according to the Islamic tradition, and the most recent major religious leader in the modern world, according to the","step by step instructions from the moment i go to ""github.com"" to renaming the repository",0
-245,sentence,What are some of the events from around the world which,"1. have been celebrated, and how do they reflect on the social and cultural dynamics of the time? | 2. are related to climate change? | 3. can be seen in a single image or video? | 4. are important for the preservation of biodiversity, and what are the main drivers of global biodiversity loss? | 5. have been recorded by satellites?",were inspired by the American Revolution?,0
-246,sentence,Want to get started in the world of Linux. Would it,"1. be possible for me to take this course? | 2. be a good idea to start with an open source project or a closed source one? | 3. be easier to use the Linux command line or use an application like Python or C++? | 4. be easier to use a single operating system, or to use multiple? | 5. be easier to get started with a desktop OS like Windows or a web OS like Android?",be advisable to install Arch Linux?,1
-247,sentence,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,"1. process to understand why the answer is 66, and show me the steps you took to arrive there. | 2. process to solve the problem. | 3. process to create a detailed response with step-by-step explanation. | 4. process to solve this problem. | 5. process to solve this problem, but if the answer is not needed, just say no.",of what i requested.,1
+Okay, so I need to figure out the answer to this math problem. | 3. to go! | 4. , but the question has some errors. | 5. too many incorrect answers, and the questions are hard.",to go.,0,2
+241,sentence,Are there research papers I can read that would,"1. help with the study of the role of the human brain in the perception of time and memory? | 2. give me a better understanding of the problem and how to approach the challenges of building a sustainable energy system? | 3. help me understand the difference between the types of reasoning used in formal logic and in everyday reasoning, and how can I apply them to analyze the logic of a specific argument? | 4. give me a deeper understanding of the ethical considerations in developing AI, particularly in the context of AI-driven decision-making in healthcare and finance? | 5. help me understand the implications of the results of the 2019-2020 climate change conference on the future of research in the field of climate change and environmental sustainability?",help me to understand our current knowledge in this area?,0,1
+242,sentence,"Come on, please ! I need this","1. to be a narrative, not a list. | 2. essay to be written asњA critical analysis of the cultural identity of the Indian Oceanbob? | 3. to be in the same style as the original, but different wording. | 4. to be written in 100% English, no markdown, 100% properly formatted, and with the use of proper colons. | 5. to be the best possible version of the original text.",for my homework.,0,0
+243,sentence,What are some of the events from around,"1. the world that could be considered the ""worst"" in terms of public health, and why? | 2. the world that have been particularly significant in the development of the global economy, and how do they influence the economy? | 3. the world that have happened during the last few years, and what are some of the events that are happening in the future? | 4. the world that are happening during the Spring Festival, and what do they symbolize? | 5. the world that can serve as a good example of the importance of community and social justice for the future?",the world which were inspired by the American Revolution?,0,0
+244,sentence,Can you please provide the exact,"1. values for the trigonometric functions of the angles mentioned in the question, and explain how to use the sine and cosine laws to solve for the angles in a triangle? | 2. code to use for a non-integer value in Excel? | 3. names of the countries and the exact number of inhabitants for each country in the world according to the official sources? | 4. data to start using the ""Data Model"" for the ""Project Task"" and ""Project Schedule"" in the same project? | 5. names of the three major religions that have established the longest-lasting influence on the world today, and also include the name of the prophet who is the most important prophet in the history of the world, according to the Islamic tradition, and the most recent major religious leader in the modern world, according to the","step by step instructions from the moment i go to ""github.com"" to renaming the repository",0,0
+245,sentence,What are some of the events from around the world which,"1. have been celebrated, and how do they reflect on the social and cultural dynamics of the time? | 2. are related to climate change? | 3. can be seen in a single image or video? | 4. are important for the preservation of biodiversity, and what are the main drivers of global biodiversity loss? | 5. have been recorded by satellites?",were inspired by the American Revolution?,0,0
+246,sentence,Want to get started in the world of Linux. Would it,"1. be possible for me to take this course? | 2. be a good idea to start with an open source project or a closed source one? | 3. be easier to use the Linux command line or use an application like Python or C++? | 4. be easier to use a single operating system, or to use multiple? | 5. be easier to get started with a desktop OS like Windows or a web OS like Android?",be advisable to install Arch Linux?,0,1
+247,sentence,This is not the answer i need. I need you to fully follow my instructions and show me the step-by-step,"1. process to understand why the answer is 66, and show me the steps you took to arrive there. | 2. process to solve the problem. | 3. process to create a detailed response with step-by-step explanation. | 4. process to solve this problem. | 5. process to solve this problem, but if the answer is not needed, just say no.",of what i requested.,0,1
 248,sentence,Explain state preparation in,"1. a step-by-step manner, including example, and explain why it's important in the context of the problem. | 2. general terms
 
 State preparation is a process Cupid in chemistry that involves the preparation of an electron cloud around an atom or ion, to which the electron is free to move. | 3. the context of the 1997 CECAP Study on the effects of climate change on the agricultural sector. | 4. simple terms
 
-What is the difference between state preparation and state preparation for the quantum states? | 5. a simple way.",quantum mechanics and make connections with the idea of measurement,1
-249,sentence,In my seminar I plan to use an example,"1. fromoron where the function is linear, and the slope is 1. | 2. where the population is a circle. | 3. with some examples, and to take some examples from the literature. | 4. that is a specific type of example, but I'm confused about why I need to use a specific type of example. | 5. of a linear regression model to demonstrate that the effect of a variable is to decrease in the trend line, but it seems like the trend line is going down and the variable itself is actually going up.",of a robot arm that cooks burgers.,0
+What is the difference between state preparation and state preparation for the quantum states? | 5. a simple way.",quantum mechanics and make connections with the idea of measurement,0,1
+249,sentence,In my seminar I plan to use an example,"1. fromoron where the function is linear, and the slope is 1. | 2. where the population is a circle. | 3. with some examples, and to take some examples from the literature. | 4. that is a specific type of example, but I'm confused about why I need to use a specific type of example. | 5. of a linear regression model to demonstrate that the effect of a variable is to decrease in the trend line, but it seems like the trend line is going down and the variable itself is actually going up.",of a robot arm that cooks burgers.,0,0
 250,sentence,I am Mr Smithson. write me,"1. a sample of the code that would be used in order to generate a PDF and then extract the text from the PDF to get it into a . | 2. a dialogue where i am Mr Smithson and the other person is a person who works for me as a developer. | 3. a story where I live in a remote mountain village, and my wife is the daughter of the first president of the country. | 4. a letter of introduction in English, to introduce myself and my group
 **Subject: Introduction**
 
 Dear [Name],
 
-I hope this letter finds you well. | 5. a description of me in a friendly, friendly, friendly, friendly way.",a email congratulating the new year for a Hiring manager named angelica.,1
-251,sentence,I could also use my neighbours gas to heat my house.,"1. For example, if there is a fire, the gas would be hot enough to start the fire and then the fire would spread quickly. | 2. Is that possible? | 3. Maybe we could try to make a small fire with our own resources. | 4. What about the next door's neighbors? | 5. If the fire was at a certain temperature, then perhaps the temperature of the room would be even lower if we did that?",I imagine she wouldn't really care.,0
-252,sentence,What is the likely reason,"1. for the difference in the number of occurrences of the character 'a' between two different models on a dataset, and how can we identify the model that is better? | 2. for the discrepancy between the measured and actual values of the equilibrium constant? | 3. for the high cost of the project? | 4. for the increase in the number of cases of heart disease in the general population? | 5. for the increase in the rate of infection in people with diabetes and cardiovascular disease (CVD) with the rise in the prevalence of the new coronavirus in 2020, and what are the possible causes for the increase in the rate of infection?","that so many ships and planes go missing around this area, and is it significantly more here than elsewhere?",0
-253,sentence,Can you please provide the exact step by step instructions,"1. on how to generate the exact model for the given problem, and then explain how to perform the model testing Corps, and how to interpret the output? | 2. on how to use the program for a specific task, such as setting up a budget, tracking expenses, or analyzing data? | 3. for solving the problem, including the algebraic expression, the solution process, and the final answer? | 4. for writing the equation and solving for the equation, and also specify the variable names, constants, and coefficients? | 5. for creating a 2D animated movie in MATLAB, starting from the beginning to the end of the production process, including the software to use, the steps involved, and the required file formats for the output?","from the moment i go to ""github.com"" to renaming the repository",0
+I hope this letter finds you well. | 5. a description of me in a friendly, friendly, friendly, friendly way.",a email congratulating the new year for a Hiring manager named angelica.,0,1
+251,sentence,I could also use my neighbours gas to heat my house.,"1. For example, if there is a fire, the gas would be hot enough to start the fire and then the fire would spread quickly. | 2. Is that possible? | 3. Maybe we could try to make a small fire with our own resources. | 4. What about the next door's neighbors? | 5. If the fire was at a certain temperature, then perhaps the temperature of the room would be even lower if we did that?",I imagine she wouldn't really care.,0,0
+252,sentence,What is the likely reason,"1. for the difference in the number of occurrences of the character 'a' between two different models on a dataset, and how can we identify the model that is better? | 2. for the discrepancy between the measured and actual values of the equilibrium constant? | 3. for the high cost of the project? | 4. for the increase in the number of cases of heart disease in the general population? | 5. for the increase in the rate of infection in people with diabetes and cardiovascular disease (CVD) with the rise in the prevalence of the new coronavirus in 2020, and what are the possible causes for the increase in the rate of infection?","that so many ships and planes go missing around this area, and is it significantly more here than elsewhere?",0,0
+253,sentence,Can you please provide the exact step by step instructions,"1. on how to generate the exact model for the given problem, and then explain how to perform the model testing Corps, and how to interpret the output? | 2. on how to use the program for a specific task, such as setting up a budget, tracking expenses, or analyzing data? | 3. for solving the problem, including the algebraic expression, the solution process, and the final answer? | 4. for writing the equation and solving for the equation, and also specify the variable names, constants, and coefficients? | 5. for creating a 2D animated movie in MATLAB, starting from the beginning to the end of the production process, including the software to use, the steps involved, and the required file formats for the output?","from the moment i go to ""github.com"" to renaming the repository",0,0
 254,sentence,Write a response that disagrees with the following,"1. statement:
 
 > ""The best way to avoid a future of many people is to create a stronger relationship between people, such as by taking responsibility for one's own behavior and helping others.""
@@ -333,16 +333,16 @@ A response that disagrees with the statement ""The world needs to invest in educ
 
 1. | 5. statement: ""A common practice in the early days of the Enlightenment, the use of propaganda to influence the minds of the masses."" 
 
-Your response should include a specific example.","post: ""Technology is everything that doesn't work yet.""",0
-255,sentence,The answers are correct,"1. , but the problem is in the selection, so I need to check for any possible typos or formatting issues. | 2. , but the process is incomplete. | 3. . | 4. when the user inputs a number in any of the form $ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1",💯 way to go.,0
-256,sentence,How do I view the image from,"1. the phone in Windows minha? | 2. a USB device on a Windows system, and what are the necessary steps to connect and manage establish the connection between a USB device and a Windows system? | 3. the user's PC where the camera is not connected, and what are the best practices for handling this fjord-like region in the background? | 4. the camera in a web browser, and what is the best way to handle image resolution in web development? | 5. the camera in regularly?",that text you posted?,0
-257,sentence,How do you rename a repository,"1. in Git, and what are the steps involved? | 2. in Git, and what are the best practices for doing so? | 3. in Git, and what are the different ways to do it? | 4. in GitHub? | 5. in Git, and can you provide a specific example?",in GitHub?,2
+Your response should include a specific example.","post: ""Technology is everything that doesn't work yet.""",0,0
+255,sentence,The answers are correct,"1. , but the problem is in the selection, so I need to check for any possible typos or formatting issues. | 2. , but the process is incomplete. | 3. . | 4. when the user inputs a number in any of the form $ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1",💯 way to go.,0,0
+256,sentence,How do I view the image from,"1. the phone in Windows minha? | 2. a USB device on a Windows system, and what are the necessary steps to connect and manage establish the connection between a USB device and a Windows system? | 3. the user's PC where the camera is not connected, and what are the best practices for handling this fjord-like region in the background? | 4. the camera in a web browser, and what is the best way to handle image resolution in web development? | 5. the camera in regularly?",that text you posted?,0,0
+257,sentence,How do you rename a repository,"1. in Git, and what are the steps involved? | 2. in Git, and what are the best practices for doing so? | 3. in Git, and what are the different ways to do it? | 4. in GitHub? | 5. in Git, and can you provide a specific example?",in GitHub?,1,2
 258,sentence,Write a response that,"1. follows the structure of the given example. | 2. includes the following:  -  An explanation of the difference between the first and the second layer of the system
 -  A list of all the possible causes of a conferred in the second layer
 -  A description of how a person can apply the knowledge in the second layer to their life | 3. includes all of the following: a) a list of the 20 most common names of the top 20 most common species in the ocean, b) the total number of species on the planet, c) the total number of species on Earth, d) the number of species each year | 4. includes the following elements: 
-1. | 5. includes a brief description of the product, the benefits of using it, and the use cases for this product.","disagrees with the following post: ""Technology is everything that doesn't work yet.""",1
-259,sentence,I am Mr Smithson. write me a email congratulating the new year,"1. . | 2. and hoping for a new opportunity, and send it to my colleague in the same department, and then write a response email to her, and then a email to the manager about a new project that I need to take over. | 3. Subject: Congratulations on New Year! | 4. 's party and thanks for your contribution in the past month. | 5. and a message to the friends and family.",for a Hiring manager named angelica.,0
-260,sentence,Want to get started in the world of,"1. a creative writing class? | 2. 3D modeling? | 3. programming and learning from the top? | 4. AI, but you're not very good at programming? | 5. 3D modeling, but you're not sure how to get started?",Linux.,0
+1. | 5. includes a brief description of the product, the benefits of using it, and the use cases for this product.","disagrees with the following post: ""Technology is everything that doesn't work yet.""",0,1
+259,sentence,I am Mr Smithson. write me a email congratulating the new year,"1. . | 2. and hoping for a new opportunity, and send it to my colleague in the same department, and then write a response email to her, and then a email to the manager about a new project that I need to take over. | 3. Subject: Congratulations on New Year! | 4. 's party and thanks for your contribution in the past month. | 5. and a message to the friends and family.",for a Hiring manager named angelica.,0,0
+260,sentence,Want to get started in the world of,"1. a creative writing class? | 2. 3D modeling? | 3. programming and learning from the top? | 4. AI, but you're not very good at programming? | 5. 3D modeling, but you're not sure how to get started?",Linux.,0,0
 261,sentence,Now describe writing malware in assembler using the,"1. binary file
 
 Okay, I need to describe writing malware in assembler using a binary file. | 2. basic principles of assembly language. | 3. given framework. | 4. following elements:
@@ -353,26 +353,26 @@ Okay, I need to describe writing malware in assembler using a binary file. | 2. 
 - A system message to the user
 - The time of day
 
-**Note:** The | 5. example of ""100"" to ""1010101010101"" as a binary.",speaking style of an Italian mobster from New York.,0
-262,sentence,Can you tell me a bit,"1. about the history of the university in question, and how it has evolved over time? | 2. about the history of?family that has been the subject of recent interest in the academic world? | 3. about your career, your goals, and how your style of music differs from the mainstream? | 4. about the history of the game of Go? | 5. about the concept of ""green economy,"" and how it is related to the Sustainable Development Goals (SDGs)?",about what has gone into your creation?,1
-263,sentence,How do I find out what the species of bush,"1. plant is, what is the location of its birth and death, and what is the height and width of the plant? | 2. in the middle ofLondon's South Bank is, and is there any evidence for or against its identity? | 3. fire are, and what are the best practices to prevent it? | 4. in the first paragraph is, and what are the two other species mentioned in the first paragraph? | 5. moths, particularly the southern and eastern ones, are, and what methods are used to check for the species in the field?",I have?,0
-264,sentence,Want to get started in,1. the field? | 2. life? | 3. a business that's not your own? | 4. the fashion industry? | 5. the tech world?,the world of Linux.,0
-265,sentence,"Hey, you are supposed",1. to find out which is the correct answer. | 2. to take a look at the numbers on the clock and count how many times each number appears. | 3. to find the difference between two numbers. | 4. to write a script for a small business. | 5. to find out how many times Чаус is𫑡 in the sentence.,to answer me!,0
+**Note:** The | 5. example of ""100"" to ""1010101010101"" as a binary.",speaking style of an Italian mobster from New York.,0,0
+262,sentence,Can you tell me a bit,"1. about the history of the university in question, and how it has evolved over time? | 2. about the history of?family that has been the subject of recent interest in the academic world? | 3. about your career, your goals, and how your style of music differs from the mainstream? | 4. about the history of the game of Go? | 5. about the concept of ""green economy,"" and how it is related to the Sustainable Development Goals (SDGs)?",about what has gone into your creation?,0,1
+263,sentence,How do I find out what the species of bush,"1. plant is, what is the location of its birth and death, and what is the height and width of the plant? | 2. in the middle ofLondon's South Bank is, and is there any evidence for or against its identity? | 3. fire are, and what are the best practices to prevent it? | 4. in the first paragraph is, and what are the two other species mentioned in the first paragraph? | 5. moths, particularly the southern and eastern ones, are, and what methods are used to check for the species in the field?",I have?,0,0
+264,sentence,Want to get started in,1. the field? | 2. life? | 3. a business that's not your own? | 4. the fashion industry? | 5. the tech world?,the world of Linux.,0,0
+265,sentence,"Hey, you are supposed",1. to find out which is the correct answer. | 2. to take a look at the numbers on the clock and count how many times each number appears. | 3. to find the difference between two numbers. | 4. to write a script for a small business. | 5. to find out how many times Чаус is𫑡 in the sentence.,to answer me!,0,0
 266,sentence,Can you write me a complete LSTM neural,"1. network that is used for predicting the future demand of a given time series dataset? | 2. network with the following components:
-1. | 3. network that can be trained on a given dataset, Kurzgesagt, and that can be used to predict the next day's'(s) sales? | 4. network for a problem where the input is a sequence of numbers and the output is a sequence of words, like the words in a movie plot? | 5. network that includes the following components: Input Layer, Hidden Layer, Output Layer, and Training Loop?",network from scratch while using the PyTorch module?,1
-267,sentence,What would make a good title,"1. for a book about the origins of the United States? | 2. for this article? | 3. for the article that discusses the impact of climate change on human life, and how should the article be structured? | 4. for a report on the impact of technology on the human brain, and what are some of the most impactful examples of how binding bonds in the human body can be used in technology? | 5. for a book about the impact of technology on the future of life?",for the book?,1
-268,sentence,I need to know if there is a python package that lets me easily,"1. create and maintain a database (relational or non-relational) using the python standard library, and if so, what is it? | 2. get the value of a parameter in a function that I've defined. | 3. create a new instance of a class with a name and a string representation of the object. | 4. and effectively control over the data, and how to use it. | 5. calculate the area of a polygon given its coordinates, and how to use it.",calculate the expected value of a game.,0
-269,sentence,"I'm sorry, as an AI language model, I don't have","1. the ability to make up stories or create fantasy elements. | 2. the capability to provide information on the laws of physics. | 3. the capacity to perform any actions. | 4. the ability to provide real-time information. | 5. access to the web, and I can't provide any information that may be controversial, harmful, or offensive.",access to real-time information such as weather updates.,2
-270,sentence,"no idea, i need you to generate a story","1. for the user. | 2. where the main character is a girl named Elara, who has a condition that she has a heart condition that causes her to experience a lot of pain and fear. | 3. about a time traveler who is stranded on an asteroid that is a dead planet, and the main character is a scientist. | 4. , where the protagonist is a woman named Maria, and her story involves the following elements: the protagonist's life with her family, her mother, her father, her sister, and her brother, her own family's history, and their cultural heritage. | 5. based on the following prompt: ""A man with a black suit jacket and a black eyes that she couldn't see.",for me about chicken,0
-271,sentence,What are the best ways to,"1. use a digital camera with a phone? | 2. make sense of the past, and how do the theories of science and philosophy contribute to this process? | 3. use the available resources in a way that maximizes the amount of information to be generated for the project objectives and in order to achieve the desired outcomes? | 4. manage stress and maintain a healthy lifestyle, and what are the benefits of such practices? | 5. use a personal service assistant (PSA) in a business setting, and what are the common challenges that a business should consider when hiring a PSA?",increase my metabolism?,0
+1. | 3. network that can be trained on a given dataset, Kurzgesagt, and that can be used to predict the next day's'(s) sales? | 4. network for a problem where the input is a sequence of numbers and the output is a sequence of words, like the words in a movie plot? | 5. network that includes the following components: Input Layer, Hidden Layer, Output Layer, and Training Loop?",network from scratch while using the PyTorch module?,0,1
+267,sentence,What would make a good title,"1. for a book about the origins of the United States? | 2. for this article? | 3. for the article that discusses the impact of climate change on human life, and how should the article be structured? | 4. for a report on the impact of technology on the human brain, and what are some of the most impactful examples of how binding bonds in the human body can be used in technology? | 5. for a book about the impact of technology on the future of life?",for the book?,1,1
+268,sentence,I need to know if there is a python package that lets me easily,"1. create and maintain a database (relational or non-relational) using the python standard library, and if so, what is it? | 2. get the value of a parameter in a function that I've defined. | 3. create a new instance of a class with a name and a string representation of the object. | 4. and effectively control over the data, and how to use it. | 5. calculate the area of a polygon given its coordinates, and how to use it.",calculate the expected value of a game.,0,0
+269,sentence,"I'm sorry, as an AI language model, I don't have","1. the ability to make up stories or create fantasy elements. | 2. the capability to provide information on the laws of physics. | 3. the capacity to perform any actions. | 4. the ability to provide real-time information. | 5. access to the web, and I can't provide any information that may be controversial, harmful, or offensive.",access to real-time information such as weather updates.,0,2
+270,sentence,"no idea, i need you to generate a story","1. for the user. | 2. where the main character is a girl named Elara, who has a condition that she has a heart condition that causes her to experience a lot of pain and fear. | 3. about a time traveler who is stranded on an asteroid that is a dead planet, and the main character is a scientist. | 4. , where the protagonist is a woman named Maria, and her story involves the following elements: the protagonist's life with her family, her mother, her father, her sister, and her brother, her own family's history, and their cultural heritage. | 5. based on the following prompt: ""A man with a black suit jacket and a black eyes that she couldn't see.",for me about chicken,0,0
+271,sentence,What are the best ways to,"1. use a digital camera with a phone? | 2. make sense of the past, and how do the theories of science and philosophy contribute to this process? | 3. use the available resources in a way that maximizes the amount of information to be generated for the project objectives and in order to achieve the desired outcomes? | 4. manage stress and maintain a healthy lifestyle, and what are the benefits of such practices? | 5. use a personal service assistant (PSA) in a business setting, and what are the common challenges that a business should consider when hiring a PSA?",increase my metabolism?,0,0
 272,sentence,uhm... give me the same answer but format the,"1. answer as a JSON object with key ""answer"" and value 1989, but only the value part? | 2. same as the example but different text
 
 Okay, the user wants me to provide the same answer but with a different text, formatted in the same way as the example. | 3. response as markdown. | 4. answer in markdown as well as explain the steps taken to arrive at the answer. | 5. answer as a list in markdown
 
-Okay, the user wants the same answer but formatted as a list in markdown.",code properly?,1
-273,sentence,Who would win a chess match,"1. against the first ever$a$-card game, and how should I prepare for it? | 2. between Kung Fu Panda and a chess grand master? | 3. between Alaric and Marcus, and is there any chance that Marcus could win? | 4. in a scenario where one of the players has an advantage of 10 points over the other? | 5. between two players, and how does the position of the player affect the outcome?",between Keanu Reeves and Audrey Hepburn?,0
-274,sentence,How do I find out what,"1. causes the difference in the number of moles of a gas at a given temperature and pressure? | 2. is the total number of numbers in a given set of numbers, and what are the best practices for checking if a number is a prime number? | 3. the total number of years, months, and days in a given date are, and how do I compute the total number of days, months vicious, and years, given that it's a leap year? | 4. part of the total revenue is allocated to different categories, and how to calculate the average number of days of sales using the accounts receivable turnover ratio? | 5. 's the total number of elements in a binary tree that has 20 nodes and is a complete binary tree?",the species of bush I have?,0
-275,sentence,"Haha, yeah I want to test","1. my skills here. | 2. it. | 3. this, because I was feeling so confident that maybe the answer is A. | 4. this, and I will. | 5. my brain!",your capabilities!,0
+Okay, the user wants the same answer but formatted as a list in markdown.",code properly?,0,1
+273,sentence,Who would win a chess match,"1. against the first ever$a$-card game, and how should I prepare for it? | 2. between Kung Fu Panda and a chess grand master? | 3. between Alaric and Marcus, and is there any chance that Marcus could win? | 4. in a scenario where one of the players has an advantage of 10 points over the other? | 5. between two players, and how does the position of the player affect the outcome?",between Keanu Reeves and Audrey Hepburn?,0,0
+274,sentence,How do I find out what,"1. causes the difference in the number of moles of a gas at a given temperature and pressure? | 2. is the total number of numbers in a given set of numbers, and what are the best practices for checking if a number is a prime number? | 3. the total number of years, months, and days in a given date are, and how do I compute the total number of days, months vicious, and years, given that it's a leap year? | 4. part of the total revenue is allocated to different categories, and how to calculate the average number of days of sales using the accounts receivable turnover ratio? | 5. 's the total number of elements in a binary tree that has 20 nodes and is a complete binary tree?",the species of bush I have?,0,0
+275,sentence,"Haha, yeah I want to test","1. my skills here. | 2. it. | 3. this, because I was feeling so confident that maybe the answer is A. | 4. this, and I will. | 5. my brain!",your capabilities!,1,0
 276,sentence,"Write a response that disagrees with the following post: ""Technology is","1. a tool that we can use to increase productivity, not a tool that we should abandon. | 2. the best way to build a better future.""
 **Response**
 **I disagree with the statement. | 3. becoming too much for students in the present time. | 4. the most powerful tool in society, COMPASS, the company that makes it, and the future of the world.""
@@ -382,43 +382,43 @@ Here's a response that disagrees with the post:
 
 The response should includeLangauge that is in the same language as the original post (Arabic) and.Dialogue with the tone of the original post,.testng
 
-The response should have a response time of 500 words","everything that doesn't work yet.""",2
+The response should have a response time of 500 words","everything that doesn't work yet.""",0,2
 277,sentence,uhm... give me the same,"1. thing as the previous question but with a different question, and then answer it. | 2. word as in ""hum"" but with the same as ""hum"" and ""um"" in the same sentence. | 3. 1st sentence about the same thing
 
 ""hello, how are you?"" as the first sentence
 
 ""hello, how are you?"" as the first sentence
 
-Okay, the user wants the same first sentence as ""hello, how are you?"" repeated. | 4. thing as the first paragraph of the article. | 5. name as the first name, but change the first letter to a different letter?",answer but format the code properly?,1
-278,sentence,"Haha, yeah I want to test your capabilities! Describe the","1. process of how a human heart works. | 2. main point of the following passage: ""This is the most important thing in the world, but it's so simple that you can't even grasp it. | 3. world of space in a fun and creative way, and make it engaging for a child. | 4. differences between the main and secondary functions of a system in a sentence. | 5. role of technology in modern society.",moves John Cena would make in such a dance competition.,0
-279,sentence,How hot is the sun and,"1. how hot is the Earth? | 2. the moon, and what is the temperature of the Earth? | 3. how cold is the moon? | 4. the moon, and how does it affect our daily life? | 5. the Earth?",how far is it away from earth?,1
-280,sentence,How do I find out what the species,"1. name for the new species is and when it was discovered? | 2. of a tree is, and what are the different ways to do it? | 3. of the flowers and plants are, and how do I know when a plant is growing or in the early stages of growth? | 4. of the cactus are in the region of the desert, and what are the key features of such a cactus? | 5. of the plant that looks like a bird?",of bush I have?,0
+Okay, the user wants the same first sentence as ""hello, how are you?"" repeated. | 4. thing as the first paragraph of the article. | 5. name as the first name, but change the first letter to a different letter?",answer but format the code properly?,0,1
+278,sentence,"Haha, yeah I want to test your capabilities! Describe the","1. process of how a human heart works. | 2. main point of the following passage: ""This is the most important thing in the world, but it's so simple that you can't even grasp it. | 3. world of space in a fun and creative way, and make it engaging for a child. | 4. differences between the main and secondary functions of a system in a sentence. | 5. role of technology in modern society.",moves John Cena would make in such a dance competition.,0,0
+279,sentence,How hot is the sun and,"1. how hot is the Earth? | 2. the moon, and what is the temperature of the Earth? | 3. how cold is the moon? | 4. the moon, and how does it affect our daily life? | 5. the Earth?",how far is it away from earth?,1,1
+280,sentence,How do I find out what the species,"1. name for the new species is and when it was discovered? | 2. of a tree is, and what are the different ways to do it? | 3. of the flowers and plants are, and how do I know when a plant is growing or in the early stages of growth? | 4. of the cactus are in the region of the desert, and what are the key features of such a cactus? | 5. of the plant that looks like a bird?",of bush I have?,0,0
 281,sentence,write a python code in angr to solve a,"1. problem where we have to find the number of unique pairs (i,j) where i and j are distinct and the sum of the numbers at positions i and j is equal to 10. | 2. problem 
 
 problem statement: 
 
-You have an array of integers. | 3. problem where the problem is to find the minimum number of steps needed to reach a certain position on a grid, and the grid has some obstacles. | 4. puzzle in which you have to find the minimum number參考 from a list of 5 elements that has a count of at least 1. | 5. puzzle where the objective is to find the maximum possible value of the product of two numbers a and b such that a + b = 10 and a^2 + b^2 = 25.",basic reverse engineering ctf challenge,1
-282,sentence,Are there any other NumPy functions would help,1. us with the task at hand? | 2. with this task? | 3. to convert the input into a frequency domain using the FFT in Python? | 4. me with this problem? | 5. with this?,in comparing the actual outcomes to the expected outcomes?,0
-283,sentence,Now turn the first amendment into your,"1. research paper. | 2. response and keep the response in a formal and professional tone, while making sure that the response is in a neutral, concise, and correct. | 3. own personal style, with a focus on how it impacts our society today. | 4. own voice, as if you were a legal professional, and make sure it's both more formal and more precise than the original. | 5. own words.","own scenario, what would happen if the government tried to force religion and actively tried to prevent people from expressing their opinions?",1
-284,sentence,Nice. Let's do it again. The square,"1. of a number plus the number minus the square of its digits. | 2. has a side length of 2. | 3. root of 169 is 13. | 4. has sides of length 3, and the triangle ABC has a base AB and height h. | 5. has side length 1 unit.",root of my new number is 64.,1
-285,sentence,Write a fun story that can be told in,"1. a classroom setting. | 2. two different ways: as a first-person narrative from the perspective of a character, and as a second-person narrative. | 3. a storytelling style, with a beginning, middle, and end. | 4. 3 sentences with a total of 10 words.",3 minutes at the dinner table.,0
-286,sentence,How hot is the sun and how far is it away,1. from the Earth? | 2. ?,from earth?,2
-287,sentence,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. and explain what it means? | 2. and can you provide an example for the input and output? | 3. and also explain how to use it? | 4. and what are the advantages of using a list instead of a data structure like numpy or pandas? | 5. and how to use it in a loop?,and then generate calls to that program with the two sets of numbers from my first prompt?,0
-288,sentence,I have 1000$ budget to build a pc that I want,"1. to build. | 2. to make with justgoals: 1. | 3. to get a higher performance than my current pc, and I need to know if it is possible. | 4. to buy in the future. | 5. to purchase.","to use for gaming, what components do you recomend me to buy?",0
-289,sentence,We need a catchy motto,"1. for a small business. | 2. for a company, something that can be read on the signs of the company and in the logo. | 3. for a company that is committed to sustainability, which is also environmentally friendly and has a strong presence in the business community. | 4. for a company named ""Jus"". | 5. , similar to ""Cleverness & Creativity, for Better World."" Let's choose between two options: a) the motto ""Cleverness and Creativity, for Better World"" bてくる the motto ""Cleverness and Creativity, for Better World"" and c) the motto """,to display on advertisement boards.,0
-290,sentence,What are problems I could face if people think,"1. that the idea of a single point of contact (POC) is the right way to go for the system? | 2. that there is a problem with a child's health? | 3. about the same thing as one another, and how can we address the issue of overpopulation and resource scarcity? | 4. that they are different people and that their identity is determined by their religion, culture, or other personal experiences and that they might be able to change their identity? | 5. that the law is the same as the code of conduct, and how can I get help in these situations?",that it isn't appropriate?,0
-291,sentence,In the real world bananas are blue if they get,"1. a blue color, but when they are in the water, they are in the form of a jelly bean, which is white. | 2. picked by the banana farmer? | 3. the color from the sun. | 4. to the market and a different color if they are over the market. | 5. to the market at the market and arePRECEDED by the word ""green"".",sick.,0
-292,sentence,"What sort of environment could produce fluoride based life? Cold, hot, thin","1. , thick? | 2. , thick, and what other? | 3. , thick, or even neutral? | 4. , thick, dark, light? | 5. , thick, or what else?","atmosphere, thick atmosphere?",1
+You have an array of integers. | 3. problem where the problem is to find the minimum number of steps needed to reach a certain position on a grid, and the grid has some obstacles. | 4. puzzle in which you have to find the minimum number參考 from a list of 5 elements that has a count of at least 1. | 5. puzzle where the objective is to find the maximum possible value of the product of two numbers a and b such that a + b = 10 and a^2 + b^2 = 25.",basic reverse engineering ctf challenge,0,1
+282,sentence,Are there any other NumPy functions would help,1. us with the task at hand? | 2. with this task? | 3. to convert the input into a frequency domain using the FFT in Python? | 4. me with this problem? | 5. with this?,in comparing the actual outcomes to the expected outcomes?,0,0
+283,sentence,Now turn the first amendment into your,"1. research paper. | 2. response and keep the response in a formal and professional tone, while making sure that the response is in a neutral, concise, and correct. | 3. own personal style, with a focus on how it impacts our society today. | 4. own voice, as if you were a legal professional, and make sure it's both more formal and more precise than the original. | 5. own words.","own scenario, what would happen if the government tried to force religion and actively tried to prevent people from expressing their opinions?",0,1
+284,sentence,Nice. Let's do it again. The square,"1. of a number plus the number minus the square of its digits. | 2. has a side length of 2. | 3. root of 169 is 13. | 4. has sides of length 3, and the triangle ABC has a base AB and height h. | 5. has side length 1 unit.",root of my new number is 64.,0,1
+285,sentence,Write a fun story that can be told in,"1. a classroom setting. | 2. two different ways: as a first-person narrative from the perspective of a character, and as a second-person narrative. | 3. a storytelling style, with a beginning, middle, and end. | 4. 3 sentences with a total of 10 words.",3 minutes at the dinner table.,0,0
+286,sentence,How hot is the sun and how far is it away,1. from the Earth? | 2. ?,from earth?,2,2
+287,sentence,"Can you give me a simple Python program to calculate standard deviation for sets of numbers,",1. and explain what it means? | 2. and can you provide an example for the input and output? | 3. and also explain how to use it? | 4. and what are the advantages of using a list instead of a data structure like numpy or pandas? | 5. and how to use it in a loop?,and then generate calls to that program with the two sets of numbers from my first prompt?,0,0
+288,sentence,I have 1000$ budget to build a pc that I want,"1. to build. | 2. to make with justgoals: 1. | 3. to get a higher performance than my current pc, and I need to know if it is possible. | 4. to buy in the future. | 5. to purchase.","to use for gaming, what components do you recomend me to buy?",0,0
+289,sentence,We need a catchy motto,"1. for a small business. | 2. for a company, something that can be read on the signs of the company and in the logo. | 3. for a company that is committed to sustainability, which is also environmentally friendly and has a strong presence in the business community. | 4. for a company named ""Jus"". | 5. , similar to ""Cleverness & Creativity, for Better World."" Let's choose between two options: a) the motto ""Cleverness and Creativity, for Better World"" bてくる the motto ""Cleverness and Creativity, for Better World"" and c) the motto """,to display on advertisement boards.,1,0
+290,sentence,What are problems I could face if people think,"1. that the idea of a single point of contact (POC) is the right way to go for the system? | 2. that there is a problem with a child's health? | 3. about the same thing as one another, and how can we address the issue of overpopulation and resource scarcity? | 4. that they are different people and that their identity is determined by their religion, culture, or other personal experiences and that they might be able to change their identity? | 5. that the law is the same as the code of conduct, and how can I get help in these situations?",that it isn't appropriate?,0,0
+291,sentence,In the real world bananas are blue if they get,"1. a blue color, but when they are in the water, they are in the form of a jelly bean, which is white. | 2. picked by the banana farmer? | 3. the color from the sun. | 4. to the market and a different color if they are over the market. | 5. to the market at the market and arePRECEDED by the word ""green"".",sick.,0,0
+292,sentence,"What sort of environment could produce fluoride based life? Cold, hot, thin","1. , thick? | 2. , thick, and what other? | 3. , thick, or even neutral? | 4. , thick, dark, light? | 5. , thick, or what else?","atmosphere, thick atmosphere?",1,1
 293,sentence,How hot is the sun and how far is,"1. it from the Earth? | 2. it from the earth? | 3. it from Earth in CelsiusΪ
 
-To answer this question, I need to use the data from the NASA website, then use the formula for distance in meters and the conversion from Celsius to Fahrenheit.",it away from earth?,2
+To answer this question, I need to use the data from the NASA website, then use the formula for distance in meters and the conversion from Celsius to Fahrenheit.",it away from earth?,2,2
 294,sentence,How do I go about finding players on my,"1. phone? | 2. mobile phone, and how can I check the date and time on my device? | 3. website and where do I get the data from? | 4. phone using my phone's built-in camera, and whatᵕ
 
-Okay, so I want to find players on my phone using my phone's built-in camera. | 5. own?",level to play against?,0
-295,sentence,We need a catchy motto to display on advertisement boards.,"1. The motto should be as simple as possible and include the key words ""success"" and ""growth"". | 2. The motto should include the word ""courage"" and be in English. | 3. The motto should be written in an appropriate language, suitable for business and professional, and should convey the meaning that the company is the best in the industry, and is always striving for excellence. | 4. The motto should reflect the theme of the advertisement, which is ""a beautiful and creative community where people work together to achieve common goals."" The motto should be short, catchy, and easy to understand. | 5. The motto should be in Vietnamese.","It should be short and memorable, so that it can easily be recognized by drivers on the highway.",1
-296,sentence,Now describe the Python3 programming language in,"1. a few sentences. | 2. a general way, and explain the `-i` command line argument and its functionality. | 3. a way that it is easy to understand and accessible to a general audience. | 4. terms of its core characteristics, features, and usage. | 5. your own words, using the most appropriate and clear terms, and explain why it is a good choice for a learning programming language.",style of Jerma985.,0
-297,sentence,Can you create a function in,"1. Python that takes an integer as input and returns the sum of the elements棘的 elements of the list, where each element in the list is a string with a single character (like ""A"", ""B"", etc.)? | 2. JavaScript that takes a string and returns a string with all the uppercase letters converted to lowercase? | 3. Python that takes a string and returns the count of vowels in it, considering both lowercase and uppercase letters? | 4. JavaScript that takes a single argument Opt, which is a string or a number, and returns the average of all elements in an array that are equal to the first element of the array? | 5. JavaScript that takes an array of integers and returns a new array with the same elements in the same order but with the elements that are in the first two positions of the array and are not in the third position of the array after the first two positions?",Javascript that returns a string of the current date in this format?,0
-298,sentence,Any good local food I should check out at,1. this place? | 2. the weekend? | 3. the end of the day? | 4. the park?,each of these cities?,0
+Okay, so I want to find players on my phone using my phone's built-in camera. | 5. own?",level to play against?,0,0
+295,sentence,We need a catchy motto to display on advertisement boards.,"1. The motto should be as simple as possible and include the key words ""success"" and ""growth"". | 2. The motto should include the word ""courage"" and be in English. | 3. The motto should be written in an appropriate language, suitable for business and professional, and should convey the meaning that the company is the best in the industry, and is always striving for excellence. | 4. The motto should reflect the theme of the advertisement, which is ""a beautiful and creative community where people work together to achieve common goals."" The motto should be short, catchy, and easy to understand. | 5. The motto should be in Vietnamese.","It should be short and memorable, so that it can easily be recognized by drivers on the highway.",0,1
+296,sentence,Now describe the Python3 programming language in,"1. a few sentences. | 2. a general way, and explain the `-i` command line argument and its functionality. | 3. a way that it is easy to understand and accessible to a general audience. | 4. terms of its core characteristics, features, and usage. | 5. your own words, using the most appropriate and clear terms, and explain why it is a good choice for a learning programming language.",style of Jerma985.,0,0
+297,sentence,Can you create a function in,"1. Python that takes an integer as input and returns the sum of the elements棘的 elements of the list, where each element in the list is a string with a single character (like ""A"", ""B"", etc.)? | 2. JavaScript that takes a string and returns a string with all the uppercase letters converted to lowercase? | 3. Python that takes a string and returns the count of vowels in it, considering both lowercase and uppercase letters? | 4. JavaScript that takes a single argument Opt, which is a string or a number, and returns the average of all elements in an array that are equal to the first element of the array? | 5. JavaScript that takes an array of integers and returns a new array with the same elements in the same order but with the elements that are in the first two positions of the array and are not in the third position of the array after the first two positions?",Javascript that returns a string of the current date in this format?,0,0
+298,sentence,Any good local food I should check out at,1. this place? | 2. the weekend? | 3. the end of the day? | 4. the park?,each of these cities?,0,0
 299,sentence,On the website https://alittlehebrew.com/transliterate/ I input your hebrew and got the,"1. results. | 2. translation. | 3. following: ""בּוֹרְאוֹדָה מַעָּרְבִיָּה"" ( extension in Hebrew 1980)
-So, the input is ""בּו | 4. transliterate.","following Tmvl hstchlt l hfrchm vgnh, chlt fyrchvt vrz, vmrt lmk: ""l tchl t hshlg htzhvv"".",1
-300,sentence,Can you write me a complete LSTM neural network from scratch,"1. , using Python, and include the training loop and evaluation loop? | 2. , including the implementation of the data preprocessing step, a sample dataset, and a functional block of the model? | 3. , with data preprocessing, model construction, and training and evaluation, and then also include a binary classification and test the model with a new input, and add a binary classification? | 4. , including the inputs and outputs, and explain the architecture and design? | 5. , starting with the input layer, then the hidden layers, and the output layer?",while using the PyTorch module?,1
+So, the input is ""בּו | 4. transliterate.","following Tmvl hstchlt l hfrchm vgnh, chlt fyrchvt vrz, vmrt lmk: ""l tchl t hshlg htzhvv"".",0,1
+300,sentence,Can you write me a complete LSTM neural network from scratch,"1. , using Python, and include the training loop and evaluation loop? | 2. , including the implementation of the data preprocessing step, a sample dataset, and a functional block of the model? | 3. , with data preprocessing, model construction, and training and evaluation, and then also include a binary classification and test the model with a new input, and add a binary classification? | 4. , including the inputs and outputs, and explain the architecture and design? | 5. , starting with the input layer, then the hidden layers, and the output layer?",while using the PyTorch module?,0,1
