@@ -35,14 +35,14 @@ itself is Phase 2/3.
 | **Bug 1:** | Exact-match scoring returned 0% everywhere |
 | Cause 1 | Exact-match too strict for open-ended text (also noted in ChaI-TeA, 2025) → switched to first-word match, char overlap, semantic similarity |
 | Cause 2 | Usefulness score compared full model output to a short reference, unfairly penalizing longer predictions → fixed by trimming prediction to reference length first |
-| Effect | Same predictions, corrected grading — numbers below are post-fix |
+| Effect | Same predictions, corrected grading -numbers below are post-fix |
 **Bug 2: generation** | Fixed token budgets caused predictions to overshoot their target (e.g. "error or issue in the" instead of "error"). Fixed with a custom stopping condition that halts generation at the actual word/phrase/sentence boundary. |
 
-Same underlying model, corrected measurement — numbers below are post-fix.
+Same underlying model, corrected measurement , numbers below are post-fix.
 
 ## Results
 
-Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-representative — see Phase 3.
+Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-representative. see Phase 3.
 
 | Granularity | Qwen usefulness | Best baseline | Top-5 accuracy | Latency |
 |---|---|---|---|---|
@@ -52,7 +52,7 @@ Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-repr
 | sentence | 0.195 | 0.000 | 0.278 | 3,181ms |
 
 Qwen beats the baseline at every granularity. Gap is largest at phrase/sentence
-(15-20x), but absolute quality there is still low — longer completions aren't
+(15-20x), but absolute quality there is still low, longer completions aren't
 solved yet. Latency jumps sharply with granularity, which is the whole reason
 invocation policy matters (Phase 2/3): don't pay sentence-level cost on every
 keystroke.
@@ -78,7 +78,7 @@ and compared against the automatic scorer's 0.75/0.4 thresholds.
 
 Open question: for next-word specifically,
 should "plausible" mean grammatically valid in context, or semantically
-related to the intended word — this choice swings next-word's agreement
+related to the intended word, this choice swings next-word's agreement
 significantly either way.
 
 ## Run it
