@@ -16,7 +16,7 @@ itself is Phase 2/3.
 |---|---|
 | Source | [OASST2](https://huggingface.co/datasets/OpenAssistant/oasst2), English `prompter` messages, validation split |
 | Method | Each message cut at 15/30/50/70/85% to simulate mid-typing |
-| Size | 597-800 examples per granularity, from 200 messages |
+| Size | 500-800 examples per granularity, from 200 messages |
 
 ## Pipeline
 
