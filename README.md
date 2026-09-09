@@ -70,16 +70,21 @@ and compared against the automatic scorer's 0.75/0.4 thresholds.
 | Next word | 75 | 48.0% |
 | **Overall** | **296** | **58.8%** |
 
-| Difference from hand label | Count | % |
+| Agreement between automatic and manual scores | Count | % |
 |---|---|---|
-| Exact match | 174 | 58.8% |
-| Off by 1 | 109 | 36.8% |
-| Off by 2 | 13 | 4.4% |
+| Exact match — same score (0, 1, or 2) | 174 | 58.8% |
+| Minor disagreement — 1 point apart (e.g. auto said "plausible", human said "relevant") | 109 | 36.8% |
+| Major disagreement — 2 points apart (auto said "irrelevant", human said "relevant", or vice versa) | 13 | 4.4% |
 
-Open question: for next-word specifically,
-should "plausible" mean grammatically valid in context, or semantically
-related to the intended word, this choice swings next-word's agreement
-significantly either way.
+**Key finding:** disagreement is almost always minor (36.8%), not major (4.4%).
+The automatic scorer rarely gets things completely backwards, but it does
+frequently draw the "plausible vs. relevant" or "irrelevant vs. plausible"
+line in the wrong place.
+
+**Open question:** for next-word specifically should "plausible" mean
+grammatically valid in context or semantically related to the intended word?
+This choice swings next-word's agreement significantly either way.
+
 
 ## Run it
 
