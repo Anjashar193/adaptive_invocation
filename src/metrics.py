@@ -64,6 +64,47 @@ def semantic_similarity(prediction, reference):
     return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-8))
 
 
+def keystrokes_saved(prediction, reference):
+    """Characters the user avoids typing by accepting `prediction`.
+
+    Only the correct leading run counts - at the first wrong character the
+    user stops accepting and types the rest themselves. Raw characters, no
+    normalization: this is what the keyboard actually saves.
+    """
+    if not prediction or not reference:
+        return 0
+    saved = 0
+    for pred_char, ref_char in zip(prediction, reference):
+        if pred_char != ref_char:
+            break
+        saved += 1
+    return saved
+
+
+def keystroke_rate(prediction, reference):
+    """Fraction of the reference the user did not have to type.
+
+    Not comparable across granularities - reference length differs ~9x
+    (median 4 chars for next/partial word vs 25 phrase, 35 sentence).
+    Use chars_saved_per_second() for cross-granularity comparison.
+    """
+    if not reference:
+        return 0.0
+    return keystrokes_saved(prediction, reference) / len(reference)
+
+
+def chars_saved_per_second(keystrokes, latency_ms):
+    """Characters saved per second of compute - the cost-aware number.
+
+    This is what an invocation policy optimizes: quality per unit of the
+    latency budget it spends. Comparable across granularities because it
+    normalizes by compute rather than by target length.
+    """
+    if latency_ms is None or latency_ms <= 0:
+        return 0.0
+    return keystrokes / (latency_ms / 1000.0)
+
+
 def usefulness_score(prediction, reference, full_text, judge_fn=None):
     if judge_fn is not None:
         return judge_fn(prediction, reference, full_text)
@@ -158,3 +199,11 @@ if __name__ == "__main__":
     # test is_hit for phrase/sentence
     print("phrase hit (usefulness>=1):", is_hit("weather looks nice today", "weather is nice", "phrase"))
     print("phrase miss:", is_hit("the quick brown fox", "weather is nice", "phrase"))
+    # keystroke savings - symbolic, no labels or thresholds
+    print("keystrokes_saved('generate', 'gen'):", keystrokes_saved("generate", "gen"))
+    print("keystrokes_saved('xyz', 'gen'):", keystrokes_saved("xyz", "gen"))
+    print("keystrokes_saved('', 'gen'):", keystrokes_saved("", "gen"))
+    print("keystroke_rate('gene', 'generate'):", round(keystroke_rate("gene", "generate"), 3))
+    print("keystroke_rate('abc', ''):", keystroke_rate("abc", ""))
+    print("chars_saved_per_second(4, 400):", chars_saved_per_second(4, 400))
+    print("chars_saved_per_second(4, 0):", chars_saved_per_second(4, 0))
