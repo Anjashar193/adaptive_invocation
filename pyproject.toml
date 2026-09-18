@@ -10,3 +10,14 @@ dependencies = [
     "torch>=2.13.0",
     "transformers>=5.14.1",
 ]
+
+[tool.pytest.ini_options]
+# tests import `src.…` and read the CSVs by relative path, so they run from
+# the repo root
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

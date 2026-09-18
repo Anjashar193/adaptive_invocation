@@ -1,12 +1,25 @@
 import csv
+import os
 import time
 import re
-from data_prep import load_oasst2_prompter_en, build_eval_set
-from baselines import FrequencyBaseline, NgramBaseline, RandomBaseline
-from metrics import score_example, topk_score
+try:  # works both as `python src/run_eval.py` and as `from src.run_eval import ...`
+    from data_prep import load_oasst2_prompter_en, build_eval_set
+    from baselines import FrequencyBaseline, NgramBaseline, RandomBaseline
+    from metrics import score_example, topk_score
+except ImportError:
+    from src.data_prep import load_oasst2_prompter_en, build_eval_set
+    from src.baselines import FrequencyBaseline, NgramBaseline, RandomBaseline
+    from src.metrics import score_example, topk_score
 
 GRANULARITIES = ["partial_word", "next_word", "phrase", "sentence"]
-N_MESSAGES = 100
+
+# N_MESSAGES=100 minus the 20% baseline-fitting holdout leaves ~80 eval
+# messages - below the >200 PROJECT_GUIDELINE requires for the learned policy.
+# 260 clears that bar, but re-running INVALIDATES phase1_results_v2.csv (new
+# predictions => new items), which would orphan the existing hand labels.
+# Keep the frozen value as the default; opt in with N_MESSAGES=260 to rescale.
+N_MESSAGES = int(os.environ.get("N_MESSAGES", "100"))
+N_MESSAGES_FULL = 260  # use once the metric decision (Stage 6) has landed
 TOP_K = 5
 TOPK_GRANULARITIES = {"next_word", "partial_word", "phrase", "sentence"}
 

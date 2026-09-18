@@ -1,6 +1,11 @@
 import csv
 from collections import defaultdict
 
+try:  # works both as `python src/report.py` and as `from src.report import ...`
+    from metrics import keystrokes_saved, chars_saved_per_second
+except ImportError:
+    from src.metrics import keystrokes_saved, chars_saved_per_second
+
 METRIC_COLUMNS = {
     "partial_word": ["char_match"],
     "next_word": ["first_word_match"],
@@ -27,7 +32,8 @@ def summarize(rows):
     for row in rows:
         groups[(row["granularity"], row["system"])].append(row)
 
-    header = f"{'granularity':<14}{'system':<20}{'n':<6}{'latency(ms)':<14}{'usefulness':<12}{'top5_acc':<10}{'top5_acc(len3+)':<16}metrics"
+    header = (f"{'granularity':<14}{'system':<20}{'n':<6}{'latency(ms)':<14}{'usefulness':<12}"
+              f"{'ks_rate':<10}{'cs_per_sec':<12}{'ks_zero':<9}{'top5_acc':<10}{'top5_acc(len3+)':<16}metrics")
     print(header)
     print("-" * len(header))
 
@@ -35,6 +41,15 @@ def summarize(rows):
         n = len(group)
         avg_latency = sum(float(r["latency_ms"]) for r in group) / n if n else 0
         avg_usefulness = _avg(group, "usefulness")
+
+        # Symbolic metrics, derived at report time from columns already in the
+        # CSV - deliberately not stored by score_example(), so the Phase 1
+        # results file stays byte-identical.
+        saved = [keystrokes_saved(r["prediction"], r["reference"]) for r in group]
+        ref_chars = sum(len(r["reference"]) for r in group)
+        ks_rate = sum(saved) / ref_chars if ref_chars else 0.0
+        ks_zero = sum(1 for s in saved if s == 0) / n if n else 0.0
+        cs_per_sec = chars_saved_per_second(sum(saved) / n, avg_latency) if n else 0.0
 
         top5_acc = ""
         top5_acc_filtered = ""
@@ -51,8 +66,19 @@ def summarize(rows):
         for col in METRIC_COLUMNS.get(granularity, []):
             metric_strs.append(f"{col}={_avg(group, col):.3f}")
 
+        cs_str = f"{cs_per_sec:.2f}" if avg_latency > 0 else "-"
         print(f"{granularity:<14}{system:<20}{n:<6}{avg_latency:<14.1f}{avg_usefulness:<12.3f}"
+              f"{ks_rate:<10.3f}{cs_str:<12}{ks_zero:<9.2f}"
               f"{top5_acc:<10}{top5_acc_filtered:<16}{' '.join(metric_strs)}")
+
+    print()
+    print("ks_rate    = chars saved / reference chars. NOT comparable across")
+    print("             granularities - median reference length differs ~9x")
+    print("             (4 chars next/partial word vs 25 phrase, 35 sentence).")
+    print("cs_per_sec = chars saved per second of compute. Comparable across")
+    print("             granularities; this is what a policy optimizes.")
+    print("ks_zero    = fraction with zero literal overlap. The symbolic")
+    print("             metric's blind spot - valid paraphrases land here.")
 
 
 if __name__ == "__main__":

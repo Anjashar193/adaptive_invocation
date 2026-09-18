@@ -44,12 +44,20 @@ Same underlying model, corrected measurement , numbers below are post-fix.
 
 Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-representative. see Phase 3.
 
-| Granularity | Qwen usefulness | Best baseline | Top-5 accuracy | Latency |
-|---|---|---|---|---|
-| next_word | 0.833 | 0.435 | 0.420 | 413ms |
-| partial_word | 0.628 | 0.535 | 0.150 | 456ms |
-| phrase | 0.182 | 0.010 | 0.323 | 1,098ms |
-| sentence | 0.195 | 0.000 | 0.278 | 3,181ms |
+Usefulness is a **mean over a 0/1/2 scale**, not a percentage — 0.833 means
+"averages between plausible and relevant", not "83% correct". The raw
+distribution is given alongside so the mean can't be misread.
+
+| Granularity | Qwen usefulness (0–2) | dist 0/1/2 | Best baseline | Top-5 accuracy | Latency |
+|---|---|---|---|---|---|
+| next_word | 0.833 | 189/89/122 | 0.435 | 0.420 | 413ms |
+| partial_word | 0.628 | 140/133/28 | 0.535 | 0.046 † | 456ms |
+| phrase | 0.182 | 339/49/12 | 0.010 | 0.323 | 1,098ms |
+| sentence | 0.195 | 333/56/11 | 0.000 | 0.278 | 3,181ms |
+
+† partial_word top-5 is **0.046** once restricted to references ≥3 characters
+(n=109). The unrestricted 0.150 is inflated by one- and two-character
+remainders that match coincidentally; `report.py` computes both.
 
 Qwen beats the baseline at every granularity. Gap is largest at phrase/sentence
 (15-20x), but absolute quality there is still low, longer completions aren't
@@ -62,28 +70,43 @@ keystroke.
 300 examples hand-labeled (75 per granularity, deduplicated by source message)
 and compared against the automatic scorer's 0.75/0.4 thresholds.
 
-| Granularity | Examples | Agreement |
-|---|---|---|
-| Partial word | 71 | 69.0% |
-| Sentence | 75 | 62.7% |
-| Phrase | 75 | 56.0% |
-| Next word | 75 | 48.0% |
-| **Overall** | **296** | **58.8%** |
+| Granularity | Examples | Agreement | κ | κ (linear) |
+|---|---|---|---|---|
+| Partial word | 74 | 70.3% | +0.323 | +0.423 |
+| Sentence | 75 | 62.7% | +0.201 | +0.249 |
+| Phrase | 75 | 56.0% | +0.149 | +0.177 |
+| Next word | 75 | 48.0% | +0.257 | +0.352 |
+| **Overall** | **299** | **59.2%** | **+0.300** | **+0.400** |
 
 | Agreement between automatic and manual scores | Count | % |
 |---|---|---|
-| Exact match — same score (0, 1, or 2) | 174 | 58.8% |
-| Minor disagreement — 1 point apart (e.g. auto said "plausible", human said "relevant") | 109 | 36.8% |
-| Major disagreement — 2 points apart (auto said "irrelevant", human said "relevant", or vice versa) | 13 | 4.4% |
+| Exact match — same score (0, 1, or 2) | 177 | 59.2% |
+| Minor disagreement — 1 point apart | 109 | 36.5% |
+| Major disagreement — 2 points apart | 13 | 4.3% |
 
-**Key finding:** disagreement is almost always minor (36.8%), not major (4.4%).
-The automatic scorer rarely gets things completely backwards, but it does
-frequently draw the "plausible vs. relevant" or "irrelevant vs. plausible"
+Report **linear-weighted κ** as the headline: since disagreement is
+overwhelmingly one point apart, unweighted κ penalises "plausible vs relevant"
+as harshly as a complete reversal and understates the scorer.
+
+**Key finding 1 — disagreement is minor, not catastrophic.** The scorer rarely
+gets things backwards, but it frequently draws the "plausible vs. relevant"
 line in the wrong place.
 
-**Open question:** for next-word specifically should "plausible" mean
-grammatically valid in context or semantically related to the intended word?
-This choice swings next-word's agreement significantly either way.
+**Key finding 2 — the error is systematic, not noise.** The scorer was too
+*low* 106 times and too *high* only 16. Random noise would be symmetric.
+
+**Key finding 3 — this is a construct mismatch, not miscalibration.** Cases
+like predicting `quantum` where the user typed `make` were labelled "plausible"
+by the human and "irrelevant" by the scorer: the human scored *grammatical
+plausibility*, the scorer measures *similarity to the reference*. No threshold
+reconciles the two. Best possible accuracy from similarity with thresholds
+fitted directly on the labels is **68.9%** (vs. 55.2% majority-class), and
+honest 5-fold CV of tuning makes `sentence` **worse** (62.7% → 58.7%).
+
+**Open limitation:** one labeller, so there is no inter-annotator agreement.
+The 68.9% ceiling is currently indistinguishable from an annotator-noise
+ceiling — if two humans agree only ~70% of the time, no metric can do better.
+See `PHASE2_METRIC_PLAN.md`.
 
 
 ## Run it
@@ -91,14 +114,21 @@ This choice swings next-word's agreement significantly either way.
 ```bash
 uv sync
 uv run python src/run_eval.py
-uv run python -c "from src.recompute_metrics import recompute; recompute('phase1_results.csv', 'phase1_results_v2.csv')"
 uv run python -c "from src.report import load_results, summarize; summarize(load_results('phase1_results_v2.csv'))"
 ```
-To run calibration:
+To reproduce the calibration analysis:
 
 ```bash
-uv run python hand_label.py
-uv run python compare_label.py
+uv run python compare_label.py       # agreement, kappa, paired metric comparison
+uv run pytest                        # 36 tests
+```
+
+To build the control set for the next labelling round (see
+`PHASE2_METRIC_PLAN.md`):
+
+```bash
+uv run python -m src.control_set     # writes control_set.csv (345 items)
+uv run python hand_label.py          # labelling instructions
 ```
 
 ## Still missing / next

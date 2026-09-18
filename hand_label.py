@@ -1,120 +1,150 @@
+"""Hand-labelling CLI for the control set.
+
+Three independently elicited axes, because a single 0/1/2 score conflates two
+different judgments (see PHASE2_METRIC_PLAN.md Part 1):
+
+  A1 plausible      reference HIDDEN - "could a writer continue this way?"
+  A2 matches        reference SHOWN  - "does it agree with what was typed?"
+  A3 preference     two candidates   - "which would you rather have seen?"
+
+A1 runs as its own pass with the reference withheld. If the reference is
+visible it anchors the plausibility judgment and the two axes stop being
+separable, which is exactly the failure mode in the first labelling round.
+
+Unlike the previous version this stores the FULL prefix and a stable
+result_row_id, so labels can be joined back to the results CSV exactly rather
+than reconstructed from a truncated prefix and a candidate list.
+"""
+
+import argparse
 import csv
-import random
 import os
 
-INPUT_CSV = "phase1_results_v2.csv"
-OUTPUT_CSV = "hand_labels.csv"
-SAMPLES_PER_GRANULARITY = 75  # 75 x 4 = 300 total
+CONTROL_SET_CSV = "control_set.csv"
+OUTPUT_CSV = "control_labels.csv"
+
+FIELDNAMES = ["item_id", "result_row_id", "granularity", "prefix", "reference",
+              "prediction", "topk_predictions", "axis", "score", "labeler"]
+
+AXES = {
+    "plausible": {
+        "prompt": "Could a competent writer continue this way? (0=no, 1=yes)",
+        "valid": {"0", "1"},
+        "show_reference": False,
+    },
+    "matches": {
+        "prompt": "Does it agree with what was actually typed? "
+                  "(0=unrelated, 1=same intent, 2=agrees)",
+        "valid": {"0", "1", "2"},
+        "show_reference": True,
+    },
+}
 
 
-def dedupe_by_source_message(rows, min_shared_length=25):
-    rows_sorted = sorted(rows, key=lambda r: len(r["prefix"]))
-    kept = []
-    kept_prefixes = []
-    for row in rows_sorted:
-        p = row["prefix"]
-        is_continuation = any(
-            len(kp) >= min_shared_length and p.startswith(kp)
-            for kp in kept_prefixes
-        )
-        if not is_continuation:
-            kept.append(row)
-            kept_prefixes.append(p)
-    return kept
-
-
-def build_sample():
-    with open(INPUT_CSV, newline="", encoding="utf-8") as f:
-        rows = list(csv.DictReader(f))
-
-    by_granularity = {}
-    for row in rows:
-        if row["system"] != "qwen":
-            continue  # calibration focuses on the model's own predictions
-        by_granularity.setdefault(row["granularity"], []).append(row)
-
-    sample = []
-    for granularity, group in by_granularity.items():
-        deduped = dedupe_by_source_message(group)
-        group_sorted = sorted(deduped, key=lambda r: (r["prefix"], r["reference"]))
-        random.Random(42).shuffle(group_sorted)
-        sample.extend(group_sorted[:SAMPLES_PER_GRANULARITY])
-
-    random.Random(7).shuffle(sample)
-    return sample
-
-
-def load_existing_labels():
-    if not os.path.exists(OUTPUT_CSV):
+def load_existing(path=OUTPUT_CSV):
+    """Labels already recorded, keyed by (item_id, axis, labeler)."""
+    if not os.path.exists(path):
         return {}
-    with open(OUTPUT_CSV, newline="", encoding="utf-8") as f:
-        rows = list(csv.DictReader(f))
-    return {(r["granularity"], r["prefix"], r["reference"]): r for r in rows}
+    with open(path, newline="", encoding="utf-8") as f:
+        return {(r["item_id"], r["axis"], r["labeler"]): r for r in csv.DictReader(f)}
 
 
-def save_label(row, manual_score):
-    file_exists = os.path.exists(OUTPUT_CSV)
-    fieldnames = ["granularity", "prefix", "reference", "prediction",
-                  "topk_predictions", "usefulness_auto", "topk_hit_auto",
-                  "manual_score", "labeler"]
-    with open(OUTPUT_CSV, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        if not file_exists:
+def save_label(row, axis, score, labeler, path=OUTPUT_CSV):
+    exists = os.path.exists(path)
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+        if not exists:
             writer.writeheader()
         writer.writerow({
+            "item_id": row["item_id"],
+            "result_row_id": row.get("result_row_id", ""),
             "granularity": row["granularity"],
-            "prefix": row["prefix"],
+            "prefix": row["prefix"],            # full, never truncated
             "reference": row["reference"],
             "prediction": row["prediction"],
             "topk_predictions": row.get("topk_predictions", ""),
-            "usefulness_auto": row["usefulness"],
-            "topk_hit_auto": row.get("topk_hit", ""),
-            "manual_score": manual_score,
-            "labeler": "solo",
+            "axis": axis,
+            "score": score,
+            "labeler": labeler,
         })
 
 
-def main():
-    sample = build_sample()
-    done = load_existing_labels()
+def label_pass(items, axis, labeler, path=OUTPUT_CSV):
+    """Run one labelling pass over `items` for a single axis."""
+    spec = AXES[axis]
+    done = load_existing(path)
+    todo = [i for i in items if (i["item_id"], axis, labeler) not in done]
 
-    remaining = [r for r in sample
-                 if (r["granularity"], r["prefix"], r["reference"]) not in done]
+    print(f"\n=== Pass: {axis} ===")
+    print(spec["prompt"])
+    if not spec["show_reference"]:
+        print("The reference is HIDDEN on purpose - judge the prefix only.")
+    print(f"{len(items) - len(todo)} already done, {len(todo)} to go.")
+    print("'s' to skip, 'q' to save and quit.\n")
 
-    print(f"{len(done)} already labeled, {len(remaining)} left to go.\n")
-    print("Score 0 (irrelevant), 1 (close/plausible), or 2 (relevant/matches).")
-    print("If a top-5 list is shown, score the BEST candidate in it.")
-    print("Type 's' to skip, 'q' to save and quit.\n")
-
-    for i, row in enumerate(remaining):
+    for n, row in enumerate(todo, start=1):
         print("-" * 70)
-        print(f"[{i + 1}/{len(remaining)}]  granularity: {row['granularity']}")
-        print(f"PREFIX:     ...{row['prefix'][-100:]}")
-
-        topk = row.get("topk_predictions", "")
-        if topk:
-            candidates = [c.strip() for c in topk.split("|")]
-            print("TOP-5 CANDIDATES:")
-            for rank, c in enumerate(candidates, start=1):
-                print(f"    {rank}. {c}")
-        else:
-            print(f"PREDICTION: {row['prediction']}")
-
-        print(f"REFERENCE:  {row['reference']}")
+        print(f"[{n}/{len(todo)}]  {row['granularity']}")
+        print(f"PREFIX:     ...{row['prefix'][-160:]}")
+        print(f"CANDIDATE:  {row['prediction']}")
+        if spec["show_reference"]:
+            print(f"REFERENCE:  {row['reference']}")
 
         while True:
-            answer = input("Your score (0/1/2, s=skip, q=quit): ").strip().lower()
+            answer = input(f"{axis} {sorted(spec['valid'])} / s / q: ").strip().lower()
             if answer == "q":
-                print(f"\nSaved to {OUTPUT_CSV}. Run this script again anytime to continue.")
-                return
+                print(f"\nSaved to {path}. Re-run to continue.")
+                return False
             if answer == "s":
                 break
-            if answer in ("0", "1", "2"):
-                save_label(row, answer)
+            if answer in spec["valid"]:
+                save_label(row, axis, answer, labeler, path)
                 break
-            print("Please type 0, 1, 2, s, or q.")
+            print(f"  please type one of {sorted(spec['valid'])}, s, or q.")
+    return True
 
-    print(f"\nAll {len(sample)} examples labeled! Run compare_labels.py next.")
+
+def load_control_set(path=CONTROL_SET_CSV):
+    if not os.path.exists(path):
+        raise SystemExit(
+            f"{path} not found. Build it first:\n"
+            f"    uv run python -m src.control_set")
+    with open(path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def _axis_progress(items, axis, labeler, path=OUTPUT_CSV):
+    done = load_existing(path)
+    return sum(1 for i in items if (i["item_id"], axis, labeler) in done)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Label the control set, one axis at a time.")
+    parser.add_argument("--axis", choices=sorted(AXES), help="which axis to label")
+    parser.add_argument("--labeler", default="A", help="labeler id (use a second id for IAA)")
+    parser.add_argument("--limit", type=int, help="stop after this many items")
+    args = parser.parse_args()
+
+    items = load_control_set()
+
+    if not args.axis:
+        print(__doc__)
+        print(f"Control set: {len(items)} items.\n")
+        print("Progress:")
+        for axis in ("plausible", "matches"):
+            for labeler in ("A", "B"):
+                n = _axis_progress(items, axis, labeler)
+                if n or labeler == "A":
+                    print(f"  {axis:<12} labeler {labeler}: {n}/{len(items)}")
+        print("\nRun one pass at a time, in this order:")
+        print("  uv run python hand_label.py --axis plausible --labeler A")
+        print("  uv run python hand_label.py --axis matches   --labeler A")
+        print("\nA1 (plausible) MUST finish before A2 (matches) for a given")
+        print("labeler, or the reference will have anchored the plausibility score.")
+        return
+
+    todo = items[: args.limit] if args.limit else items
+    label_pass(todo, args.axis, args.labeler)
 
 
 if __name__ == "__main__":
