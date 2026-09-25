@@ -1,0 +1,82 @@
+{
+  "next_word": {
+    "metric": "keystrokes",
+    "n": 97,
+    "delta": -0.07830002313785167,
+    "ci_lo": -0.2503256968781551,
+    "ci_hi": 0.07545199296762839,
+    "verdict": "tie",
+    "human_agreement_matches": {
+      "n": 22,
+      "exact_agreement": 0.6818181818181818,
+      "kappa": 0.504823151125402
+    },
+    "human_agreement_plausible": {
+      "n": 22,
+      "exact_agreement": 0.9545454545454546,
+      "kappa": 0.8791208791208791
+    }
+  },
+  "partial_word": {
+    "metric": "keystrokes",
+    "n": 155,
+    "delta": 0.24444489307649428,
+    "ci_lo": 0.04724726675545744,
+    "ci_hi": 0.44815328798665444,
+    "verdict": "a_better",
+    "human_agreement_matches": {
+      "n": 35,
+      "exact_agreement": 0.9428571428571428,
+      "kappa": 0.6916299559471365
+    },
+    "human_agreement_plausible": {
+      "n": 35,
+      "exact_agreement": 0.9428571428571428,
+      "kappa": 0.8387096774193549
+    }
+  },
+  "phrase": {
+    "metric": "keystrokes",
+    "n": 97,
+    "delta": -0.15018683751436565,
+    "ci_lo": -0.42609290962163365,
+    "ci_hi": 0.13856771445315835,
+    "verdict": "tie",
+    "human_agreement_matches": {
+      "n": 22,
+      "exact_agreement": 0.5454545454545454,
+      "kappa": 0.026548672566371723
+    },
+    "note": "Low inter-annotator agreement (kappa < 0.2) on the 'matches' axis for this granularity - the axis this decision is actually made against - so this verdict may reflect task ambiguity rather than a real difference between the two candidate metrics.",
+    "human_agreement_plausible": {
+      "n": 22,
+      "exact_agreement": 0.9090909090909091,
+      "kappa": -0.04761904761904767
+    }
+  },
+  "sentence": {
+    "metric": "embeddings",
+    "n": 96,
+    "delta": -0.3857238996654334,
+    "ci_lo": -0.6463823849288187,
+    "ci_hi": -0.12169067009268425,
+    "verdict": "b_better",
+    "human_agreement_matches": {
+      "n": 21,
+      "exact_agreement": 0.7142857142857143,
+      "kappa": 0.44736842105263164
+    },
+    "human_agreement_plausible": {
+      "n": 21,
+      "exact_agreement": 0.9523809523809523,
+      "kappa": 0.6440677966101694
+    }
+  },
+  "_metadata": {
+    "version": "1.0",
+    "generated_at": "2026-09-25T07:32:18.512276+00:00",
+    "source_file": "control_labels.csv",
+    "source_md5": "ba25ddfe1319e95f3814fbb37f41136c",
+    "source_row_count": 890
+  }
+}
