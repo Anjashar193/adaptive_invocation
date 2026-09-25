@@ -1,14 +1,17 @@
 # Adaptive Invocation for Autocomplete Generation
 
-Studies when a small language model (Qwen3-0.6B) should generate an autocomplete
-suggestion while someone types and how much text to generate partial word,
-next word, phrase or sentence under a limited latency budget.
-
 **Question:** Can a lightweight adaptive invocation policy cut unnecessary model
 calls without losing useful suggestions?
 
-This repo = **Phase 1**: checking generation quality first. Invocation policy
-itself is Phase 2/3.
+```
+Phase 1   Generation quality baseline        DONE
+Phase 2.0 Metric validation & calibration    ONGOING
+Phase 2   Invocation policy (the thesis)     NOT STARTED  <- next
+Phase 3   Production runtime validation      NOT STARTED
+Phase 4   Demo                               NOT STARTED
+```
+
+---
 
 ## Dataset
 
@@ -18,35 +21,7 @@ itself is Phase 2/3.
 | Method | Each message cut at 15/30/50/70/85% to simulate mid-typing |
 | Size | 500-800 examples per granularity, from 200 messages |
 
-## Pipeline
-
-| File | Does |
-|---|---|
-| `data_prep.py` | Builds prefix/reference pairs from OASST2 |
-| `baselines.py` | Frequency, bigram, random baselines |
-| `metrics.py` | Scoring logic |
-| `run_eval.py` | Runs Qwen3-0.6B + baselines, saves CSV |
-| `report.py` | Prints summary table |
-
-## The bug
-
-| | |
-|---|---|
-| **Bug 1:** | Exact-match scoring returned 0% everywhere |
-| Cause 1 | Exact-match too strict for open-ended text (also noted in ChaI-TeA, 2025) → switched to first-word match, char overlap, semantic similarity |
-| Cause 2 | Usefulness score compared full model output to a short reference, unfairly penalizing longer predictions → fixed by trimming prediction to reference length first |
-| Effect | Same predictions, corrected grading -numbers below are post-fix |
-**Bug 2: generation** | Fixed token budgets caused predictions to overshoot their target (e.g. "error or issue in the" instead of "error"). Fixed with a custom stopping condition that halts generation at the actual word/phrase/sentence boundary. |
-
-Same underlying model, corrected measurement , numbers below are post-fix.
-
-## Results
-
-Latency measured with PyTorch float32 on Apple M2 Max (MPS). Not production-representative. see Phase 3.
-
-Usefulness is a **mean over a 0/1/2 scale**, not a percentage — 0.833 means
-"averages between plausible and relevant", not "83% correct". The raw
-distribution is given alongside so the mean can't be misread.
+## Phase 1 — Generation Quality Baseline- DONE
 
 | Granularity | Qwen usefulness (0–2) | dist 0/1/2 | Best baseline | Top-5 accuracy | Latency |
 |---|---|---|---|---|---|
@@ -55,20 +30,20 @@ distribution is given alongside so the mean can't be misread.
 | phrase | 0.182 | 339/49/12 | 0.010 | 0.323 | 1,098ms |
 | sentence | 0.195 | 333/56/11 | 0.000 | 0.278 | 3,181ms |
 
-† partial_word top-5 is **0.046** once restricted to references ≥3 characters
-(n=109). The unrestricted 0.150 is inflated by one- and two-character
-remainders that match coincidentally; `report.py` computes both.
+Qwen beats the baseline at every granularity. Gap is largest at
+phrase/sentence (15-20x). Latency jumps sharply with granularity, which is
+the reason invocation policy matters (Phase 2): don't pay sentence-level
+cost on every keystroke.
 
-Qwen beats the baseline at every granularity. Gap is largest at phrase/sentence
-(15-20x), but absolute quality there is still low, longer completions aren't
-solved yet. Latency jumps sharply with granularity, which is the whole reason
-invocation policy matters (Phase 2/3): don't pay sentence-level cost on every
-keystroke.
+---
 
-## Calibration (Phase 2.0)
+## Phase 2.0 — Metric Validation & Calibration- Ongoing
 
-300 examples hand-labeled (75 per granularity, deduplicated by source message)
-and compared against the automatic scorer's 0.75/0.4 thresholds.
+### Round 1: initial calibration (300 examples, single labeler)
+
+300 examples hand-labeled (75 per granularity, deduplicated by source
+message), scored 0/1/2, and compared against the automatic scorer's
+0.75/0.4 similarity thresholds.
 
 | Granularity | Examples | Agreement | κ | κ (linear) |
 |---|---|---|---|---|
@@ -80,65 +55,125 @@ and compared against the automatic scorer's 0.75/0.4 thresholds.
 
 | Agreement between automatic and manual scores | Count | % |
 |---|---|---|
-| Exact match — same score (0, 1, or 2) | 177 | 59.2% |
-| Minor disagreement — 1 point apart | 109 | 36.5% |
-| Major disagreement — 2 points apart | 13 | 4.3% |
+| Exact match | 177 | 59.2% |
+| Off by 1 point | 109 | 36.5% |
+| Off by 2 points | 13 | 4.3% |
 
-Report **linear-weighted κ** as the headline: since disagreement is
-overwhelmingly one point apart, unweighted κ penalises "plausible vs relevant"
-as harshly as a complete reversal and understates the scorer.
+Disagreement direction: the automatic scorer was lower than the human 106
+times, higher 16 times.
 
-**Key finding 1 — disagreement is minor, not catastrophic.** The scorer rarely
-gets things backwards, but it frequently draws the "plausible vs. relevant"
-line in the wrong place.
+This round used one labeler; no inter-annotator agreement was measured.
 
-**Key finding 2 — the error is systematic, not noise.** The scorer was too
-*low* 106 times and too *high* only 16. Random noise would be symmetric.
+### Round 2: control set and two-axis labeling
 
-**Key finding 3 — this is a construct mismatch, not miscalibration.** Cases
-like predicting `quantum` where the user typed `make` were labelled "plausible"
-by the human and "irrelevant" by the scorer: the human scored *grammatical
-plausibility*, the scorer measures *similarity to the reference*. No threshold
-reconciles the two. Best possible accuracy from similarity with thresholds
-fitted directly on the labels is **68.9%** (vs. 55.2% majority-class), and
-honest 5-fold CV of tuning makes `sentence` **worse** (62.7% → 58.7%).
+A control set of 345 items was built (`src/control_set.py`): 120
+partial_word, 75 each of next_word/phrase/sentence. 
 
-**Open limitation:** one labeller, so there is no inter-annotator agreement.
-The 68.9% ceiling is currently indistinguishable from an annotator-noise
-ceiling — if two humans agree only ~70% of the time, no metric can do better.
-See `PHASE2_METRIC_PLAN.md`.
+Scoring was split into two separately-run passes:
+- `plausible` (reference hidden): scored 0/1
+- `matches` (reference shown): scored 0/1/2
+
+All 345 items were labeled by one labeler (Labeler A) on both axes, in that
+order.
+
+A second labeler (Labeler B) was assigned 100 items. A proportional sample
+(35/22/22/21) taken from within the existing 345 items, duplicated under new
+item IDs and shuffled across granularities, so the second labeler's batch
+spans all four granularities. Labeler B labeled this corrected batch on both
+axes.
+
+### Metric decision
+
+Two candidate metrics were compared: `semantic_similarity` (the original
+embedding-based metric) and `keystrokes_saved`.
+
+For each granularity, a paired bootstrap compared each metric's correlation with the `matches`-axis human scores. Decision rule, fixed before results were computed: if the resulting confidence interval excludes zero, adopt the higher-correlation metric; if it includes zero, adopt `keystrokes_saved`.
+
+| Granularity | keystrokes_saved − embeddings, 95% CI | Result | Metric adopted |
+|---|---|---|---|
+| next_word | delta -0.078, [-0.250, +0.075] | CI includes 0 | keystrokes_saved |
+| partial_word | delta +0.244, [+0.047, +0.448] | CI excludes 0 | keystrokes_saved |
+| phrase | delta -0.150, [-0.426, +0.139] | CI includes 0 | keystrokes_saved |
+| sentence | delta -0.386, [-0.646, -0.122] | CI excludes 0 | semantic_similarity |
+
+The CI is the range where the true difference between the
+two metrics most likely falls. If that range crosses zero, both a real
+advantage and no advantage at all are still possible, too uncertain to
+call.
+
+| Granularity | Does the range cross zero? | What that means |
+|---|---|---|
+| next_word | Yes (-0.250 to +0.075) | Can't tell which metric is better |
+| partial_word | No (+0.047 to +0.448, all positive) | keystrokes is consistently ahead |
+| phrase | Yes (-0.426 to +0.139) | Can't tell which metric is better |
+| sentence | No (-0.646 to -0.122, all negative) | embeddings is consistently ahead |
+
+Recorded in `metric_choice.json` (version 1.0, generated 2026-09-25T07:32:18Z,
+source `control_labels.csv`, MD5 `ba25ddfe1319e95f3814fbb37f41136c`,
+890 source rows).
+
+### Inter-annotator agreement
+
+Labeler A's and Labeler B's scores were compared on the 100 overlapping
+items, matched by `(granularity, prefix, reference)`.
+
+| Axis | Granularity | n | Exact agreement | κ |
+|---|---|---|---|---|
+| plausible | next_word | 22 | 95.5% | 0.879 |
+| plausible | partial_word | 35 | 94.3% | 0.839 |
+| plausible | phrase | 22 | 90.9% | -0.048 |
+| plausible | sentence | 21 | 95.2% | 0.644 |
+| matches | next_word | 22 | 68.2% | 0.505 |
+| matches | partial_word | 35 | 94.3% | 0.692 |
+| matches | phrase | 22 | 54.5% | 0.027 |
+| matches | sentence | 21 | 71.4% | 0.447 |
+
+> [!NOTE]
+> One thing to notice here: κ for 'plausible' phrase is -0.048.
+
+### Post-decision checks
+
+- `uv run pytest`: 36 tests passed
+- Bootstrap seed stability: verdicts identical at seed 99 and seed 12345,
+  for all four granularities
+- Power re-check (bootstrap resampling the final labeled data, 60 trials,
+  checking how often the resampled verdict matches the real verdict):
+  next_word 80.0%, partial_word 68.3%, phrase 80.0%, sentence 86.7%
+- `partial_word`'s `matches`-axis score distribution: 0 → 139, 1 → 12, 2 → 4
+  (n=155). 
 
 
-## Run it
+##  Gaps
+partial_word's metric decision has below-target power (68.3% against an 80% target)
+partial_word's matches-axis score distribution is imbalanced: 0 → 139, 1 → 12, 2 → 4 (n=155) — very likely the direct cause of the power shortfall above.
 
+## Next (per PROJECT_GUIDELINE.md, 2a)
+
+## Run It
+
+Set up and reproduce Phase 1:
 ```bash
 uv sync
 uv run python src/run_eval.py
 uv run python -c "from src.report import load_results, summarize; summarize(load_results('phase1_results_v2.csv'))"
 ```
-To reproduce the calibration analysis:
 
+Reproduce the Round 1 calibration:
 ```bash
-uv run python compare_label.py       # agreement, kappa, paired metric comparison
-uv run pytest                        # 36 tests
+uv run python compare_label.py
+uv run pytest
 ```
 
-To build the control set for the next labelling round (see
-`PHASE2_METRIC_PLAN.md`):
-
+Build the control set and reproduce the Round 2 metric decision:
 ```bash
-uv run python -m src.control_set     # writes control_set.csv (345 items)
-uv run python hand_label.py          # labelling instructions
+uv run python -m src.control_set        # writes control_set.csv (345 items)
+uv run python hand_label.py             # labeling instructions
+uv run python -m src.decide_metric      # writes metric_choice.json
+uv run python -m src.inter_annotator    # inter-annotator agreement, matched pairs
+uv run python -m src.power_recheck      # post-labeling power check
 ```
 
-## Still missing / next
-
-| Gap | Next step |
-|---|---|
-| Interpretation of "plausible" for next-word is ambiguous | re-check agreement |
-| Single-reference eval undercounts valid completions | Known limitation, shared with ChaI-TeA |
-| No typing simulation yet | Build one (pauses, timing) using AmazonQAC |
-| No invocation policy yet | Compare always/fixed-interval/pause/boundary/adaptive |
+---
 
 ## References
 
