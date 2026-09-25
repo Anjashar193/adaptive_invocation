@@ -143,9 +143,13 @@ items, matched by `(granularity, prefix, reference)`.
   (n=155). 
 
 
-##  Gaps
-partial_word's metric decision has below-target power (68.3% against an 80% target)
-partial_word's matches-axis score distribution is imbalanced: 0 → 139, 1 → 12, 2 → 4 (n=155) — very likely the direct cause of the power shortfall above.
+## Gaps
+
+- `partial_word`'s metric decision has below-target power (68.3% against an
+  80% target)
+- `partial_word`'s `matches`-axis score distribution is imbalanced: 0 → 139,
+  1 → 12, 2 → 4 (n=155) — very likely the direct cause of the power
+  shortfall above
 
 ## Next (per PROJECT_GUIDELINE.md, 2a)
 
