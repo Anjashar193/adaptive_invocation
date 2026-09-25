@@ -24,7 +24,24 @@ Files: `data_prep.py`, `baselines.py`, `metrics.py`, `run_eval.py`, `recompute_m
 
 This is the novel part. It comes before any runtime or production work.
 
-**2.0. Validate the thresholds first.** Hand-label a few hundred examples and check the 0.75/0.4 usefulness thresholds against them. Phase 2's success is measured with these thresholds — if they're wrong, everything after is wrong. Do this before anything else in Phase 2.
+**2.0. Validate the thresholds first.** `usefulness_score()`'s single 0.75/0.4-threshold scale was found to conflate two different questions — *plausibility* and *reference-match* and disagreed with human judgment 41% of the time. Not fixable by threshold tuning.
+
+A control set of 345 items was built (`src/control_set.py`): 120
+partial_word, 75 each of next_word/phrase/sentence, sized via a power
+simulation. Scoring was split into two separately-run passes:
+- `plausible` (reference hidden): scored 0/1
+- `matches` (reference shown): scored 0/1/2
+A labeller B did the same two passes on 100 item (also from the control.set) to see human agreement.
+
+| Granularity | Result | Metric adopted |
+|---|---|---|
+| next_word | Tie | keystrokes_saved |
+| partial_word | keystrokes_saved wins | keystrokes_saved |
+| phrase | Tie | keystrokes_saved |
+| sentence | semantic_similarity wins | semantic_similarity |
+
+Recorded in `metric_choice.json` (versioned with a timestamp and a hash of
+the source labels).
 
 **2a. When to invoke.** Build the typing-simulation layer first. **Don't invent pause timings** — take them from a real keystroke/prefix-typing dataset and record the source. Primary source: **Amazon Query Autocomplete (`amazon/AmazonQAC`)** — real prefix-typing sequences with `first_prefix_typed_time`/`search_time`, i.e. actual inter-prefix pause behavior during autocomplete, not simulated. Confirm whether timestamps are per-prefix or per-keystroke before relying on them for fine-grained pause modeling; fall back to the Aalto typing studies if finer granularity is needed. Then compare: always-invoke (baseline) → fixed-interval → pause-based → boundary-based → learned/adaptive.
 
