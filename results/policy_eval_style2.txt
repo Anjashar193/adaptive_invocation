@@ -1,0 +1,46 @@
+Typing style 2: sigma=1.2, boundary x3.0  (modelled gaps - robustness check)
+Source: phase1_results_v2.csv (Qwen rows), seed 42, 10 simulated typists per example
+
+== partial_word: metric = keystrokes_saved (chars still saved on arrival); 301 examples ==
+   check: keystroke rate with zero delay = 9.9%  (metric plan: 9.9%)   mean latency 0.46s
+policy          calls/100 keys  model-s/100 keys  value/call  value kept %  missed %
+always                   100.0              45.6        0.11         100.0       0.0
+every 3 keys              32.2              14.7        0.13          47.6      64.6
+every 5 keys              18.7               8.5        0.08          17.2      80.7
+pause 0.3s                52.5              23.9        0.13          58.0      44.8
+pause 0.6s                33.8              15.4        0.16          41.4      62.3
+pause 1.0s                22.0              10.0        0.20          30.4      73.6
+word boundary             18.1               8.3         nan           0.0     100.0
+
+== next_word: metric = keystrokes_saved (chars still saved on arrival); 400 examples ==
+   check: keystroke rate with zero delay = 25.9%  (metric plan: 25.9%)   mean latency 0.41s
+policy          calls/100 keys  model-s/100 keys  value/call  value kept %  missed %
+always                   100.0              41.3        0.95         100.0       0.0
+every 3 keys              31.8              13.1        1.05          35.7      65.1
+every 5 keys              17.8               7.4        0.85          14.3      85.2
+pause 0.3s                53.3              22.0        0.97          78.7      22.3
+pause 0.6s                34.6              14.3        0.99          63.1      37.7
+pause 1.0s                22.7               9.4        1.03          48.5      52.5
+word boundary             20.1               8.3        0.95         100.0       0.0
+
+== phrase: metric = keystrokes_saved (chars still saved on arrival); 400 examples ==
+   check: keystroke rate with zero delay = 7.1%  (metric plan: 7.1%)   mean latency 1.10s
+policy          calls/100 keys  model-s/100 keys  value/call  value kept %  missed %
+always                   100.0             109.8        1.25         100.0       0.0
+every 3 keys              31.8              34.9        1.41          36.3      63.7
+every 5 keys              17.8              19.6        1.20          15.4      83.3
+pause 0.3s                52.2              57.3        1.27          77.0      23.7
+pause 0.6s                33.4              36.7        1.35          62.7      38.5
+pause 1.0s                21.8              24.0        1.47          50.6      52.4
+word boundary             20.1              22.1        1.25         100.0       0.0
+
+== sentence: metric = semantic_similarity (similarity if still valid); 400 examples ==
+   check: keystroke rate with zero delay = 3.9%  (metric plan: 3.9%)   mean latency 3.18s
+policy          calls/100 keys  model-s/100 keys  value/call  value kept %  missed %
+always                   100.0             318.1        0.10         100.0       0.0
+every 3 keys              31.8             101.1        0.09          28.2      72.1
+every 5 keys              17.8              56.7        0.10          16.0      84.8
+pause 0.3s                52.1             165.8        0.11          80.9      22.9
+pause 0.6s                33.4             106.2        0.11          65.7      37.4
+pause 1.0s                21.7              69.1        0.12          51.2      51.9
+word boundary             20.1              64.1        0.10         100.0       0.0
