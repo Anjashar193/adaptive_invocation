@@ -17,7 +17,7 @@
       *(500 of 168,595 participant files, 7,452 sentences kept; word-boundary effect 1.48×, spread 0.58 — milder than the modelled styles, see §2.1)*
 - [x] **Stage A6** — More than 200 messages with `message_id` saved: `src/run_eval_v3.py` → `phase1_results_v3.csv`; evaluated by `src/policy_eval_v3.py`
       *(240 evaluation messages, 4,510 Qwen examples, 18,040 rows; all 382 next_word prefixes of the v2 run reappear in v3; intervals are computed over messages)*
-- [ ] **Stage A7** — Learned policy *(a gap is left by every simple rule, see §1.3)* ← **YOU ARE HERE**
+- [ ] **Stage A7** — Learned policy *(a gap is left by every simple rule, see §1.3)* ← **WE ARE HERE**
 - [ ] **Stage A8** — One run on AESLC
 - [ ] `tests/` for `typing_sim` and `policy_eval`
 
