@@ -1,0 +1,91 @@
+Source: phase1_results_v3.csv; 240 messages, 4510 Qwen examples; 10 simulated typists per example; seed 42
+Typing model: Aalto gap shape x AmazonQAC pace; latency = single-suggestion time
+Samples: 45100 (examples used: {'partial_word': 910, 'next_word': 1200, 'phrase': 1200, 'sentence': 1200}); mix weight mid-word x 3.92
+Evaluation: 5-fold CV grouped by message; bootstrap 1000 resamples over messages
+
+== word-level mix: always-invoke delivers at 19.1 % of decision points (oracle needs that few calls) ==
+policy                                       missed @20% calls     missed @35% calls     missed @50% calls
+random skip                                               80.0                  65.0                  50.0
+oracle                                                     0.0                   0.0                   0.0
+pause                                             80.5 [79-82]          66.3 [65-68]          52.9 [51-55]
+boundary + mid-word                                        n/a          55.1 [51-58]          44.7 [41-48]
+logreg [timing] gate 0s                           76.9 [76-78]          60.8 [59-62]          45.5 [44-47]
+logreg [timing] gate 0.4s                         77.1 [76-79]          62.5 [60-64]          49.5 [47-52]
+logreg [timing+position] gate 0s                  65.5 [61-69]          49.2 [44-54]          33.8 [29-38]
+logreg [timing+position] gate 0.4s                65.9 [62-69]          52.5 [48-56]          42.3 [38-46]
+gbt [timing+position] gate 0s                     68.7 [65-72]          46.6 [41-51]          31.5 [27-36]
+gbt [timing+position] gate 0.4s                   68.2 [64-71]          50.6 [46-54]          41.6 [38-45]
+-- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
+  20% calls: learned 18 % | best simple rule (pause) -1 % | learned minus rule in missed points: -14.6 [-18.1, -11.6]
+  35% calls: learned 19 % | best simple rule (boundary + mid-word) 15 % | learned minus rule in missed points: -2.6 [-4.6, -0.3]
+  50% calls: learned 15 % | best simple rule (boundary + mid-word) 11 % | learned minus rule in missed points: -2.4 [-4.9, +0.3]
+
+== partial_word: always-invoke delivers at 15.8 % of decision points (oracle needs that few calls) ==
+policy                                       missed @20% calls     missed @35% calls     missed @50% calls
+random skip                                               80.0                  65.0                  50.0
+oracle                                                     0.0                   0.0                   0.0
+pause                                             82.8 [81-84]          70.5 [69-72]          58.5 [56-61]
+boundary + mid-word                               82.8 [81-84]          70.5 [69-72]          58.5 [56-61]
+logreg [timing] gate 0s                           77.9 [75-80]          62.3 [60-65]          47.3 [44-50]
+logreg [timing] gate 0.4s                         80.6 [79-82]          68.4 [66-71]          57.0 [55-60]
+logreg [timing+position] gate 0s                  68.0 [61-74]          51.5 [45-58]          39.7 [33-46]
+logreg [timing+position] gate 0.4s                76.6 [73-80]          66.6 [63-70]          56.4 [53-59]
+gbt [timing+position] gate 0s                     67.3 [60-74]          51.9 [45-59]          39.0 [32-45]
+gbt [timing+position] gate 0.4s                   77.5 [74-81]          65.7 [62-69]          56.8 [54-60]
+-- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
+  20% calls: learned 4 % | best simple rule (boundary + mid-word) -4 % | learned minus rule in missed points: -6.2 [-10.2, -2.4]
+  35% calls: learned -3 % | best simple rule (boundary + mid-word) -8 % | learned minus rule in missed points: -3.8 [-7.6, -0.3]
+  50% calls: learned -13 % | best simple rule (boundary + mid-word) -17 % | learned minus rule in missed points: -2.1 [-4.6, +0.4]
+
+== next_word: always-invoke delivers at 28.7 % of decision points (oracle needs that few calls) ==
+policy                                       missed @20% calls     missed @35% calls     missed @50% calls
+random skip                                               80.0                  65.0                  50.0
+oracle                                                    30.3                   0.0                   0.0
+pause                                             81.0 [80-82]          66.9 [66-68]          52.0 [51-53]
+boundary + mid-word                                        n/a                   n/a                   n/a
+logreg [timing] gate 0s                           78.0 [77-79]          62.1 [61-63]          47.6 [46-49]
+logreg [timing] gate 0.4s                         78.0 [77-79]          62.1 [61-63]          47.6 [46-49]
+logreg [timing+position] gate 0s                  77.3 [74-81]          58.1 [54-62]          41.8 [38-46]
+logreg [timing+position] gate 0.4s                77.3 [74-81]          58.1 [54-62]          41.8 [38-46]
+gbt [timing+position] gate 0s                     77.5 [74-81]          62.4 [58-66]          45.2 [41-49]
+gbt [timing+position] gate 0.4s                   77.5 [74-81]          62.4 [58-66]          45.2 [41-49]
+-- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
+  20% calls: learned 5 % | best simple rule (pause) -2 % | learned minus rule in missed points: -3.7 [-7.0, -0.1]
+  35% calls: learned 11 % | best simple rule (pause) -3 % | learned minus rule in missed points: -8.9 [-12.9, -4.9]
+  50% calls: learned 16 % | best simple rule (pause) -4 % | learned minus rule in missed points: -10.2 [-14.8, -5.7]
+
+== phrase: always-invoke delivers at 28.3 % of decision points (oracle needs that few calls) ==
+policy                                       missed @20% calls     missed @35% calls     missed @50% calls
+random skip                                               80.0                  65.0                  50.0
+oracle                                                    29.4                   0.0                   0.0
+pause                                             79.5 [78-81]          65.0 [64-66]          50.4 [49-52]
+boundary + mid-word                                        n/a                   n/a                   n/a
+logreg [timing] gate 0s                           76.6 [75-78]          60.9 [59-62]          45.6 [44-47]
+logreg [timing] gate 0.4s                         76.6 [75-78]          60.9 [59-62]          45.6 [44-47]
+logreg [timing+position] gate 0s                  75.9 [73-79]          57.2 [53-61]          40.9 [36-45]
+logreg [timing+position] gate 0.4s                75.9 [73-79]          57.2 [53-61]          40.9 [36-45]
+gbt [timing+position] gate 0s                     78.8 [75-82]          61.7 [58-65]          43.1 [39-47]
+gbt [timing+position] gate 0.4s                   78.8 [75-82]          61.7 [58-65]          43.1 [39-47]
+-- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
+  20% calls: learned 8 % | best simple rule (pause) 1 % | learned minus rule in missed points: -3.6 [-6.9, -0.7]
+  35% calls: learned 12 % | best simple rule (pause) 0 % | learned minus rule in missed points: -7.7 [-11.9, -3.5]
+  50% calls: learned 18 % | best simple rule (pause) -1 % | learned minus rule in missed points: -9.5 [-13.8, -5.1]
+
+== sentence: always-invoke delivers at 13.1 % of decision points (oracle needs that few calls) ==
+policy                                       missed @20% calls     missed @35% calls     missed @50% calls
+random skip                                               80.0                  65.0                  50.0
+oracle                                                     0.0                   0.0                   0.0
+pause                                             81.3 [79-83]          67.6 [65-70]          53.8 [51-56]
+boundary + mid-word                                        n/a                   n/a                   n/a
+logreg [timing] gate 0s                           77.4 [75-80]          61.7 [59-64]          46.1 [43-49]
+logreg [timing] gate 0.4s                         77.4 [75-80]          61.7 [59-64]          46.1 [43-49]
+logreg [timing+position] gate 0s                  61.1 [54-67]          39.3 [32-46]          18.6 [12-25]
+logreg [timing+position] gate 0.4s                61.1 [54-67]          39.3 [32-46]          18.6 [12-25]
+gbt [timing+position] gate 0s                     65.4 [59-72]          39.0 [32-46]          23.4 [17-30]
+gbt [timing+position] gate 0.4s                   65.4 [59-72]          39.0 [32-46]          23.4 [17-30]
+-- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
+  20% calls: learned 24 % | best simple rule (pause) -2 % | learned minus rule in missed points: -20.2 [-26.8, -13.7]
+  35% calls: learned 40 % | best simple rule (pause) -4 % | learned minus rule in missed points: -28.4 [-36.0, -21.7]
+  50% calls: learned 63 % | best simple rule (pause) -8 % | learned minus rule in missed points: -35.2 [-41.5, -29.3]
+
+Saved results/learned_policy_summary.csv and results/learned_policy_curves.csv
