@@ -1,121 +1,321 @@
-group,family,budget,missed,lo,hi,gap_closed
-word-level mix,pause,20,80.49026013693798,79.31613766283941,81.59790673570502,
-word-level mix,pause,35,66.34091043434702,64.68129744675717,67.92802555310098,
-word-level mix,pause,50,52.85921301264393,50.94400645009742,54.578397561984005,
-word-level mix,boundary + mid-word,20,,,,
-word-level mix,boundary + mid-word,35,55.050833244714184,50.91726240847804,58.38057473744973,
-word-level mix,boundary + mid-word,50,44.70583397817464,41.18126330960082,47.52877132911287,
-word-level mix,logreg [timing] gate 0s,20,76.94889005748433,75.54894118529161,78.23875496869165,
-word-level mix,logreg [timing] gate 0s,35,60.799796963109074,59.12021122213929,62.46994517400934,
-word-level mix,logreg [timing] gate 0s,50,45.451833865349755,43.65697495297217,47.190194034315006,
-word-level mix,logreg [timing] gate 0.4s,20,77.13632542338479,75.57306294533326,78.5520728870205,
-word-level mix,logreg [timing] gate 0.4s,35,62.532236421223544,60.278943528999314,64.43936392687247,
-word-level mix,logreg [timing] gate 0.4s,50,49.458380100262026,47.04682307112155,51.717035509218086,
-word-level mix,logreg [timing+position] gate 0s,20,65.51968167323767,61.36311146759005,68.9652332377479,
-word-level mix,logreg [timing+position] gate 0s,35,49.24900674682697,44.033651074258,53.57041453365152,
-word-level mix,logreg [timing+position] gate 0s,50,33.80385473955051,28.954882548208595,38.2904314760092,
-word-level mix,logreg [timing+position] gate 0.4s,20,65.9014679933413,62.130877625282025,69.19864517862086,
-word-level mix,logreg [timing+position] gate 0.4s,35,52.4723088175817,48.19260552514833,56.02541363123628,
-word-level mix,logreg [timing+position] gate 0.4s,50,42.298766500671725,38.48005333393286,45.81931626729883,
-word-level mix,gbt [timing+position] gate 0s,20,68.67231686056058,64.89384561477014,72.35889710111658,
-word-level mix,gbt [timing+position] gate 0s,35,46.60024970617466,41.3957106084601,50.90397228760953,
-word-level mix,gbt [timing+position] gate 0s,50,31.53058469732126,26.609619171048706,36.03571159744853,
-word-level mix,gbt [timing+position] gate 0.4s,20,68.18372563137335,64.38785735678086,71.40768374256903,
-word-level mix,gbt [timing+position] gate 0.4s,35,50.596659158540746,46.29942168600892,54.20632898375682,
-word-level mix,gbt [timing+position] gate 0.4s,50,41.628372254247935,38.0991490296905,44.7696808943442,
-partial_word,pause,20,82.82849547586025,81.27252769690841,84.42838939310771,
-partial_word,pause,35,70.46320960054966,68.60274043047077,72.4194178181138,
-partial_word,pause,50,58.51542888880419,56.42093213258668,60.70017323053797,
-partial_word,boundary + mid-word,20,82.82849547586025,81.27252769690841,84.42838939310771,
-partial_word,boundary + mid-word,35,70.46320960054966,68.60274043047077,72.4194178181138,
-partial_word,boundary + mid-word,50,58.51542888880419,56.42093213258668,60.70017323053797,
-partial_word,logreg [timing] gate 0s,20,77.9338920034033,75.3679006210748,80.08656432361033,
-partial_word,logreg [timing] gate 0s,35,62.27863046044864,59.57053688339439,64.72169414092245,
-partial_word,logreg [timing] gate 0s,50,47.2617448206183,44.15827794509523,50.0333088755568,
-partial_word,logreg [timing] gate 0.4s,20,80.64728739927328,78.75057660740659,82.47984125910706,
-partial_word,logreg [timing] gate 0.4s,35,68.40895581533584,66.24576982872233,70.71999237397299,
-partial_word,logreg [timing] gate 0.4s,50,57.042080307181465,54.63335515692039,59.610277401385105,
-partial_word,logreg [timing+position] gate 0s,20,68.01573406698347,61.140229157378975,74.33993083185291,
-partial_word,logreg [timing+position] gate 0s,35,51.45374223044126,44.60570695225277,58.3885595928135,
-partial_word,logreg [timing+position] gate 0s,50,39.68823493939577,33.3458127515674,46.072088944527856,
-partial_word,logreg [timing+position] gate 0.4s,20,76.61351935870613,72.90390956881568,80.083569042825,
-partial_word,logreg [timing+position] gate 0.4s,35,66.62885009938833,63.03925688413734,70.03107085647682,
-partial_word,logreg [timing+position] gate 0.4s,50,56.377834913081855,53.35755142351751,59.43647639426163,
-partial_word,gbt [timing+position] gate 0s,20,67.25522406166901,60.35492421793755,73.93340632706567,
-partial_word,gbt [timing+position] gate 0s,35,51.931840697444024,44.83818647046352,58.87580110970083,
-partial_word,gbt [timing+position] gate 0s,50,38.98196948682386,32.0999408317575,45.368326954316544,
-partial_word,gbt [timing+position] gate 0.4s,20,77.50959165660969,73.94923869718282,81.12323156456446,
-partial_word,gbt [timing+position] gate 0.4s,35,65.70360235408779,62.09454957567532,69.31212308102195,
-partial_word,gbt [timing+position] gate 0.4s,50,56.82444179640952,53.53559253897197,60.11313621445164,
-next_word,pause,20,81.01757073713038,80.08487872222933,82.00327744459527,
-next_word,pause,35,66.93801359711146,65.6957304314767,68.28307838171472,
-next_word,pause,50,51.98569587432635,50.66679320677168,53.3842463853845,
-next_word,boundary + mid-word,20,,,,
-next_word,boundary + mid-word,35,,,,
-next_word,boundary + mid-word,50,,,,
-next_word,logreg [timing] gate 0s,20,77.95763811705771,76.82749536987933,79.11574179519984,
-next_word,logreg [timing] gate 0s,35,62.08865660085172,60.73586685405454,63.44798442879581,
-next_word,logreg [timing] gate 0s,50,47.580251612840264,46.056612816775186,49.06070364625353,
-next_word,logreg [timing] gate 0.4s,20,77.95763811705771,76.82749536987933,79.11574179519984,
-next_word,logreg [timing] gate 0.4s,35,62.08865660085172,60.73586685405454,63.44798442879581,
-next_word,logreg [timing] gate 0.4s,50,47.580251612840264,46.056612816775186,49.06070364625353,
-next_word,logreg [timing+position] gate 0s,20,77.30807645681958,74.1236160742715,80.7658381906386,
-next_word,logreg [timing+position] gate 0s,35,58.06754221388368,54.339868596303575,61.96725640937306,
-next_word,logreg [timing+position] gate 0s,50,41.769938448372336,37.53899986543634,46.0146900088321,
-next_word,logreg [timing+position] gate 0.4s,20,77.30807645681958,74.1236160742715,80.7658381906386,
-next_word,logreg [timing+position] gate 0.4s,35,58.06754221388368,54.339868596303575,61.96725640937306,
-next_word,logreg [timing+position] gate 0.4s,50,41.769938448372336,37.53899986543634,46.0146900088321,
-next_word,gbt [timing+position] gate 0s,20,77.48812420345267,73.83543711121393,81.02923399033105,
-next_word,gbt [timing+position] gate 0s,35,62.35302250981694,58.452895419158395,66.05965173993718,
-next_word,gbt [timing+position] gate 0s,50,45.18611839010953,41.17219811600858,49.04167885253589,
-next_word,gbt [timing+position] gate 0.4s,20,77.48812420345267,73.83543711121393,81.02923399033105,
-next_word,gbt [timing+position] gate 0.4s,35,62.35302250981694,58.452895419158395,66.05965173993718,
-next_word,gbt [timing+position] gate 0.4s,50,45.18611839010953,41.17219811600858,49.04167885253589,
-phrase,pause,20,79.48344865625383,78.3631854029084,80.55358668653385,
-phrase,pause,35,64.96284515249526,63.64771837762404,66.31201849352342,
-phrase,pause,50,50.39661933801031,48.921195985951755,51.86756907014253,
-phrase,boundary + mid-word,20,,,,
-phrase,boundary + mid-word,35,,,,
-phrase,boundary + mid-word,50,,,,
-phrase,logreg [timing] gate 0s,20,76.55053604879515,75.22079405973001,77.71812999189814,
-phrase,logreg [timing] gate 0s,35,60.90405582991797,59.39553730706059,62.33322910390502,
-phrase,logreg [timing] gate 0s,50,45.63430958608848,44.069665951548785,47.186101524591585,
-phrase,logreg [timing] gate 0.4s,20,76.55053604879515,75.22079405973001,77.71812999189814,
-phrase,logreg [timing] gate 0.4s,35,60.90405582991797,59.39553730706059,62.33322910390502,
-phrase,logreg [timing] gate 0.4s,50,45.63430958608848,44.069665951548785,47.186101524591585,
-phrase,logreg [timing+position] gate 0s,20,75.86851542508047,72.76531317513022,78.8629050588628,
-phrase,logreg [timing+position] gate 0s,35,57.23871923556944,53.287779882038265,61.31317105374894,
-phrase,logreg [timing+position] gate 0s,50,40.92060016030411,36.455372692809576,44.98655544076644,
-phrase,logreg [timing+position] gate 0.4s,20,75.86851542508047,72.76531317513022,78.8629050588628,
-phrase,logreg [timing+position] gate 0.4s,35,57.23871923556944,53.287779882038265,61.31317105374894,
-phrase,logreg [timing+position] gate 0.4s,50,40.92060016030411,36.455372692809576,44.98655544076644,
-phrase,gbt [timing+position] gate 0s,20,78.79499599427174,75.35350718827222,82.13393170380978,
-phrase,gbt [timing+position] gate 0s,35,61.67922747179622,57.571847009538295,65.46920780503883,
-phrase,gbt [timing+position] gate 0s,50,43.07125048405816,38.77833265502848,46.828687799590774,
-phrase,gbt [timing+position] gate 0.4s,20,78.79499599427174,75.35350718827222,82.13393170380978,
-phrase,gbt [timing+position] gate 0.4s,35,61.67922747179622,57.571847009538295,65.46920780503883,
-phrase,gbt [timing+position] gate 0.4s,50,43.07125048405816,38.77833265502848,46.828687799590774,
-sentence,pause,20,81.26430431197244,79.4172817741579,83.00857759563235,
-sentence,pause,35,67.6383872484822,64.71981593062505,70.13814267466265,
-sentence,pause,50,53.81961882067013,51.042658596844994,56.272444489341524,
-sentence,boundary + mid-word,20,,,,
-sentence,boundary + mid-word,35,,,,
-sentence,boundary + mid-word,50,,,,
-sentence,logreg [timing] gate 0s,20,77.41115853282997,75.18177277986891,79.58349772169358,
-sentence,logreg [timing] gate 0s,35,61.69798681660173,59.44061651128018,64.00343966537467,
-sentence,logreg [timing] gate 0s,50,46.10789595492878,43.4690389781992,48.573321740494414,
-sentence,logreg [timing] gate 0.4s,20,77.41115853282997,75.18177277986891,79.58349772169358,
-sentence,logreg [timing] gate 0.4s,35,61.69798681660173,59.44061651128018,64.00343966537467,
-sentence,logreg [timing] gate 0.4s,50,46.10789595492878,43.4690389781992,48.573321740494414,
-sentence,logreg [timing+position] gate 0s,20,61.067040829695244,54.3302603556819,67.38673394605738,
-sentence,logreg [timing+position] gate 0s,35,39.25942067333883,31.712462184224822,45.88080253532261,
-sentence,logreg [timing+position] gate 0s,50,18.57469701234245,12.178654896234521,24.575080412578156,
-sentence,logreg [timing+position] gate 0.4s,20,61.067040829695244,54.3302603556819,67.38673394605738,
-sentence,logreg [timing+position] gate 0.4s,35,39.25942067333883,31.712462184224822,45.88080253532261,
-sentence,logreg [timing+position] gate 0.4s,50,18.57469701234245,12.178654896234521,24.575080412578156,
-sentence,gbt [timing+position] gate 0s,20,65.376874365142,59.138671761171345,71.54777194895476,
-sentence,gbt [timing+position] gate 0s,35,39.040490029641276,32.43097519383009,46.21504166407319,
-sentence,gbt [timing+position] gate 0s,50,23.40332235798936,17.409168165826557,30.05345714596956,
-sentence,gbt [timing+position] gate 0.4s,20,65.376874365142,59.138671761171345,71.54777194895476,
-sentence,gbt [timing+position] gate 0.4s,35,39.040490029641276,32.43097519383009,46.21504166407319,
-sentence,gbt [timing+position] gate 0.4s,50,23.40332235798936,17.409168165826557,30.05345714596956,
+group,family,chosen,budget,missed,lo,hi
+word-level mix,pause,False,20,81.14507493018736,79.33013700029056,82.92121996889382
+word-level mix,pause,False,35,68.10110983876963,65.8971242392147,70.3408755756363
+word-level mix,pause,False,50,54.43894593411068,52.00610130747709,56.70764168691306
+word-level mix,boundary + mid-word,False,20,,,
+word-level mix,boundary + mid-word,False,35,55.69437616259812,50.01014926673374,60.87182069274897
+word-level mix,boundary + mid-word,False,50,46.18535581115613,41.372362903318404,50.5281400745162
+word-level mix,min letters in word,False,20,72.08824419439071,65.21337293281358,79.35443641813883
+word-level mix,min letters in word,False,35,61.02720146978289,54.31074393902648,68.43352601119345
+word-level mix,min letters in word,False,50,52.656452132403885,46.484211350397636,59.81268691336864
+word-level mix,word start + min letters,False,20,,,
+word-level mix,word start + min letters,False,35,48.67131014881079,42.31218368777993,54.68376491933344
+word-level mix,word start + min letters,False,50,30.45481733673171,23.867777369880297,36.952196313958254
+word-level mix,min words typed,False,20,,,
+word-level mix,min words typed,False,35,,58.14525636460745,70.83465869755788
+word-level mix,min words typed,False,50,47.91076548196705,41.42582289534361,55.82963544737953
+word-level mix,word start + min words,False,20,67.14042953085313,61.77903739816101,71.81420579267555
+word-level mix,word start + min words,False,35,,,
+word-level mix,word start + min words,False,50,,,
+word-level mix,logreg [timing] gate 0s,False,20,76.36787879030629,74.55135317940628,78.20151984472487
+word-level mix,logreg [timing] gate 0s,False,35,61.07410370227464,58.82344090179932,63.418061124979275
+word-level mix,logreg [timing] gate 0s,False,50,46.02350235047067,43.61505606009292,48.30107650436042
+word-level mix,logreg [timing] gate 0.4s,False,20,77.28530476410305,75.19828630980065,79.2733045035535
+word-level mix,logreg [timing] gate 0.4s,False,35,62.886032396415864,60.26026084578139,65.31536376118193
+word-level mix,logreg [timing] gate 0.4s,False,50,49.416887124912684,46.624533683300115,52.22733817781509
+word-level mix,logreg [timing+position] gate 0s,False,20,66.47826838145507,61.05912240939031,71.2075820904946
+word-level mix,logreg [timing+position] gate 0s,False,35,51.90311976428178,45.86080528834253,57.4227965658054
+word-level mix,logreg [timing+position] gate 0s,False,50,39.315981654379634,33.125516935852076,45.30777640148983
+word-level mix,logreg [timing+position] gate 0.4s,False,20,67.62841817011298,62.300194292518704,72.11813132431274
+word-level mix,logreg [timing+position] gate 0.4s,False,35,55.18736855787939,49.582316011190485,60.06589206354809
+word-level mix,logreg [timing+position] gate 0.4s,False,50,45.845941246106825,40.67469925588638,50.86144743916173
+word-level mix,gbt [timing+position] gate 0s,True,20,67.6192900985493,62.11852836323537,72.85586091280392
+word-level mix,gbt [timing+position] gate 0s,True,35,53.55966467032417,46.18405142439099,59.35207797348007
+word-level mix,gbt [timing+position] gate 0s,True,50,36.78410589789301,29.442661145027024,43.45560224512787
+word-level mix,gbt [timing+position] gate 0.4s,False,20,69.11228303150622,64.61356831145886,73.45927850372351
+word-level mix,gbt [timing+position] gate 0.4s,False,35,53.73616687878035,47.61408634094762,59.54748368785791
+word-level mix,gbt [timing+position] gate 0.4s,False,50,43.22735976021074,38.4666623708011,47.826093446943176
+word-level mix,logreg [word shape] gate 0s,False,20,,,
+word-level mix,logreg [word shape] gate 0s,False,35,47.251459586095976,40.93153449817603,53.29018970063126
+word-level mix,logreg [word shape] gate 0s,False,50,29.67454609601225,23.104575678708265,36.60949918436932
+word-level mix,logreg [word shape] gate 0.4s,False,20,,,
+word-level mix,logreg [word shape] gate 0.4s,False,35,51.13303921438841,45.312318056452064,56.31542056676561
+word-level mix,logreg [word shape] gate 0.4s,False,50,41.098014826173696,36.28344189964872,45.75281069909881
+word-level mix,logreg [prefix length] gate 0s,False,20,85.16197903449638,79.53314135370847,89.64420240915278
+word-level mix,logreg [prefix length] gate 0s,False,35,65.00886638790571,58.83103386023008,73.3040128808967
+word-level mix,logreg [prefix length] gate 0s,False,50,50.170407492916354,42.80950189329252,57.91871469396058
+word-level mix,logreg [prefix length] gate 0.4s,False,20,83.08955728835898,79.26950134119953,87.24436823039136
+word-level mix,logreg [prefix length] gate 0.4s,False,35,67.54719293506619,62.4026978408319,71.88441402240102
+word-level mix,logreg [prefix length] gate 0.4s,False,50,50.441110350717935,45.64376744334138,55.22433696299783
+word-level mix,logreg [word shape+length] gate 0s,False,20,66.94937750909034,61.45556933666229,71.68985645635655
+word-level mix,logreg [word shape+length] gate 0s,False,35,51.72251920225651,45.24661325343652,57.315264473884405
+word-level mix,logreg [word shape+length] gate 0s,False,50,42.60294141166918,35.25717311000926,49.31173898225423
+word-level mix,logreg [word shape+length] gate 0.4s,False,20,67.45746445299342,62.2424320797526,72.26727161260261
+word-level mix,logreg [word shape+length] gate 0.4s,False,35,56.4863794279396,50.646102891306846,61.59224611476805
+word-level mix,logreg [word shape+length] gate 0.4s,False,50,46.74020184561495,41.160556742559166,51.86000351290448
+word-level mix,"logreg [timing+position, no length] gate 0s",False,20,68.93802385173376,63.90864319089355,73.42903763394303
+word-level mix,"logreg [timing+position, no length] gate 0s",False,35,48.52765279266631,42.42748296251603,53.93281486740411
+word-level mix,"logreg [timing+position, no length] gate 0s",False,50,31.614722426739263,26.140278330249686,37.10551586622802
+word-level mix,gbt [timing+position] gate 0s,True,pass,0.1,,
+word-level mix,pause,False,pass,0.0,,
+word-level mix,boundary + mid-word,False,pass,0.0,,
+word-level mix,min letters in word,False,pass,0.0,,
+word-level mix,word start + min letters,False,pass,5.800000000000001,,
+word-level mix,min words typed,False,pass,0.0,,
+word-level mix,word start + min words,False,pass,0.0,,
+partial_word,pause,False,20,84.44370887497993,82.15358930109569,86.47049415908938
+partial_word,pause,False,35,72.54118575515439,69.65064014886732,75.18786428943594
+partial_word,pause,False,50,60.213727362761745,57.28000652513318,63.3417243524222
+partial_word,boundary + mid-word,False,20,84.44370887497993,82.15358930109569,86.47049415908938
+partial_word,boundary + mid-word,False,35,72.54118575515439,69.65064014886732,75.18786428943594
+partial_word,boundary + mid-word,False,50,60.213727362761745,57.28000652513318,63.3417243524222
+partial_word,min letters in word,False,20,65.87602783048703,55.798664420255264,75.31029344946775
+partial_word,min letters in word,False,35,46.97480340234313,37.61423263497378,57.03983452549818
+partial_word,min letters in word,False,50,35.43116171199663,27.674819548585365,44.58347780623925
+partial_word,word start + min letters,False,20,65.87602783048703,55.798664420255264,75.31029344946775
+partial_word,word start + min letters,False,35,46.97480340234313,37.61423263497378,57.03983452549818
+partial_word,word start + min letters,False,50,35.43116171199663,27.674819548585365,44.58347780623925
+partial_word,min words typed,False,20,,,
+partial_word,min words typed,False,35,,60.50578912762049,77.3660717087552
+partial_word,min words typed,False,50,51.527370478983386,41.391891838584144,62.5895602521046
+partial_word,word start + min words,False,20,,,
+partial_word,word start + min words,False,35,,,
+partial_word,word start + min words,False,50,,,
+partial_word,logreg [timing] gate 0s,False,20,76.35805919301608,73.12452991734169,79.0534553360274
+partial_word,logreg [timing] gate 0s,False,35,62.74465386009423,59.18193327348267,66.24590626512261
+partial_word,logreg [timing] gate 0s,False,50,48.34949022229651,44.60126291692793,52.160968223595084
+partial_word,logreg [timing] gate 0.4s,False,20,82.00463760978413,79.39487570963317,84.44608934645157
+partial_word,logreg [timing] gate 0.4s,False,35,68.96881720430108,66.05059181824939,72.02060811821322
+partial_word,logreg [timing] gate 0.4s,False,50,57.7482605945604,54.50268899196724,61.06534695146458
+partial_word,logreg [timing+position] gate 0s,False,20,68.6217758427337,61.85708570261385,75.28551968456584
+partial_word,logreg [timing+position] gate 0s,False,35,51.65243516761543,44.55992070372287,59.11153357809731
+partial_word,logreg [timing+position] gate 0s,False,50,37.810361681329425,31.159875864626994,44.76395675424102
+partial_word,logreg [timing+position] gate 0.4s,False,20,77.2038567493113,73.49892579067077,81.01548897751647
+partial_word,logreg [timing+position] gate 0.4s,False,35,66.04702022963367,62.05290750161325,69.91156682547039
+partial_word,logreg [timing+position] gate 0.4s,False,50,55.723952539859106,52.57606397761041,59.086413645764324
+partial_word,gbt [timing+position] gate 0s,True,20,66.17703533026113,56.253474863363266,76.91289790032909
+partial_word,gbt [timing+position] gate 0s,True,35,57.862903225806456,47.372551801449085,68.50818498150753
+partial_word,gbt [timing+position] gate 0s,True,50,43.817204301075265,34.4671678196935,53.036478830780986
+partial_word,gbt [timing+position] gate 0.4s,False,20,80.57294174289841,75.64718668102621,85.0393115732974
+partial_word,gbt [timing+position] gate 0.4s,False,35,67.11578809336481,62.65968371634191,71.84420905321846
+partial_word,gbt [timing+position] gate 0.4s,False,50,57.91890681003584,53.32883295087534,62.417900074124596
+partial_word,logreg [word shape] gate 0s,False,20,64.55948664585502,54.51971717244586,74.05461366648157
+partial_word,logreg [word shape] gate 0s,False,35,45.69892473118279,35.962280506927705,56.68573307044177
+partial_word,logreg [word shape] gate 0s,False,50,34.177927927927925,25.810388419179112,43.61640141170986
+partial_word,logreg [word shape] gate 0.4s,False,20,74.13965020077075,68.55227861039012,80.0116409119381
+partial_word,logreg [word shape] gate 0.4s,False,35,64.94149606567429,60.16388579579139,70.15490400063814
+partial_word,logreg [word shape] gate 0.4s,False,50,57.1561879323334,52.849825461384604,61.918266596878766
+partial_word,logreg [prefix length] gate 0s,False,20,77.87298387096774,71.00367682493332,86.0097159496692
+partial_word,logreg [prefix length] gate 0s,False,35,66.47252090800478,57.9709450558217,75.43168522432354
+partial_word,logreg [prefix length] gate 0s,False,50,50.73924731182796,40.48536811166802,60.96691488932727
+partial_word,logreg [prefix length] gate 0.4s,False,20,86.31912442396313,81.21037743245549,90.89473395289806
+partial_word,logreg [prefix length] gate 0.4s,False,35,72.04595400674987,66.31090755018003,78.02099425783734
+partial_word,logreg [prefix length] gate 0.4s,False,50,57.7546581301814,52.820106260445904,62.375984627722055
+partial_word,logreg [word shape+length] gate 0s,False,20,65.93095642331636,55.824819384118804,75.37016148618906
+partial_word,logreg [word shape+length] gate 0s,False,35,47.215053763440864,37.1321925632984,57.858589254932696
+partial_word,logreg [word shape+length] gate 0s,False,50,34.543010752688176,26.353873154082592,47.26083299058996
+partial_word,logreg [word shape+length] gate 0.4s,False,20,75.01680107526882,68.98309145709695,80.64824005961592
+partial_word,logreg [word shape+length] gate 0.4s,False,35,66.8862807219662,60.957199042359996,72.6579430346806
+partial_word,logreg [word shape+length] gate 0.4s,False,50,57.47938394373029,52.666866658176296,62.37375685624548
+partial_word,"logreg [timing+position, no length] gate 0s",False,20,68.01438535309504,60.64004544572412,75.00047806524185
+partial_word,"logreg [timing+position, no length] gate 0s",False,35,50.61827956989247,43.41835479254882,57.801273405550305
+partial_word,"logreg [timing+position, no length] gate 0s",False,50,37.171690463599504,30.869097477632103,43.78519512920321
+partial_word,gbt [timing+position] gate 0s,True,pass,0.0,,
+partial_word,pause,False,pass,0.0,,
+partial_word,boundary + mid-word,False,pass,0.0,,
+partial_word,min letters in word,False,pass,0.8,,
+partial_word,word start + min letters,False,pass,0.8,,
+partial_word,min words typed,False,pass,0.0,,
+partial_word,word start + min words,False,pass,0.0,,
+next_word,pause,False,20,81.09671000206919,79.53716876048064,82.60288805101105
+next_word,pause,False,35,67.2319212747813,65.34713603894765,69.12225273605476
+next_word,pause,False,50,53.141276677090914,51.01059471506018,55.14124858850765
+next_word,boundary + mid-word,False,20,,,
+next_word,boundary + mid-word,False,35,,,
+next_word,boundary + mid-word,False,50,,,
+next_word,min letters in word,False,20,,,
+next_word,min letters in word,False,35,,,
+next_word,min letters in word,False,50,,,
+next_word,word start + min letters,False,20,,,
+next_word,word start + min letters,False,35,,,
+next_word,word start + min letters,False,50,,,
+next_word,min words typed,False,20,,,
+next_word,min words typed,False,35,,52.30893054693542,63.6821377547184
+next_word,min words typed,False,50,41.724410139461455,36.014305337966526,47.80064751703474
+next_word,word start + min words,False,20,,,
+next_word,word start + min words,False,35,,52.30893054693542,63.6821377547184
+next_word,word start + min words,False,50,41.724410139461455,36.014305337966526,47.80064751703474
+next_word,logreg [timing] gate 0s,False,20,78.20715077865076,76.59001896545962,79.77609915085779
+next_word,logreg [timing] gate 0s,False,35,63.08174721515656,61.04945418369178,64.93063863375588
+next_word,logreg [timing] gate 0s,False,50,47.87064782159052,45.80830485304169,49.833460845735495
+next_word,logreg [timing] gate 0.4s,False,20,78.20715077865076,76.59001896545962,79.77609915085779
+next_word,logreg [timing] gate 0.4s,False,35,63.08174721515656,61.04945418369178,64.93063863375588
+next_word,logreg [timing] gate 0.4s,False,50,47.87064782159052,45.80830485304169,49.833460845735495
+next_word,logreg [timing+position] gate 0s,False,20,78.03710566324591,73.50639021346592,82.82053782939613
+next_word,logreg [timing+position] gate 0s,False,35,62.122996729610186,56.319487915752454,68.00987876488223
+next_word,logreg [timing+position] gate 0s,False,50,46.80937078884627,40.446718519148604,52.77734305464705
+next_word,logreg [timing+position] gate 0.4s,False,20,78.03710566324591,73.50639021346592,82.82053782939613
+next_word,logreg [timing+position] gate 0.4s,False,35,62.122996729610186,56.319487915752454,68.00987876488223
+next_word,logreg [timing+position] gate 0.4s,False,50,46.80937078884627,40.446718519148604,52.77734305464705
+next_word,gbt [timing+position] gate 0s,False,20,77.18548080577727,73.06264008154558,81.2613405127613
+next_word,gbt [timing+position] gate 0s,False,35,60.93294293588811,55.49159772553223,66.25995678524082
+next_word,gbt [timing+position] gate 0s,False,50,46.361043440699014,41.00745584044268,51.94995485383874
+next_word,gbt [timing+position] gate 0.4s,False,20,77.18548080577727,73.06264008154558,81.2613405127613
+next_word,gbt [timing+position] gate 0.4s,False,35,60.93294293588811,55.49159772553223,66.25995678524082
+next_word,gbt [timing+position] gate 0.4s,False,50,46.361043440699014,41.00745584044268,51.94995485383874
+next_word,logreg [word shape] gate 0s,False,20,,,
+next_word,logreg [word shape] gate 0s,False,35,,,
+next_word,logreg [word shape] gate 0s,False,50,,,
+next_word,logreg [word shape] gate 0.4s,False,20,,,
+next_word,logreg [word shape] gate 0.4s,False,35,,,
+next_word,logreg [word shape] gate 0.4s,False,50,,,
+next_word,logreg [prefix length] gate 0s,True,20,77.88727805831569,72.66088642814985,82.91399503826463
+next_word,logreg [prefix length] gate 0s,True,35,61.98530343342202,55.77563159794377,68.4985917694871
+next_word,logreg [prefix length] gate 0s,True,50,46.97200050677816,40.30818381004256,53.02069146531423
+next_word,logreg [prefix length] gate 0.4s,False,20,77.88727805831569,72.66088642814985,82.91399503826463
+next_word,logreg [prefix length] gate 0.4s,False,35,61.98530343342202,55.77563159794377,68.4985917694871
+next_word,logreg [prefix length] gate 0.4s,False,50,46.97200050677816,40.30818381004256,53.02069146531423
+next_word,logreg [word shape+length] gate 0s,False,20,77.88727805831569,72.66088642814985,82.91399503826463
+next_word,logreg [word shape+length] gate 0s,False,35,61.98530343342202,55.77563159794377,68.4985917694871
+next_word,logreg [word shape+length] gate 0s,False,50,46.97200050677816,40.30818381004256,53.02069146531423
+next_word,logreg [word shape+length] gate 0.4s,False,20,77.88727805831569,72.66088642814985,82.91399503826463
+next_word,logreg [word shape+length] gate 0.4s,False,35,61.98530343342202,55.77563159794377,68.4985917694871
+next_word,logreg [word shape+length] gate 0.4s,False,50,46.97200050677816,40.30818381004256,53.02069146531423
+next_word,"logreg [timing+position, no length] gate 0s",False,20,78.20715077865076,76.59001896545962,79.77609915085779
+next_word,"logreg [timing+position, no length] gate 0s",False,35,63.08174721515656,61.04945418369178,64.93063863375588
+next_word,"logreg [timing+position, no length] gate 0s",False,50,47.87064782159052,45.80830485304169,49.833460845735495
+next_word,logreg [prefix length] gate 0s,True,pass,0.0,,
+next_word,pause,False,pass,0.0,,
+next_word,boundary + mid-word,False,pass,0.0,,
+next_word,min letters in word,False,pass,0.0,,
+next_word,word start + min letters,False,pass,0.0,,
+next_word,min words typed,False,pass,0.0,,
+next_word,word start + min words,False,pass,0.0,,
+phrase,pause,False,20,79.50169875424689,78.12405055304694,80.88759723033662
+phrase,pause,False,35,65.6789003698173,63.832292795560285,67.41808482011233
+phrase,pause,False,50,50.97921456924854,48.804342631168105,53.12886889850931
+phrase,boundary + mid-word,False,20,,,
+phrase,boundary + mid-word,False,35,,,
+phrase,boundary + mid-word,False,50,,,
+phrase,min letters in word,False,20,,,
+phrase,min letters in word,False,35,,,
+phrase,min letters in word,False,50,,,
+phrase,word start + min letters,False,20,,,
+phrase,word start + min letters,False,35,,,
+phrase,word start + min letters,False,50,,,
+phrase,min words typed,False,20,,,
+phrase,min words typed,False,35,,48.562083723683934,59.66747812612152
+phrase,min words typed,False,50,38.265528356128584,32.559617917588675,44.07624407341368
+phrase,word start + min words,False,20,,,
+phrase,word start + min words,False,35,,48.562083723683934,59.66747812612152
+phrase,word start + min words,False,50,38.265528356128584,32.559617917588675,44.07624407341368
+phrase,logreg [timing] gate 0s,False,20,76.18813648201436,74.62451996739469,77.88126094328707
+phrase,logreg [timing] gate 0s,False,35,60.200614787251254,58.355140898804024,62.0402888649143
+phrase,logreg [timing] gate 0s,False,50,45.9435606596829,43.64786791671534,48.11805145271676
+phrase,logreg [timing] gate 0.4s,False,20,76.18813648201436,74.62451996739469,77.88126094328707
+phrase,logreg [timing] gate 0.4s,False,35,60.200614787251254,58.355140898804024,62.0402888649143
+phrase,logreg [timing] gate 0.4s,False,50,45.9435606596829,43.64786791671534,48.11805145271676
+phrase,logreg [timing+position] gate 0s,True,20,76.92219949974336,72.31839747281636,81.31683020899172
+phrase,logreg [timing+position] gate 0s,True,35,60.796174844914724,56.38690006652844,65.30524874338329
+phrase,logreg [timing+position] gate 0s,True,50,42.40767222680769,37.124294458852,47.20148378701251
+phrase,logreg [timing+position] gate 0.4s,False,20,76.92219949974336,72.31839747281636,81.31683020899172
+phrase,logreg [timing+position] gate 0.4s,False,35,60.796174844914724,56.38690006652844,65.30524874338329
+phrase,logreg [timing+position] gate 0.4s,False,50,42.40767222680769,37.124294458852,47.20148378701251
+phrase,gbt [timing+position] gate 0s,False,20,77.59459856664908,72.90087667591604,82.28315011429997
+phrase,gbt [timing+position] gate 0s,False,35,59.97867521264548,53.89948947677748,65.3128406136653
+phrase,gbt [timing+position] gate 0s,False,50,44.599810479118034,38.63722328012532,49.98844407858712
+phrase,gbt [timing+position] gate 0.4s,False,20,77.59459856664908,72.90087667591604,82.28315011429997
+phrase,gbt [timing+position] gate 0.4s,False,35,59.97867521264548,53.89948947677748,65.3128406136653
+phrase,gbt [timing+position] gate 0.4s,False,50,44.599810479118034,38.63722328012532,49.98844407858712
+phrase,logreg [word shape] gate 0s,False,20,,,
+phrase,logreg [word shape] gate 0s,False,35,,,
+phrase,logreg [word shape] gate 0s,False,50,,,
+phrase,logreg [word shape] gate 0.4s,False,20,,,
+phrase,logreg [word shape] gate 0.4s,False,35,,,
+phrase,logreg [word shape] gate 0.4s,False,50,,,
+phrase,logreg [prefix length] gate 0s,False,20,74.4826521157212,70.56314464641207,80.30859750235695
+phrase,logreg [prefix length] gate 0s,False,35,62.20489589685513,57.437656365146275,67.0407266338365
+phrase,logreg [prefix length] gate 0s,False,50,42.876557191392976,37.14175173734269,47.936972109657226
+phrase,logreg [prefix length] gate 0.4s,False,20,74.4826521157212,70.56314464641207,80.30859750235695
+phrase,logreg [prefix length] gate 0.4s,False,35,62.20489589685513,57.437656365146275,67.0407266338365
+phrase,logreg [prefix length] gate 0.4s,False,50,42.876557191392976,37.14175173734269,47.936972109657226
+phrase,logreg [word shape+length] gate 0s,False,20,74.4826521157212,70.56314464641207,80.30859750235695
+phrase,logreg [word shape+length] gate 0s,False,35,62.20489589685513,57.437656365146275,67.0407266338365
+phrase,logreg [word shape+length] gate 0s,False,50,42.876557191392976,37.14175173734269,47.936972109657226
+phrase,logreg [word shape+length] gate 0.4s,False,20,74.4826521157212,70.56314464641207,80.30859750235695
+phrase,logreg [word shape+length] gate 0.4s,False,35,62.20489589685513,57.437656365146275,67.0407266338365
+phrase,logreg [word shape+length] gate 0.4s,False,50,42.876557191392976,37.14175173734269,47.936972109657226
+phrase,"logreg [timing+position, no length] gate 0s",False,20,76.18813648201436,74.62451996739469,77.88126094328707
+phrase,"logreg [timing+position, no length] gate 0s",False,35,60.200614787251254,58.355140898804024,62.0402888649143
+phrase,"logreg [timing+position, no length] gate 0s",False,50,45.9435606596829,43.64786791671534,48.11805145271676
+phrase,logreg [timing+position] gate 0s,True,pass,0.0,,
+phrase,pause,False,pass,0.0,,
+phrase,boundary + mid-word,False,pass,0.0,,
+phrase,min letters in word,False,pass,0.0,,
+phrase,word start + min letters,False,pass,0.0,,
+phrase,min words typed,False,pass,0.0,,
+phrase,word start + min words,False,pass,0.0,,
+sentence,pause,False,20,81.00536842650054,78.40394137331388,83.64825874263946
+sentence,pause,False,35,65.96291104429059,62.05288988361443,70.01278595075532
+sentence,pause,False,50,51.818074120069284,48.32598880181691,55.60176293837159
+sentence,boundary + mid-word,False,20,,,
+sentence,boundary + mid-word,False,35,,,
+sentence,boundary + mid-word,False,50,,,
+sentence,min letters in word,False,20,,,
+sentence,min letters in word,False,35,,,
+sentence,min letters in word,False,50,,,
+sentence,word start + min letters,False,20,,,
+sentence,word start + min letters,False,35,,,
+sentence,word start + min letters,False,50,,,
+sentence,min words typed,False,20,,,
+sentence,min words typed,False,35,,18.61082772495816,39.48430806035464
+sentence,min words typed,False,50,13.521222831984621,7.18597906647772,22.62295079861594
+sentence,word start + min words,False,20,,,
+sentence,word start + min words,False,35,,18.61082772495816,39.48430806035464
+sentence,word start + min words,False,50,13.521222831984621,7.18597906647772,22.62295079861594
+sentence,logreg [timing] gate 0s,False,20,76.1302714791709,73.25761018964666,79.17552276932666
+sentence,logreg [timing] gate 0s,False,35,60.30263968424175,57.29043953371748,63.344716350078194
+sentence,logreg [timing] gate 0s,False,50,45.04774215069007,41.77375482887794,48.392365114699395
+sentence,logreg [timing] gate 0.4s,False,20,76.1302714791709,73.25761018964666,79.17552276932666
+sentence,logreg [timing] gate 0.4s,False,35,60.30263968424175,57.29043953371748,63.344716350078194
+sentence,logreg [timing] gate 0.4s,False,50,45.04774215069007,41.77375482887794,48.392365114699395
+sentence,logreg [timing+position] gate 0s,False,20,63.21375789332259,52.94750344734069,72.17016148855949
+sentence,logreg [timing+position] gate 0s,False,35,39.036678758565095,29.320485106752987,48.77084277711088
+sentence,logreg [timing+position] gate 0s,False,50,19.455650554836225,10.828079773050888,28.030267050177226
+sentence,logreg [timing+position] gate 0.4s,False,20,63.21375789332259,52.94750344734069,72.17016148855949
+sentence,logreg [timing+position] gate 0.4s,False,35,39.036678758565095,29.320485106752987,48.77084277711088
+sentence,logreg [timing+position] gate 0.4s,False,50,19.455650554836225,10.828079773050888,28.030267050177226
+sentence,gbt [timing+position] gate 0s,False,20,66.29914376286807,58.65471555635738,73.9840218037149
+sentence,gbt [timing+position] gate 0s,False,35,39.01970327183692,29.76303120024124,49.397707959724706
+sentence,gbt [timing+position] gate 0s,False,50,24.39136628661226,15.763333365756578,33.49548414496455
+sentence,gbt [timing+position] gate 0.4s,False,20,66.29914376286807,58.65471555635738,73.9840218037149
+sentence,gbt [timing+position] gate 0.4s,False,35,39.01970327183692,29.76303120024124,49.397707959724706
+sentence,gbt [timing+position] gate 0.4s,False,50,24.39136628661226,15.763333365756578,33.49548414496455
+sentence,logreg [word shape] gate 0s,False,20,,,
+sentence,logreg [word shape] gate 0s,False,35,,,
+sentence,logreg [word shape] gate 0s,False,50,,,
+sentence,logreg [word shape] gate 0.4s,False,20,,,
+sentence,logreg [word shape] gate 0.4s,False,35,,,
+sentence,logreg [word shape] gate 0.4s,False,50,,,
+sentence,logreg [prefix length] gate 0s,True,20,64.46709276213508,53.511496205371984,74.3994102174612
+sentence,logreg [prefix length] gate 0s,True,35,40.04433696090287,29.825414525472986,49.73553333500301
+sentence,logreg [prefix length] gate 0s,True,50,19.965067848985623,11.228636929777922,28.54640228820472
+sentence,logreg [prefix length] gate 0.4s,False,20,64.46709276213508,53.511496205371984,74.3994102174612
+sentence,logreg [prefix length] gate 0.4s,False,35,40.04433696090287,29.825414525472986,49.73553333500301
+sentence,logreg [prefix length] gate 0.4s,False,50,19.965067848985623,11.228636929777922,28.54640228820472
+sentence,logreg [word shape+length] gate 0s,False,20,64.46709276213508,53.511496205371984,74.3994102174612
+sentence,logreg [word shape+length] gate 0s,False,35,40.04433696090287,29.825414525472986,49.73553333500301
+sentence,logreg [word shape+length] gate 0s,False,50,19.965067848985623,11.228636929777922,28.54640228820472
+sentence,logreg [word shape+length] gate 0.4s,False,20,64.46709276213508,53.511496205371984,74.3994102174612
+sentence,logreg [word shape+length] gate 0.4s,False,35,40.04433696090287,29.825414525472986,49.73553333500301
+sentence,logreg [word shape+length] gate 0.4s,False,50,19.965067848985623,11.228636929777922,28.54640228820472
+sentence,"logreg [timing+position, no length] gate 0s",False,20,76.1302714791709,73.25761018964666,79.17552276932666
+sentence,"logreg [timing+position, no length] gate 0s",False,35,60.30263968424175,57.29043953371748,63.344716350078194
+sentence,"logreg [timing+position, no length] gate 0s",False,50,45.04774215069007,41.77375482887794,48.392365114699395
+sentence,logreg [prefix length] gate 0s,True,pass,87.5,,
+sentence,pause,False,pass,0.0,,
+sentence,boundary + mid-word,False,pass,0.0,,
+sentence,min letters in word,False,pass,0.0,,
+sentence,word start + min letters,False,pass,0.0,,
+sentence,min words typed,False,pass,99.6,,
+sentence,word start + min words,False,pass,99.6,,

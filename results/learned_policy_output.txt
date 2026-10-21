@@ -1,91 +1,322 @@
 Source: phase1_results_v3.csv; 240 messages, 4510 Qwen examples; 10 simulated typists per example; seed 42
 Typing model: Aalto gap shape x AmazonQAC pace; latency = single-suggestion time
 Samples: 45100 (examples used: {'partial_word': 910, 'next_word': 1200, 'phrase': 1200, 'sentence': 1200}); mix weight mid-word x 3.92
-Evaluation: 5-fold CV grouped by message; bootstrap 1000 resamples over messages
+Messages split at random (seed 7): 120 dev (variant chosen here, 5-fold CV by message), 120 test (final numbers, never used for a choice)
+Intervals: 95 % bootstrap over test messages, 1000 resamples, paired across policies
 
-== word-level mix: always-invoke delivers at 19.1 % of decision points (oracle needs that few calls) ==
-policy                                       missed @20% calls     missed @35% calls     missed @50% calls
-random skip                                               80.0                  65.0                  50.0
-oracle                                                     0.0                   0.0                   0.0
-pause                                             80.5 [79-82]          66.3 [65-68]          52.9 [51-55]
-boundary + mid-word                                        n/a          55.1 [51-58]          44.7 [41-48]
-logreg [timing] gate 0s                           76.9 [76-78]          60.8 [59-62]          45.5 [44-47]
-logreg [timing] gate 0.4s                         77.1 [76-79]          62.5 [60-64]          49.5 [47-52]
-logreg [timing+position] gate 0s                  65.5 [61-69]          49.2 [44-54]          33.8 [29-38]
-logreg [timing+position] gate 0.4s                65.9 [62-69]          52.5 [48-56]          42.3 [38-46]
-gbt [timing+position] gate 0s                     68.7 [65-72]          46.6 [41-51]          31.5 [27-36]
-gbt [timing+position] gate 0.4s                   68.2 [64-71]          50.6 [46-54]          41.6 [38-45]
--- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
-  20% calls: learned 18 % | best simple rule (pause) -1 % | learned minus rule in missed points: -14.6 [-18.1, -11.6]
-  35% calls: learned 19 % | best simple rule (boundary + mid-word) 15 % | learned minus rule in missed points: -2.6 [-4.6, -0.3]
-  50% calls: learned 15 % | best simple rule (boundary + mid-word) 11 % | learned minus rule in missed points: -2.4 [-4.9, +0.3]
+== word-level mix: always-invoke delivers at 19.6 % of test decision points (the oracle needs that few calls) ==
+Choice on the dev half (mean missed % over the budgets, lower is better):
+   gbt [timing+position] gate 0s           47.4   <- chosen
+   logreg [timing+position] gate 0s        49.4
+   logreg [word shape+length] gate 0s      50.2
+   gbt [timing+position] gate 0.4s         51.8
+   logreg [timing+position] gate 0.4s      53.0
+   logreg [word shape+length] gate 0.4s    53.3
+   logreg [word shape] gate 0s             61.5
+   logreg [prefix length] gate 0.4s        61.8
+   logreg [timing] gate 0s                 61.9
+   logreg [prefix length] gate 0s          62.5
+   logreg [timing] gate 0.4s               62.9
+   logreg [word shape] gate 0.4s           64.8
 
-== partial_word: always-invoke delivers at 15.8 % of decision points (oracle needs that few calls) ==
-policy                                       missed @20% calls     missed @35% calls     missed @50% calls
-random skip                                               80.0                  65.0                  50.0
-oracle                                                     0.0                   0.0                   0.0
-pause                                             82.8 [81-84]          70.5 [69-72]          58.5 [56-61]
-boundary + mid-word                               82.8 [81-84]          70.5 [69-72]          58.5 [56-61]
-logreg [timing] gate 0s                           77.9 [75-80]          62.3 [60-65]          47.3 [44-50]
-logreg [timing] gate 0.4s                         80.6 [79-82]          68.4 [66-71]          57.0 [55-60]
-logreg [timing+position] gate 0s                  68.0 [61-74]          51.5 [45-58]          39.7 [33-46]
-logreg [timing+position] gate 0.4s                76.6 [73-80]          66.6 [63-70]          56.4 [53-59]
-gbt [timing+position] gate 0s                     67.3 [60-74]          51.9 [45-59]          39.0 [32-45]
-gbt [timing+position] gate 0.4s                   77.5 [74-81]          65.7 [62-69]          56.8 [54-60]
--- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
-  20% calls: learned 4 % | best simple rule (boundary + mid-word) -4 % | learned minus rule in missed points: -6.2 [-10.2, -2.4]
-  35% calls: learned -3 % | best simple rule (boundary + mid-word) -8 % | learned minus rule in missed points: -3.8 [-7.6, -0.3]
-  50% calls: learned -13 % | best simple rule (boundary + mid-word) -17 % | learned minus rule in missed points: -2.1 [-4.6, +0.4]
+TEST half, missed % at each call budget [95 % interval]:
+policy                                                @20% calls          @35% calls          @50% calls
+random skip                                                 80.0                65.0                50.0
+oracle                                                       0.0                 0.0                 0.0
+  pause                                             81.1 [79-83]        68.1 [66-70]        54.4 [52-57]
+  boundary + mid-word                                        n/a        55.7 [50-61]        46.2 [41-51]
+  min letters in word                               72.1 [65-79]        61.0 [54-68]        52.7 [46-60]
+  word start + min letters                                   n/a        48.7 [42-55]        30.5 [24-37]
+  min words typed                                            n/a                 n/a        47.9 [41-56]
+  word start + min words                            67.1 [62-72]                 n/a                 n/a
+  logreg [timing] gate 0s                           76.4 [75-78]        61.1 [59-63]        46.0 [44-48]
+  logreg [timing] gate 0.4s                         77.3 [75-79]        62.9 [60-65]        49.4 [47-52]
+  logreg [timing+position] gate 0s                  66.5 [61-71]        51.9 [46-57]        39.3 [33-45]
+  logreg [timing+position] gate 0.4s                67.6 [62-72]        55.2 [50-60]        45.8 [41-51]
+* gbt [timing+position] gate 0s                     67.6 [62-73]        53.6 [46-59]        36.8 [29-43]
+  gbt [timing+position] gate 0.4s                   69.1 [65-73]        53.7 [48-60]        43.2 [38-48]
+  logreg [word shape] gate 0s                                n/a        47.3 [41-53]        29.7 [23-37]
+  logreg [word shape] gate 0.4s                              n/a        51.1 [45-56]        41.1 [36-46]
+  logreg [prefix length] gate 0s                    85.2 [80-90]        65.0 [59-73]        50.2 [43-58]
+  logreg [prefix length] gate 0.4s                  83.1 [79-87]        67.5 [62-72]        50.4 [46-55]
+  logreg [word shape+length] gate 0s                66.9 [61-72]        51.7 [45-57]        42.6 [35-49]
+  logreg [word shape+length] gate 0.4s              67.5 [62-72]        56.5 [51-62]        46.7 [41-52]
+  logreg [timing+position, no length] gate 0s        68.9 [64-73]        48.5 [42-54]        31.6 [26-37]
+  (* = variant chosen on the dev half; the other learned rows are for reference only)
 
-== next_word: always-invoke delivers at 28.7 % of decision points (oracle needs that few calls) ==
-policy                                       missed @20% calls     missed @35% calls     missed @50% calls
-random skip                                               80.0                  65.0                  50.0
-oracle                                                    30.3                   0.0                   0.0
-pause                                             81.0 [80-82]          66.9 [66-68]          52.0 [51-53]
-boundary + mid-word                                        n/a                   n/a                   n/a
-logreg [timing] gate 0s                           78.0 [77-79]          62.1 [61-63]          47.6 [46-49]
-logreg [timing] gate 0.4s                         78.0 [77-79]          62.1 [61-63]          47.6 [46-49]
-logreg [timing+position] gate 0s                  77.3 [74-81]          58.1 [54-62]          41.8 [38-46]
-logreg [timing+position] gate 0.4s                77.3 [74-81]          58.1 [54-62]          41.8 [38-46]
-gbt [timing+position] gate 0s                     77.5 [74-81]          62.4 [58-66]          45.2 [41-49]
-gbt [timing+position] gate 0.4s                   77.5 [74-81]          62.4 [58-66]          45.2 [41-49]
--- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
-  20% calls: learned 5 % | best simple rule (pause) -2 % | learned minus rule in missed points: -3.7 [-7.0, -0.1]
-  35% calls: learned 11 % | best simple rule (pause) -3 % | learned minus rule in missed points: -8.9 [-12.9, -4.9]
-  50% calls: learned 16 % | best simple rule (pause) -4 % | learned minus rule in missed points: -10.2 [-14.8, -5.7]
+Chosen variant (gbt [timing+position] gate 0s) vs the best simple rule at each budget (the rule may pick its best family, the learned policy may not):
+  20% calls: gap closed 15 % vs 16 % (word start + min words); learned minus rule in missed points +0.5 [-4.2, +5.3]
+  35% calls: gap closed 18 % vs 25 % (word start + min letters); learned minus rule in missed points +4.9 [-3.5, +12.0]
+  50% calls: gap closed 26 % vs 39 % (word start + min letters); learned minus rule in missed points +6.3 [-1.1, +13.0]
 
-== phrase: always-invoke delivers at 28.3 % of decision points (oracle needs that few calls) ==
-policy                                       missed @20% calls     missed @35% calls     missed @50% calls
-random skip                                               80.0                  65.0                  50.0
-oracle                                                    29.4                   0.0                   0.0
-pause                                             79.5 [78-81]          65.0 [64-66]          50.4 [49-52]
-boundary + mid-word                                        n/a                   n/a                   n/a
-logreg [timing] gate 0s                           76.6 [75-78]          60.9 [59-62]          45.6 [44-47]
-logreg [timing] gate 0.4s                         76.6 [75-78]          60.9 [59-62]          45.6 [44-47]
-logreg [timing+position] gate 0s                  75.9 [73-79]          57.2 [53-61]          40.9 [36-45]
-logreg [timing+position] gate 0.4s                75.9 [73-79]          57.2 [53-61]          40.9 [36-45]
-gbt [timing+position] gate 0s                     78.8 [75-82]          61.7 [58-65]          43.1 [39-47]
-gbt [timing+position] gate 0.4s                   78.8 [75-82]          61.7 [58-65]          43.1 [39-47]
--- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
-  20% calls: learned 8 % | best simple rule (pause) 1 % | learned minus rule in missed points: -3.6 [-6.9, -0.7]
-  35% calls: learned 12 % | best simple rule (pause) 0 % | learned minus rule in missed points: -7.7 [-11.9, -3.5]
-  50% calls: learned 18 % | best simple rule (pause) -1 % | learned minus rule in missed points: -9.5 [-13.8, -5.1]
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always):
+  gbt [timing+position] gate 0s          passes in 0 % of resamples; fewest calls that pass: median 49 % [49-49]
+  pause                                  passes in 0 % of resamples; never passes at <= 50 % calls
+  boundary + mid-word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  min letters in word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min letters               passes in 6 % of resamples; fewest calls that pass: median 49 % [44-50]
+  min words typed                        passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min words                 passes in 0 % of resamples; never passes at <= 50 % calls
 
-== sentence: always-invoke delivers at 13.1 % of decision points (oracle needs that few calls) ==
-policy                                       missed @20% calls     missed @35% calls     missed @50% calls
-random skip                                               80.0                  65.0                  50.0
-oracle                                                     0.0                   0.0                   0.0
-pause                                             81.3 [79-83]          67.6 [65-70]          53.8 [51-56]
-boundary + mid-word                                        n/a                   n/a                   n/a
-logreg [timing] gate 0s                           77.4 [75-80]          61.7 [59-64]          46.1 [43-49]
-logreg [timing] gate 0.4s                         77.4 [75-80]          61.7 [59-64]          46.1 [43-49]
-logreg [timing+position] gate 0s                  61.1 [54-67]          39.3 [32-46]          18.6 [12-25]
-logreg [timing+position] gate 0.4s                61.1 [54-67]          39.3 [32-46]          18.6 [12-25]
-gbt [timing+position] gate 0s                     65.4 [59-72]          39.0 [32-46]          23.4 [17-30]
-gbt [timing+position] gate 0.4s                   65.4 [59-72]          39.0 [32-46]          23.4 [17-30]
--- primary learned policy (logreg [timing+position] gate 0.4s) vs best simple rule; share of the random-to-oracle gap closed --
-  20% calls: learned 24 % | best simple rule (pause) -2 % | learned minus rule in missed points: -20.2 [-26.8, -13.7]
-  35% calls: learned 40 % | best simple rule (pause) -4 % | learned minus rule in missed points: -28.4 [-36.0, -21.7]
-  50% calls: learned 63 % | best simple rule (pause) -8 % | learned minus rule in missed points: -35.2 [-41.5, -29.3]
+Feature check (test half, missed % @35% / @50% calls, no wait):
+  logreg [word shape] gate 0s                      47.3     29.7
+  logreg [prefix length] gate 0s                   65.0     50.2
+  logreg [word shape+length] gate 0s               51.7     42.6
+  logreg [timing+position, no length] gate 0s      48.5     31.6
+  logreg [timing+position] gate 0s                 51.9     39.3
+  logreg [timing] gate 0s                          61.1     46.0
+  largest standardised coefficients of logreg [timing+position]: is_alpha -1.33, at_space -0.85, log_len +0.46, is_digit +0.39, n_words -0.31
+
+== partial_word: always-invoke delivers at 16.3 % of test decision points (the oracle needs that few calls) ==
+Choice on the dev half (mean missed % over the budgets, lower is better):
+   gbt [timing+position] gate 0s           52.6   <- chosen
+   logreg [word shape] gate 0s             56.3
+   logreg [word shape+length] gate 0s      60.2
+   logreg [timing+position] gate 0s        60.5
+   logreg [timing] gate 0s                 62.8
+   logreg [prefix length] gate 0s          67.1
+   logreg [word shape] gate 0.4s           67.5
+   gbt [timing+position] gate 0.4s         67.8
+   logreg [timing] gate 0.4s               68.2
+   logreg [word shape+length] gate 0.4s    68.6
+   logreg [timing+position] gate 0.4s      68.7
+   logreg [prefix length] gate 0.4s        71.1
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                                @20% calls          @35% calls          @50% calls
+random skip                                                 80.0                65.0                50.0
+oracle                                                       0.0                 0.0                 0.0
+  pause                                             84.4 [82-86]        72.5 [70-75]        60.2 [57-63]
+  boundary + mid-word                               84.4 [82-86]        72.5 [70-75]        60.2 [57-63]
+  min letters in word                               65.9 [56-75]        47.0 [38-57]        35.4 [28-45]
+  word start + min letters                          65.9 [56-75]        47.0 [38-57]        35.4 [28-45]
+  min words typed                                            n/a                 n/a        51.5 [41-63]
+  word start + min words                                     n/a                 n/a                 n/a
+  logreg [timing] gate 0s                           76.4 [73-79]        62.7 [59-66]        48.3 [45-52]
+  logreg [timing] gate 0.4s                         82.0 [79-84]        69.0 [66-72]        57.7 [55-61]
+  logreg [timing+position] gate 0s                  68.6 [62-75]        51.7 [45-59]        37.8 [31-45]
+  logreg [timing+position] gate 0.4s                77.2 [73-81]        66.0 [62-70]        55.7 [53-59]
+* gbt [timing+position] gate 0s                     66.2 [56-77]        57.9 [47-69]        43.8 [34-53]
+  gbt [timing+position] gate 0.4s                   80.6 [76-85]        67.1 [63-72]        57.9 [53-62]
+  logreg [word shape] gate 0s                       64.6 [55-74]        45.7 [36-57]        34.2 [26-44]
+  logreg [word shape] gate 0.4s                     74.1 [69-80]        64.9 [60-70]        57.2 [53-62]
+  logreg [prefix length] gate 0s                    77.9 [71-86]        66.5 [58-75]        50.7 [40-61]
+  logreg [prefix length] gate 0.4s                  86.3 [81-91]        72.0 [66-78]        57.8 [53-62]
+  logreg [word shape+length] gate 0s                65.9 [56-75]        47.2 [37-58]        34.5 [26-47]
+  logreg [word shape+length] gate 0.4s              75.0 [69-81]        66.9 [61-73]        57.5 [53-62]
+  logreg [timing+position, no length] gate 0s        68.0 [61-75]        50.6 [43-58]        37.2 [31-44]
+  (* = variant chosen on the dev half; the other learned rows are for reference only)
+
+Chosen variant (gbt [timing+position] gate 0s) vs the best simple rule at each budget (the rule may pick its best family, the learned policy may not):
+  20% calls: gap closed 17 % vs 18 % (min letters in word); learned minus rule in missed points +0.3 [-10.6, +12.7]
+  35% calls: gap closed 11 % vs 28 % (min letters in word); learned minus rule in missed points +10.9 [-0.6, +22.7]
+  50% calls: gap closed 12 % vs 29 % (min letters in word); learned minus rule in missed points +8.4 [-3.8, +19.6]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always):
+  gbt [timing+position] gate 0s          passes in 0 % of resamples; never passes at <= 50 % calls
+  pause                                  passes in 0 % of resamples; never passes at <= 50 % calls
+  boundary + mid-word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  min letters in word                    passes in 1 % of resamples; fewest calls that pass: median 48 % [47-50]
+  word start + min letters               passes in 1 % of resamples; fewest calls that pass: median 48 % [47-50]
+  min words typed                        passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min words                 passes in 0 % of resamples; never passes at <= 50 % calls
+
+Feature check (test half, missed % @35% / @50% calls, no wait):
+  logreg [word shape] gate 0s                      45.7     34.2
+  logreg [prefix length] gate 0s                   66.5     50.7
+  logreg [word shape+length] gate 0s               47.2     34.5
+  logreg [timing+position, no length] gate 0s      50.6     37.2
+  logreg [timing+position] gate 0s                 51.7     37.8
+  logreg [timing] gate 0s                          62.7     48.3
+  largest standardised coefficients of logreg [timing+position]: is_digit +0.36, is_alpha -0.33, log_mean5 -0.30, log_speed +0.22, log_prev +0.13
+
+== next_word: always-invoke delivers at 29.2 % of test decision points (the oracle needs that few calls) ==
+Choice on the dev half (mean missed % over the budgets, lower is better):
+   logreg [prefix length] gate 0s          53.3   <- chosen
+   logreg [prefix length] gate 0.4s        53.3
+   logreg [word shape+length] gate 0s      53.3
+   logreg [word shape+length] gate 0.4s    53.3
+   logreg [timing+position] gate 0s        53.7
+   logreg [timing+position] gate 0.4s      53.7
+   gbt [timing+position] gate 0s           60.4
+   gbt [timing+position] gate 0.4s         60.4
+   logreg [timing] gate 0s                 62.9
+   logreg [timing] gate 0.4s               62.9
+   logreg [word shape] gate 0s            100.0
+   logreg [word shape] gate 0.4s          100.0
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                                @20% calls          @35% calls          @50% calls
+random skip                                                 80.0                65.0                50.0
+oracle                                                      31.6                 0.0                 0.0
+  pause                                             81.1 [80-83]        67.2 [65-69]        53.1 [51-55]
+  boundary + mid-word                                        n/a                 n/a                 n/a
+  min letters in word                                        n/a                 n/a                 n/a
+  word start + min letters                                   n/a                 n/a                 n/a
+  min words typed                                            n/a                 n/a        41.7 [36-48]
+  word start + min words                                     n/a                 n/a        41.7 [36-48]
+  logreg [timing] gate 0s                           78.2 [77-80]        63.1 [61-65]        47.9 [46-50]
+  logreg [timing] gate 0.4s                         78.2 [77-80]        63.1 [61-65]        47.9 [46-50]
+  logreg [timing+position] gate 0s                  78.0 [74-83]        62.1 [56-68]        46.8 [40-53]
+  logreg [timing+position] gate 0.4s                78.0 [74-83]        62.1 [56-68]        46.8 [40-53]
+  gbt [timing+position] gate 0s                     77.2 [73-81]        60.9 [55-66]        46.4 [41-52]
+  gbt [timing+position] gate 0.4s                   77.2 [73-81]        60.9 [55-66]        46.4 [41-52]
+  logreg [word shape] gate 0s                                n/a                 n/a                 n/a
+  logreg [word shape] gate 0.4s                              n/a                 n/a                 n/a
+* logreg [prefix length] gate 0s                    77.9 [73-83]        62.0 [56-68]        47.0 [40-53]
+  logreg [prefix length] gate 0.4s                  77.9 [73-83]        62.0 [56-68]        47.0 [40-53]
+  logreg [word shape+length] gate 0s                77.9 [73-83]        62.0 [56-68]        47.0 [40-53]
+  logreg [word shape+length] gate 0.4s              77.9 [73-83]        62.0 [56-68]        47.0 [40-53]
+  logreg [timing+position, no length] gate 0s        78.2 [77-80]        63.1 [61-65]        47.9 [46-50]
+  (* = variant chosen on the dev half; the other learned rows are for reference only)
+
+Chosen variant (logreg [prefix length] gate 0s) vs the best simple rule at each budget (the rule may pick its best family, the learned policy may not):
+  20% calls: gap closed 4 % vs -2 % (pause); learned minus rule in missed points -3.2 [-8.4, +2.1]
+  35% calls: gap closed 5 % vs -3 % (pause); learned minus rule in missed points -5.2 [-12.2, +1.7]
+  50% calls: gap closed 6 % vs 17 % (min words typed); learned minus rule in missed points +5.2 [-0.1, +9.7]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always):
+  logreg [prefix length] gate 0s         passes in 0 % of resamples; never passes at <= 50 % calls
+  pause                                  passes in 0 % of resamples; never passes at <= 50 % calls
+  boundary + mid-word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  min letters in word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min letters               passes in 0 % of resamples; never passes at <= 50 % calls
+  min words typed                        passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min words                 passes in 0 % of resamples; never passes at <= 50 % calls
+
+Feature check (test half, missed % @35% / @50% calls, no wait):
+  logreg [word shape] gate 0s                       n/a      n/a
+  logreg [prefix length] gate 0s                   62.0     47.0
+  logreg [word shape+length] gate 0s               62.0     47.0
+  logreg [timing+position, no length] gate 0s      63.1     47.9
+  logreg [timing+position] gate 0s                 62.1     46.8
+  logreg [timing] gate 0s                          63.1     47.9
+  largest standardised coefficients of logreg [timing+position]: log_len +1.21, n_words -0.88, log_ratio -0.04, log_speed +0.02, log_prev -0.01
+
+== phrase: always-invoke delivers at 29.4 % of test decision points (the oracle needs that few calls) ==
+Choice on the dev half (mean missed % over the budgets, lower is better):
+   logreg [timing+position] gate 0s        53.1   <- chosen
+   logreg [timing+position] gate 0.4s      53.1
+   logreg [prefix length] gate 0s          53.1
+   logreg [prefix length] gate 0.4s        53.1
+   logreg [word shape+length] gate 0s      53.1
+   logreg [word shape+length] gate 0.4s    53.1
+   gbt [timing+position] gate 0s           59.4
+   gbt [timing+position] gate 0.4s         59.4
+   logreg [timing] gate 0s                 62.5
+   logreg [timing] gate 0.4s               62.5
+   logreg [word shape] gate 0s            100.0
+   logreg [word shape] gate 0.4s          100.0
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                                @20% calls          @35% calls          @50% calls
+random skip                                                 80.0                65.0                50.0
+oracle                                                      32.0                 0.0                 0.0
+  pause                                             79.5 [78-81]        65.7 [64-67]        51.0 [49-53]
+  boundary + mid-word                                        n/a                 n/a                 n/a
+  min letters in word                                        n/a                 n/a                 n/a
+  word start + min letters                                   n/a                 n/a                 n/a
+  min words typed                                            n/a                 n/a        38.3 [33-44]
+  word start + min words                                     n/a                 n/a        38.3 [33-44]
+  logreg [timing] gate 0s                           76.2 [75-78]        60.2 [58-62]        45.9 [44-48]
+  logreg [timing] gate 0.4s                         76.2 [75-78]        60.2 [58-62]        45.9 [44-48]
+* logreg [timing+position] gate 0s                  76.9 [72-81]        60.8 [56-65]        42.4 [37-47]
+  logreg [timing+position] gate 0.4s                76.9 [72-81]        60.8 [56-65]        42.4 [37-47]
+  gbt [timing+position] gate 0s                     77.6 [73-82]        60.0 [54-65]        44.6 [39-50]
+  gbt [timing+position] gate 0.4s                   77.6 [73-82]        60.0 [54-65]        44.6 [39-50]
+  logreg [word shape] gate 0s                                n/a                 n/a                 n/a
+  logreg [word shape] gate 0.4s                              n/a                 n/a                 n/a
+  logreg [prefix length] gate 0s                    74.5 [71-80]        62.2 [57-67]        42.9 [37-48]
+  logreg [prefix length] gate 0.4s                  74.5 [71-80]        62.2 [57-67]        42.9 [37-48]
+  logreg [word shape+length] gate 0s                74.5 [71-80]        62.2 [57-67]        42.9 [37-48]
+  logreg [word shape+length] gate 0.4s              74.5 [71-80]        62.2 [57-67]        42.9 [37-48]
+  logreg [timing+position, no length] gate 0s        76.2 [75-78]        60.2 [58-62]        45.9 [44-48]
+  (* = variant chosen on the dev half; the other learned rows are for reference only)
+
+Chosen variant (logreg [timing+position] gate 0s) vs the best simple rule at each budget (the rule may pick its best family, the learned policy may not):
+  20% calls: gap closed 6 % vs 1 % (pause); learned minus rule in missed points -2.6 [-7.2, +1.8]
+  35% calls: gap closed 6 % vs -1 % (pause); learned minus rule in missed points -4.9 [-9.9, -0.2]
+  50% calls: gap closed 15 % vs 23 % (min words typed); learned minus rule in missed points +4.1 [-1.1, +9.1]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always):
+  logreg [timing+position] gate 0s       passes in 0 % of resamples; never passes at <= 50 % calls
+  pause                                  passes in 0 % of resamples; never passes at <= 50 % calls
+  boundary + mid-word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  min letters in word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min letters               passes in 0 % of resamples; never passes at <= 50 % calls
+  min words typed                        passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min words                 passes in 0 % of resamples; never passes at <= 50 % calls
+
+Feature check (test half, missed % @35% / @50% calls, no wait):
+  logreg [word shape] gate 0s                       n/a      n/a
+  logreg [prefix length] gate 0s                   62.2     42.9
+  logreg [word shape+length] gate 0s               62.2     42.9
+  logreg [timing+position, no length] gate 0s      60.2     45.9
+  logreg [timing+position] gate 0s                 60.8     42.4
+  logreg [timing] gate 0s                          60.2     45.9
+  largest standardised coefficients of logreg [timing+position]: log_len +1.14, n_words -0.99, log_mean5 -0.13, log_speed +0.11, log_prev +0.06
+
+== sentence: always-invoke delivers at 13.8 % of test decision points (the oracle needs that few calls) ==
+Choice on the dev half (mean missed % over the budgets, lower is better):
+   logreg [prefix length] gate 0s          39.3   <- chosen
+   logreg [prefix length] gate 0.4s        39.3
+   logreg [word shape+length] gate 0s      39.3
+   logreg [word shape+length] gate 0.4s    39.3
+   logreg [timing+position] gate 0s        40.4
+   logreg [timing+position] gate 0.4s      40.4
+   gbt [timing+position] gate 0s           43.1
+   gbt [timing+position] gate 0.4s         43.1
+   logreg [timing] gate 0s                 63.5
+   logreg [timing] gate 0.4s               63.5
+   logreg [word shape] gate 0s            100.0
+   logreg [word shape] gate 0.4s          100.0
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                                @20% calls          @35% calls          @50% calls
+random skip                                                 80.0                65.0                50.0
+oracle                                                       0.0                 0.0                 0.0
+  pause                                             81.0 [78-84]        66.0 [62-70]        51.8 [48-56]
+  boundary + mid-word                                        n/a                 n/a                 n/a
+  min letters in word                                        n/a                 n/a                 n/a
+  word start + min letters                                   n/a                 n/a                 n/a
+  min words typed                                            n/a                 n/a         13.5 [7-23]
+  word start + min words                                     n/a                 n/a         13.5 [7-23]
+  logreg [timing] gate 0s                           76.1 [73-79]        60.3 [57-63]        45.0 [42-48]
+  logreg [timing] gate 0.4s                         76.1 [73-79]        60.3 [57-63]        45.0 [42-48]
+  logreg [timing+position] gate 0s                  63.2 [53-72]        39.0 [29-49]        19.5 [11-28]
+  logreg [timing+position] gate 0.4s                63.2 [53-72]        39.0 [29-49]        19.5 [11-28]
+  gbt [timing+position] gate 0s                     66.3 [59-74]        39.0 [30-49]        24.4 [16-33]
+  gbt [timing+position] gate 0.4s                   66.3 [59-74]        39.0 [30-49]        24.4 [16-33]
+  logreg [word shape] gate 0s                                n/a                 n/a                 n/a
+  logreg [word shape] gate 0.4s                              n/a                 n/a                 n/a
+* logreg [prefix length] gate 0s                    64.5 [54-74]        40.0 [30-50]        20.0 [11-29]
+  logreg [prefix length] gate 0.4s                  64.5 [54-74]        40.0 [30-50]        20.0 [11-29]
+  logreg [word shape+length] gate 0s                64.5 [54-74]        40.0 [30-50]        20.0 [11-29]
+  logreg [word shape+length] gate 0.4s              64.5 [54-74]        40.0 [30-50]        20.0 [11-29]
+  logreg [timing+position, no length] gate 0s        76.1 [73-79]        60.3 [57-63]        45.0 [42-48]
+  (* = variant chosen on the dev half; the other learned rows are for reference only)
+
+Chosen variant (logreg [prefix length] gate 0s) vs the best simple rule at each budget (the rule may pick its best family, the learned policy may not):
+  20% calls: gap closed 19 % vs -1 % (pause); learned minus rule in missed points -16.5 [-27.1, -6.6]
+  35% calls: gap closed 38 % vs -1 % (pause); learned minus rule in missed points -25.9 [-34.9, -17.1]
+  50% calls: gap closed 60 % vs 73 % (min words typed); learned minus rule in missed points +6.4 [-1.3, +11.7]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always):
+  logreg [prefix length] gate 0s         passes in 88 % of resamples; fewest calls that pass: median 46 % [39-50]
+  pause                                  passes in 0 % of resamples; never passes at <= 50 % calls
+  boundary + mid-word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  min letters in word                    passes in 0 % of resamples; never passes at <= 50 % calls
+  word start + min letters               passes in 0 % of resamples; never passes at <= 50 % calls
+  min words typed                        passes in 100 % of resamples; fewest calls that pass: median 40 % [33-47]
+  word start + min words                 passes in 100 % of resamples; fewest calls that pass: median 40 % [33-47]
+
+Feature check (test half, missed % @35% / @50% calls, no wait):
+  logreg [word shape] gate 0s                       n/a      n/a
+  logreg [prefix length] gate 0s                   40.0     20.0
+  logreg [word shape+length] gate 0s               40.0     20.0
+  logreg [timing+position, no length] gate 0s      60.3     45.0
+  logreg [timing+position] gate 0s                 39.0     19.5
+  logreg [timing] gate 0s                          60.3     45.0
+  largest standardised coefficients of logreg [timing+position]: log_len +2.12, n_words -1.22, log_speed +0.05, log_prev +0.03, log_ratio -0.02
 
 Saved results/learned_policy_summary.csv and results/learned_policy_curves.csv
