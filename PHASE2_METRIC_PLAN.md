@@ -43,10 +43,10 @@
       item within a granularity has a unique prefix** — the first pass left
       4–5 exact duplicates that would have broken bootstrap independence)*
 - [x] `tests/` — metrics, label_join, agreement *(**36 passing**)*
-- [ ] **— HUMAN LABELING —** ← **YOU ARE HERE.** 345 items in `control_set.csv`,
+- [x] **— HUMAN LABELING —** ← **YOU ARE HERE.** 345 items in `control_set.csv`,
       3 passes (A1 plausible → A2 matches → A3 preference) + 100-item overlap
       block for a second labeler
-- [ ] **Stage 6** — `src/decide_metric.py` → `metric_choice.json`
+- [x] **Stage 6** — `src/decide_metric.py` → `metric_choice.json`
       *(blocked on labels; the decision rule is pre-registered in §3.2)*
 
 **All code stages are complete.** Everything above the labeling line runs and is
