@@ -113,8 +113,8 @@ ABLATIONS = {                       # diagnostics only, no wait, scored on the t
 POS_RULES = {
     "min letters in word": (range(1, 9), lambda kss, sp, nw, n: kss >= n),
     "word start + min letters": (range(1, 9), lambda kss, sp, nw, n: sp | (kss >= n)),
-    "min words typed": (range(1, 13), lambda kss, sp, nw, n: nw >= n),
-    "word start + min words": (range(1, 13), lambda kss, sp, nw, n: sp & (nw >= n)),
+    "min words typed": (range(1, 21), lambda kss, sp, nw, n: nw >= n),
+    "word start + min words": (range(1, 21), lambda kss, sp, nw, n: sp & (nw >= n)),
 }
 RULE_FAMILIES = ["pause", "boundary + mid-word"] + list(POS_RULES)
 RULE_PARAMS = {"pause": list(RULE_T), "boundary + mid-word": list(RULE_T),

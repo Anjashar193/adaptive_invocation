@@ -11,8 +11,8 @@ word-level mix,min letters in word,False,50,52.656452132403885,46.48421135039763
 word-level mix,word start + min letters,False,20,,,
 word-level mix,word start + min letters,False,35,48.67131014881079,42.31218368777993,54.68376491933344
 word-level mix,word start + min letters,False,50,30.45481733673171,23.867777369880297,36.952196313958254
-word-level mix,min words typed,False,20,,,
-word-level mix,min words typed,False,35,,58.14525636460745,70.83465869755788
+word-level mix,min words typed,False,20,78.11561076136279,72.76762571059137,83.78255288490158
+word-level mix,min words typed,False,35,64.7276888242356,58.768887412597266,70.60528844278299
 word-level mix,min words typed,False,50,47.91076548196705,41.42582289534361,55.82963544737953
 word-level mix,word start + min words,False,20,67.14042953085313,61.77903739816101,71.81420579267555
 word-level mix,word start + min words,False,35,,,
@@ -75,8 +75,8 @@ partial_word,min letters in word,False,50,35.43116171199663,27.674819548585365,4
 partial_word,word start + min letters,False,20,65.87602783048703,55.798664420255264,75.31029344946775
 partial_word,word start + min letters,False,35,46.97480340234313,37.61423263497378,57.03983452549818
 partial_word,word start + min letters,False,50,35.43116171199663,27.674819548585365,44.58347780623925
-partial_word,min words typed,False,20,,,
-partial_word,min words typed,False,35,,60.50578912762049,77.3660717087552
+partial_word,min words typed,False,20,80.24193548387096,71.54404721260303,88.30577861754054
+partial_word,min words typed,False,35,69.13861617578307,60.73666319867977,77.88536591642078
 partial_word,min words typed,False,50,51.527370478983386,41.391891838584144,62.5895602521046
 partial_word,word start + min words,False,20,,,
 partial_word,word start + min words,False,35,,,
@@ -139,11 +139,11 @@ next_word,min letters in word,False,50,,,
 next_word,word start + min letters,False,20,,,
 next_word,word start + min letters,False,35,,,
 next_word,word start + min letters,False,50,,,
-next_word,min words typed,False,20,,,
-next_word,min words typed,False,35,,52.30893054693542,63.6821377547184
+next_word,min words typed,False,20,74.49095943964815,69.41380807642206,79.49422759758109
+next_word,min words typed,False,35,57.35461801596351,52.54973547497286,63.103585796012624
 next_word,min words typed,False,50,41.724410139461455,36.014305337966526,47.80064751703474
-next_word,word start + min words,False,20,,,
-next_word,word start + min words,False,35,,52.30893054693542,63.6821377547184
+next_word,word start + min words,False,20,74.49095943964815,69.41380807642206,79.49422759758109
+next_word,word start + min words,False,35,57.35461801596351,52.54973547497286,63.103585796012624
 next_word,word start + min words,False,50,41.724410139461455,36.014305337966526,47.80064751703474
 next_word,logreg [timing] gate 0s,False,20,78.20715077865076,76.59001896545962,79.77609915085779
 next_word,logreg [timing] gate 0s,False,35,63.08174721515656,61.04945418369178,64.93063863375588
@@ -203,11 +203,11 @@ phrase,min letters in word,False,50,,,
 phrase,word start + min letters,False,20,,,
 phrase,word start + min letters,False,35,,,
 phrase,word start + min letters,False,50,,,
-phrase,min words typed,False,20,,,
-phrase,min words typed,False,35,,48.562083723683934,59.66747812612152
+phrase,min words typed,False,20,72.29412716388934,67.02887672925364,77.6471715882684
+phrase,min words typed,False,35,54.00339750849377,48.59001085993038,59.58971138015342
 phrase,min words typed,False,50,38.265528356128584,32.559617917588675,44.07624407341368
-phrase,word start + min words,False,20,,,
-phrase,word start + min words,False,35,,48.562083723683934,59.66747812612152
+phrase,word start + min words,False,20,72.29412716388934,67.02887672925364,77.6471715882684
+phrase,word start + min words,False,35,54.00339750849377,48.59001085993038,59.58971138015342
 phrase,word start + min words,False,50,38.265528356128584,32.559617917588675,44.07624407341368
 phrase,logreg [timing] gate 0s,False,20,76.18813648201436,74.62451996739469,77.88126094328707
 phrase,logreg [timing] gate 0s,False,35,60.200614787251254,58.355140898804024,62.0402888649143
@@ -267,11 +267,11 @@ sentence,min letters in word,False,50,,,
 sentence,word start + min letters,False,20,,,
 sentence,word start + min letters,False,35,,,
 sentence,word start + min letters,False,50,,,
-sentence,min words typed,False,20,,,
-sentence,min words typed,False,35,,18.61082772495816,39.48430806035464
+sentence,min words typed,False,20,57.79927448609432,46.34852438663127,66.71147441336254
+sentence,min words typed,False,35,32.03143893591294,20.344067158939524,40.843009376801774
 sentence,min words typed,False,50,13.521222831984621,7.18597906647772,22.62295079861594
-sentence,word start + min words,False,20,,,
-sentence,word start + min words,False,35,,18.61082772495816,39.48430806035464
+sentence,word start + min words,False,20,57.79927448609432,46.34852438663127,66.71147441336254
+sentence,word start + min words,False,35,32.03143893591294,20.344067158939524,40.843009376801774
 sentence,word start + min words,False,50,13.521222831984621,7.18597906647772,22.62295079861594
 sentence,logreg [timing] gate 0s,False,20,76.1302714791709,73.25761018964666,79.17552276932666
 sentence,logreg [timing] gate 0s,False,35,60.30263968424175,57.29043953371748,63.344716350078194
