@@ -1,0 +1,1253 @@
+group,policy,calls,missed
+word-level mix,letters in word (honest),0.0,100.0
+word-level mix,letters in word (honest),3.1204635483047043,95.96953839880908
+word-level mix,letters in word (honest),28.229338388991795,58.4416932172687
+word-level mix,letters in word (honest),33.81332579122126,50.04489821478755
+word-level mix,letters in word (honest),39.561548117045746,41.64810321230642
+word-level mix,letters in word (honest),59.762443719228834,29.13687865860953
+word-level mix,letters in word (honest),61.897497725963625,25.77816065761708
+word-level mix,letters in word (honest),72.90123760682752,16.541686154887834
+word-level mix,letters in word (honest),98.02918091686016,2.5190385007443403
+word-level mix,letters in word (honest),100.0,0.0
+word-level mix,letters in word (in-sample),0.0,100.0
+word-level mix,letters in word (in-sample),2.1350540067347965,96.64128199900756
+word-level mix,letters in word (in-sample),7.719041408964262,88.24448699652643
+word-level mix,letters in word (in-sample),32.82791624965135,50.71664181498604
+word-level mix,letters in word (in-sample),38.57613857547582,42.3198468125049
+word-level mix,letters in word (in-sample),41.69660212378054,38.28938521131397
+word-level mix,letters in word (in-sample),43.667421206920366,35.770346710569626
+word-level mix,letters in word (in-sample),54.6711610877843,26.533872207840385
+word-level mix,letters in word (in-sample),74.87205668996732,14.022647654143494
+word-level mix,letters in word (in-sample),100.0,0.0
+word-level mix,words typed (honest),0.0,100.0
+word-level mix,words typed (honest),7.051829343279144,94.71567990873467
+word-level mix,words typed (honest),12.702925472986534,88.16376874160505
+word-level mix,words typed (honest),16.869592139653207,82.87944865033974
+word-level mix,words typed (honest),24.623366877389685,73.80849898246574
+word-level mix,words typed (honest),49.37543570432574,48.10386531400005
+word-level mix,words typed (honest),56.63650567127728,39.11688359615087
+word-level mix,words typed (honest),60.10122694348661,35.72587829318987
+word-level mix,words typed (honest),65.13407392820561,29.815834489484526
+word-level mix,words typed (honest),71.36788622885274,28.220443439013117
+word-level mix,words typed (honest),77.68539477896881,21.03191683625572
+word-level mix,words typed (honest),81.3980472242421,17.44309939647089
+word-level mix,words typed (honest),90.46885892608141,9.921520891309841
+word-level mix,words typed (honest),92.90316495664342,8.851741952269352
+word-level mix,words typed (honest),100.0,0.0
+word-level mix,words typed (in-sample),0.0,100.0
+word-level mix,words typed (in-sample),4.166666666666668,94.71567990873471
+word-level mix,words typed (in-sample),11.263501710023219,85.86393795646534
+word-level mix,words typed (in-sample),18.524571676974766,76.87695623861616
+word-level mix,words typed (in-sample),23.557418661693763,70.9669124349108
+word-level mix,words typed (in-sample),31.31119339943025,61.89596276703681
+word-level mix,words typed (in-sample),36.96228952913764,55.34405159990716
+word-level mix,words typed (in-sample),43.27979807925373,48.155524997149755
+word-level mix,words typed (in-sample),68.03186690618979,22.450891328684126
+word-level mix,words typed (in-sample),71.49658817839908,19.059886025723113
+word-level mix,words typed (in-sample),75.20924062367231,15.471068585938282
+word-level mix,words typed (in-sample),84.2800523255116,7.949490080777237
+word-level mix,words typed (in-sample),91.3318816687908,2.665169989511904
+word-level mix,words typed (in-sample),93.76618769935283,1.5953910504714153
+word-level mix,words typed (in-sample),100.0,0.0
+word-level mix,characters typed (honest),0.0,100.0
+word-level mix,characters typed (honest),11.302192259414772,87.19410140357367
+word-level mix,characters typed (honest),22.433834444548683,75.17822485693881
+word-level mix,characters typed (honest),37.11389415136089,61.25086667341567
+word-level mix,characters typed (honest),47.70782586563244,51.307950203325
+word-level mix,characters typed (honest),56.99103576648705,41.134934294441955
+word-level mix,characters typed (honest),67.88421950458581,30.639370338748368
+word-level mix,characters typed (honest),75.19345274695772,20.536180961598987
+word-level mix,characters typed (honest),80.5673998802384,20.322225173790887
+word-level mix,characters typed (honest),89.76691353162406,11.02642799492106
+word-level mix,characters typed (honest),100.0,0.0
+word-level mix,characters typed (in-sample),0.0,100.0
+word-level mix,characters typed (in-sample),7.309233242371875,89.89681062285065
+word-level mix,characters typed (in-sample),18.61142550178665,77.09091202642428
+word-level mix,characters typed (in-sample),27.894635402641264,66.91789611754123
+word-level mix,characters typed (in-sample),39.0262775877752,54.90201957090636
+word-level mix,characters typed (in-sample),49.2593640561511,43.8755915759853
+word-level mix,characters typed (in-sample),58.45887770753672,34.579794397115464
+word-level mix,characters typed (in-sample),69.3520614456355,24.084230441421877
+word-level mix,characters typed (in-sample),84.0321211524477,10.156872257898748
+word-level mix,characters typed (in-sample),94.6260528667193,0.21395578780809776
+word-level mix,characters typed (in-sample),100.0,0.0
+word-level mix,letters x words (honest),0.0,100.0
+word-level mix,letters x words (honest),0.32846984718996874,99.16032049975189
+word-level mix,letters x words (honest),0.8211746179749219,97.4809614992557
+word-level mix,letters x words (honest),1.313879388759875,96.64128199900756
+word-level mix,letters x words (honest),3.1970450018114076,93.8598567575023
+word-level mix,letters x words (honest),4.510924390571284,92.18049775700607
+word-level mix,letters x words (honest),7.302918091686014,90.50113875650983
+word-level mix,letters x words (honest),9.98119807469264,86.64993457596408
+word-level mix,letters x words (honest),13.663833051326755,81.94290724418595
+word-level mix,letters x words (honest),20.69431800671914,68.549274927399
+word-level mix,letters x words (honest),21.51549262469406,66.86991592690276
+word-level mix,letters x words (honest),22.33666724266898,65.19055692640654
+word-level mix,letters x words (honest),23.157841860643895,63.511197925910324
+word-level mix,letters x words (honest),25.45948872104021,60.08790532098075
+word-level mix,letters x words (honest),29.56536181091482,55.217764219541685
+word-level mix,letters x words (honest),31.700415817649606,54.378084719293575
+word-level mix,letters x words (honest),36.62746352549915,51.85904621854924
+word-level mix,letters x words (honest),39.74792707380387,49.34000771780489
+word-level mix,letters x words (honest),40.733336615373766,48.50032821755676
+word-level mix,letters x words (honest),44.45781971674235,41.69653416525924
+word-level mix,letters x words (honest),47.57828326504706,39.1774956645149
+word-level mix,letters x words (honest),49.71333727178185,37.49813666401868
+word-level mix,letters x words (honest),53.4907405144665,35.81877766352245
+word-level mix,letters x words (honest),57.43237868074612,33.2997391627781
+word-level mix,letters x words (honest),62.195191465000654,30.108957061835284
+word-level mix,letters x words (honest),64.49448039533043,28.429598061339068
+word-level mix,letters x words (honest),66.9580042492552,25.154848010371428
+word-level mix,letters x words (honest),69.91423287396493,23.475489009875204
+word-level mix,letters x words (honest),73.72241222480245,20.908019556178036
+word-level mix,letters x words (honest),81.27721871017175,17.63326950521039
+word-level mix,letters x words (honest),83.41227271690653,15.953910504714162
+word-level mix,letters x words (honest),83.9049774876915,14.27455150421793
+word-level mix,letters x words (honest),86.36850134161627,11.755513003473588
+word-level mix,letters x words (honest),89.65319981351595,10.076154002977361
+word-level mix,letters x words (honest),90.96707920227583,9.236474502729246
+word-level mix,letters x words (honest),93.75907290339059,5.877756501736794
+word-level mix,letters x words (honest),95.72989198653039,2.5190385007443403
+word-level mix,letters x words (honest),95.89412691012537,2.5190385007443403
+word-level mix,letters x words (honest),97.70071106967019,1.6793590004962269
+word-level mix,letters x words (honest),98.68612061124011,0.8396795002481134
+word-level mix,letters x words (honest),100.0,0.0
+word-level mix,letters x words (in-sample),0.0,100.0
+word-level mix,letters x words (in-sample),0.16423492359498437,99.16032049975189
+word-level mix,letters x words (in-sample),1.1496444651648907,95.80160249875948
+word-level mix,letters x words (in-sample),1.806584159544828,94.12224349826323
+word-level mix,letters x words (in-sample),2.791993701114735,91.60320499751889
+word-level mix,letters x words (in-sample),6.897866790989341,83.20640999503775
+word-level mix,letters x words (in-sample),13.928351746381743,69.81277767825082
+word-level mix,letters x words (in-sample),17.65283484775033,63.00898362595331
+word-level mix,letters x words (in-sample),18.47400946572525,61.4975605255067
+word-level mix,letters x words (in-sample),19.459419007295146,59.818201525010466
+word-level mix,letters x words (in-sample),21.761065867691457,56.3949089200809
+word-level mix,letters x words (in-sample),23.644231480742985,53.61348367857563
+word-level mix,letters x words (in-sample),26.322511463749603,49.76227949802986
+word-level mix,letters x words (in-sample),28.78603531767437,46.487529447062215
+word-level mix,letters x words (in-sample),32.46867029430847,41.78050211528405
+word-level mix,letters x words (in-sample),36.410308460588105,36.74242511379538
+word-level mix,letters x words (in-sample),37.06724815496805,35.90274561354727
+word-level mix,letters x words (in-sample),38.54536246732292,34.22338661305104
+word-level mix,letters x words (in-sample),41.00888632124769,31.7043481123067
+word-level mix,letters x words (in-sample),42.97970540438751,30.024989111810477
+word-level mix,letters x words (in-sample),47.249813417857105,26.666271110818027
+word-level mix,letters x words (in-sample),49.54910234818689,24.9869121103218
+word-level mix,letters x words (in-sample),53.357281699024426,22.419442656624632
+word-level mix,letters x words (in-sample),58.120094483278955,19.228660555681802
+word-level mix,letters x words (in-sample),59.43397387203885,18.388981055433696
+word-level mix,letters x words (in-sample),63.37561203831847,15.86994255468935
+word-level mix,letters x words (in-sample),66.1676057394332,14.190583554193122
+word-level mix,letters x words (in-sample),67.64572005178806,13.350904053945007
+word-level mix,letters x words (in-sample),70.60194867649776,11.671545053448778
+word-level mix,letters x words (in-sample),73.88664714839744,9.99218605295255
+word-level mix,letters x words (in-sample),78.813694856247,7.47314755220821
+word-level mix,letters x words (in-sample),82.42686317533666,5.793788551711983
+word-level mix,letters x words (in-sample),86.20426641802128,4.114429551215755
+word-level mix,letters x words (in-sample),93.75907290339056,0.8396795002481134
+word-level mix,letters x words (in-sample),95.89412691012535,0.0
+word-level mix,letters x words (in-sample),97.37224122248021,0.0
+word-level mix,letters x words (in-sample),97.70071106967019,0.0
+word-level mix,letters x words (in-sample),98.68612061124009,0.0
+word-level mix,letters x words (in-sample),100.0,0.0
+word-level mix,letters x words x previous gap (honest),0.0,100.0
+word-level mix,letters x words x previous gap (honest),0.1478114312354859,99.41222434982635
+word-level mix,letters x words x previous gap (honest),0.7810611093909224,98.45426639998519
+word-level mix,letters x words x previous gap (honest),3.0967735320802,95.85125994921601
+word-level mix,letters x words x previous gap (honest),5.001338894088546,93.27530983752546
+word-level mix,letters x words x previous gap (honest),5.329808741278516,92.51959828730214
+word-level mix,letters x words x previous gap (honest),6.1974079179470305,91.01181274955366
+word-level mix,letters x words x previous gap (honest),7.557396107866208,89.56659958304917
+word-level mix,letters x words x previous gap (honest),8.381804165135435,88.49682064400865
+word-level mix,letters x words x previous gap (honest),8.883981661949177,87.70518422911871
+word-level mix,letters x words x previous gap (honest),9.536812407807044,86.74238318398227
+word-level mix,letters x words x previous gap (honest),10.470025589385916,85.5014396146953
+word-level mix,letters x words x previous gap (honest),12.37411526480469,81.9711691158617
+word-level mix,letters x words x previous gap (honest),13.989452879555563,78.82601903508265
+word-level mix,letters x words x previous gap (honest),15.956314742076055,75.12458390600257
+word-level mix,letters x words x previous gap (honest),16.153396650390036,74.62077620585369
+word-level mix,letters x words x previous gap (honest),16.893241150115063,73.45370556349974
+word-level mix,letters x words x previous gap (honest),19.37357601730873,69.2613776550582
+word-level mix,letters x words x previous gap (honest),19.97200420101177,68.29857660992175
+word-level mix,letters x words x previous gap (honest),22.15632868482506,66.19937785930146
+word-level mix,letters x words x previous gap (honest),22.89032961987754,64.79534148526015
+word-level mix,letters x words x previous gap (honest),24.466984886389383,63.28391838481357
+word-level mix,letters x words x previous gap (honest),25.069597882565873,62.25693060333469
+word-level mix,letters x words x previous gap (honest),25.655471628848574,61.50808534600635
+word-level mix,letters x words x previous gap (honest),26.17020356308266,60.78063566745882
+word-level mix,letters x words x previous gap (honest),28.7277637005804,57.90473862033565
+word-level mix,letters x words x previous gap (honest),31.289828508662147,56.477283469913836
+word-level mix,letters x words x previous gap (honest),32.275238050232055,56.14141166981459
+word-level mix,letters x words x previous gap (honest),34.60737396528083,54.629988569367995
+word-level mix,letters x words x previous gap (honest),36.59461654078016,53.202533418946196
+word-level mix,letters x words x previous gap (honest),37.75546834812433,51.23736890130854
+word-level mix,letters x words x previous gap (honest),39.11861821396271,50.14578555098601
+word-level mix,letters x words x previous gap (honest),40.31492303082784,48.16083981966599
+word-level mix,letters x words x previous gap (honest),41.47032699556137,46.21868524590757
+word-level mix,letters x words x previous gap (honest),43.68749846409366,44.45535829538653
+word-level mix,letters x words x previous gap (honest),46.840808997117364,41.76838389459257
+word-level mix,letters x words x previous gap (honest),47.826218538687264,40.84473644431965
+word-level mix,letters x words x previous gap (honest),49.79703762182709,39.41728129389785
+word-level mix,letters x words x previous gap (honest),52.178444013954376,36.81427484312869
+word-level mix,letters x words x previous gap (honest),53.65497543806149,34.89513021324952
+word-level mix,letters x words x previous gap (honest),54.114833224127445,34.64322636317509
+word-level mix,letters x words x previous gap (honest),56.92325041760167,33.63561096287735
+word-level mix,letters x words x previous gap (honest),59.45246824096443,31.620380162281887
+word-level mix,letters x words x previous gap (honest),60.94700604567877,30.108957061835284
+word-level mix,letters x words x previous gap (honest),62.96709560589708,28.34563011131425
+word-level mix,letters x words x previous gap (honest),65.51273692161932,26.33039931071877
+word-level mix,letters x words x previous gap (honest),66.58404891482198,25.367598265582334
+word-level mix,letters x words x previous gap (honest),68.46563984077831,24.116559673203557
+word-level mix,letters x words x previous gap (honest),70.92916369470308,23.02497632288101
+word-level mix,letters x words x previous gap (honest),72.76859483896689,22.353232722682517
+word-level mix,letters x words x previous gap (honest),74.12368673681638,21.296368704429455
+word-level mix,letters x words x previous gap (honest),74.8134734159153,20.540657154206148
+word-level mix,letters x words x previous gap (honest),76.93210393029061,19.113202003784355
+word-level mix,letters x words x previous gap (honest),77.86113229939602,18.556916955483302
+word-level mix,letters x words x previous gap (honest),78.38668405489997,18.053109255334437
+word-level mix,letters x words x previous gap (honest),80.76809044702723,15.11423100446604
+word-level mix,letters x words x previous gap (honest),82.73890953016704,14.190583554193113
+word-level mix,letters x words x previous gap (honest),86.08930197150472,11.251705303324716
+word-level mix,letters x words x previous gap (honest),87.25536992902914,8.984570652654812
+word-level mix,letters x words x previous gap (honest),90.3758334773338,6.7174360019849075
+word-level mix,letters x words x previous gap (honest),92.29738208339515,4.618237251364623
+word-level mix,letters x words x previous gap (honest),93.97257830406402,3.862525701141322
+word-level mix,letters x words x previous gap (honest),96.1569027878773,2.5190385007443403
+word-level mix,letters x words x previous gap (honest),98.34122727169063,0.6717436001984906
+word-level mix,letters x words x previous gap (honest),100.0,0.0
+word-level mix,letters x words x previous gap (in-sample),0.0,100.0
+word-level mix,letters x words x previous gap (in-sample),0.0985409541569906,99.49619229985115
+word-level mix,letters x words x previous gap (in-sample),2.2664419456107843,92.442884497767
+word-level mix,letters x words x previous gap (in-sample),4.252101632862364,87.75279751706906
+word-level mix,letters x words x previous gap (in-sample),4.61341846477133,86.91311801682095
+word-level mix,letters x words x previous gap (in-sample),6.157614267473587,83.89634140872677
+word-level mix,letters x words x previous gap (in-sample),7.772951882224459,80.75119132794772
+word-level mix,letters x words x previous gap (in-sample),8.413468084244897,79.32373617752592
+word-level mix,letters x words x previous gap (in-sample),10.38032994676539,75.62230104844583
+word-level mix,letters x words x previous gap (in-sample),12.711430423531123,71.16838309933931
+word-level mix,letters x words x previous gap (in-sample),14.006276194553248,68.6796296678704
+word-level mix,letters x words x previous gap (in-sample),14.96459825097281,66.98937894418644
+word-level mix,letters x words x previous gap (in-sample),15.654384930071744,65.64589174378946
+word-level mix,letters x words x previous gap (in-sample),17.012318645729884,63.17691952600294
+word-level mix,letters x words x previous gap (in-sample),18.912387538306753,59.714861193804516
+word-level mix,letters x words x previous gap (in-sample),19.69565895043772,58.39479276978802
+word-level mix,letters x words x previous gap (in-sample),19.991281812908696,57.89098506963916
+word-level mix,letters x words x previous gap (in-sample),20.58970999661173,56.92818402450271
+word-level mix,letters x words x previous gap (in-sample),21.61743924892943,55.212900159339824
+word-level mix,letters x words x previous gap (in-sample),22.74655127321275,53.41041961395528
+word-level mix,letters x words x previous gap (in-sample),23.805548722577978,51.78233242901407
+word-level mix,letters x words x previous gap (in-sample),24.290986969497926,51.07627832924736
+word-level mix,letters x words x previous gap (in-sample),24.904259857889,50.180892750650195
+word-level mix,letters x words x previous gap (in-sample),26.087538651320486,48.51001440814734
+word-level mix,letters x words x previous gap (in-sample),26.790587146859725,47.5686089417917
+word-level mix,letters x words x previous gap (in-sample),27.723800328438596,46.32766537250473
+word-level mix,letters x words x previous gap (in-sample),28.57331726054851,45.21509527590262
+word-level mix,letters x words x previous gap (in-sample),30.66233422949911,42.465957336365896
+word-level mix,letters x words x previous gap (in-sample),31.612050867965127,41.21007564869183
+word-level mix,letters x words x previous gap (in-sample),32.197924614247825,40.461230391363486
+word-level mix,letters x words x previous gap (in-sample),33.05194621694174,39.36964704104095
+word-level mix,letters x words x previous gap (in-sample),34.93219414823325,37.07829691389461
+word-level mix,letters x words x previous gap (in-sample),36.57454338418311,35.147034063323964
+word-level mix,letters x words x previous gap (in-sample),38.90667929923188,32.62799556257962
+word-level mix,letters x words x previous gap (in-sample),41.173121244842676,30.276892961884904
+word-level mix,letters x words x previous gap (in-sample),43.37386922101547,28.093726261239812
+word-level mix,letters x words x previous gap (in-sample),45.64031116662625,25.910559560594724
+word-level mix,letters x words x previous gap (in-sample),48.43608985757624,23.352367464986873
+word-level mix,letters x words x previous gap (in-sample),49.043759074877705,22.848559764838004
+word-level mix,letters x words x previous gap (in-sample),51.211660066331476,21.169200764341774
+word-level mix,letters x words x previous gap (in-sample),53.346714073066266,19.57380971387036
+word-level mix,letters x words x previous gap (in-sample),55.967362155200036,17.651027521293088
+word-level mix,letters x words x previous gap (in-sample),57.2812415439599,17.063251871119405
+word-level mix,letters x words x previous gap (in-sample),59.1863666576617,15.803732620747235
+word-level mix,letters x words x previous gap (in-sample),61.117228060696505,14.659671922272503
+word-level mix,letters x words x previous gap (in-sample),63.08804714383635,13.987928322074014
+word-level mix,letters x words x previous gap (in-sample),65.27237162764965,12.812377021726654
+word-level mix,letters x words x previous gap (in-sample),68.34356469887588,11.384921871304858
+word-level mix,letters x words x previous gap (in-sample),70.51146569032967,10.293338520982308
+word-level mix,letters x words x previous gap (in-sample),72.74506065122144,9.201755170659764
+word-level mix,letters x words x previous gap (in-sample),74.51879782604728,8.36207567041165
+word-level mix,letters x words x previous gap (in-sample),76.68669881750104,7.522396170163536
+word-level mix,letters x words x previous gap (in-sample),78.65751790064088,6.598748719890613
+word-level mix,letters x words x previous gap (in-sample),79.53632852006491,6.213628301836038
+word-level mix,letters x words x previous gap (in-sample),81.45787712612625,5.373948801587924
+word-level mix,letters x words x previous gap (in-sample),82.6075215912911,4.870141101439057
+word-level mix,letters x words x previous gap (in-sample),85.03819846049686,3.8625257011413203
+word-level mix,letters x words x previous gap (in-sample),88.5856728101485,2.51903850074434
+word-level mix,letters x words x previous gap (in-sample),90.47437443149079,1.763326950521038
+word-level mix,letters x words x previous gap (in-sample),91.32839603418472,1.595391050471415
+word-level mix,letters x words x previous gap (in-sample),93.43060305620052,1.0915833503225472
+word-level mix,letters x words x previous gap (in-sample),96.76457200517876,0.3358718000992453
+word-level mix,letters x words x previous gap (in-sample),98.04560440921966,0.08396795002481132
+word-level mix,letters x words x previous gap (in-sample),100.0,0.0
+word-level mix,rule: pause,4.266230757377907,95.92272181095464
+word-level mix,rule: pause,9.17321350978292,90.74094535079928
+word-level mix,rule: pause,15.16762009079204,85.53090701896818
+word-level mix,rule: pause,20.9170172810735,80.31279686164497
+word-level mix,rule: pause,27.31048397078025,75.02727123778247
+word-level mix,rule: pause,36.050059871572316,67.15529164663634
+word-level mix,rule: pause,48.54539937250927,55.71468466188902
+word-level mix,rule: pause,67.77539387739486,38.849265892499986
+word-level mix,rule: pause,79.3296262583956,27.402998147454873
+word-level mix,rule: pause,90.88046527104677,15.508628780609923
+word-level mix,rule: pause,98.67230314368256,5.759069219642498
+word-level mix,rule: boundary + mid-word,27.62166917169034,60.87676376798823
+word-level mix,rule: boundary + mid-word,30.545050811681083,58.861532967392755
+word-level mix,rule: boundary + mid-word,34.37172453144424,56.09059061657398
+word-level mix,rule: boundary + mid-word,38.0998572970504,53.73948801587926
+word-level mix,rule: boundary + mid-word,42.50135324939597,51.556321315234165
+word-level mix,rule: boundary + mid-word,48.72585685364585,47.02205201389435
+word-level mix,rule: boundary + mid-word,57.67666018957251,41.144295512157555
+word-level mix,rule: boundary + mid-word,72.65488522143505,30.31242995895689
+word-level mix,rule: boundary + mid-word,82.01627586634912,22.503410606649428
+word-level mix,rule: boundary + mid-word,91.77183032789112,13.518839953994616
+word-level mix,rule: boundary + mid-word,98.75181458067806,5.373948801587922
+word-level mix,rule: min letters in word,2.1350540067347965,96.64128199900756
+word-level mix,rule: min letters in word,4.105873089874611,94.12224349826322
+word-level mix,rule: min letters in word,7.226336638179311,90.09178189707227
+word-level mix,rule: min letters in word,12.974558964003773,81.69498689459112
+word-level mix,rule: min letters in word,18.55854636623323,73.29819189211
+word-level mix,rule: min letters in word,29.56228624709719,64.06171738938075
+word-level mix,rule: min letters in word,54.69022955712979,50.03906973523724
+word-level mix,rule: min letters in word,74.89112515931284,37.52784518154034
+word-level mix,rule: word start + min letters,27.24392884742189,59.11343681746718
+word-level mix,rule: word start + min letters,29.214747930561707,56.594398316722845
+word-level mix,rule: word start + min letters,32.335211478866405,52.5639367155319
+word-level mix,rule: word start + min letters,38.08343380469086,44.167141713050746
+word-level mix,rule: word start + min letters,43.667421206920366,35.770346710569626
+word-level mix,rule: word start + min letters,54.6711610877843,26.533872207840385
+word-level mix,rule: word start + min letters,79.7991043978169,12.511224553696891
+word-level mix,rule: word start + min letters,100.0,0.0
+word-level mix,rule: min words typed,35.68394311442637,63.92453828582752
+word-level mix,rule: min words typed,39.39659555969964,60.33572084604267
+word-level mix,rule: min words typed,45.04769168940702,53.78380967891304
+word-level mix,rule: min words typed,49.21435835607369,48.499489587647695
+word-level mix,rule: min words typed,56.26618769935282,43.21516949638236
+word-level mix,rule: min words typed,63.52725766630435,34.22818777853319
+word-level mix,rule: min words typed,71.28103240404087,25.157238110659218
+word-level mix,rule: min words typed,77.59854095415695,17.968711507901812
+word-level mix,rule: min words typed,84.69537599751351,9.116969555632457
+word-level mix,rule: min words typed,93.76618769935283,1.5953910504714153
+word-level mix,rule: min words typed,100.0,0.0
+word-level mix,rule: min words typed,100.0,0.0
+word-level mix,rule: word start + min words,8.913650568443922,83.82494244170785
+word-level mix,rule: word start + min words,9.834309312602448,82.75516350266736
+word-level mix,rule: word start + min words,11.21529742884024,80.40164983677828
+word-level mix,rule: word start + min words,12.261500547202202,78.47604774650539
+word-level mix,rule: word start + min words,13.893577411846863,76.5504456562325
+word-level mix,rule: word start + min words,15.734894900163917,74.19693199034343
+word-level mix,rule: word start + min words,17.576212388480972,71.84341832445435
+word-level mix,rule: word start + min words,19.459378001532503,68.0136097226894
+word-level mix,rule: word start + min words,21.30069548984956,65.03962427215683
+word-level mix,rule: word start + min words,23.309405477104526,62.47215481845964
+word-level mix,rule: word start + min words,25.1088748406871,62.47215481845964
+word-level mix,rule: word start + min words,25.1088748406871,62.47215481845964
+partial_word,letters in word (honest),0.0,100.0
+partial_word,letters in word (honest),4.166666666666667,93.54838709677419
+partial_word,letters in word (honest),11.62280701754386,80.10752688172043
+partial_word,letters in word (honest),19.29824561403509,66.66666666666667
+partial_word,letters in word (honest),46.271929824561404,46.63978494623656
+partial_word,letters in word (honest),49.12280701754386,41.263440860215056
+partial_word,letters in word (honest),63.81578947368421,26.478494623655912
+partial_word,letters in word (honest),97.36842105263158,4.032258064516129
+partial_word,letters in word (honest),100.0,0.0
+partial_word,letters in word (in-sample),0.0,100.0
+partial_word,letters in word (in-sample),2.8508771929824563,94.6236559139785
+partial_word,letters in word (in-sample),10.307017543859649,81.18279569892474
+partial_word,letters in word (in-sample),17.982456140350877,67.74193548387096
+partial_word,letters in word (in-sample),22.149122807017545,61.29032258064516
+partial_word,letters in word (in-sample),24.780701754385966,57.25806451612903
+partial_word,letters in word (in-sample),39.473684210526315,42.473118279569896
+partial_word,letters in word (in-sample),66.44736842105263,22.446236559139784
+partial_word,letters in word (in-sample),100.0,0.0
+partial_word,words typed (honest),0.0,100.0
+partial_word,words typed (honest),7.2368421052631575,94.6236559139785
+partial_word,words typed (honest),12.93859649122807,87.90322580645162
+partial_word,words typed (honest),17.105263157894736,82.52688172043011
+partial_word,words typed (honest),25.0,71.7741935483871
+partial_word,words typed (honest),30.92105263157895,69.22043010752688
+partial_word,words typed (honest),55.70175438596491,46.774193548387096
+partial_word,words typed (honest),62.93859649122807,36.155913978494624
+partial_word,words typed (honest),66.44736842105263,33.46774193548387
+partial_word,words typed (honest),75.87719298245614,25.537634408602152
+partial_word,words typed (honest),81.79824561403508,20.161290322580644
+partial_word,words typed (honest),90.5701754385965,9.408602150537634
+partial_word,words typed (honest),97.58771929824562,0.0
+partial_word,words typed (honest),100.0,0.0
+partial_word,words typed (in-sample),0.0,100.0
+partial_word,words typed (in-sample),7.2368421052631575,89.38172043010752
+partial_word,words typed (in-sample),15.131578947368421,78.62903225806451
+partial_word,words typed (in-sample),22.149122807017545,69.22043010752688
+partial_word,words typed (in-sample),27.19298245614035,62.5
+partial_word,words typed (in-sample),31.359649122807017,57.123655913978496
+partial_word,words typed (in-sample),37.06140350877193,50.403225806451616
+partial_word,words typed (in-sample),40.78947368421053,46.37096774193548
+partial_word,words typed (in-sample),46.71052631578947,40.994623655913976
+partial_word,words typed (in-sample),71.49122807017544,18.548387096774192
+partial_word,words typed (in-sample),80.92105263157895,10.618279569892474
+partial_word,words typed (in-sample),84.4298245614035,7.93010752688172
+partial_word,words typed (in-sample),91.66666666666667,2.553763440860215
+partial_word,words typed (in-sample),97.58771929824562,0.0
+partial_word,words typed (in-sample),100.0,0.0
+partial_word,characters typed (honest),0.0,100.0
+partial_word,characters typed (honest),11.403508771929825,86.69354838709677
+partial_word,characters typed (honest),23.026315789473685,73.52150537634408
+partial_word,characters typed (honest),30.04385964912281,61.424731182795696
+partial_word,characters typed (honest),40.57017543859649,52.016129032258064
+partial_word,characters typed (honest),46.49122807017544,48.11827956989247
+partial_word,characters typed (honest),61.62280701754386,31.989247311827956
+partial_word,characters typed (honest),72.36842105263158,24.059139784946236
+partial_word,characters typed (honest),81.57894736842105,15.994623655913978
+partial_word,characters typed (honest),92.32456140350877,5.376344086021505
+partial_word,characters typed (honest),100.0,0.0
+partial_word,characters typed (in-sample),0.0,100.0
+partial_word,characters typed (in-sample),7.017543859649122,87.90322580645162
+partial_word,characters typed (in-sample),18.42105263157895,74.59677419354838
+partial_word,characters typed (in-sample),30.04385964912281,61.424731182795696
+partial_word,characters typed (in-sample),45.175438596491226,45.295698924731184
+partial_word,characters typed (in-sample),55.921052631578945,34.67741935483871
+partial_word,characters typed (in-sample),66.44736842105263,25.268817204301076
+partial_word,characters typed (in-sample),75.65789473684211,17.204301075268816
+partial_word,characters typed (in-sample),86.40350877192982,9.274193548387096
+partial_word,characters typed (in-sample),94.07894736842105,3.8978494623655915
+partial_word,characters typed (in-sample),100.0,0.0
+partial_word,letters x words (honest),0.0,100.0
+partial_word,letters x words (honest),0.43859649122807015,98.65591397849462
+partial_word,letters x words (honest),1.0964912280701755,95.96774193548387
+partial_word,letters x words (honest),2.8508771929824563,93.27956989247312
+partial_word,letters x words (honest),6.578947368421052,90.59139784946237
+partial_word,letters x words (honest),7.2368421052631575,89.24731182795699
+partial_word,letters x words (honest),8.333333333333334,86.55913978494624
+partial_word,letters x words (honest),9.429824561403509,83.87096774193549
+partial_word,letters x words (honest),10.526315789473685,81.18279569892474
+partial_word,letters x words (honest),16.00877192982456,73.38709677419355
+partial_word,letters x words (honest),18.859649122807017,72.04301075268818
+partial_word,letters x words (honest),25.43859649122807,68.01075268817205
+partial_word,letters x words (honest),29.605263157894736,63.97849462365591
+partial_word,letters x words (honest),30.92105263157895,62.634408602150536
+partial_word,letters x words (honest),33.771929824561404,59.946236559139784
+partial_word,letters x words (honest),38.81578947368421,57.25806451612903
+partial_word,letters x words (honest),42.98245614035088,53.225806451612904
+partial_word,letters x words (honest),48.24561403508772,49.193548387096776
+partial_word,letters x words (honest),51.31578947368421,46.505376344086024
+partial_word,letters x words (honest),57.675438596491226,41.39784946236559
+partial_word,letters x words (honest),60.96491228070175,36.155913978494624
+partial_word,letters x words (honest),61.62280701754386,33.46774193548387
+partial_word,letters x words (honest),65.5701754385965,30.77956989247312
+partial_word,letters x words (honest),75.65789473684211,25.537634408602152
+partial_word,letters x words (honest),78.50877192982456,22.849462365591396
+partial_word,letters x words (honest),80.26315789473684,21.50537634408602
+partial_word,letters x words (honest),83.55263157894737,17.473118279569892
+partial_word,letters x words (honest),87.28070175438596,12.096774193548388
+partial_word,letters x words (honest),89.91228070175438,6.720430107526882
+partial_word,letters x words (honest),94.29824561403508,4.032258064516129
+partial_word,letters x words (honest),94.51754385964912,4.032258064516129
+partial_word,letters x words (honest),96.9298245614035,2.6881720430107525
+partial_word,letters x words (honest),98.24561403508773,1.3440860215053763
+partial_word,letters x words (honest),100.0,0.0
+partial_word,letters x words (in-sample),0.0,100.0
+partial_word,letters x words (in-sample),1.3157894736842106,94.6236559139785
+partial_word,letters x words (in-sample),1.5350877192982457,93.27956989247312
+partial_word,letters x words (in-sample),2.412280701754386,90.59139784946237
+partial_word,letters x words (in-sample),7.894736842105263,77.15053763440861
+partial_word,letters x words (in-sample),9.210526315789474,73.11827956989248
+partial_word,letters x words (in-sample),10.307017543859649,70.6989247311828
+partial_word,letters x words (in-sample),11.62280701754386,68.01075268817205
+partial_word,letters x words (in-sample),14.912280701754385,62.76881720430107
+partial_word,letters x words (in-sample),20.17543859649123,54.704301075268816
+partial_word,letters x words (in-sample),21.05263157894737,53.36021505376344
+partial_word,letters x words (in-sample),23.026315789473685,50.67204301075269
+partial_word,letters x words (in-sample),26.31578947368421,46.63978494623656
+partial_word,letters x words (in-sample),28.94736842105263,43.95161290322581
+partial_word,letters x words (in-sample),34.64912280701754,38.575268817204304
+partial_word,letters x words (in-sample),37.719298245614034,35.88709677419355
+partial_word,letters x words (in-sample),44.078947368421055,30.77956989247312
+partial_word,letters x words (in-sample),45.833333333333336,29.43548387096774
+partial_word,letters x words (in-sample),51.09649122807018,25.403225806451612
+partial_word,letters x words (in-sample),54.824561403508774,22.71505376344086
+partial_word,letters x words (in-sample),56.79824561403509,21.370967741935484
+partial_word,letters x words (in-sample),60.74561403508772,18.682795698924732
+partial_word,letters x words (in-sample),62.719298245614034,18.682795698924732
+partial_word,letters x words (in-sample),67.10526315789474,15.994623655913978
+partial_word,letters x words (in-sample),73.6842105263158,11.96236559139785
+partial_word,letters x words (in-sample),78.50877192982456,9.274193548387096
+partial_word,letters x words (in-sample),83.55263157894737,6.586021505376344
+partial_word,letters x words (in-sample),86.40350877192982,5.241935483870968
+partial_word,letters x words (in-sample),96.49122807017544,0.0
+partial_word,letters x words (in-sample),96.9298245614035,0.0
+partial_word,letters x words (in-sample),98.24561403508773,0.0
+partial_word,letters x words (in-sample),100.0,0.0
+partial_word,letters x words x previous gap (honest),0.0,100.0
+partial_word,letters x words x previous gap (honest),1.0964912280701755,99.59677419354838
+partial_word,letters x words x previous gap (honest),1.5350877192982457,99.05913978494624
+partial_word,letters x words x previous gap (honest),2.6973684210526314,97.58064516129032
+partial_word,letters x words x previous gap (honest),4.385964912280702,95.56451612903226
+partial_word,letters x words x previous gap (honest),5.2631578947368425,94.35483870967742
+partial_word,letters x words x previous gap (honest),6.5131578947368425,90.99462365591398
+partial_word,letters x words x previous gap (honest),7.828947368421052,89.11290322580645
+partial_word,letters x words x previous gap (honest),10.81140350877193,86.15591397849462
+partial_word,letters x words x previous gap (honest),11.951754385964913,84.54301075268818
+partial_word,letters x words x previous gap (honest),12.87280701754386,82.39247311827957
+partial_word,letters x words x previous gap (honest),14.49561403508772,80.24193548387096
+partial_word,letters x words x previous gap (honest),15.942982456140351,79.83870967741936
+partial_word,letters x words x previous gap (honest),16.513157894736842,79.83870967741936
+partial_word,letters x words x previous gap (honest),17.74122807017544,78.2258064516129
+partial_word,letters x words x previous gap (honest),19.473684210526315,75.53763440860214
+partial_word,letters x words x previous gap (honest),21.44736842105263,72.98387096774194
+partial_word,letters x words x previous gap (honest),23.399122807017545,71.10215053763442
+partial_word,letters x words x previous gap (honest),25.67982456140351,70.16129032258064
+partial_word,letters x words x previous gap (honest),26.907894736842106,69.6236559139785
+partial_word,letters x words x previous gap (honest),28.92543859649123,67.47311827956989
+partial_word,letters x words x previous gap (honest),29.12280701754386,67.20430107526882
+partial_word,letters x words x previous gap (honest),31.776315789473685,65.45698924731182
+partial_word,letters x words x previous gap (honest),33.728070175438596,63.575268817204304
+partial_word,letters x words x previous gap (honest),34.824561403508774,61.693548387096776
+partial_word,letters x words x previous gap (honest),35.6359649122807,59.946236559139784
+partial_word,letters x words x previous gap (honest),37.171052631578945,58.19892473118279
+partial_word,letters x words x previous gap (honest),41.776315789473685,53.62903225806452
+partial_word,letters x words x previous gap (honest),41.776315789473685,53.62903225806452
+partial_word,letters x words x previous gap (honest),45.06578947368421,51.47849462365591
+partial_word,letters x words x previous gap (honest),46.8640350877193,50.26881720430107
+partial_word,letters x words x previous gap (honest),48.1140350877193,49.32795698924731
+partial_word,letters x words x previous gap (honest),49.3859649122807,47.8494623655914
+partial_word,letters x words x previous gap (honest),50.87719298245614,45.43010752688172
+partial_word,letters x words x previous gap (honest),52.5,44.086021505376344
+partial_word,letters x words x previous gap (honest),53.24561403508772,43.68279569892473
+partial_word,letters x words x previous gap (honest),54.45175438596491,41.666666666666664
+partial_word,letters x words x previous gap (honest),56.51315789473684,40.456989247311824
+partial_word,letters x words x previous gap (honest),57.19298245614035,39.6505376344086
+partial_word,letters x words x previous gap (honest),59.3421052631579,37.365591397849464
+partial_word,letters x words x previous gap (honest),59.75877192982456,37.365591397849464
+partial_word,letters x words x previous gap (honest),60.76754385964912,36.693548387096776
+partial_word,letters x words x previous gap (honest),63.48684210526316,33.333333333333336
+partial_word,letters x words x previous gap (honest),64.9780701754386,31.85483870967742
+partial_word,letters x words x previous gap (honest),66.11842105263158,30.913978494623656
+partial_word,letters x words x previous gap (honest),67.10526315789474,29.166666666666668
+partial_word,letters x words x previous gap (honest),69.25438596491227,26.612903225806452
+partial_word,letters x words x previous gap (honest),70.83333333333333,25.672043010752688
+partial_word,letters x words x previous gap (honest),71.57894736842105,24.865591397849464
+partial_word,letters x words x previous gap (honest),73.0701754385965,21.908602150537636
+partial_word,letters x words x previous gap (honest),74.69298245614036,20.56451612903226
+partial_word,letters x words x previous gap (honest),77.5657894736842,17.338709677419356
+partial_word,letters x words x previous gap (honest),78.57456140350877,16.532258064516128
+partial_word,letters x words x previous gap (honest),79.95614035087719,13.978494623655914
+partial_word,letters x words x previous gap (honest),82.71929824561404,11.155913978494624
+partial_word,letters x words x previous gap (honest),84.91228070175438,10.080645161290322
+partial_word,letters x words x previous gap (honest),86.68859649122807,8.870967741935484
+partial_word,letters x words x previous gap (honest),90.37280701754386,6.989247311827957
+partial_word,letters x words x previous gap (honest),91.77631578947368,6.048387096774194
+partial_word,letters x words x previous gap (honest),92.5219298245614,5.10752688172043
+partial_word,letters x words x previous gap (honest),94.73684210526316,4.032258064516129
+partial_word,letters x words x previous gap (honest),95.54824561403508,2.8225806451612905
+partial_word,letters x words x previous gap (honest),96.42543859649123,1.881720430107527
+partial_word,letters x words x previous gap (honest),97.82894736842105,1.3440860215053763
+partial_word,letters x words x previous gap (honest),99.69298245614036,0.26881720430107525
+partial_word,letters x words x previous gap (honest),100.0,0.0
+partial_word,letters x words x previous gap (in-sample),0.0,100.0
+partial_word,letters x words x previous gap (in-sample),0.13157894736842105,99.19354838709677
+partial_word,letters x words x previous gap (in-sample),1.3596491228070176,95.02688172043011
+partial_word,letters x words x previous gap (in-sample),2.741228070175439,90.7258064516129
+partial_word,letters x words x previous gap (in-sample),4.385964912280702,85.88709677419355
+partial_word,letters x words x previous gap (in-sample),5.1535087719298245,82.79569892473118
+partial_word,letters x words x previous gap (in-sample),6.381578947368421,79.43548387096774
+partial_word,letters x words x previous gap (in-sample),8.223684210526315,75.26881720430107
+partial_word,letters x words x previous gap (in-sample),9.100877192982455,72.98387096774194
+partial_word,letters x words x previous gap (in-sample),10.74561403508772,69.6236559139785
+partial_word,letters x words x previous gap (in-sample),11.447368421052632,67.60752688172043
+partial_word,letters x words x previous gap (in-sample),12.916666666666666,64.78494623655914
+partial_word,letters x words x previous gap (in-sample),14.25438596491228,62.096774193548384
+partial_word,letters x words x previous gap (in-sample),15.701754385964913,59.40860215053763
+partial_word,letters x words x previous gap (in-sample),17.214912280701753,57.25806451612903
+partial_word,letters x words x previous gap (in-sample),18.114035087719298,55.645161290322584
+partial_word,letters x words x previous gap (in-sample),19.67105263157895,53.225806451612904
+partial_word,letters x words x previous gap (in-sample),21.162280701754387,50.94086021505376
+partial_word,letters x words x previous gap (in-sample),21.644736842105264,50.26881720430107
+partial_word,letters x words x previous gap (in-sample),23.333333333333332,48.11827956989247
+partial_word,letters x words x previous gap (in-sample),24.100877192982455,47.043010752688176
+partial_word,letters x words x previous gap (in-sample),25.81140350877193,44.89247311827957
+partial_word,letters x words x previous gap (in-sample),28.092105263157894,42.33870967741935
+partial_word,letters x words x previous gap (in-sample),29.649122807017545,40.59139784946237
+partial_word,letters x words x previous gap (in-sample),30.43859649122807,39.6505376344086
+partial_word,letters x words x previous gap (in-sample),32.06140350877193,37.903225806451616
+partial_word,letters x words x previous gap (in-sample),33.55263157894737,36.29032258064516
+partial_word,letters x words x previous gap (in-sample),35.021929824561404,34.81182795698925
+partial_word,letters x words x previous gap (in-sample),35.43859649122807,34.40860215053763
+partial_word,letters x words x previous gap (in-sample),37.39035087719298,32.526881720430104
+partial_word,letters x words x previous gap (in-sample),38.94736842105263,31.048387096774192
+partial_word,letters x words x previous gap (in-sample),39.80263157894737,30.241935483870968
+partial_word,letters x words x previous gap (in-sample),42.21491228070175,28.091397849462364
+partial_word,letters x words x previous gap (in-sample),43.1140350877193,27.28494623655914
+partial_word,letters x words x previous gap (in-sample),44.73684210526316,26.344086021505376
+partial_word,letters x words x previous gap (in-sample),45.921052631578945,25.403225806451612
+partial_word,letters x words x previous gap (in-sample),47.719298245614034,24.865591397849464
+partial_word,letters x words x previous gap (in-sample),48.728070175438596,24.059139784946236
+partial_word,letters x words x previous gap (in-sample),49.671052631578945,23.387096774193548
+partial_word,letters x words x previous gap (in-sample),51.18421052631579,22.177419354838708
+partial_word,letters x words x previous gap (in-sample),52.06140350877193,21.50537634408602
+partial_word,letters x words x previous gap (in-sample),53.83771929824562,20.161290322580644
+partial_word,letters x words x previous gap (in-sample),54.473684210526315,20.161290322580644
+partial_word,letters x words x previous gap (in-sample),55.833333333333336,19.489247311827956
+partial_word,letters x words x previous gap (in-sample),57.14912280701754,18.682795698924732
+partial_word,letters x words x previous gap (in-sample),58.55263157894737,17.741935483870968
+partial_word,letters x words x previous gap (in-sample),59.583333333333336,17.204301075268816
+partial_word,letters x words x previous gap (in-sample),60.81140350877193,16.532258064516128
+partial_word,letters x words x previous gap (in-sample),62.083333333333336,15.86021505376344
+partial_word,letters x words x previous gap (in-sample),65.39473684210526,14.381720430107526
+partial_word,letters x words x previous gap (in-sample),66.53508771929825,13.709677419354838
+partial_word,letters x words x previous gap (in-sample),67.30263157894737,13.306451612903226
+partial_word,letters x words x previous gap (in-sample),68.46491228070175,12.634408602150538
+partial_word,letters x words x previous gap (in-sample),71.03070175438596,11.290322580645162
+partial_word,letters x words x previous gap (in-sample),73.22368421052632,9.946236559139784
+partial_word,letters x words x previous gap (in-sample),73.83771929824562,9.67741935483871
+partial_word,letters x words x previous gap (in-sample),74.91228070175438,9.408602150537634
+partial_word,letters x words x previous gap (in-sample),77.76315789473684,7.93010752688172
+partial_word,letters x words x previous gap (in-sample),79.34210526315789,7.123655913978495
+partial_word,letters x words x previous gap (in-sample),80.85526315789474,6.586021505376344
+partial_word,letters x words x previous gap (in-sample),81.40350877192982,6.451612903225806
+partial_word,letters x words x previous gap (in-sample),83.1140350877193,5.645161290322581
+partial_word,letters x words x previous gap (in-sample),85.30701754385964,4.56989247311828
+partial_word,letters x words x previous gap (in-sample),87.41228070175438,3.763440860215054
+partial_word,letters x words x previous gap (in-sample),89.67105263157895,2.956989247311828
+partial_word,letters x words x previous gap (in-sample),90.08771929824562,2.956989247311828
+partial_word,letters x words x previous gap (in-sample),93.1798245614035,1.6129032258064515
+partial_word,letters x words x previous gap (in-sample),93.66228070175438,1.6129032258064515
+partial_word,letters x words x previous gap (in-sample),95.81140350877193,1.075268817204301
+partial_word,letters x words x previous gap (in-sample),97.25877192982456,0.6720430107526881
+partial_word,letters x words x previous gap (in-sample),97.82894736842105,0.6720430107526881
+partial_word,letters x words x previous gap (in-sample),100.0,0.0
+partial_word,rule: pause,3.3552631578947367,97.44623655913979
+partial_word,rule: pause,7.258771929824562,94.22043010752688
+partial_word,rule: pause,12.368421052631579,89.78494623655914
+partial_word,rule: pause,17.346491228070175,86.02150537634408
+partial_word,rule: pause,23.223684210526315,82.52688172043011
+partial_word,rule: pause,31.535087719298247,75.26881720430107
+partial_word,rule: pause,43.48684210526316,65.86021505376344
+partial_word,rule: pause,63.48684210526316,48.52150537634409
+partial_word,rule: pause,75.98684210526316,36.02150537634409
+partial_word,rule: pause,89.01315789473684,21.63978494623656
+partial_word,rule: pause,98.33333333333333,8.602150537634408
+partial_word,rule: boundary + mid-word,3.3552631578947367,97.44623655913979
+partial_word,rule: boundary + mid-word,7.258771929824562,94.22043010752688
+partial_word,rule: boundary + mid-word,12.368421052631579,89.78494623655914
+partial_word,rule: boundary + mid-word,17.346491228070175,86.02150537634408
+partial_word,rule: boundary + mid-word,23.223684210526315,82.52688172043011
+partial_word,rule: boundary + mid-word,31.535087719298247,75.26881720430107
+partial_word,rule: boundary + mid-word,43.48684210526316,65.86021505376344
+partial_word,rule: boundary + mid-word,63.48684210526316,48.52150537634409
+partial_word,rule: boundary + mid-word,75.98684210526316,36.02150537634409
+partial_word,rule: boundary + mid-word,89.01315789473684,21.63978494623656
+partial_word,rule: boundary + mid-word,98.33333333333333,8.602150537634408
+partial_word,rule: min letters in word,2.8508771929824563,94.6236559139785
+partial_word,rule: min letters in word,5.482456140350878,90.59139784946237
+partial_word,rule: min letters in word,9.649122807017545,84.13978494623656
+partial_word,rule: min letters in word,17.32456140350877,70.6989247311828
+partial_word,rule: min letters in word,24.780701754385966,57.25806451612903
+partial_word,rule: min letters in word,39.473684210526315,42.473118279569896
+partial_word,rule: min letters in word,73.02631578947368,20.026881720430108
+partial_word,rule: min letters in word,100.0,0.0
+partial_word,rule: word start + min letters,2.8508771929824563,94.6236559139785
+partial_word,rule: word start + min letters,5.482456140350878,90.59139784946237
+partial_word,rule: word start + min letters,9.649122807017545,84.13978494623656
+partial_word,rule: word start + min letters,17.32456140350877,70.6989247311828
+partial_word,rule: word start + min letters,24.780701754385966,57.25806451612903
+partial_word,rule: word start + min letters,39.473684210526315,42.473118279569896
+partial_word,rule: word start + min letters,73.02631578947368,20.026881720430108
+partial_word,rule: word start + min letters,100.0,0.0
+partial_word,rule: min words typed,35.74561403508772,68.14516129032258
+partial_word,rule: min words typed,39.473684210526315,64.11290322580645
+partial_word,rule: min words typed,45.175438596491226,57.39247311827957
+partial_word,rule: min words typed,49.3421052631579,52.016129032258064
+partial_word,rule: min words typed,56.578947368421055,46.63978494623656
+partial_word,rule: min words typed,63.81578947368421,36.02150537634409
+partial_word,rule: min words typed,71.71052631578948,25.268817204301076
+partial_word,rule: min words typed,77.63157894736842,19.892473118279568
+partial_word,rule: min words typed,84.64912280701755,10.483870967741936
+partial_word,rule: min words typed,94.07894736842105,2.553763440860215
+partial_word,rule: min words typed,100.0,0.0
+partial_word,rule: min words typed,100.0,0.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+next_word,letters in word (honest),0.0,100.0
+next_word,letters in word (honest),100.0,0.0
+next_word,letters in word (in-sample),0.0,100.0
+next_word,letters in word (in-sample),100.0,0.0
+next_word,words typed (honest),0.0,100.0
+next_word,words typed (honest),2.5,97.14937286202965
+next_word,words typed (honest),5.833333333333333,92.58836944127708
+next_word,words typed (honest),10.833333333333334,88.02736602052451
+next_word,words typed (honest),18.166666666666668,81.75598631698973
+next_word,words typed (honest),24.666666666666668,76.6248574686431
+next_word,words typed (honest),28.833333333333332,71.49372862029647
+next_word,words typed (honest),34.333333333333336,65.22234891676169
+next_word,words typed (honest),59.0,34.09350057012543
+next_word,words typed (honest),66.33333333333333,27.82212086659065
+next_word,words typed (honest),70.0,24.971493728620295
+next_word,words typed (honest),77.5,14.766248574686431
+next_word,words typed (honest),85.5,7.924743443557583
+next_word,words typed (honest),92.83333333333333,0.0
+next_word,words typed (honest),100.0,0.0
+next_word,words typed (in-sample),0.0,100.0
+next_word,words typed (in-sample),7.5,89.79475484606614
+next_word,words typed (in-sample),10.833333333333334,85.23375142531357
+next_word,words typed (in-sample),35.5,54.10490307867731
+next_word,words typed (in-sample),39.666666666666664,48.973774230330676
+next_word,words typed (in-sample),45.166666666666664,42.70239452679589
+next_word,words typed (in-sample),47.666666666666664,39.85176738882554
+next_word,words typed (in-sample),55.0,31.92702394526796
+next_word,words typed (in-sample),60.0,27.366020524515392
+next_word,words typed (in-sample),74.66666666666667,14.823261117445838
+next_word,words typed (in-sample),82.66666666666667,7.98175598631699
+next_word,words typed (in-sample),89.16666666666667,2.8506271379703536
+next_word,words typed (in-sample),92.83333333333333,0.0
+next_word,words typed (in-sample),100.0,0.0
+next_word,characters typed (honest),0.0,100.0
+next_word,characters typed (honest),10.333333333333334,85.74686431014823
+next_word,characters typed (honest),23.666666666666668,75.48460661345496
+next_word,characters typed (honest),33.5,64.65222348916761
+next_word,characters typed (honest),44.166666666666664,50.45610034207526
+next_word,characters typed (honest),53.0,43.671607753705814
+next_word,characters typed (honest),72.5,21.60775370581528
+next_word,characters typed (honest),81.33333333333333,13.055872291904219
+next_word,characters typed (honest),92.33333333333333,0.5701254275940707
+next_word,characters typed (honest),100.0,0.0
+next_word,characters typed (in-sample),0.0,100.0
+next_word,characters typed (in-sample),10.333333333333334,85.74686431014823
+next_word,characters typed (in-sample),21.0,71.55074116305587
+next_word,characters typed (in-sample),31.0,59.578107183580386
+next_word,characters typed (in-sample),42.0,47.09236031927024
+next_word,characters typed (in-sample),51.833333333333336,36.259977194982895
+next_word,characters typed (in-sample),61.333333333333336,26.168757126567844
+next_word,characters typed (in-sample),70.16666666666667,17.616875712656785
+next_word,characters typed (in-sample),79.0,10.832383124287343
+next_word,characters typed (in-sample),92.33333333333333,0.5701254275940707
+next_word,characters typed (in-sample),100.0,0.0
+next_word,letters x words (honest),0.0,100.0
+next_word,letters x words (honest),7.5,92.58836944127708
+next_word,letters x words (honest),18.166666666666668,82.32611174458381
+next_word,letters x words (honest),32.833333333333336,69.78335233751426
+next_word,letters x words (honest),60.833333333333336,34.09350057012543
+next_word,letters x words (honest),70.0,24.971493728620295
+next_word,letters x words (honest),84.83333333333333,6.841505131128848
+next_word,letters x words (honest),100.0,0.0
+next_word,letters x words (in-sample),0.0,100.0
+next_word,letters x words (in-sample),28.0,64.31014823261117
+next_word,letters x words (in-sample),42.833333333333336,46.18015963511973
+next_word,letters x words (in-sample),52.0,37.058152793614596
+next_word,letters x words (in-sample),59.5,29.646522234891677
+next_word,letters x words (in-sample),70.16666666666667,19.384264538198405
+next_word,letters x words (in-sample),84.83333333333333,6.841505131128848
+next_word,letters x words (in-sample),100.0,0.0
+next_word,letters x words x previous gap (honest),0.0,100.0
+next_word,letters x words x previous gap (honest),1.95,98.11858608893957
+next_word,letters x words x previous gap (honest),3.65,96.35119726339795
+next_word,letters x words x previous gap (honest),7.533333333333333,93.04446978335234
+next_word,letters x words x previous gap (honest),10.05,90.87799315849487
+next_word,letters x words x previous gap (honest),13.583333333333334,87.79931584948689
+next_word,letters x words x previous gap (honest),16.116666666666667,85.17673888255416
+next_word,letters x words x previous gap (honest),17.9,83.29532497149373
+next_word,letters x words x previous gap (honest),20.85,80.72976054732041
+next_word,letters x words x previous gap (honest),24.716666666666665,77.4230330672748
+next_word,letters x words x previous gap (honest),27.216666666666665,74.85746864310148
+next_word,letters x words x previous gap (honest),34.166666666666664,66.0775370581528
+next_word,letters x words x previous gap (honest),36.233333333333334,64.19612314709237
+next_word,letters x words x previous gap (honest),42.416666666666664,55.815279361459524
+next_word,letters x words x previous gap (honest),50.15,46.00912200684151
+next_word,letters x words x previous gap (honest),57.28333333333333,37.286202964652226
+next_word,letters x words x previous gap (honest),59.516666666666666,34.83466362599772
+next_word,letters x words x previous gap (honest),62.18333333333333,31.92702394526796
+next_word,letters x words x previous gap (honest),64.6,29.817559863169897
+next_word,letters x words x previous gap (honest),67.98333333333333,26.966932725199545
+next_word,letters x words x previous gap (honest),70.0,24.971493728620295
+next_word,letters x words x previous gap (honest),73.66666666666667,20.467502850627138
+next_word,letters x words x previous gap (honest),77.63333333333334,15.906499429874572
+next_word,letters x words x previous gap (honest),81.28333333333333,11.573546180159635
+next_word,letters x words x previous gap (honest),84.83333333333333,6.841505131128848
+next_word,letters x words x previous gap (honest),89.05,4.218928164196123
+next_word,letters x words x previous gap (honest),92.83333333333333,2.33751425313569
+next_word,letters x words x previous gap (honest),96.66666666666667,1.1972633979475484
+next_word,letters x words x previous gap (honest),100.0,0.0
+next_word,letters x words x previous gap (in-sample),0.0,100.0
+next_word,letters x words x previous gap (in-sample),6.183333333333334,91.61915621436717
+next_word,letters x words x previous gap (in-sample),9.733333333333333,86.88711516533637
+next_word,letters x words x previous gap (in-sample),17.466666666666665,77.08095781071836
+next_word,letters x words x previous gap (in-sample),24.416666666666668,68.30102622576968
+next_word,letters x words x previous gap (in-sample),31.55,59.578107183580386
+next_word,letters x words x previous gap (in-sample),35.21666666666667,55.07411630558723
+next_word,letters x words x previous gap (in-sample),38.86666666666667,50.74116305587229
+next_word,letters x words x previous gap (in-sample),42.833333333333336,46.18015963511973
+next_word,letters x words x previous gap (in-sample),45.06666666666667,43.72862029646522
+next_word,letters x words x previous gap (in-sample),47.733333333333334,40.820980615735465
+next_word,letters x words x previous gap (in-sample),49.516666666666666,38.93956670467503
+next_word,letters x words x previous gap (in-sample),51.21666666666667,37.17217787913341
+next_word,letters x words x previous gap (in-sample),53.75,34.54960091220068
+next_word,letters x words x previous gap (in-sample),56.25,31.984036488027368
+next_word,letters x words x previous gap (in-sample),58.266666666666666,29.988597491448118
+next_word,letters x words x previous gap (in-sample),60.21666666666667,28.107183580387684
+next_word,letters x words x previous gap (in-sample),62.28333333333333,26.225769669327253
+next_word,letters x words x previous gap (in-sample),64.7,24.116305587229192
+next_word,letters x words x previous gap (in-sample),67.65,21.55074116305587
+next_word,letters x words x previous gap (in-sample),71.18333333333334,18.472063854047892
+next_word,letters x words x previous gap (in-sample),73.7,16.305587229190422
+next_word,letters x words x previous gap (in-sample),77.56666666666666,12.998859749144811
+next_word,letters x words x previous gap (in-sample),81.45,9.692132269099202
+next_word,letters x words x previous gap (in-sample),84.83333333333333,6.841505131128848
+next_word,letters x words x previous gap (in-sample),89.05,4.218928164196123
+next_word,letters x words x previous gap (in-sample),92.83333333333333,2.33751425313569
+next_word,letters x words x previous gap (in-sample),96.16666666666667,1.1402508551881414
+next_word,letters x words x previous gap (in-sample),100.0,0.0
+next_word,rule: pause,6.983333333333333,93.38654503990878
+next_word,rule: pause,14.883333333333333,84.94868871151654
+next_word,rule: pause,23.516666666666666,78.44925883694413
+next_word,rule: pause,31.566666666666666,70.80957810718358
+next_word,rule: pause,39.5,62.54275940706955
+next_word,rule: pause,49.516666666666666,53.64880273660205
+next_word,rule: pause,63.63333333333333,38.82554161915621
+next_word,rule: pause,80.56666666666666,22.74800456100342
+next_word,rule: pause,89.3,13.055872291904219
+next_word,rule: pause,96.45,5.3021664766248575
+next_word,rule: pause,99.68333333333334,1.0262257696693273
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: boundary + mid-word,100.0,0.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: min letters in word,0.0,100.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: min words typed,35.5,56.89851767388826
+next_word,rule: min words typed,39.166666666666664,54.0478905359179
+next_word,rule: min words typed,44.666666666666664,47.776510832383124
+next_word,rule: min words typed,48.833333333333336,42.64538198403649
+next_word,rule: min words typed,55.333333333333336,37.51425313568985
+next_word,rule: min words typed,62.666666666666664,31.242873432155076
+next_word,rule: min words typed,70.0,24.971493728620295
+next_word,rule: min words typed,77.5,14.766248574686431
+next_word,rule: min words typed,84.83333333333333,6.841505131128848
+next_word,rule: min words typed,92.83333333333333,0.0
+next_word,rule: min words typed,100.0,0.0
+next_word,rule: min words typed,100.0,0.0
+next_word,rule: word start + min words,35.5,56.89851767388826
+next_word,rule: word start + min words,39.166666666666664,54.0478905359179
+next_word,rule: word start + min words,44.666666666666664,47.776510832383124
+next_word,rule: word start + min words,48.833333333333336,42.64538198403649
+next_word,rule: word start + min words,55.333333333333336,37.51425313568985
+next_word,rule: word start + min words,62.666666666666664,31.242873432155076
+next_word,rule: word start + min words,70.0,24.971493728620295
+next_word,rule: word start + min words,77.5,14.766248574686431
+next_word,rule: word start + min words,84.83333333333333,6.841505131128848
+next_word,rule: word start + min words,92.83333333333333,0.0
+next_word,rule: word start + min words,100.0,0.0
+next_word,rule: word start + min words,100.0,0.0
+phrase,letters in word (honest),0.0,100.0
+phrase,letters in word (honest),100.0,0.0
+phrase,letters in word (in-sample),0.0,100.0
+phrase,letters in word (in-sample),100.0,0.0
+phrase,words typed (honest),0.0,100.0
+phrase,words typed (honest),7.333333333333333,94.90373725934315
+phrase,words typed (honest),11.5,89.24122310305776
+phrase,words typed (honest),16.5,84.31483578708946
+phrase,words typed (honest),19.0,81.48357870894677
+phrase,words typed (honest),24.5,76.44394110985277
+phrase,words typed (honest),31.0,71.0079275198188
+phrase,words typed (honest),55.666666666666664,37.032842582106454
+phrase,words typed (honest),59.0,32.276330690826725
+phrase,words typed (honest),62.666666666666664,28.708946772366932
+phrase,words typed (honest),70.0,21.91392978482446
+phrase,words typed (honest),77.33333333333333,15.232163080407702
+phrase,words typed (honest),85.33333333333333,9.003397508493771
+phrase,words typed (honest),92.83333333333333,0.0
+phrase,words typed (honest),100.0,0.0
+phrase,words typed (in-sample),0.0,100.0
+phrase,words typed (in-sample),3.3333333333333335,95.24348810872027
+phrase,words typed (in-sample),28.0,61.268403171007925
+phrase,words typed (in-sample),32.166666666666664,55.605889014722536
+phrase,words typed (in-sample),39.666666666666664,46.602491506228766
+phrase,words typed (in-sample),42.166666666666664,43.77123442808607
+phrase,words typed (in-sample),47.166666666666664,38.84484711211778
+phrase,words typed (in-sample),50.833333333333336,35.27746319365799
+phrase,words typed (in-sample),58.166666666666664,28.482446206115515
+phrase,words typed (in-sample),63.666666666666664,23.44280860702152
+phrase,words typed (in-sample),71.0,16.761041902604756
+phrase,words typed (in-sample),77.5,11.325028312570781
+phrase,words typed (in-sample),85.5,5.096262740656852
+phrase,words typed (in-sample),92.83333333333333,0.0
+phrase,words typed (in-sample),100.0,0.0
+phrase,characters typed (honest),0.0,100.0
+phrase,characters typed (honest),9.833333333333334,90.93997734994338
+phrase,characters typed (honest),20.166666666666668,77.46319365798415
+phrase,characters typed (honest),33.5,65.17553793884484
+phrase,characters typed (honest),42.333333333333336,58.66364665911665
+phrase,characters typed (honest),53.0,41.22310305775765
+phrase,characters typed (honest),63.0,28.87882219705549
+phrase,characters typed (honest),71.83333333333333,20.951302378255946
+phrase,characters typed (honest),81.33333333333333,10.758776896942242
+phrase,characters typed (honest),92.33333333333333,0.0
+phrase,characters typed (honest),100.0,0.0
+phrase,characters typed (in-sample),0.0,100.0
+phrase,characters typed (in-sample),10.666666666666666,82.55945639864099
+phrase,characters typed (in-sample),21.0,69.08267270668176
+phrase,characters typed (in-sample),31.0,56.73839184597961
+phrase,characters typed (in-sample),40.5,46.54586636466591
+phrase,characters typed (in-sample),51.5,35.78708946772367
+phrase,characters typed (in-sample),61.333333333333336,26.727066817667044
+phrase,characters typed (in-sample),74.66666666666667,14.439411098527746
+phrase,characters typed (in-sample),83.5,6.511891279728199
+phrase,characters typed (in-sample),92.33333333333333,0.0
+phrase,characters typed (in-sample),100.0,0.0
+phrase,letters x words (honest),0.0,100.0
+phrase,letters x words (honest),10.666666666666666,88.90147225368064
+phrase,letters x words (honest),18.166666666666668,81.14382785956965
+phrase,letters x words (honest),32.833333333333336,69.36579841449604
+phrase,letters x words (honest),42.0,60.758776896942244
+phrase,letters x words (honest),70.0,22.02718006795017
+phrase,letters x words (honest),84.83333333333333,6.22876557191393
+phrase,letters x words (honest),100.0,0.0
+phrase,letters x words (in-sample),0.0,100.0
+phrase,letters x words (in-sample),28.0,61.268403171007925
+phrase,letters x words (in-sample),42.833333333333336,45.46998867497169
+phrase,letters x words (in-sample),53.5,34.37146092865232
+phrase,letters x words (in-sample),61.0,26.613816534541336
+phrase,letters x words (in-sample),70.16666666666667,18.006795016987542
+phrase,letters x words (in-sample),84.83333333333333,6.22876557191393
+phrase,letters x words (in-sample),100.0,0.0
+phrase,letters x words x previous gap (honest),0.0,100.0
+phrase,letters x words x previous gap (honest),1.8666666666666667,98.30124575311439
+phrase,letters x words x previous gap (honest),4.366666666666666,95.6964892412231
+phrase,letters x words x previous gap (honest),7.983333333333333,92.58210645526614
+phrase,letters x words x previous gap (honest),10.916666666666666,89.46772366930918
+phrase,letters x words x previous gap (honest),14.733333333333333,86.52321630804077
+phrase,letters x words x previous gap (honest),16.666666666666668,84.08833522083805
+phrase,letters x words x previous gap (honest),19.183333333333334,81.42695356738392
+phrase,letters x words x previous gap (honest),22.8,78.8788221970555
+phrase,letters x words x previous gap (honest),24.8,76.95356738391845
+phrase,letters x words x previous gap (honest),27.516666666666666,74.23556058890148
+phrase,letters x words x previous gap (honest),29.866666666666667,72.14043035107588
+phrase,letters x words x previous gap (honest),33.483333333333334,68.96942242355605
+phrase,letters x words x previous gap (honest),35.18333333333333,67.27066817667044
+phrase,letters x words x previous gap (honest),37.45,65.06228765571915
+phrase,letters x words x previous gap (honest),45.03333333333333,53.793884484711214
+phrase,letters x words x previous gap (honest),51.95,44.960362400906
+phrase,letters x words x previous gap (honest),54.166666666666664,42.86523216308041
+phrase,letters x words x previous gap (honest),61.1,33.63533408833522
+phrase,letters x words x previous gap (honest),64.85,29.161947904869763
+phrase,letters x words x previous gap (honest),71.41666666666667,19.762174405436014
+phrase,letters x words x previous gap (honest),73.75,17.553793884484712
+phrase,letters x words x previous gap (honest),77.43333333333334,14.04303510758777
+phrase,letters x words x previous gap (honest),80.85,10.985277463193658
+phrase,letters x words x previous gap (honest),84.83333333333333,6.22876557191393
+phrase,letters x words x previous gap (honest),88.28333333333333,4.813137032842582
+phrase,letters x words x previous gap (honest),91.75,3.5107587768969424
+phrase,letters x words x previous gap (honest),95.95,1.5855039637599093
+phrase,letters x words x previous gap (honest),100.0,0.0
+phrase,letters x words x previous gap (in-sample),0.0,100.0
+phrase,letters x words x previous gap (in-sample),7.583333333333333,88.73159682899207
+phrase,letters x words x previous gap (in-sample),14.15,79.33182332955832
+phrase,letters x words x previous gap (in-sample),21.083333333333332,70.10192525481314
+phrase,letters x words x previous gap (in-sample),28.0,61.268403171007925
+phrase,letters x words x previous gap (in-sample),29.933333333333334,58.83352208380521
+phrase,letters x words x previous gap (in-sample),33.916666666666664,54.07701019252548
+phrase,letters x words x previous gap (in-sample),37.666666666666664,49.60362400906002
+phrase,letters x words x previous gap (in-sample),40.6,46.48924122310306
+phrase,letters x words x previous gap (in-sample),43.11666666666667,43.82785956964892
+phrase,letters x words x previous gap (in-sample),45.61666666666667,41.22310305775765
+phrase,letters x words x previous gap (in-sample),48.333333333333336,38.50509626274066
+phrase,letters x words x previous gap (in-sample),50.03333333333333,36.80634201585504
+phrase,letters x words x previous gap (in-sample),52.3,34.597961494903736
+phrase,letters x words x previous gap (in-sample),54.3,32.672706681766705
+phrase,letters x words x previous gap (in-sample),57.983333333333334,29.161947904869763
+phrase,letters x words x previous gap (in-sample),60.31666666666667,26.95356738391846
+phrase,letters x words x previous gap (in-sample),62.53333333333333,24.858437146092864
+phrase,letters x words x previous gap (in-sample),64.4,23.159682899207247
+phrase,letters x words x previous gap (in-sample),66.75,21.064552661381654
+phrase,letters x words x previous gap (in-sample),70.16666666666667,18.006795016987542
+phrase,letters x words x previous gap (in-sample),73.78333333333333,14.835787089467724
+phrase,letters x words x previous gap (in-sample),77.4,11.72140430351076
+phrase,letters x words x previous gap (in-sample),81.21666666666667,8.776896942242356
+phrase,letters x words x previous gap (in-sample),84.83333333333333,6.22876557191393
+phrase,letters x words x previous gap (in-sample),89.03333333333333,4.303510758776897
+phrase,letters x words x previous gap (in-sample),92.48333333333333,2.887882219705549
+phrase,letters x words x previous gap (in-sample),96.53333333333333,1.3023782559456398
+phrase,letters x words x previous gap (in-sample),100.0,0.0
+phrase,rule: pause,7.2,92.07248018120045
+phrase,rule: pause,14.6,84.48471121177803
+phrase,rule: pause,22.7,77.01019252548132
+phrase,rule: pause,31.283333333333335,69.42242355605889
+phrase,rule: pause,38.81666666666667,61.83465458663647
+phrase,rule: pause,49.13333333333333,51.81200453001132
+phrase,rule: pause,63.983333333333334,37.54246885617214
+phrase,rule: pause,80.45,19.98867497168743
+phrase,rule: pause,89.33333333333333,12.287655719139298
+phrase,rule: pause,96.58333333333333,5.322763306908267
+phrase,rule: pause,99.68333333333334,1.5855039637599093
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: boundary + mid-word,100.0,0.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: min letters in word,0.0,100.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: min words typed,35.5,53.51075877689694
+phrase,rule: min words typed,39.166666666666664,49.943374858437146
+phrase,rule: min words typed,44.666666666666664,44.903737259343146
+phrase,rule: min words typed,48.833333333333336,39.241223103057756
+phrase,rule: min words typed,55.333333333333336,33.80520951302378
+phrase,rule: min words typed,62.666666666666664,28.708946772366932
+phrase,rule: min words typed,70.0,22.02718006795017
+phrase,rule: min words typed,77.5,13.023782559456398
+phrase,rule: min words typed,84.83333333333333,6.22876557191393
+phrase,rule: min words typed,92.83333333333333,0.0
+phrase,rule: min words typed,100.0,0.0
+phrase,rule: min words typed,100.0,0.0
+phrase,rule: word start + min words,35.5,53.51075877689694
+phrase,rule: word start + min words,39.166666666666664,49.943374858437146
+phrase,rule: word start + min words,44.666666666666664,44.903737259343146
+phrase,rule: word start + min words,48.833333333333336,39.241223103057756
+phrase,rule: word start + min words,55.333333333333336,33.80520951302378
+phrase,rule: word start + min words,62.666666666666664,28.708946772366932
+phrase,rule: word start + min words,70.0,22.02718006795017
+phrase,rule: word start + min words,77.5,13.023782559456398
+phrase,rule: word start + min words,84.83333333333333,6.22876557191393
+phrase,rule: word start + min words,92.83333333333333,0.0
+phrase,rule: word start + min words,100.0,0.0
+phrase,rule: word start + min words,100.0,0.0
+sentence,letters in word (honest),0.0,100.0
+sentence,letters in word (honest),100.0,0.0
+sentence,letters in word (in-sample),0.0,100.0
+sentence,letters in word (in-sample),100.0,0.0
+sentence,words typed (honest),0.0,100.0
+sentence,words typed (honest),4.166666666666667,93.5912938331318
+sentence,words typed (honest),28.833333333333332,41.35429262394196
+sentence,words typed (honest),32.166666666666664,34.3409915356711
+sentence,words typed (honest),37.166666666666664,28.41596130592503
+sentence,words typed (honest),40.833333333333336,20.19347037484885
+sentence,words typed (honest),46.333333333333336,16.928657799274486
+sentence,words typed (honest),53.666666666666664,13.422007255139057
+sentence,words typed (honest),60.166666666666664,13.301088270858525
+sentence,words typed (honest),67.5,11.608222490931077
+sentence,words typed (honest),74.83333333333333,6.892382103990326
+sentence,words typed (honest),82.33333333333333,5.683192261185006
+sentence,words typed (honest),84.83333333333333,2.2974607013301087
+sentence,words typed (honest),92.83333333333333,0.0
+sentence,words typed (honest),100.0,0.0
+sentence,words typed (in-sample),0.0,100.0
+sentence,words typed (in-sample),3.6666666666666665,91.77750906892382
+sentence,words typed (in-sample),28.333333333333332,39.54050785973398
+sentence,words typed (in-sample),31.666666666666668,32.52720677146312
+sentence,words typed (in-sample),35.833333333333336,26.11850060459492
+sentence,words typed (in-sample),38.333333333333336,22.732769044740024
+sentence,words typed (in-sample),43.333333333333336,16.807738814993954
+sentence,words typed (in-sample),50.666666666666664,12.091898428053204
+sentence,words typed (in-sample),56.166666666666664,8.82708585247884
+sentence,words typed (in-sample),63.5,5.32043530834341
+sentence,words typed (in-sample),71.5,3.022974607013301
+sentence,words typed (in-sample),78.83333333333333,1.3301088270858525
+sentence,words typed (in-sample),86.33333333333333,0.12091898428053205
+sentence,words typed (in-sample),92.83333333333333,0.0
+sentence,words typed (in-sample),100.0,0.0
+sentence,characters typed (honest),0.0,100.0
+sentence,characters typed (honest),10.666666666666666,75.93712212817412
+sentence,characters typed (honest),20.5,69.40749697702539
+sentence,characters typed (honest),30.833333333333332,49.57678355501814
+sentence,characters typed (honest),40.333333333333336,32.889963724304714
+sentence,characters typed (honest),53.666666666666664,14.510278113663846
+sentence,characters typed (honest),62.5,12.091898428053204
+sentence,characters typed (honest),72.5,3.9903264812575574
+sentence,characters typed (honest),83.5,1.2091898428053205
+sentence,characters typed (honest),92.33333333333333,0.0
+sentence,characters typed (honest),100.0,0.0
+sentence,characters typed (in-sample),0.0,100.0
+sentence,characters typed (in-sample),10.666666666666666,75.93712212817412
+sentence,characters typed (in-sample),21.0,56.10640870616687
+sentence,characters typed (in-sample),30.5,39.41958887545345
+sentence,characters typed (in-sample),43.833333333333336,21.039903264812576
+sentence,characters typed (in-sample),53.833333333333336,12.938331318016928
+sentence,characters typed (in-sample),63.666666666666664,6.408706166868198
+sentence,characters typed (in-sample),72.5,3.9903264812575574
+sentence,characters typed (in-sample),83.5,1.2091898428053205
+sentence,characters typed (in-sample),92.33333333333333,0.0
+sentence,characters typed (in-sample),100.0,0.0
+sentence,letters x words (honest),0.0,100.0
+sentence,letters x words (honest),28.0,40.7496977025393
+sentence,letters x words (honest),38.666666666666664,34.220072551390565
+sentence,letters x words (honest),47.833333333333336,22.732769044740024
+sentence,letters x words (honest),55.333333333333336,13.422007255139057
+sentence,letters x words (honest),70.0,5.199516324062878
+sentence,letters x words (honest),84.83333333333333,2.2974607013301087
+sentence,letters x words (honest),100.0,0.0
+sentence,letters x words (in-sample),0.0,100.0
+sentence,letters x words (in-sample),28.0,40.7496977025393
+sentence,letters x words (in-sample),37.166666666666664,29.262394195888753
+sentence,letters x words (in-sample),44.666666666666664,19.951632406287786
+sentence,letters x words (in-sample),55.333333333333336,13.422007255139057
+sentence,letters x words (in-sample),70.0,5.199516324062878
+sentence,letters x words (in-sample),84.83333333333333,2.2974607013301087
+sentence,letters x words (in-sample),100.0,0.0
+sentence,letters x words x previous gap (honest),0.0,100.0
+sentence,letters x words x previous gap (honest),7.533333333333333,84.40145102781136
+sentence,letters x words x previous gap (honest),10.1,83.19226118500605
+sentence,letters x words x previous gap (honest),16.65,66.74727932285369
+sentence,letters x words x previous gap (honest),19.216666666666665,64.32889963724304
+sentence,letters x words x previous gap (honest),26.483333333333334,51.87424425634825
+sentence,letters x words x previous gap (honest),29.183333333333334,49.8186215235792
+sentence,letters x words x previous gap (honest),31.8,45.94921402660218
+sentence,letters x words x previous gap (honest),38.45,31.197097944377266
+sentence,letters x words x previous gap (honest),41.28333333333333,30.350665054413543
+sentence,letters x words x previous gap (honest),43.46666666666667,26.723095525997582
+sentence,letters x words x previous gap (honest),45.233333333333334,24.425634824667473
+sentence,letters x words x previous gap (honest),47.4,22.611850060459492
+sentence,letters x words x previous gap (honest),49.38333333333333,19.830713422007253
+sentence,letters x words x previous gap (honest),51.166666666666664,17.65417170495768
+sentence,letters x words x previous gap (honest),53.36666666666667,15.477629987908102
+sentence,letters x words x previous gap (honest),55.333333333333336,13.422007255139057
+sentence,letters x words x previous gap (honest),58.85,11.608222490931077
+sentence,letters x words x previous gap (honest),62.43333333333333,9.310761789600967
+sentence,letters x words x previous gap (honest),66.35,6.6505441354292625
+sentence,letters x words x previous gap (honest),70.0,6.287787182587667
+sentence,letters x words x previous gap (honest),73.65,4.836759371221282
+sentence,letters x words x previous gap (honest),77.41666666666667,4.2321644498186215
+sentence,letters x words x previous gap (honest),81.43333333333334,3.264812575574365
+sentence,letters x words x previous gap (honest),84.83333333333333,2.2974607013301087
+sentence,letters x words x previous gap (honest),88.73333333333333,1.9347037484885128
+sentence,letters x words x previous gap (honest),92.88333333333334,1.3301088270858525
+sentence,letters x words x previous gap (honest),96.35,0.7255139056831923
+sentence,letters x words x previous gap (honest),100.0,0.0
+sentence,letters x words x previous gap (in-sample),0.0,100.0
+sentence,letters x words x previous gap (in-sample),6.55,83.55501813784764
+sentence,letters x words x previous gap (in-sample),13.2,68.80290205562274
+sentence,letters x words x previous gap (in-sample),20.733333333333334,53.2043530834341
+sentence,letters x words x previous gap (in-sample),28.0,40.7496977025393
+sentence,letters x words x previous gap (in-sample),30.183333333333334,37.12212817412334
+sentence,letters x words x previous gap (in-sample),32.8,33.252720677146314
+sentence,letters x words x previous gap (in-sample),34.78333333333333,30.471584038694076
+sentence,letters x words x previous gap (in-sample),36.55,28.174123337363966
+sentence,letters x words x previous gap (in-sample),38.333333333333336,25.99758162031439
+sentence,letters x words x previous gap (in-sample),40.3,23.941958887545344
+sentence,letters x words x previous gap (in-sample),42.5,21.765417170495766
+sentence,letters x words x previous gap (in-sample),45.06666666666667,19.347037484885128
+sentence,letters x words x previous gap (in-sample),47.233333333333334,17.533252720677147
+sentence,letters x words x previous gap (in-sample),49.93333333333333,15.477629987908102
+sentence,letters x words x previous gap (in-sample),53.85,12.817412333736396
+sentence,letters x words x previous gap (in-sample),57.43333333333333,10.519951632406288
+sentence,letters x words x previous gap (in-sample),60.95,8.706166868198308
+sentence,letters x words x previous gap (in-sample),63.516666666666666,7.496977025392987
+sentence,letters x words x previous gap (in-sample),67.16666666666667,6.045949214026602
+sentence,letters x words x previous gap (in-sample),70.0,5.199516324062878
+sentence,letters x words x previous gap (in-sample),73.4,4.2321644498186215
+sentence,letters x words x previous gap (in-sample),77.41666666666667,3.264812575574365
+sentence,letters x words x previous gap (in-sample),81.06666666666666,2.539298669891173
+sentence,letters x words x previous gap (in-sample),84.53333333333333,1.9347037484885128
+sentence,letters x words x previous gap (in-sample),88.3,1.3301088270858525
+sentence,letters x words x previous gap (in-sample),92.45,0.7255139056831923
+sentence,letters x words x previous gap (in-sample),96.1,0.36275695284159615
+sentence,letters x words x previous gap (in-sample),100.0,0.0
+sentence,rule: pause,7.9,92.74486094316808
+sentence,rule: pause,15.766666666666667,85.24788391777508
+sentence,rule: pause,24.333333333333332,76.66263603385731
+sentence,rule: pause,32.916666666666664,67.83555018137848
+sentence,rule: pause,40.45,61.06408706166868
+sentence,rule: pause,50.31666666666667,51.51148730350665
+sentence,rule: pause,64.08333333333333,39.29866989117291
+sentence,rule: pause,80.25,24.30471584038694
+sentence,rule: pause,88.91666666666667,15.719467956469165
+sentence,rule: pause,96.55,8.101571946795646
+sentence,rule: pause,99.66666666666667,3.6275695284159615
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: boundary + mid-word,100.0,0.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: min letters in word,0.0,100.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: min words typed,35.5,31.43893591293833
+sentence,rule: min words typed,39.166666666666664,23.216444981862153
+sentence,rule: min words typed,44.666666666666664,19.951632406287786
+sentence,rule: min words typed,48.833333333333336,13.54292623941959
+sentence,rule: min words typed,55.333333333333336,13.422007255139057
+sentence,rule: min words typed,62.666666666666664,9.915356711003627
+sentence,rule: min words typed,70.0,5.199516324062878
+sentence,rule: min words typed,77.5,3.9903264812575574
+sentence,rule: min words typed,84.83333333333333,2.2974607013301087
+sentence,rule: min words typed,92.83333333333333,0.0
+sentence,rule: min words typed,100.0,0.0
+sentence,rule: min words typed,100.0,0.0
+sentence,rule: word start + min words,35.5,31.43893591293833
+sentence,rule: word start + min words,39.166666666666664,23.216444981862153
+sentence,rule: word start + min words,44.666666666666664,19.951632406287786
+sentence,rule: word start + min words,48.833333333333336,13.54292623941959
+sentence,rule: word start + min words,55.333333333333336,13.422007255139057
+sentence,rule: word start + min words,62.666666666666664,9.915356711003627
+sentence,rule: word start + min words,70.0,5.199516324062878
+sentence,rule: word start + min words,77.5,3.9903264812575574
+sentence,rule: word start + min words,84.83333333333333,2.2974607013301087
+sentence,rule: word start + min words,92.83333333333333,0.0
+sentence,rule: word start + min words,100.0,0.0
+sentence,rule: word start + min words,100.0,0.0

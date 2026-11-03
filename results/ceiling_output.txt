@@ -1,0 +1,241 @@
+Source: phase1_results_v3.csv; 240 messages, 4510 Qwen examples; 10 simulated typists per example; seed 42
+Messages split at random (seed 7): 120 dev, 120 test (same split as learned_policy.py)
+Ceiling = best possible policy that only knows the context. honest: rates from dev, applied to test; in-sample: rates from test (optimistic).
+Intervals: 95 % bootstrap over test messages, 1000 resamples, paired across policies
+
+== word-level mix: always-invoke delivers at 19.6 % of test decision points (the oracle needs that few calls) ==
+How often a call delivers, by context (all messages):
+  delivers (%) by words typed: 2:9  3:14  4:16  5:17  6:25  7:21  8:23  9:28  10:26  11:16  12:21  13:9  14:18  15:20
+  delivers (%) by letters in word: 0:29  1:14  2:12  3:15  4:26  5:25  6:28  7:18  8:24
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                               cells          @20% calls          @35% calls          @50% calls
+random skip                                                               80.0                65.0                50.0
+oracle (knows the answer)                                                  0.0                 0.0                 0.0
+best simple rule (family picked per budget)                       67.1 [62-72]        48.7 [42-55]        30.5 [24-37]
+  (best simple rule at each budget: 20% -> word start + min words, 35% -> word start + min letters, 50% -> word start + min letters)
+ceiling: letters in word (honest)                        9        70.7 [66-75]        48.3 [42-55]        35.2 [28-42]
+ceiling: letters in word (in-sample)                     9        69.9 [65-75]        47.5 [40-55]        30.5 [24-37]
+ceiling: words typed (honest)                           14        79.2 [74-84]        63.0 [58-69]        47.3 [42-53]
+ceiling: words typed (in-sample)                        14        75.1 [69-81]        57.6 [51-64]        41.2 [35-47]
+ceiling: characters typed (honest)                      10        77.8 [72-83]        63.3 [57-70]        48.8 [43-56]
+ceiling: characters typed (in-sample)                   10        75.6 [70-81]        59.2 [53-65]        43.1 [37-50]
+ceiling: letters x words (honest)                       53        69.9 [64-76]        52.7 [46-59]        37.4 [31-44]
+ceiling: letters x words (in-sample)                    53        59.0 [53-65]        38.5 [31-45]        24.7 [18-31]
+ceiling: letters x words x previous gap (honest)       211        68.3 [64-73]        54.3 [49-60]        39.2 [33-44]
+ceiling: letters x words x previous gap (in-sample)    211        57.9 [53-63]        37.0 [30-43]        22.1 [16-27]
+
+Honest ceiling minus best simple rule, in missed points (negative = the ceiling is better) [95 % interval of the difference]:
+  letters in word                   @20%: +3.6 [-0.2, +7.2]   @35%: -0.4 [-6.1, +6.2]   @50%: +4.7 [-1.3, +11.1]
+  words typed                       @20%: +12.1 [+5.1, +19.5]   @35%: +14.4 [+6.2, +23.5]   @50%: +16.9 [+8.8, +25.1]
+  characters typed                  @20%: +10.7 [+2.7, +18.4]   @35%: +14.6 [+5.5, +23.8]   @50%: +18.3 [+10.0, +27.4]
+  letters x words                   @20%: +2.7 [-1.8, +7.1]   @35%: +4.0 [-4.1, +12.3]   @50%: +6.9 [-0.3, +14.8]
+  letters x words x previous gap    @20%: +1.1 [-2.6, +5.3]   @35%: +5.7 [-1.8, +13.3]   @50%: +8.7 [+1.7, +16.1]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always), fewest calls that pass, point estimate:
+  rule: pause                                               never at <= 50 % calls
+  rule: boundary + mid-word                                 never at <= 50 % calls
+  rule: min letters in word                                 never at <= 50 % calls
+  rule: word start + min letters                            never at <= 50 % calls
+  rule: min words typed                                     never at <= 50 % calls
+  rule: word start + min words                              never at <= 50 % calls
+  ceiling: letters in word (honest)                         never at <= 50 % calls
+  ceiling: letters in word (in-sample)                      never at <= 50 % calls
+  ceiling: words typed (honest)                             never at <= 50 % calls
+  ceiling: words typed (in-sample)                          never at <= 50 % calls
+  ceiling: characters typed (honest)                        never at <= 50 % calls
+  ceiling: characters typed (in-sample)                     never at <= 50 % calls
+  ceiling: letters x words (honest)                         never at <= 50 % calls
+  ceiling: letters x words (in-sample)                      50 % calls
+  ceiling: letters x words x previous gap (honest)          never at <= 50 % calls
+  ceiling: letters x words x previous gap (in-sample)       47 % calls
+
+== partial_word: always-invoke delivers at 16.3 % of test decision points (the oracle needs that few calls) ==
+How often a call delivers, by context (all messages):
+  delivers (%) by words typed: 2:13  3:12  4:14  5:11  6:24  7:18  8:21  9:25  10:23  11:13  12:16  13:0  14:12  15:15
+  delivers (%) by letters in word: 1:14  2:12  3:15  4:26  5:25  6:28  7:18  8:24
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                               cells          @20% calls          @35% calls          @50% calls
+random skip                                                               80.0                65.0                50.0
+oracle (knows the answer)                                                  0.0                 0.0                 0.0
+best simple rule (family picked per budget)                       65.9 [55-75]        47.0 [37-57]        35.4 [27-44]
+  (best simple rule at each budget: 20% -> min letters in word, 35% -> min letters in word, 50% -> min letters in word)
+ceiling: letters in word (honest)                        8        66.1 [56-76]        55.0 [44-64]        40.4 [29-51]
+ceiling: letters in word (in-sample)                     8        64.6 [54-74]        47.0 [37-57]        34.7 [26-44]
+ceiling: words typed (honest)                           14        78.6 [71-86]        65.5 [56-75]        51.9 [42-61]
+ceiling: words typed (in-sample)                        14        72.1 [64-81]        52.8 [43-63]        38.0 [29-47]
+ceiling: characters typed (honest)                      10        77.0 [69-85]        57.0 [47-67]        44.4 [35-53]
+ceiling: characters typed (in-sample)                   10        72.8 [64-81]        56.1 [47-65]        40.5 [31-51]
+ceiling: letters x words (honest)                       46        71.3 [61-80]        59.3 [49-70]        47.7 [39-58]
+ceiling: letters x words (in-sample)                    46        55.0 [45-64]        38.3 [27-49]        26.2 [18-35]
+ceiling: letters x words x previous gap (honest)       183        74.9 [67-82]        61.3 [53-69]        46.9 [39-55]
+ceiling: letters x words x previous gap (in-sample)    183        52.7 [45-60]        34.8 [27-42]        23.1 [16-29]
+
+Honest ceiling minus best simple rule, in missed points (negative = the ceiling is better) [95 % interval of the difference]:
+  letters in word                   @20%: +0.3 [-7.1, +9.0]   @35%: +8.0 [-2.2, +17.9]   @50%: +4.9 [-8.6, +18.2]
+  words typed                       @20%: +12.7 [+1.2, +25.7]   @35%: +18.6 [+5.4, +30.3]   @50%: +16.5 [+4.0, +27.2]
+  characters typed                  @20%: +11.1 [-0.8, +24.1]   @35%: +10.0 [-1.8, +23.2]   @50%: +8.9 [-2.5, +20.3]
+  letters x words                   @20%: +5.5 [-6.6, +17.5]   @35%: +12.3 [+0.1, +25.1]   @50%: +12.2 [+0.8, +25.0]
+  letters x words x previous gap    @20%: +9.0 [-2.3, +21.5]   @35%: +14.3 [+2.2, +26.1]   @50%: +11.4 [-0.2, +22.9]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always), fewest calls that pass, point estimate:
+  rule: pause                                               never at <= 50 % calls
+  rule: boundary + mid-word                                 never at <= 50 % calls
+  rule: min letters in word                                 never at <= 50 % calls
+  rule: word start + min letters                            never at <= 50 % calls
+  rule: min words typed                                     never at <= 50 % calls
+  rule: word start + min words                              never at <= 50 % calls
+  ceiling: letters in word (honest)                         never at <= 50 % calls
+  ceiling: letters in word (in-sample)                      never at <= 50 % calls
+  ceiling: words typed (honest)                             never at <= 50 % calls
+  ceiling: words typed (in-sample)                          never at <= 50 % calls
+  ceiling: characters typed (honest)                        never at <= 50 % calls
+  ceiling: characters typed (in-sample)                     never at <= 50 % calls
+  ceiling: letters x words (honest)                         never at <= 50 % calls
+  ceiling: letters x words (in-sample)                      never at <= 50 % calls
+  ceiling: letters x words x previous gap (honest)          never at <= 50 % calls
+  ceiling: letters x words x previous gap (in-sample)       48 % calls
+
+== next_word: always-invoke delivers at 29.2 % of test decision points (the oracle needs that few calls) ==
+How often a call delivers, by context (all messages):
+  delivers (%) by words typed: 2:0  3:23  4:23  5:32  6:29  7:31  8:29  9:36  10:34  11:23  12:33  13:38  14:41  15:35
+  delivers (%) by letters in word: 0:29
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                               cells          @20% calls          @35% calls          @50% calls
+random skip                                                               80.0                65.0                50.0
+oracle (knows the answer)                                                 31.6                 0.0                 0.0
+best simple rule (family picked per budget)                       81.1 [80-83]        67.2 [66-69]        41.7 [36-48]
+  (best simple rule at each budget: 20% -> pause, 35% -> pause, 50% -> min words typed)
+ceiling: letters in word (honest)                        1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: letters in word (in-sample)                     1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: words typed (honest)                           14        80.3 [75-85]        64.4 [59-70]        45.5 [40-51]
+ceiling: words typed (in-sample)                        14        73.7 [70-77]        54.7 [49-60]        37.3 [31-44]
+ceiling: characters typed (honest)                      10        78.3 [74-83]        62.7 [56-69]        46.0 [40-52]
+ceiling: characters typed (in-sample)                   10        72.9 [68-77]        55.0 [50-60]        38.3 [33-44]
+ceiling: letters x words (honest)                        7        80.8 [76-85]        67.0 [61-72]        47.9 [43-53]
+ceiling: letters x words (in-sample)                     7        74.5 [70-78]        55.8 [50-61]        39.0 [33-45]
+ceiling: letters x words x previous gap (honest)        28        81.5 [78-85]        65.3 [61-69]        46.2 [42-51]
+ceiling: letters x words x previous gap (in-sample)     28        73.9 [70-77]        55.3 [49-60]        38.4 [33-43]
+
+Honest ceiling minus best simple rule, in missed points (negative = the ceiling is better) [95 % interval of the difference]:
+  letters in word                   @20%: -1.1 [-2.6, +0.4]   @35%: -2.2 [-4.2, -0.5]   @50%: +8.3 [+2.2, +14.1]
+  words typed                       @20%: -0.8 [-6.2, +4.3]   @35%: -2.9 [-9.2, +3.1]   @50%: +3.7 [-2.0, +9.0]
+  characters typed                  @20%: -2.8 [-7.4, +2.0]   @35%: -4.6 [-11.6, +1.8]   @50%: +4.3 [-0.8, +9.5]
+  letters x words                   @20%: -0.3 [-5.4, +4.5]   @35%: -0.2 [-6.4, +5.4]   @50%: +6.2 [-1.5, +13.7]
+  letters x words x previous gap    @20%: +0.4 [-3.7, +4.6]   @35%: -1.9 [-6.1, +2.2]   @50%: +4.5 [-1.6, +10.1]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always), fewest calls that pass, point estimate:
+  rule: pause                                               never at <= 50 % calls
+  rule: boundary + mid-word                                 never at <= 50 % calls
+  rule: min letters in word                                 never at <= 50 % calls
+  rule: word start + min letters                            never at <= 50 % calls
+  rule: min words typed                                     never at <= 50 % calls
+  rule: word start + min words                              never at <= 50 % calls
+  ceiling: letters in word (honest)                         never at <= 50 % calls
+  ceiling: letters in word (in-sample)                      never at <= 50 % calls
+  ceiling: words typed (honest)                             never at <= 50 % calls
+  ceiling: words typed (in-sample)                          never at <= 50 % calls
+  ceiling: characters typed (honest)                        never at <= 50 % calls
+  ceiling: characters typed (in-sample)                     never at <= 50 % calls
+  ceiling: letters x words (honest)                         never at <= 50 % calls
+  ceiling: letters x words (in-sample)                      never at <= 50 % calls
+  ceiling: letters x words x previous gap (honest)          never at <= 50 % calls
+  ceiling: letters x words x previous gap (in-sample)       never at <= 50 % calls
+
+== phrase: always-invoke delivers at 29.4 % of test decision points (the oracle needs that few calls) ==
+How often a call delivers, by context (all messages):
+  delivers (%) by words typed: 2:2  3:22  4:25  5:27  6:25  7:36  8:29  9:43  10:30  11:26  12:34  13:34  14:36  15:34
+  delivers (%) by letters in word: 0:28
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                               cells          @20% calls          @35% calls          @50% calls
+random skip                                                               80.0                65.0                50.0
+oracle (knows the answer)                                                 32.0                 0.0                 0.0
+best simple rule (family picked per budget)                       79.5 [78-81]        65.7 [64-68]        38.3 [33-44]
+  (best simple rule at each budget: 20% -> pause, 35% -> pause, 50% -> min words typed)
+ceiling: letters in word (honest)                        1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: letters in word (in-sample)                     1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: words typed (honest)                           14        80.6 [75-86]        65.5 [60-71]        44.8 [39-50]
+ceiling: words typed (in-sample)                        14        72.3 [68-77]        52.2 [47-58]        36.1 [31-42]
+ceiling: characters typed (honest)                      10        77.7 [72-82]        64.1 [58-70]        46.1 [41-52]
+ceiling: characters typed (in-sample)                   10        70.4 [66-74]        52.4 [47-57]        37.3 [32-43]
+ceiling: letters x words (honest)                        7        79.7 [74-85]        67.3 [61-73]        49.7 [44-54]
+ceiling: letters x words (in-sample)                     7        72.3 [68-77]        53.8 [49-59]        38.0 [33-43]
+ceiling: letters x words x previous gap (honest)        28        80.9 [77-84]        67.5 [61-73]        47.5 [42-52]
+ceiling: letters x words x previous gap (in-sample)     28        71.5 [68-76]        52.8 [48-58]        36.8 [32-42]
+
+Honest ceiling minus best simple rule, in missed points (negative = the ceiling is better) [95 % interval of the difference]:
+  letters in word                   @20%: +0.5 [-1.0, +2.0]   @35%: -0.7 [-2.5, +1.0]   @50%: +11.7 [+6.1, +17.3]
+  words typed                       @20%: +1.1 [-4.5, +6.4]   @35%: -0.2 [-6.1, +5.8]   @50%: +6.6 [+0.2, +11.9]
+  characters typed                  @20%: -1.8 [-7.0, +2.7]   @35%: -1.6 [-7.9, +4.6]   @50%: +7.9 [+1.5, +13.7]
+  letters x words                   @20%: +0.2 [-5.3, +5.3]   @35%: +1.7 [-5.1, +7.6]   @50%: +11.4 [+3.4, +18.0]
+  letters x words x previous gap    @20%: +1.3 [-2.8, +5.2]   @35%: +1.8 [-4.7, +7.7]   @50%: +9.2 [+1.5, +15.4]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always), fewest calls that pass, point estimate:
+  rule: pause                                               never at <= 50 % calls
+  rule: boundary + mid-word                                 never at <= 50 % calls
+  rule: min letters in word                                 never at <= 50 % calls
+  rule: word start + min letters                            never at <= 50 % calls
+  rule: min words typed                                     never at <= 50 % calls
+  rule: word start + min words                              never at <= 50 % calls
+  ceiling: letters in word (honest)                         never at <= 50 % calls
+  ceiling: letters in word (in-sample)                      never at <= 50 % calls
+  ceiling: words typed (honest)                             never at <= 50 % calls
+  ceiling: words typed (in-sample)                          never at <= 50 % calls
+  ceiling: characters typed (honest)                        never at <= 50 % calls
+  ceiling: characters typed (in-sample)                     never at <= 50 % calls
+  ceiling: letters x words (honest)                         never at <= 50 % calls
+  ceiling: letters x words (in-sample)                      never at <= 50 % calls
+  ceiling: letters x words x previous gap (honest)          never at <= 50 % calls
+  ceiling: letters x words x previous gap (in-sample)       never at <= 50 % calls
+
+== sentence: always-invoke delivers at 13.8 % of test decision points (the oracle needs that few calls) ==
+How often a call delivers, by context (all messages):
+  delivers (%) by words typed: 2:0  3:2  4:5  5:2  6:6  7:10  8:6  9:27  10:11  11:24  12:18  13:10  14:27  15:25
+  delivers (%) by letters in word: 0:13
+
+TEST half, missed % at each call budget [95 % interval]:
+policy                                               cells          @20% calls          @35% calls          @50% calls
+random skip                                                               80.0                65.0                50.0
+oracle (knows the answer)                                                  0.0                 0.0                 0.0
+best simple rule (family picked per budget)                       81.0 [79-83]        66.0 [62-70]         13.5 [7-23]
+  (best simple rule at each budget: 20% -> pause, 35% -> pause, 50% -> min words typed)
+ceiling: letters in word (honest)                        1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: letters in word (in-sample)                     1        80.0 [80-80]        65.0 [65-65]        50.0 [50-50]
+ceiling: words typed (honest)                           14        60.1 [52-67]        31.0 [21-40]         15.2 [8-24]
+ceiling: words typed (in-sample)                        14        57.2 [47-65]        27.4 [18-38]         12.5 [7-19]
+ceiling: characters typed (honest)                      10        69.7 [61-78]        42.3 [32-52]        19.6 [11-28]
+ceiling: characters typed (in-sample)                   10        58.0 [49-67]        33.2 [24-43]         16.0 [9-24]
+ceiling: letters x words (honest)                        7        57.7 [49-65]        36.5 [28-47]        20.0 [11-30]
+ceiling: letters x words (in-sample)                     7        57.7 [49-65]        32.0 [23-42]         16.7 [9-26]
+ceiling: letters x words x previous gap (honest)        28        63.0 [56-69]        38.9 [29-48]        19.1 [11-28]
+ceiling: letters x words x previous gap (in-sample)     28        54.7 [47-63]        30.2 [21-40]         15.4 [9-24]
+
+Honest ceiling minus best simple rule, in missed points (negative = the ceiling is better) [95 % interval of the difference]:
+  letters in word                   @20%: -1.0 [-3.4, +1.3]   @35%: -1.0 [-5.0, +2.8]   @50%: +36.5 [+26.7, +43.0]
+  words typed                       @20%: -20.9 [-29.9, -13.2]   @35%: -35.0 [-45.5, -25.6]   @50%: +1.7 [-4.8, +6.3]
+  characters typed                  @20%: -11.3 [-20.2, -3.3]   @35%: -23.7 [-33.5, -14.3]   @50%: +6.0 [-0.1, +10.6]
+  letters x words                   @20%: -23.3 [-32.8, -15.3]   @35%: -29.5 [-38.4, -19.5]   @50%: +6.5 [+0.0, +11.4]
+  letters x words x previous gap    @20%: -18.0 [-24.4, -12.1]   @35%: -27.1 [-37.3, -18.3]   @50%: +5.6 [+0.1, +9.4]
+
+Proposed selection rule (calls <= 50 %, missed <= 25 %, value/call >= 0.95 x always), fewest calls that pass, point estimate:
+  rule: pause                                               never at <= 50 % calls
+  rule: boundary + mid-word                                 never at <= 50 % calls
+  rule: min letters in word                                 never at <= 50 % calls
+  rule: word start + min letters                            never at <= 50 % calls
+  rule: min words typed                                     39 % calls
+  rule: word start + min words                              39 % calls
+  ceiling: letters in word (honest)                         never at <= 50 % calls
+  ceiling: letters in word (in-sample)                      never at <= 50 % calls
+  ceiling: words typed (honest)                             39 % calls
+  ceiling: words typed (in-sample)                          37 % calls
+  ceiling: characters typed (honest)                        47 % calls
+  ceiling: characters typed (in-sample)                     41 % calls
+  ceiling: letters x words (honest)                         47 % calls
+  ceiling: letters x words (in-sample)                      41 % calls
+  ceiling: letters x words x previous gap (honest)          45 % calls
+  ceiling: letters x words x previous gap (in-sample)       40 % calls
+
+Saved results/ceiling_summary.csv and results/ceiling_curves.csv

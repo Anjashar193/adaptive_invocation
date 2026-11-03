@@ -1,6 +1,6 @@
 # Phase 2a — When to Invoke the Model
 
-**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules. Four decisions need feedback (next section) before the full-session run and the AESLC run start.
+**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules, and a ceiling analysis shows the simple rules already sit at the ceiling for the inputs used so far, so new inputs are needed. Four decisions need feedback (next section) before the full-session run and the AESLC run start.
 
 ---
 
@@ -19,8 +19,9 @@
       *(240 evaluation messages, 4,510 Qwen examples, 18,040 rows; all 382 next_word prefixes of the v2 run reappear in v3; intervals are computed over messages)*
 - [x] **Stage A7** — Learned policy and position rules: `src/learned_policy.py`
       *(variant chosen on 120 dev messages and scored on 120 test messages; pauses do not help, letters and words typed do; the learned policy does not beat the best simple position rule, see §1.4)*
-- [ ] **Stage A7b** — Ceiling analysis: the best any policy could do with the current inputs ← **YOU ARE HERE**
-- [ ] **Stage A7c** — Full typing sessions: suggestions at every keystroke for about 30 messages
+- [x] **Stage A7b** — Ceiling analysis: `src/ceiling.py`
+      *(the best any policy could do with the current inputs; the simple rules are within a few points of it, so a better model on the same inputs cannot help, see §1.5)*
+- [ ] **Stage A7c** — Full typing sessions with new inputs: suggestions at every keystroke for about 30 messages ← **YOU ARE HERE**
 - [ ] **Stage A8** — One run on AESLC
 - [ ] `tests/` for `typing_sim` and `policy_eval`
 
@@ -30,16 +31,16 @@
 
 ## Feedback required
 
-Stages A0 to A7 are done. The four points below need feedback on what should be done; until then the work continues with the default in the third column. The full-session run (A7c) and the AESLC run wait for answers 1 and 3.
+Stages A0 to A7b are done. The four points below need feedback on what should be done; until then the work continues with the default in the third column. The full-session run (A7c) and the AESLC run wait for answers 1 and 3.
 
 | # | Question | Default until feedback arrives | Details |
 |---|---|---|---|
-| 1 | **Selection rule.** Are "at most 50 % of always-invoke's calls, at most 25 % missed, value per call at least 0.95× always-invoke's" the right targets, or should only the trade-off curve (calls against missed) be reported, with no single winner? Is a simple threshold on words and letters typed an acceptable answer to "when to invoke"? | the curve is reported; the thresholds are marked as a proposal | §1.3, §1.4, §4.9 |
+| 1 | **Selection rule.** Are "at most 50 % of always-invoke's calls, at most 25 % missed, value per call at least 0.95× always-invoke's" the right targets, or should only the trade-off curve (calls against missed) be reported, with no single winner? Is a simple threshold on words and letters typed an acceptable answer to "when to invoke"? | the curve is reported; the thresholds are marked as a proposal | §1.3, §1.4, §1.5, §4.9 |
 | 2 | **Latency definition.** Should cost use the time to the first suggestion (what a user waits for: 0.11 / 0.10 / 0.29 / 0.72 s) or the five-candidate time that Phase 1 reported (0.54 / 0.51 / 1.51 / 3.57 s)? | first suggestion; both columns are kept in `phase1_results_v3.csv` | §1.2, §4.10 |
 | 3 | **Cut points and weights.** The Phase 1 cut points sit at word starts (next_word, phrase, sentence) or inside a word (partial_word), 5 per message. Both are pooled with weights 3.9 : 1 (letters per word, taken from the data). Should every keystroke position of a message be evaluated instead (Stage A7c)? | the pooled word-level mix stays; A7c is planned | §1.3, §4.2 |
 | 4 | **Staleness for sentence.** A suggestion counts only if its first typed characters match literally, which is strict for paraphrases. Should an embedding-based rule be used instead? | literal match | §4.4 |
 
-Open for comments, no decision needed: the Aalto data is copy-typing (§4.7), and the plan for A7b and A7c (§3.2). Documentation updates (the README latency table) follow once question 2 is settled.
+Open for comments, no decision needed: the Aalto data is copy-typing (§4.7), and the plan for A7c (§3.2). Documentation updates (the README latency table) follow once question 2 is settled.
 
 ---
 
@@ -220,6 +221,47 @@ A positive last column means the simple rule is better. For comparison, random s
 - Both policy types read their operating point off the test curve, so both carry a similar small optimism.
 - A model using only word shape (letters typed, last key a space or letter) reached 29.7 % in the mix, as good as the best rule. It was not chosen on the dev half, so it is a diagnostic only.
 
+§1.5 asks whether any policy on these inputs could do better.
+
+## 1.5 Ceiling analysis (Stage A7b)
+
+**Question.** The learned policy did not beat the best simple rule. Either the inputs (timing, words typed, letters in the word) hold no more signal, or the classifier was too weak. A7b separates the two without a classifier. Decision points are grouped by context (for example "3 letters into a word, 9 words typed"), and the best possible policy for that grouping calls where a suggestion most often delivers value. That is the ceiling for any policy that knows only that context.
+
+**Setup** (`src/ceiling.py`; the same simulated typists, seeds, dev/test split and staleness rule as §1.4). Two versions of each ceiling are reported:
+
+- **honest:** the delivery rate of each context is measured on the dev half and applied to the test half. This is a usable policy.
+- **in-sample:** the rates are measured on the test half itself. This is an optimistic upper bound; with many cells it is inflated, because it partly memorises examples.
+
+Contexts: letters in word; words typed; characters typed; letters × words; letters × words × previous gap. The comparison is the best simple rule per call budget; the rule family is picked on the test half, which favours the rules.
+
+**Missed % at 50 % of the calls** (test half)
+
+| Granularity | Best simple rule | In-sample ceiling, coarse context | Honest ceiling, coarse context |
+|---|---|---|---|
+| word-level mix | 30.5 | 30.5 (letters in word) | 35.2 |
+| partial_word | 35.4 | 34.7 (letters in word) | 40.4 |
+| next_word | 41.7 | 37.3 (words typed) | 45.5 |
+| phrase | 38.3 | 36.1 (words typed) | 44.8 |
+| sentence | 13.5 | 12.5 (words typed) | 15.2 |
+
+**What the results show**
+
+| Observation | Numbers |
+|---|---|
+| The simple rules sit at or within a few points of the ceiling | in-sample ceilings of the coarse contexts are 0–4.5 points better than the rules; the honest ceilings are 2–7 points worse than the rules |
+| Finer contexts only memorise | word-level mix, letters × words × previous gap (211 cells): 22.1 % in-sample, 39.2 % honest at 50 % of the calls |
+| Timing adds nothing | the previous gap never improves an honest ceiling (mix at 50 % of the calls: 39.2 % with the gap, 37.4 % without), as in §1.3 |
+| Only sentence meets the proposed targets | a words-typed threshold, at about 39 % of the calls |
+| The remaining gap is about content | the oracle needs only 13.8–29.4 % of the calls (the share at which a call delivers); the 30–45 points between the ceilings and the oracle (which misses 0 %) at 50 % of the calls for word-level, next_word and phrase can only be closed by information about whether this suggestion will be right |
+
+**Cautions**
+
+- For sentence at 20 % and 35 % of the calls, the ceilings look 20–35 points better than the best rule. This is an artifact: the min-words rules stop at 12 words, so their curves end near 39 % of the calls and the comparison falls back to the pause rule. The comparison at 50 % of the calls is not affected. Open fix: extend the min-words grid to 20 words in `src/learned_policy.py`.
+- "Words typed" and "characters typed" partly reflect where the five fixed cut points fall in a message (§4.2); A7c tests this on full sessions.
+- The test half has now been used many times (§4.12). In-sample ceilings of coarse contexts are the fairer upper bound.
+
+**Conclusion.** With these inputs, no policy can do clearly better than a threshold on letters or words typed. The next gain has to come from new inputs, not a better model on the same inputs. This leads to A7c.
+
 ---
 
 # Part 2 — Approach
@@ -312,11 +354,20 @@ Read-only on `phase1_results_v2.csv`. Run from the repo root: `uv run python -m 
 
 Finding: the learned policy adds nothing over a threshold on letters and words typed. Limits: 5 cut points per message, a test half that has been seen several times, and no content-based inputs (§4.2, §4.11, §4.12).
 
-### A7b — Ceiling analysis (next)
-Group the decision points by context (word start or mid-word, letters typed, words typed). For each group, count how often a call delivers a still-valid suggestion. The best possible policy for these inputs calls the groups with the highest share first. This gives the best frontier of calls against missed that any policy using these inputs could reach. If the simple rules are already close to it, learning cannot help with these inputs; if there is a gap, it shows where to look. It needs only the existing data.
+### A7b — Ceiling analysis
+`src/ceiling.py` imports the samples, the dev/test split and the rule curves from `src/learned_policy.py`, so the data are identical to §1.4. Decision points are grouped by five contexts. For each, the smoothed share of positions at which a call delivers a still-valid suggestion is estimated (on the dev half for the honest ceiling, on the test half for the in-sample ceiling). Contexts are then called in order of that share, which gives the best frontier of calls against missed for that context. The frontier is read at 20, 35 and 50 % of the calls with paired bootstrap intervals over test messages, and compared with the best simple rule, random skipping and the oracle. It needs only the existing data and writes `results/ceiling_summary.csv` and `results/ceiling_curves.csv`. Finding: §1.5.
 
-### A7c — Full typing sessions (after A7b)
-Generate suggestions at every keystroke for about 30 messages (single-suggestion timing only), then replay full typing sessions. In a session the model is busy while it generates, and an earlier suggestion can be reused while it still matches what has been typed. The actions are skip, call now, or wait for a pause. The simple rules and a router that picks among them from the session state are compared on real call rates. This removes the fixed cut points (§4.2) and is the place where a learned policy can use information a threshold cannot. Content-based inputs (how predictable the current word is from the training vocabulary, whether the last suggestions in the session were right) are added only if the sessions show room. It runs on the machine with Qwen, and the results are confirmed on about 100 new messages.
+### A7c — Full typing sessions with new inputs (next)
+**Goal.** Evaluate policies on full typing sessions instead of 5 fixed cut points, and test inputs that carry information about content.
+
+1. Generate suggestions at every keystroke position for about 30 messages (single-suggestion timing only). This runs on the machine with Qwen and stores the latency of each call.
+2. Replay each message with a simulated typist. At every keystroke the policy chooses skip, call now, or wait for a pause. The model is busy while it generates, and an earlier suggestion can be reused while it still matches what has been typed.
+3. Report the four numbers per policy: calls and model time, value delivered (keystrokes saved), missed value, and the share of keystrokes with a usable suggestion on screen.
+4. Compare always-invoke, the best position rules (§1.4, §1.5) and a router that picks among them from the session state.
+
+**New inputs** (all known before the call): whether the last suggestions in the session were right; whether a still-valid suggestion is already on screen; how predictable the current word is from the training vocabulary (frequency of the typed prefix, number of matching words).
+
+**Success criterion.** A policy that misses fewer suggestions than the best position rule at the same share of calls, with the interval over messages excluding zero. The result is confirmed on about 100 new messages (§4.12), then run on AESLC (A8).
 
 ## 3.3 Verification
 
@@ -330,7 +381,8 @@ Generate suggestions at every keystroke for about 30 messages (single-suggestion
 | 6 | all typing models run | tables for aalto and styles 0, 1, 2 | aalto ✅ (v2 file: all four) |
 | 7 | learned policy on data with no signal | no better than random | ✅ on a toy set |
 | 8 | selection-rule check on constructed curves | passes and fails where expected | ✅ |
-| 9 | `pytest tests/` | green incl. new tests | tests not written yet |
+| 9 | ceiling analysis on data with a known structure | coarse contexts: in-sample and honest agree; fine contexts: in-sample better than honest | ✅ on a toy set |
+| 10 | `pytest tests/` | green incl. new tests | tests not written yet |
 
 ## 3.4 Reproduce
 
@@ -341,6 +393,7 @@ uv run python -m src.run_eval_v3             # 240 messages, about 2.4 h; resume
 uv run python -m src.policy_eval_v3 aalto    # the results of section 1.3
 uv run python -m src.policy_eval_v3 1        # robustness: medium modelled typist
 uv run python -m src.learned_policy          # the results of section 1.4, about 30 min
+uv run python -m src.ceiling > results/ceiling_output.txt   # the results of section 1.5
 uv run python -m src.policy_eval 1           # earlier 80-message pilot on phase1_results_v2.csv
 ```
 
@@ -379,10 +432,10 @@ The 50 % / 25 % / 0.95 thresholds are not from the research plan. Either the tra
 The README latency table (413 / 456 / 1,098 / 3,181 ms) is the five-candidate time; the measured first-suggestion time is 0.11 / 0.10 / 0.29 / 0.72 s. The README is updated once question 2 is settled. **Feedback required (question 2).**
 
 ## 4.11 No content-based inputs yet
-The inputs of the learned policy are about timing and position. Whether a call pays off depends mostly on whether the model's guess will be right, which these inputs hardly predict. That is why mid-word, next_word and phrase suggestions still miss 30–42 % at 50 % of the calls. Content-based inputs are part of A7c.
+The inputs of the learned policy are about timing and position. Whether a call pays off depends mostly on whether the model's guess will be right, which these inputs hardly predict. That is why mid-word, next_word and phrase suggestions still miss 30–42 % at 50 % of the calls. A7b (§1.5) confirms that more of the same inputs cannot close the gap. Content-based inputs are part of A7c.
 
 ## 4.12 The test half has been seen several times
-Choices after the first look at the test half (new candidates, new baseline rules) make its numbers exploratory. Confirmation needs new messages that nobody has looked at (about 100, generated with `run_eval_v3.py`), and the AESLC run as a second dataset.
+Choices after the first look at the test half (new candidates, new baseline rules) make its numbers exploratory. The ceiling analysis (§1.5) used the same test half again. Confirmation needs new messages that nobody has looked at (about 100, generated with `run_eval_v3.py`), and the AESLC run as a second dataset.
 
 ## Files
 
@@ -400,7 +453,8 @@ Choices after the first look at the test half (new candidates, new baseline rule
 | `src/run_eval_v3.py` | Phase 1 re-run at scale: 240 messages, `message_id`, first-suggestion latency, seeded, resumable |
 | `src/policy_eval_v3.py` | the results of §1.3: timing rules, intervals over messages, word-level mix, PASS column |
 | `src/learned_policy.py` | the results of §1.4: position rules, learned policy, dev/test split, PASS check, feature check |
+| `src/ceiling.py` | the results of §1.5: ceiling analysis by context, honest and in-sample |
 | `phase1_results_v3.csv` | results of the v3 run (the raw `.jsonl` is not committed) |
-| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv` |
+| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv`, `ceiling_output.txt`, `ceiling_summary.csv`, `ceiling_curves.csv` |
 | `inspect_aalto.py` | inspects an Aalto zip without unzipping (not needed for the folder download) |
 | `phase1_results_v2.csv` | frozen Phase 1 results, read-only; hand labels belong to it |
