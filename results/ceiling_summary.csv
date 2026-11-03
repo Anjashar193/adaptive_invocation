@@ -97,8 +97,8 @@ partial_word,ceiling: letters x words (honest),pass_calls,pass,,,
 partial_word,ceiling: letters x words (in-sample),pass_calls,pass,,,
 partial_word,ceiling: letters x words x previous gap (honest),pass_calls,pass,,,
 partial_word,ceiling: letters x words x previous gap (in-sample),pass_calls,pass,48.0,,
-next_word,best simple rule,pause,20,81.09671000206919,79.55420530043828,82.60466888143375
-next_word,best simple rule,pause,35,67.2319212747813,65.50188363892157,69.18111714504786
+next_word,best simple rule,min words typed,20,74.49095943964815,69.13655560857403,79.64834021306572
+next_word,best simple rule,min words typed,35,57.35461801596351,51.542249946256625,63.63356638308231
 next_word,best simple rule,min words typed,50,41.724410139461455,35.91277141830501,47.7563315582974
 next_word,letters in word (honest),1,20,80.0,80.0,80.0
 next_word,letters in word (honest),1,35,65.0,65.0,65.0
@@ -146,8 +146,8 @@ next_word,ceiling: letters x words (honest),pass_calls,pass,,,
 next_word,ceiling: letters x words (in-sample),pass_calls,pass,,,
 next_word,ceiling: letters x words x previous gap (honest),pass_calls,pass,,,
 next_word,ceiling: letters x words x previous gap (in-sample),pass_calls,pass,,,
-phrase,best simple rule,pause,20,79.50169875424689,78.01412450389084,80.99095150825039
-phrase,best simple rule,pause,35,65.6789003698173,64.04136556024477,67.50867450660024
+phrase,best simple rule,min words typed,20,72.29412716388934,66.94850264739905,78.1343953053204
+phrase,best simple rule,min words typed,35,54.00339750849377,48.81050380292767,59.809626051171946
 phrase,best simple rule,min words typed,50,38.265528356128584,32.6557656016577,43.918796566509826
 phrase,letters in word (honest),1,20,80.0,80.0,80.0
 phrase,letters in word (honest),1,35,65.0,65.0,65.0
@@ -195,8 +195,8 @@ phrase,ceiling: letters x words (honest),pass_calls,pass,,,
 phrase,ceiling: letters x words (in-sample),pass_calls,pass,,,
 phrase,ceiling: letters x words x previous gap (honest),pass_calls,pass,,,
 phrase,ceiling: letters x words x previous gap (in-sample),pass_calls,pass,,,
-sentence,best simple rule,pause,20,81.00536842650054,78.74916561294356,83.4221247657443
-sentence,best simple rule,pause,35,65.96291104429059,62.203320922812935,69.98472031289589
+sentence,best simple rule,min words typed,20,57.79927448609432,46.82806823452114,67.17611475733078
+sentence,best simple rule,min words typed,35,32.03143893591294,21.26743624614693,40.74581767301903
 sentence,best simple rule,min words typed,50,13.521222831984621,7.007401420058324,23.297937208095483
 sentence,letters in word (honest),1,20,80.0,80.0,80.0
 sentence,letters in word (honest),1,35,65.0,65.0,65.0

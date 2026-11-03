@@ -164,7 +164,7 @@ The timing rules above leave a gap, so Stage A7 tested two more things: simple r
 **Setup** (`src/learned_policy.py`; the same simulation, staleness rule and latency as §1.3):
 
 - The 240 messages are split once at random into a **dev half** and a **test half** (120 each). The learned variant is chosen on the dev half by 5-fold cross-validation split by message. It is then trained on the whole dev half and scored on the test half, which is never used for a choice. All numbers below are test-half numbers.
-- **Position rules** (not learned): call once the current word has n letters; call at every word start and mid-word once the word has n letters; call once m words are typed; call at word starts once m words are typed.
+- **Position rules** (not learned): call once the current word has n letters; call at every word start and mid-word once the word has n letters; call once m words are typed; call at word starts once m words are typed (m up to 20 words, so the curves reach low call shares).
 - **Learned policy:** logistic regression and small gradient-boosted trees. Inputs are known before the call: pause lengths and typing speed, letters in the current word, words typed, prefix length. The label is whether a call delivers a suggestion that is still valid on arrival. Variants with and without a short wait before a mid-word call were tried.
 - **Reading:** each policy is a curve of calls against missed. The curves are read at 20, 35 and 50 % of the calls, next to random skipping (missed = 100 − calls) and an oracle (calls only where a call would deliver). Calls and missed are measured at the same position. Intervals are paired bootstrap over test messages.
 
@@ -189,6 +189,8 @@ A positive last column means the simple rule is better. For comparison, random s
 | m = 10 | 44.7 % | 20.0 % |
 | m = 11 | 39.2 % | 23.2 % |
 | m = 12 | 35.5 % | 31.4 % |
+
+Read from the whole curve (random skipping misses 80 % and 65 %): `min words typed` misses 57.8 % at 20 % of the calls and 32.0 % at 35 %. For next_word it misses 74.5 % and 57.4 %, for phrase 72.3 % and 54.0 % at the same budgets.
 
 | Word-level mix: word start + n letters | calls | missed |
 |---|---|---|
@@ -244,11 +246,19 @@ Contexts: letters in word; words typed; characters typed; letters × words; lett
 | phrase | 38.3 | 36.1 (words typed) | 44.8 |
 | sentence | 13.5 | 12.5 (words typed) | 15.2 |
 
+For sentence, the same comparison at lower budgets (missed %, test half):
+
+| Calls | Best simple rule (min words typed) | In-sample ceiling (words typed) | Honest ceiling (words typed) |
+|---|---|---|---|
+| 20 % | 57.8 | 57.2 | 60.1 |
+| 35 % | 32.0 | 27.4 | 31.0 |
+| 50 % | 13.5 | 12.5 | 15.2 |
+
 **What the results show**
 
 | Observation | Numbers |
 |---|---|
-| The simple rules sit at or within a few points of the ceiling | in-sample ceilings of the coarse contexts are 0–4.5 points better than the rules; the honest ceilings are 2–7 points worse than the rules |
+| The simple rules sit at or within a few points of the ceiling | in-sample ceilings of the coarse contexts are 0–4.5 points better than the rules; the honest ceilings are 2–7 points worse than the rules; at 20 % and 35 % of the calls the coarse in-sample ceilings are within 5 points of the best rule |
 | Finer contexts only memorise | word-level mix, letters × words × previous gap (211 cells): 22.1 % in-sample, 39.2 % honest at 50 % of the calls |
 | Timing adds nothing | the previous gap never improves an honest ceiling (mix at 50 % of the calls: 39.2 % with the gap, 37.4 % without), as in §1.3 |
 | Only sentence meets the proposed targets | a words-typed threshold, at about 39 % of the calls |
@@ -256,7 +266,7 @@ Contexts: letters in word; words typed; characters typed; letters × words; lett
 
 **Cautions**
 
-- For sentence at 20 % and 35 % of the calls, the ceilings look 20–35 points better than the best rule. This is an artifact: the min-words rules stop at 12 words, so their curves end near 39 % of the calls and the comparison falls back to the pause rule. The comparison at 50 % of the calls is not affected. Open fix: extend the min-words grid to 20 words in `src/learned_policy.py`.
+- The `min words typed` rules were first limited to 12 words, so their curves ended near 39 % of the calls and the comparison at 20 % and 35 % fell back to the pause rule (the ceilings then looked 20–35 points better). The grid now goes to 20 words, both analyses were rerun, and the sentence rule matches the honest ceiling at all three budgets (table above). All numbers at 50 % of the calls were unchanged by the rerun.
 - "Words typed" and "characters typed" partly reflect where the five fixed cut points fall in a message (§4.2); A7c tests this on full sessions.
 - The test half has now been used many times (§4.12). In-sample ceilings of coarse contexts are the fairer upper bound.
 

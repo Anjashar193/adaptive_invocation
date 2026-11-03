@@ -318,6 +318,14 @@ word-level mix,rule: word start + min letters,43.667421206920366,35.770346710569
 word-level mix,rule: word start + min letters,54.6711610877843,26.533872207840385
 word-level mix,rule: word start + min letters,79.7991043978169,12.511224553696891
 word-level mix,rule: word start + min letters,100.0,0.0
+word-level mix,rule: min words typed,16.293191119399285,80.25384108819259
+word-level mix,rule: min words typed,17.20121956218609,79.61197372476829
+word-level mix,rule: min words typed,18.81119339943025,78.3282389979197
+word-level mix,rule: min words typed,21.20365130525777,77.9003274223035
+word-level mix,rule: min words typed,22.64623264356402,77.47241584668731
+word-level mix,rule: min words typed,24.75206882693605,74.2953663315344
+word-level mix,rule: min words typed,28.216790099145378,70.90436102857338
+word-level mix,rule: min words typed,30.65109612970738,69.83458208953289
 word-level mix,rule: min words typed,35.68394311442637,63.92453828582752
 word-level mix,rule: min words typed,39.39659555969964,60.33572084604267
 word-level mix,rule: min words typed,45.04769168940702,53.78380967891304
@@ -330,6 +338,14 @@ word-level mix,rule: min words typed,84.69537599751351,9.116969555632457
 word-level mix,rule: min words typed,93.76618769935283,1.5953910504714153
 word-level mix,rule: min words typed,100.0,0.0
 word-level mix,rule: min words typed,100.0,0.0
+word-level mix,rule: word start + min words,3.975571849775458,92.59712974183986
+word-level mix,rule: word start + min words,4.226660598182328,91.95526237841557
+word-level mix,rule: word start + min words,4.6869899702615925,90.67152765156695
+word-level mix,rule: word start + min words,5.2728637165442915,90.24361607595075
+word-level mix,rule: word start + min words,5.565800589685641,89.81570450033456
+word-level mix,rule: word start + min words,6.193522460702819,88.31801398567791
+word-level mix,rule: word start + min words,7.030484955392389,86.60636768321312
+word-level mix,rule: word start + min words,7.658206826409566,85.53658874417263
 word-level mix,rule: word start + min words,8.913650568443922,83.82494244170785
 word-level mix,rule: word start + min words,9.834309312602448,82.75516350266736
 word-level mix,rule: word start + min words,11.21529742884024,80.40164983677828
@@ -653,6 +669,14 @@ partial_word,rule: word start + min letters,24.780701754385966,57.25806451612903
 partial_word,rule: word start + min letters,39.473684210526315,42.473118279569896
 partial_word,rule: word start + min letters,73.02631578947368,20.026881720430108
 partial_word,rule: word start + min letters,100.0,0.0
+partial_word,rule: min words typed,16.44736842105263,80.24193548387096
+partial_word,rule: min words typed,17.32456140350877,80.24193548387096
+partial_word,rule: min words typed,18.859649122807017,80.24193548387096
+partial_word,rule: min words typed,21.271929824561404,80.24193548387096
+partial_word,rule: min words typed,22.80701754385965,80.24193548387096
+partial_word,rule: min words typed,24.780701754385966,77.55376344086021
+partial_word,rule: min words typed,28.289473684210527,74.86559139784946
+partial_word,rule: min words typed,30.70175438596491,74.86559139784946
 partial_word,rule: min words typed,35.74561403508772,68.14516129032258
 partial_word,rule: min words typed,39.473684210526315,64.11290322580645
 partial_word,rule: min words typed,45.175438596491226,57.39247311827957
@@ -665,6 +689,14 @@ partial_word,rule: min words typed,84.64912280701755,10.483870967741936
 partial_word,rule: min words typed,94.07894736842105,2.553763440860215
 partial_word,rule: min words typed,100.0,0.0
 partial_word,rule: min words typed,100.0,0.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
+partial_word,rule: word start + min words,0.0,100.0
 partial_word,rule: word start + min words,0.0,100.0
 partial_word,rule: word start + min words,0.0,100.0
 partial_word,rule: word start + min words,0.0,100.0
@@ -843,6 +875,14 @@ next_word,rule: word start + min letters,100.0,0.0
 next_word,rule: word start + min letters,100.0,0.0
 next_word,rule: word start + min letters,100.0,0.0
 next_word,rule: word start + min letters,100.0,0.0
+next_word,rule: min words typed,15.833333333333334,80.27366020524515
+next_word,rule: min words typed,16.833333333333332,78.56328392246294
+next_word,rule: min words typed,18.666666666666668,75.14253135689852
+next_word,rule: min words typed,21.0,74.00228050171037
+next_word,rule: min words typed,22.166666666666668,72.86202964652223
+next_word,rule: min words typed,24.666666666666668,68.87115165336374
+next_word,rule: min words typed,28.0,64.31014823261117
+next_word,rule: min words typed,30.5,61.45952109464082
 next_word,rule: min words typed,35.5,56.89851767388826
 next_word,rule: min words typed,39.166666666666664,54.0478905359179
 next_word,rule: min words typed,44.666666666666664,47.776510832383124
@@ -855,6 +895,14 @@ next_word,rule: min words typed,84.83333333333333,6.841505131128848
 next_word,rule: min words typed,92.83333333333333,0.0
 next_word,rule: min words typed,100.0,0.0
 next_word,rule: min words typed,100.0,0.0
+next_word,rule: word start + min words,15.833333333333334,80.27366020524515
+next_word,rule: word start + min words,16.833333333333332,78.56328392246294
+next_word,rule: word start + min words,18.666666666666668,75.14253135689852
+next_word,rule: word start + min words,21.0,74.00228050171037
+next_word,rule: word start + min words,22.166666666666668,72.86202964652223
+next_word,rule: word start + min words,24.666666666666668,68.87115165336374
+next_word,rule: word start + min words,28.0,64.31014823261117
+next_word,rule: word start + min words,30.5,61.45952109464082
 next_word,rule: word start + min words,35.5,56.89851767388826
 next_word,rule: word start + min words,39.166666666666664,54.0478905359179
 next_word,rule: word start + min words,44.666666666666664,47.776510832383124
@@ -1035,6 +1083,14 @@ phrase,rule: word start + min letters,100.0,0.0
 phrase,rule: word start + min letters,100.0,0.0
 phrase,rule: word start + min letters,100.0,0.0
 phrase,rule: word start + min letters,100.0,0.0
+phrase,rule: min words typed,15.833333333333334,77.80294450736127
+phrase,rule: min words typed,16.833333333333332,76.21744054360136
+phrase,rule: min words typed,18.666666666666668,73.55605889014723
+phrase,rule: min words typed,21.0,71.34767836919592
+phrase,rule: min words typed,22.166666666666668,69.6489241223103
+phrase,rule: min words typed,24.666666666666668,66.02491506228766
+phrase,rule: min words typed,28.0,61.268403171007925
+phrase,rule: min words typed,30.5,58.437146092865234
 phrase,rule: min words typed,35.5,53.51075877689694
 phrase,rule: min words typed,39.166666666666664,49.943374858437146
 phrase,rule: min words typed,44.666666666666664,44.903737259343146
@@ -1047,6 +1103,14 @@ phrase,rule: min words typed,84.83333333333333,6.22876557191393
 phrase,rule: min words typed,92.83333333333333,0.0
 phrase,rule: min words typed,100.0,0.0
 phrase,rule: min words typed,100.0,0.0
+phrase,rule: word start + min words,15.833333333333334,77.80294450736127
+phrase,rule: word start + min words,16.833333333333332,76.21744054360136
+phrase,rule: word start + min words,18.666666666666668,73.55605889014723
+phrase,rule: word start + min words,21.0,71.34767836919592
+phrase,rule: word start + min words,22.166666666666668,69.6489241223103
+phrase,rule: word start + min words,24.666666666666668,66.02491506228766
+phrase,rule: word start + min words,28.0,61.268403171007925
+phrase,rule: word start + min words,30.5,58.437146092865234
 phrase,rule: word start + min words,35.5,53.51075877689694
 phrase,rule: word start + min words,39.166666666666664,49.943374858437146
 phrase,rule: word start + min words,44.666666666666664,44.903737259343146
@@ -1227,6 +1291,14 @@ sentence,rule: word start + min letters,100.0,0.0
 sentence,rule: word start + min letters,100.0,0.0
 sentence,rule: word start + min letters,100.0,0.0
 sentence,rule: word start + min letters,100.0,0.0
+sentence,rule: min words typed,15.833333333333334,65.53808948004837
+sentence,rule: min words typed,16.833333333333332,62.636033857315596
+sentence,rule: min words typed,18.666666666666668,59.73397823458283
+sentence,rule: min words typed,21.0,56.34824667472793
+sentence,rule: min words typed,22.166666666666668,52.478839177750906
+sentence,rule: min words typed,24.666666666666668,47.76299879081016
+sentence,rule: min words typed,28.0,40.7496977025393
+sentence,rule: min words typed,30.5,37.363966142684404
 sentence,rule: min words typed,35.5,31.43893591293833
 sentence,rule: min words typed,39.166666666666664,23.216444981862153
 sentence,rule: min words typed,44.666666666666664,19.951632406287786
@@ -1239,6 +1311,14 @@ sentence,rule: min words typed,84.83333333333333,2.2974607013301087
 sentence,rule: min words typed,92.83333333333333,0.0
 sentence,rule: min words typed,100.0,0.0
 sentence,rule: min words typed,100.0,0.0
+sentence,rule: word start + min words,15.833333333333334,65.53808948004837
+sentence,rule: word start + min words,16.833333333333332,62.636033857315596
+sentence,rule: word start + min words,18.666666666666668,59.73397823458283
+sentence,rule: word start + min words,21.0,56.34824667472793
+sentence,rule: word start + min words,22.166666666666668,52.478839177750906
+sentence,rule: word start + min words,24.666666666666668,47.76299879081016
+sentence,rule: word start + min words,28.0,40.7496977025393
+sentence,rule: word start + min words,30.5,37.363966142684404
 sentence,rule: word start + min words,35.5,31.43893591293833
 sentence,rule: word start + min words,39.166666666666664,23.216444981862153
 sentence,rule: word start + min words,44.666666666666664,19.951632406287786
