@@ -1,0 +1,8 @@
+'matches' rows: 445; unique items: 345; duplicate rows dropped (labeler B copies): 100.
+Loaded 345 'matches'-axis rows from control_labels.csv.
+next_word      n=75   delta=+0.010 [-0.179, +0.185]  verdict=tie          -> adopt keystrokes  matches-kappa=+0.505 (n=22)  plausible-kappa=+0.879 (n=22)
+partial_word   n=120  delta=+0.266 [+0.034, +0.499]  verdict=a_better     -> adopt keystrokes  matches-kappa=+0.692 (n=35)  plausible-kappa=+0.839 (n=35)
+phrase         n=75   delta=-0.060 [-0.385, +0.271]  verdict=tie          -> adopt keystrokes  matches-kappa=+0.027 (n=22)  plausible-kappa=-0.048 (n=22)
+sentence       n=75   delta=-0.412 [-0.709, -0.103]  verdict=b_better     -> adopt embeddings  matches-kappa=+0.447 (n=21)  plausible-kappa=+0.644 (n=21)
+
+Wrote decision to metric_choice.json

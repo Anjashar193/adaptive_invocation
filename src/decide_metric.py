@@ -99,10 +99,34 @@ def load_matches_rows(labels_csv="control_labels.csv"):
     control_labels.csv already carries granularity/reference/prediction for
     every row (copied straight from control_set.csv, which built them from
     phase1_results_v2.csv originally). The only filtering needed is by axis.
+
+    ONE ROW PER ITEM. Labeler B re-labeled 100 items that labeler A had already
+    scored (under different item_ids), so those items appear twice in the file. Counting both would treat
+    one item as two independent observations and make the bootstrap interval
+    too narrow. Here each item is kept once (labeler A's row is preferred);
+    labeler B's rows are used only for inter-annotator kappa, in
+    compute_human_agreement().
     """
     with open(labels_csv, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    return [r for r in rows if r["axis"] == "matches"]
+    matches = [r for r in rows if r["axis"] == "matches"]
+
+    # Labeler B's copies carry different item_ids than labeler A's rows, so items
+    # are matched by their text (granularity, prefix, reference) - the same key
+    # compute_human_agreement() uses to pair A with B.
+    def text_key(r):
+        return (r["granularity"], r["prefix"], r["reference"])
+
+    chosen = [r for r in matches if r["labeler"] == "A"]
+    seen = {text_key(r) for r in chosen}
+    for r in matches:
+        if r["labeler"] != "A" and text_key(r) not in seen:
+            chosen.append(r)          # an item only a non-A labeler scored
+            seen.add(text_key(r))
+    n_dup = len(matches) - len(chosen)
+    print(f"'matches' rows: {len(matches)}; unique items: {len(chosen)}; "
+          f"duplicate rows dropped (labeler B copies): {n_dup}.")
+    return chosen
 
 
 def compute_metrics_for_row(row, cache):
@@ -231,7 +255,8 @@ def decide_metric(labels_csv="control_labels.csv"):
               f"[{lo_str}, {hi_str}]  verdict={result:<12} -> adopt {chosen}{agreement_str}")
 
     decisions["_metadata"] = {
-        "version": "1.0",
+        "version": "1.1",
+        "dedupe": "one row per item (matched by granularity, prefix, reference; labeler A preferred); labeler B used for kappa only",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         **_fingerprint_source(labels_csv),
     }

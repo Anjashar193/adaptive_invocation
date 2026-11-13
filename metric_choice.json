@@ -1,10 +1,10 @@
 {
   "next_word": {
     "metric": "keystrokes",
-    "n": 97,
-    "delta": -0.07830002313785167,
-    "ci_lo": -0.2503256968781551,
-    "ci_hi": 0.07545199296762839,
+    "n": 75,
+    "delta": 0.009788802865053903,
+    "ci_lo": -0.17901603026797386,
+    "ci_hi": 0.18523977431325145,
     "verdict": "tie",
     "human_agreement_matches": {
       "n": 22,
@@ -19,10 +19,10 @@
   },
   "partial_word": {
     "metric": "keystrokes",
-    "n": 155,
-    "delta": 0.24444489307649428,
-    "ci_lo": 0.04724726675545744,
-    "ci_hi": 0.44815328798665444,
+    "n": 120,
+    "delta": 0.26590494167349416,
+    "ci_lo": 0.033727179763529444,
+    "ci_hi": 0.4990942179991912,
     "verdict": "a_better",
     "human_agreement_matches": {
       "n": 35,
@@ -37,10 +37,10 @@
   },
   "phrase": {
     "metric": "keystrokes",
-    "n": 97,
-    "delta": -0.15018683751436565,
-    "ci_lo": -0.42609290962163365,
-    "ci_hi": 0.13856771445315835,
+    "n": 75,
+    "delta": -0.06049121493567999,
+    "ci_lo": -0.38452270670894984,
+    "ci_hi": 0.2714798529519236,
     "verdict": "tie",
     "human_agreement_matches": {
       "n": 22,
@@ -56,10 +56,10 @@
   },
   "sentence": {
     "metric": "embeddings",
-    "n": 96,
-    "delta": -0.3857238996654334,
-    "ci_lo": -0.6463823849288187,
-    "ci_hi": -0.12169067009268425,
+    "n": 75,
+    "delta": -0.411725860197672,
+    "ci_lo": -0.7086083435626284,
+    "ci_hi": -0.10305161041337468,
     "verdict": "b_better",
     "human_agreement_matches": {
       "n": 21,
@@ -73,8 +73,9 @@
     }
   },
   "_metadata": {
-    "version": "1.0",
-    "generated_at": "2026-09-25T07:32:18.512276+00:00",
+    "version": "1.1",
+    "dedupe": "one row per item (matched by granularity, prefix, reference; labeler A preferred); labeler B used for kappa only",
+    "generated_at": "2026-11-13T11:42:54.669959+00:00",
     "source_file": "control_labels.csv",
     "source_md5": "ba25ddfe1319e95f3814fbb37f41136c",
     "source_row_count": 890
