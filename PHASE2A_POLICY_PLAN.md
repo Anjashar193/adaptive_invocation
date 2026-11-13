@@ -1,6 +1,6 @@
 # Phase 2a — When to Invoke the Model
 
-**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules, and a ceiling analysis shows the simple rules already sit at the ceiling for the inputs used so far, so new inputs are needed. Four decisions need feedback (next section) before the full-session run and the AESLC run start.
+**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules, and a ceiling analysis shows the simple rules already sit at the ceiling for the inputs used so far, so new inputs are needed. On the test half only sentence suggestions meet the targets; on all 240 messages the same rule misses 31 %, and on AESLC emails it keeps 75 % of the calls (§1.6). The word-level rule gave similar results on both datasets. Four decisions need feedback (next section).
 
 ---
 
@@ -21,17 +21,21 @@
       *(variant chosen on 120 dev messages and scored on 120 test messages; pauses do not help, letters and words typed do; the learned policy does not beat the best simple position rule, see §1.4)*
 - [x] **Stage A7b** — Ceiling analysis: `src/ceiling.py`
       *(the best any policy could do with the current inputs; the simple rules are within a few points of it, so a better model on the same inputs cannot help, see §1.5)*
-- [ ] **Stage A7c** — Full typing sessions with new inputs: suggestions at every keystroke for about 30 messages ← **YOU ARE HERE**
-- [ ] **Stage A8** — One run on AESLC
+- [x] **Metric decision recounted** — each labeled item counted once (`src/decide_metric.py`, `metric_choice.json`: n = 120 partial_word, 75 next_word, 75 phrase, 75 sentence); verdicts unchanged
+- [x] **Frozen policy module** — `src/policy.py`, `tests/test_policy.py` *(8 tests pass)*
+- [x] **Stage A8** — One run on AESLC emails with the frozen rule: `src/aeslc_prep.py`, `src/run_eval_aeslc.py`, `src/eval_frozen.py` *(120 emails, `phase1_results_aeslc.csv`; see §1.6)*
+- [ ] **Phase 3a** — llama.cpp / GGUF latency and policy comparison ← **YOU ARE HERE**
+- [ ] **Phase 4** — minimal demo (`/suggest` endpoint and ghost text)
+- [ ] **Stage A7c** — Full typing sessions with new inputs; postponed in favour of the pipeline
 - [ ] `tests/` for `typing_sim` and `policy_eval`
 
-> ⚠ **The results are development results.** They rest on a simulated typist, 5 fixed cut points per message (§4.2), copy-typing gap shapes (§4.7), and a selection rule that is still a proposal. The test half of the messages has been looked at several times, so a fresh set of messages and a check on a second dataset (Stage A8) are still open.
+> ⚠ **The results are development results.** They rest on a simulated typist, 5 fixed cut points per message (§4.2), copy-typing gap shapes (§4.7), and a selection rule that is still a proposal. The test half of the messages has been looked at several times, so a fresh set of messages is still open. The second dataset (Stage A8) was run once with the frozen rule.
 
 ---
 
 ## Feedback required
 
-Stages A0 to A7b are done. The four points below need feedback on what should be done; until then the work continues with the default in the third column. The full-session run (A7c) and the AESLC run wait for answers 1 and 3.
+Stages A0 to A7b are done. The four points below need feedback on what should be done; until then the work continues with the default in the third column. The full-session run (A7c) waits for answers 1 and 3. The AESLC run was done with the defaults.
 
 | # | Question | Default until feedback arrives | Details |
 |---|---|---|---|
@@ -221,6 +225,7 @@ Read from the whole curve (random skipping misses 80 % and 65 %): `min words typ
 - Only 5 cut points exist per message. Call shares are shares of those points, not of real keystrokes. A words-typed threshold may partly select the late cut points of a message, where less text remains to predict, so the sentence threshold of about 10–11 words should not be taken as a general value yet.
 - The test half has been looked at several times. The dev half chose a gradient-boosted model for the mix and partial_word, and on the test half it did no better than the simple rule. A fresh set of messages is needed to confirm.
 - Both policy types read their operating point off the test curve, so both carry a similar small optimism.
+- The "sentence meets the targets" statement holds for the test half. With the frozen rule on all 240 messages, sentence misses 31.1 % [24–39] at 38 % of the calls, which is above the 25 % target (§1.6).
 - A model using only word shape (letters typed, last key a space or letter) reached 29.7 % in the mix, as good as the best rule. It was not chosen on the dev half, so it is a diagnostic only.
 
 §1.5 asks whether any policy on these inputs could do better.
@@ -271,6 +276,42 @@ For sentence, the same comparison at lower budgets (missed %, test half):
 - The test half has now been used many times (§4.12). In-sample ceilings of coarse contexts are the fairer upper bound.
 
 **Conclusion.** With these inputs, no policy can do clearly better than a threshold on letters or words typed. The next gain has to come from new inputs, not a better model on the same inputs. This leads to A7c.
+
+## 1.6 Second dataset: AESLC emails (Stage A8)
+
+**Question.** Does the frozen rule (`src/policy.py`) behave similarly on a different kind of text?
+
+**Setup.** 120 emails from the AESLC validation split (`email_body`), filtered to prose (`src/aeslc_prep.py`: 595 of 1,960 pass, median 42 words; the original guideline filter passed 657, so the re-implementation is not identical). Same pipeline as OASST2: Qwen suggestions at 5 cut points per message (`src/run_eval_aeslc.py` → `phase1_results_aeslc.csv`), same simulated typists and staleness rule. The frozen rule (`MIN_LETTERS = 3`, `SENTENCE_MIN_WORDS = 11`) is evaluated on all messages of each dataset with no dev/test split and no re-tuning (`src/eval_frozen.py`).
+
+**Result (frozen rule, all messages, 95 % intervals over messages).**
+
+| group | dataset | calls % | missed % | random missed % | value/call (always) | meets rule |
+|---|---|---|---|---|---|---|
+| sentence | OASST2 (240) | 38.3 [34–42] | 31.1 [24–39] | 61.7 | 0.25 (0.17) | 6 % |
+| sentence | AESLC (120) | 74.5 [73–76] | 10.2 [4–17] | 25.5 | 0.21 (0.19) | 0 % |
+| word-level mix | OASST2 | 54.1 [52–56] | 30.5 [25–36] | 45.9 | 0.58 (0.40) | 0 % |
+| word-level mix | AESLC | 54.1 [51–57] | 23.7 [15–33] | 45.9 | 0.51 (0.33) | 0 % |
+| partial_word | OASST2 | 38.7 [36–42] | 49.0 [41–57] | 61.3 | 0.29 (0.23) | 0 % |
+| partial_word | AESLC | 40.5 [37–45] | 38.2 [25–50] | 59.5 | 0.34 (0.20) | 2 % |
+
+"Meets rule" is the share of bootstrap resamples that meet the proposed selection rule (calls ≤ 50 %, missed ≤ 25 %, value per call ≥ 0.95 × always-invoke).
+
+**Observations.**
+- Word-level mix: the same call share (54.1 %) and a similar missed share (30.5 % and 23.7 %, intervals overlap) on both datasets. Neither meets the 50 % call target.
+- Sentence on OASST2: 31.1 % missed at 38 % of the calls. This is above the 25 % target, so the test-half result in §1.4 does not carry over to all messages.
+- Sentence on AESLC: missed is low (10.2 %) but the rule keeps 74.5 % of the calls, because emails are longer and more cut points lie beyond 11 words. The call target is not met.
+- Threshold needed on AESLC for about 40 % of the calls: 24 words → 42 % of the calls, 26 words → 36 % (call shares only; missed at these thresholds not measured).
+- Partial_word: 49.0 % and 38.2 % missed; neither meets the targets.
+
+The full output is in `results/eval_frozen_oasst2.txt` and `results/eval_frozen_aeslc.txt`.
+
+**Cautions.**
+- The rule was not re-tuned on AESLC. The missed share at the 24- and 26-word thresholds was not measured.
+- 120 emails and 5 cut points each; the intervals are wide and overlap for most rows.
+- The AESLC filter is a re-implementation (595 vs 657 passing emails).
+- The word-level result is similar on the two datasets, but both rest on the same simulator (§4.7).
+
+**Conclusion.** The word-level thresholds gave similar call shares and overlapping missed shares on both datasets. The sentence threshold depends on message length, so it is a setting of the policy to choose per domain (§4.13).
 
 ---
 
@@ -367,7 +408,10 @@ Finding: the learned policy adds nothing over a threshold on letters and words t
 ### A7b — Ceiling analysis
 `src/ceiling.py` imports the samples, the dev/test split and the rule curves from `src/learned_policy.py`, so the data are identical to §1.4. Decision points are grouped by five contexts. For each, the smoothed share of positions at which a call delivers a still-valid suggestion is estimated (on the dev half for the honest ceiling, on the test half for the in-sample ceiling). Contexts are then called in order of that share, which gives the best frontier of calls against missed for that context. The frontier is read at 20, 35 and 50 % of the calls with paired bootstrap intervals over test messages, and compared with the best simple rule, random skipping and the oracle. It needs only the existing data and writes `results/ceiling_summary.csv` and `results/ceiling_curves.csv`. Finding: §1.5.
 
-### A7c — Full typing sessions with new inputs (next)
+### A8 — AESLC run
+`src/aeslc_prep.py` loads the AESLC validation split from Hugging Face, keeps prose emails and selects messages. `src/run_eval_aeslc.py` runs the Phase 1 pipeline (`src/run_eval_v3.py`) on them and writes `phase1_results_aeslc.csv`. `src/eval_frozen.py` evaluates the frozen rule on one results file (`RESULTS=... uv run python -m src.eval_frozen`). Finding: §1.6.
+
+### A7c — Full typing sessions with new inputs (postponed)
 **Goal.** Evaluate policies on full typing sessions instead of 5 fixed cut points, and test inputs that carry information about content.
 
 1. Generate suggestions at every keystroke position for about 30 messages (single-suggestion timing only). This runs on the machine with Qwen and stores the latency of each call.
@@ -392,7 +436,8 @@ Finding: the learned policy adds nothing over a threshold on letters and words t
 | 7 | learned policy on data with no signal | no better than random | ✅ on a toy set |
 | 8 | selection-rule check on constructed curves | passes and fails where expected | ✅ |
 | 9 | ceiling analysis on data with a known structure | coarse contexts: in-sample and honest agree; fine contexts: in-sample better than honest | ✅ on a toy set |
-| 10 | `pytest tests/` | green incl. new tests | tests not written yet |
+| 10 | `pytest tests/test_policy.py` | green | ✅ 8 passed |
+| 11 | tests for `typing_sim` and `policy_eval` | green | not written yet |
 
 ## 3.4 Reproduce
 
@@ -405,6 +450,11 @@ uv run python -m src.policy_eval_v3 1        # robustness: medium modelled typis
 uv run python -m src.learned_policy          # the results of section 1.4, about 30 min
 uv run python -m src.ceiling > results/ceiling_output.txt   # the results of section 1.5
 uv run python -m src.policy_eval 1           # earlier 80-message pilot on phase1_results_v2.csv
+uv run python -m src.aeslc_prep              # check the AESLC filter (needs Hugging Face access)
+uv run python -m src.run_eval_aeslc          # 120 emails, writes phase1_results_aeslc.csv
+RESULTS=phase1_results_v3.csv uv run python -m src.eval_frozen      # frozen rule, OASST2
+RESULTS=phase1_results_aeslc.csv uv run python -m src.eval_frozen   # frozen rule, AESLC
+uv run python -m src.policy                  # demo of the frozen policy
 ```
 
 ---
@@ -445,7 +495,10 @@ The README latency table (413 / 456 / 1,098 / 3,181 ms) is the five-candidate ti
 The inputs of the learned policy are about timing and position. Whether a call pays off depends mostly on whether the model's guess will be right, which these inputs hardly predict. That is why mid-word, next_word and phrase suggestions still miss 30–42 % at 50 % of the calls. A7b (§1.5) confirms that more of the same inputs cannot close the gap. Content-based inputs are part of A7c.
 
 ## 4.12 The test half has been seen several times
-Choices after the first look at the test half (new candidates, new baseline rules) make its numbers exploratory. The ceiling analysis (§1.5) used the same test half again. Confirmation needs new messages that nobody has looked at (about 100, generated with `run_eval_v3.py`), and the AESLC run as a second dataset.
+Choices after the first look at the test half (new candidates, new baseline rules) make its numbers exploratory. The ceiling analysis (§1.5) used the same test half again. Confirmation needs new messages that nobody has looked at (about 100, generated with `run_eval_v3.py`), The AESLC run (§1.6) is the second dataset.
+
+## 4.13 The sentence threshold is a domain setting
+The 11-word threshold comes from short chat messages. On AESLC emails it keeps about 75 % of the calls, and about 24–26 words are needed for 36–42 % (§1.6). Message length and style change the right value, so `SENTENCE_MIN_WORDS` should be set per domain and checked on that domain's data.
 
 ## Files
 
@@ -464,7 +517,13 @@ Choices after the first look at the test half (new candidates, new baseline rule
 | `src/policy_eval_v3.py` | the results of §1.3: timing rules, intervals over messages, word-level mix, PASS column |
 | `src/learned_policy.py` | the results of §1.4: position rules, learned policy, dev/test split, PASS check, feature check |
 | `src/ceiling.py` | the results of §1.5: ceiling analysis by context, honest and in-sample |
+| `src/policy.py` | the frozen policy: `decide(text_before_cursor)` and its thresholds |
+| `tests/test_policy.py` | tests of the frozen policy |
+| `src/aeslc_prep.py` | loads and filters AESLC emails |
+| `src/run_eval_aeslc.py` | Phase 1 pipeline on AESLC emails |
+| `src/eval_frozen.py` | the results of §1.6: frozen rule on one dataset |
+| `phase1_results_aeslc.csv` | results of the AESLC run |
 | `phase1_results_v3.csv` | results of the v3 run (the raw `.jsonl` is not committed) |
-| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv`, `ceiling_output.txt`, `ceiling_summary.csv`, `ceiling_curves.csv` |
+| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv`, `ceiling_output.txt`, `ceiling_summary.csv`, `ceiling_curves.csv`, `eval_frozen_oasst2.txt`, `eval_frozen_aeslc.txt`, `frozen_policy_*.csv` |
 | `inspect_aalto.py` | inspects an Aalto zip without unzipping (not needed for the folder download) |
 | `phase1_results_v2.csv` | frozen Phase 1 results, read-only; hand labels belong to it |

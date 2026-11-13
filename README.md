@@ -6,7 +6,7 @@ calls without losing useful suggestions?
 ```
 Phase 1   Generation quality baseline        DONE
 Phase 2.0 Metric validation & calibration    ONGOING
-Phase 2   Invocation policy (the thesis)     NOT STARTED  <- next
+Phase 2   Invocation policy (the thesis)     ONGOING (2a development results)
 Phase 3   Production runtime validation      NOT STARTED
 Phase 4   Demo                               NOT STARTED
 ```
@@ -143,6 +143,17 @@ items, matched by `(granularity, prefix, reference)`.
   (n=155). 
 
 
+## Phase 2a — When to invoke the model (development results)
+
+Simulated typists (real pace from AmazonQAC, real gap shape from Aalto), 5 cut points per message, 240 OASST2 messages. Details: `PHASE2A_POLICY_PLAN.md`.
+
+- Pauses do not help. How much has been typed does: letters in the current word for mid-word suggestions, words typed for sentence suggestions.
+- A learned policy did not beat simple rules on these inputs. A ceiling analysis (Stage A7b) puts the simple rules at or within a few points of the best possible policy for timing and position inputs.
+- Frozen rule (`src/policy.py`): mid-word suggestions from 3 letters, next-word at word starts, sentence from 11 words.
+- On both OASST2 and AESLC emails, the word-level rule uses about 54 % of the calls and misses about 24–31 % of the suggestions that always-invoke would deliver. The intervals overlap.
+- The sentence threshold depends on the domain: on OASST2 it uses 38 % of the calls and misses 31 %; on AESLC emails it uses 75 % of the calls and misses 10 %. It should be set per domain.
+- These are development results: simulated typists, fixed cut points, a test half that has been looked at several times, and a selection rule that is still a proposal.
+
 ## Gaps
 
 - `partial_word`'s metric decision has below-target power (68.3% against an
@@ -175,6 +186,12 @@ uv run python hand_label.py             # labeling instructions
 uv run python -m src.decide_metric      # writes metric_choice.json
 uv run python -m src.inter_annotator    # inter-annotator agreement, matched pairs
 uv run python -m src.power_recheck      # post-labeling power check
+```
+
+Reproduce the frozen-policy check on both datasets (Phase 2a):
+```bash
+RESULTS=phase1_results_v3.csv uv run python -m src.eval_frozen
+RESULTS=phase1_results_aeslc.csv uv run python -m src.eval_frozen
 ```
 
 ---
