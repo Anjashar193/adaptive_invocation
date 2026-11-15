@@ -1,6 +1,6 @@
 # Phase 2a — When to Invoke the Model
 
-**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules, and a ceiling analysis shows the simple rules already sit at the ceiling for the inputs used so far, so new inputs are needed. On the test half only sentence suggestions meet the targets; on all 240 messages the same rule misses 31 %, and on AESLC emails it keeps 75 % of the calls (§1.6). The word-level rule gave similar results on both datasets. Four decisions need feedback (next section).
+**One-line summary:** Phase 2a compares rules for *when* to call the model while a user types. It uses 240 OASST2 messages, real typing pace (AmazonQAC), a real gap shape (Aalto), the single-suggestion latency, and the four numbers the research plan requires. Pauses do not help; how much has been typed does. Only sentence suggestions meet the proposed targets (about 40 % of the calls and about 23 % missed, by calling after about 11 words). A learned policy did not beat these simple rules, and a ceiling analysis shows the simple rules already sit at the ceiling for the inputs used so far, so new inputs are needed. On the test half only sentence suggestions meet the targets; on all 240 messages the same rule misses 31 %, and on AESLC emails it keeps 75 % of the calls (§1.6). The word-level rule gave similar results on both datasets. Under llama.cpp (Q4_K_M) one suggestion takes about a quarter to a half of the Phase 1 time, and the policy numbers stay nearly the same (§1.7, `PHASE3_RUNTIME.md`). Four decisions need feedback (next section).
 
 ---
 
@@ -24,8 +24,8 @@
 - [x] **Metric decision recounted** — each labeled item counted once (`src/decide_metric.py`, `metric_choice.json`: n = 120 partial_word, 75 next_word, 75 phrase, 75 sentence); verdicts unchanged
 - [x] **Frozen policy module** — `src/policy.py`, `tests/test_policy.py` *(8 tests pass)*
 - [x] **Stage A8** — One run on AESLC emails with the frozen rule: `src/aeslc_prep.py`, `src/run_eval_aeslc.py`, `src/eval_frozen.py` *(120 emails, `phase1_results_aeslc.csv`; see §1.6)*
-- [ ] **Phase 3a** — llama.cpp / GGUF latency and policy comparison ← **YOU ARE HERE**
-- [ ] **Phase 4** — minimal demo (`/suggest` endpoint and ghost text)
+- [x] **Phase 3a** — llama.cpp / GGUF latency and policy comparison: `src/bench_llama.py`, `src/swap_latency.py` *(Q4_K_M and Q8_0, with and without the prompt cache; frozen rule rerun with the llama.cpp times, see `PHASE3_RUNTIME.md`)*
+- [ ] **Phase 4** — minimal demo (`/suggest` endpoint and ghost text) ← **YOU ARE HERE**
 - [ ] **Stage A7c** — Full typing sessions with new inputs; postponed in favour of the pipeline
 - [ ] `tests/` for `typing_sim` and `policy_eval`
 
@@ -313,6 +313,10 @@ The full output is in `results/eval_frozen_oasst2.txt` and `results/eval_frozen_
 
 **Conclusion.** The word-level thresholds gave similar call shares and overlapping missed shares on both datasets. The sentence threshold depends on message length, so it is a setting of the policy to choose per domain (§4.13).
 
+## 1.7 Runtime: llama.cpp (Phase 3a)
+
+The runtime results are in `PHASE3_RUNTIME.md`. In short: under llama.cpp (Q4_K_M) the median time per suggestion is 45 / 38 / 64 / 140 ms (partial_word / next_word / phrase / sentence) against 98 / 92 / 266 / 553 ms in Phase 1. With those times the frozen rule gives nearly the same numbers as in §1.6 (missed shares within 0.3 points). In that rerun only the time was replaced; the suggestions and their scores are the Phase 1 ones.
+
 ---
 
 # Part 2 — Approach
@@ -411,6 +415,9 @@ Finding: the learned policy adds nothing over a threshold on letters and words t
 ### A8 — AESLC run
 `src/aeslc_prep.py` loads the AESLC validation split from Hugging Face, keeps prose emails and selects messages. `src/run_eval_aeslc.py` runs the Phase 1 pipeline (`src/run_eval_v3.py`) on them and writes `phase1_results_aeslc.csv`. `src/eval_frozen.py` evaluates the frozen rule on one results file (`RESULTS=... uv run python -m src.eval_frozen`). Finding: §1.6.
 
+### Phase 3a — llama.cpp runtime
+`src/bench_llama.py` needs a running `llama-server` with one GGUF file and writes `results/llama_bench_<label>.csv` and a summary. `src/swap_latency.py` writes `phase1_results_v3_llama_<label>.csv`, a copy of the Phase 1 results with the llama.cpp time per prefix. The frozen rule is then evaluated on that file. Finding: `PHASE3_RUNTIME.md`.
+
 ### A7c — Full typing sessions with new inputs (postponed)
 **Goal.** Evaluate policies on full typing sessions instead of 5 fixed cut points, and test inputs that carry information about content.
 
@@ -455,6 +462,10 @@ uv run python -m src.run_eval_aeslc          # 120 emails, writes phase1_results
 RESULTS=phase1_results_v3.csv uv run python -m src.eval_frozen      # frozen rule, OASST2
 RESULTS=phase1_results_aeslc.csv uv run python -m src.eval_frozen   # frozen rule, AESLC
 uv run python -m src.policy                  # demo of the frozen policy
+# Phase 3a: start `llama-server -m <Qwen_Qwen3-0.6B-Q4_K_M.gguf> --port 8080 -c 2048` in another terminal first
+MESSAGES=240 uv run python -m src.bench_llama Q4_K_M_all          # latency under llama.cpp, about 15 min
+uv run python -m src.swap_latency Q4_K_M_all                      # Phase 1 results with llama.cpp times
+RESULTS=phase1_results_v3_llama_Q4_K_M_all.csv uv run python -m src.eval_frozen   # frozen rule, llama.cpp times
 ```
 
 ---
@@ -523,7 +534,10 @@ The 11-word threshold comes from short chat messages. On AESLC emails it keeps a
 | `src/run_eval_aeslc.py` | Phase 1 pipeline on AESLC emails |
 | `src/eval_frozen.py` | the results of §1.6: frozen rule on one dataset |
 | `phase1_results_aeslc.csv` | results of the AESLC run |
+| `src/bench_llama.py` | the latency results of `PHASE3_RUNTIME.md`: Phase 1 prefixes against a llama.cpp server |
+| `src/swap_latency.py` | copies the Phase 1 results with the llama.cpp latency |
+| `phase1_results_v3_llama_Q4_K_M_all.csv` | Phase 1 results with llama.cpp Q4_K_M times |
 | `phase1_results_v3.csv` | results of the v3 run (the raw `.jsonl` is not committed) |
-| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv`, `ceiling_output.txt`, `ceiling_summary.csv`, `ceiling_curves.csv`, `eval_frozen_oasst2.txt`, `eval_frozen_aeslc.txt`, `frozen_policy_*.csv` |
+| `results/` | saved outputs: pilot (aalto, styles 0/1/2), `policy_eval_v3_aalto.txt`, `policy_eval_v3_summary.csv`, `learned_policy_output.txt`, `learned_policy_summary.csv`, `learned_policy_curves.csv`, `ceiling_output.txt`, `ceiling_summary.csv`, `ceiling_curves.csv`, `eval_frozen_oasst2.txt`, `eval_frozen_aeslc.txt`, `frozen_policy_*.csv`, `llama_bench_*.txt`, `llama_bench_*_summary.csv`, `llama_bench_Q4_K_M_all.csv`, `eval_frozen_oasst2_llama_Q4.txt` |
 | `inspect_aalto.py` | inspects an Aalto zip without unzipping (not needed for the folder download) |
 | `phase1_results_v2.csv` | frozen Phase 1 results, read-only; hand labels belong to it |

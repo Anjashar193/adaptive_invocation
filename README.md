@@ -7,7 +7,7 @@ calls without losing useful suggestions?
 Phase 1   Generation quality baseline        DONE
 Phase 2.0 Metric validation & calibration    ONGOING
 Phase 2   Invocation policy (the thesis)     ONGOING (2a development results)
-Phase 3   Production runtime validation      NOT STARTED
+Phase 3   Production runtime validation      ONGOING (3a llama.cpp done)
 Phase 4   Demo                               NOT STARTED
 ```
 
@@ -154,6 +154,23 @@ Simulated typists (real pace from AmazonQAC, real gap shape from Aalto), 5 cut p
 - The sentence threshold depends on the domain: on OASST2 it uses 38 % of the calls and misses 31 %; on AESLC emails it uses 75 % of the calls and misses 10 %. It should be set per domain.
 - These are development results: simulated typists, fixed cut points, a test half that has been looked at several times, and a selection rule that is still a proposal.
 
+## Phase 3a — llama.cpp runtime
+
+The same model as a GGUF file under `llama-server`, on the Phase 1 prefixes of all 240 messages. Details: `PHASE3_RUNTIME.md`.
+
+| Granularity | Hugging Face fp32 (Phase 1) | llama.cpp Q4_K_M |
+|---|---|---|
+| partial_word | 98 ms | 45 ms |
+| next_word | 92 ms | 38 ms |
+| phrase | 266 ms | 64 ms |
+| sentence | 553 ms | 140 ms |
+
+Median time until one suggestion is complete (prompt cache on).
+
+- Q8_0 was not faster than Q4_K_M on a 20-message subset.
+- With the llama.cpp times, the frozen rule gives nearly the same call and missed shares as with the Phase 1 times.
+- The quantized model was checked with a simple first-word match only, not with the Phase 1 quality metric.
+
 ## Gaps
 
 - `partial_word`'s metric decision has below-target power (68.3% against an
@@ -192,6 +209,13 @@ Reproduce the frozen-policy check on both datasets (Phase 2a):
 ```bash
 RESULTS=phase1_results_v3.csv uv run python -m src.eval_frozen
 RESULTS=phase1_results_aeslc.csv uv run python -m src.eval_frozen
+```
+
+Reproduce the llama.cpp latency run (Phase 3a; start `llama-server` with the Q4_K_M file on port 8080 first):
+```bash
+MESSAGES=240 uv run python -m src.bench_llama Q4_K_M_all
+uv run python -m src.swap_latency Q4_K_M_all
+RESULTS=phase1_results_v3_llama_Q4_K_M_all.csv uv run python -m src.eval_frozen
 ```
 
 ---
