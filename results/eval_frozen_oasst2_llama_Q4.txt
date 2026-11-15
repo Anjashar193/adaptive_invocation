@@ -1,0 +1,10 @@
+Source: phase1_results_v3_llama_Q4_K_M_all.csv; 240 messages, 4510 Qwen examples; 10 simulated typists per example; seed 42
+Frozen policy: sentence at >= 11 words typed; word level at word starts and from 3 letters in a word
+All messages, no dev/test split (nothing is tuned). Intervals: 95 % bootstrap over messages, 1000 resamples
+
+group                      calls %          missed %  random missed  value/call  always  meets rule
+sentence             38.3 [34-42]      31.4 [25-39]           61.7        0.29    0.20          3 %
+word-level mix       54.1 [52-56]      30.8 [25-36]           45.9        0.58    0.40          0 %
+partial_word         38.7 [36-42]      49.3 [41-57]           61.3        0.30    0.23          0 %
+
+Saved results/frozen_policy_phase1_results_v3_llama_Q4_K_M_all.csv

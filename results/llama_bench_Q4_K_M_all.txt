@@ -1,0 +1,14 @@
+Source: phase1_results_v3.csv; first 240 messages, 4510 Qwen examples; server http://127.0.0.1:8080; label Q4_K_M_all
+  no_cache: 4510 requests in 394 s
+  cache: 4510 requests in 386 s
+
+Time until one suggestion is complete, ms (median; 90th percentile in brackets)
+granularity       n   HF fp32 (Phase 1)    llama.cpp no cache     llama.cpp cache  tokens    1st word = ref, HF / llama
+partial_word    910          98 [169]          45 [61]               45 [71]            2             3.0 / 3.0
+next_word      1200          92 [142]          41 [50]               38 [53]            2            23.9 / 23.9
+phrase         1200         266 [395]          68 [89]               64 [88]            5            23.5 / 23.3
+sentence       1200         553 [1527]        145 [356]             140 [364]          14            24.2 / 23.7
+
+Notes: one sampled suggestion per request, so the match column is noisy; it is a sanity check, not the Phase 1 metric.
+       The cache run sends the cut points of a message in order; real typing extends the text one key at a time.
+Saved results/llama_bench_Q4_K_M_all.csv and results/llama_bench_Q4_K_M_all_summary.csv

@@ -1,0 +1,5 @@
+label,granularity,n,hf_median_ms,hf_p90_ms,no_cache_median_ms,no_cache_p90_ms,cache_median_ms,cache_p90_ms,median_tokens,first_word_match_hf_pct,first_word_match_llama_pct
+Q4_K_M_all,partial_word,910,97.6,168.9,45.0,60.6,45.1,71.4,2.0,3.0,3.0
+Q4_K_M_all,next_word,1200,92.4,142.1,40.8,50.5,37.8,52.7,2.0,23.9,23.9
+Q4_K_M_all,phrase,1200,266.1,395.3,67.7,89.1,63.5,87.6,5.0,23.5,23.3
+Q4_K_M_all,sentence,1200,552.6,1526.9,145.1,355.9,139.9,364.2,14.0,24.2,23.7
