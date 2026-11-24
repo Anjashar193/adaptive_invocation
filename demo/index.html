@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive invocation demo</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1f23; --muted: #6b6f76; --ghost: #9aa0a8;
+    --line: #dcdad3; --accent: #1f6f5c; --accent-soft: #e2f0ec; --warn: #a3410f; --warn-soft: #fbeadf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a; --panel: #1e2125; --ink: #e9e7e1; --muted: #9a9fa7; --ghost: #747a83;
+      --line: #32363c; --accent: #6fc7b1; --accent-soft: #1d3a34; --warn: #f0a070; --warn-soft: #3a261a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  p.lead { margin: 0 0 20px; color: var(--muted); max-width: 62ch; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; }
+  label { font-size: 14px; color: var(--muted); }
+  select, button { font: inherit; font-size: 14px; color: var(--ink); background: var(--panel);
+                   border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
+  button { cursor: pointer; }
+  button:hover, select:hover { border-color: var(--accent); }
+  .spacer { flex: 1; }
+  .editor { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+  .editor:focus-within { border-color: var(--accent); }
+  .mirror, textarea { font: 18px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                      padding: 16px; margin: 0; width: 100%; height: 220px; border: 0;
+                      white-space: pre-wrap; overflow-wrap: break-word; overflow-y: auto; }
+  .mirror { position: absolute; inset: 0; color: transparent; pointer-events: none; }
+  .mirror .ghost { color: var(--ghost); }
+  textarea { position: relative; display: block; resize: none; background: transparent; color: var(--ink);
+             outline: none; border-radius: 12px; }
+  .hint { font-size: 13px; color: var(--muted); margin: 8px 2px 18px; min-height: 20px; }
+  .hint b { color: var(--ink); font-weight: 600; }
+  kbd { font: 12px ui-monospace, Menlo, monospace; border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; background: var(--panel); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .tile .k { font-size: 13px; color: var(--muted); }
+  .tile .v { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .tile .s { font-size: 12px; color: var(--muted); }
+  .tile.main { background: var(--accent-soft); border-color: transparent; }
+  .tile.main .v { color: var(--accent); }
+  .error { display: none; background: var(--warn-soft); color: var(--warn); border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; font-size: 14px; }
+  .rules { margin-top: 22px; font-size: 14px; color: var(--muted); }
+  .rules li { margin: 2px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Adaptive invocation demo</h1>
+  <p class="lead">Type below. After every key press the server decides whether to call the model, reuse the last suggestion, or do nothing. The counters show how many model calls that takes.</p>
+
+  <div class="error" id="error"></div>
+
+  <div class="bar">
+    <label for="mode">Mode</label>
+    <select id="mode">
+      <option value="policy">Policy with reuse</option>
+      <option value="policy_no_reuse">Policy without reuse</option>
+      <option value="always">Always call the model</option>
+      <option value="always_reuse">Always call, with reuse</option>
+    </select>
+    <span class="spacer"></span>
+    <button id="reset" type="button">Clear text and counters</button>
+  </div>
+
+  <div class="editor">
+    <div class="mirror" id="mirror" aria-hidden="true"></div>
+    <textarea id="ta" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Start typing…" aria-label="Text"></textarea>
+  </div>
+  <div class="hint" id="hint"><kbd>Tab</kbd> accepts the grey suggestion.</div>
+
+  <div class="tiles">
+    <div class="tile main"><div class="k">Model calls</div><div class="v" id="s-calls">0 %</div><div class="s" id="s-calls-n">0 of 0 key presses</div></div>
+    <div class="tile"><div class="k">Reused</div><div class="v" id="s-reused">0</div><div class="s">last suggestion still matched</div></div>
+    <div class="tile"><div class="k">Skipped</div><div class="v" id="s-skipped">0</div><div class="s">policy said no call</div></div>
+    <div class="tile"><div class="k">Suggestion on screen</div><div class="v" id="s-shown">0 %</div><div class="s">share of key presses</div></div>
+    <div class="tile"><div class="k">Model time</div><div class="v" id="s-ms">0 ms</div><div class="s" id="s-ms-avg">no calls yet</div></div>
+  </div>
+
+  <ul class="rules" id="rules"></ul>
+</main>
+
+<script>
+(function () {
+  var ta = document.getElementById("ta"), mirror = document.getElementById("mirror");
+  var modeEl = document.getElementById("mode"), hint = document.getElementById("hint"), errorEl = document.getElementById("error");
+  var session = Math.random().toString(36).slice(2);
+  var sug = null;          // {base: text at the request, ghost: suggestion for that text}
+  var seq = 0, applied = 0;
+
+  function visibleGhost() {
+    var text = ta.value;
+    if (!sug || ta.selectionStart !== text.length || text.indexOf(sug.base) !== 0) return "";
+    var extra = text.slice(sug.base.length);
+    if (sug.ghost.indexOf(extra) !== 0 || extra.length >= sug.ghost.length) return "";
+    return sug.ghost.slice(extra.length);
+  }
+
+  function render() {
+    mirror.textContent = "";
+    mirror.appendChild(document.createTextNode(ta.value));
+    var g = document.createElement("span");
+    g.className = "ghost";
+    g.textContent = visibleGhost();
+    mirror.appendChild(g);
+    mirror.appendChild(document.createTextNode("​"));
+    mirror.scrollTop = ta.scrollTop;
+  }
+
+  function showStats(s) {
+    document.getElementById("s-calls").textContent = s.calls_pct + " %";
+    document.getElementById("s-calls-n").textContent = s.model_calls + " of " + s.key_presses + " key presses";
+    document.getElementById("s-reused").textContent = s.reused;
+    document.getElementById("s-skipped").textContent = s.skipped;
+    document.getElementById("s-shown").textContent = s.shown_pct + " %";
+    document.getElementById("s-ms").textContent = Math.round(s.model_ms) + " ms";
+    document.getElementById("s-ms-avg").textContent = s.model_calls ? Math.round(s.model_ms / s.model_calls) + " ms per call" : "no calls yet";
+  }
+
+  function describe(r) {
+    if (r.source === "model") return "Last key press: <b>model call</b> (" + r.granularity.replace("_", " ") + ", " + Math.round(r.latency_ms) + " ms)";
+    if (r.source === "reuse") return "Last key press: <b>reused</b> the last suggestion, no model call";
+    if (r.source === "skip") return "Last key press: <b>skipped</b>, the policy made no call";
+    return "";
+  }
+
+  function request() {
+    var mine = ++seq, text = ta.value;
+    fetch("/suggest", { method: "POST", headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ text: text, session: session, mode: modeEl.value }) })
+      .then(function (res) { return res.json(); })
+      .then(function (r) {
+        if (mine < applied) return;                 // an older answer arrived late
+        applied = mine;
+        if (r.error) { errorEl.textContent = r.error; errorEl.style.display = "block"; }
+        else { errorEl.style.display = "none"; }
+        showStats(r.stats);
+        hint.innerHTML = describe(r) + ' &nbsp;·&nbsp; <kbd>Tab</kbd> accepts the grey suggestion.';
+        sug = r.ghost ? { base: r.text, ghost: r.ghost } : (mine === seq ? null : sug);
+        render();
+      })
+      .catch(function () {
+        errorEl.textContent = "The demo server does not answer. Is `python -m demo.server` still running?";
+        errorEl.style.display = "block";
+      });
+  }
+
+  ta.addEventListener("input", function () { render(); request(); });
+  ta.addEventListener("scroll", function () { mirror.scrollTop = ta.scrollTop; });
+  ta.addEventListener("click", render);
+  ta.addEventListener("keyup", function (e) { if (e.key.indexOf("Arrow") === 0) render(); });
+  ta.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab") return;
+    var g = visibleGhost();
+    if (!g) return;
+    e.preventDefault();
+    ta.value = ta.value + g;
+    ta.selectionStart = ta.selectionEnd = ta.value.length;
+    render(); request();
+  });
+
+  function reset() {
+    fetch("/reset", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ session: session }) });
+    ta.value = ""; sug = null; applied = ++seq;
+    showStats({ calls_pct: 0, model_calls: 0, key_presses: 0, reused: 0, skipped: 0, shown_pct: 0, model_ms: 0 });
+    hint.innerHTML = "<kbd>Tab</kbd> accepts the grey suggestion.";
+    render(); ta.focus();
+  }
+  document.getElementById("reset").addEventListener("click", reset);
+  modeEl.addEventListener("change", reset);
+
+  fetch("/health").then(function (r) { return r.json(); }).then(function (h) {
+    document.getElementById("rules").innerHTML =
+      "<li>Inside a word: a call once the word has " + h.min_letters + " letters.</li>" +
+      "<li>At a word start: a call for the next word, or for the rest of the sentence from " + h.sentence_min_words + " words.</li>" +
+      "<li>With reuse: no call while what you type still matches the last suggestion.</li>";
+  }).catch(function () {});
+  render(); ta.focus();
+})();
+</script>
+</body>
+</html>

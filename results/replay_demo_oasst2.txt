@@ -1,0 +1,16 @@
+Dataset: oasst2; 60 messages, 8518 key presses per mode; llama.cpp server http://127.0.0.1:8080
+Frozen policy: mid-word from 3 letters; sentence from 11 words
+  always: done in 510 s
+  policy_no_reuse: done in 337 s
+  policy: done in 209 s
+
+Shares of key presses, % [95 % interval over messages]
+mode                     model calls    reused    suggestion shown     correct shown  ms per key  ms per call
+always               100.0 [100-100]       0.0               100.0         6.8 [6-8]        59.7         59.7
+policy_no_reuse         62.2 [61-63]       0.0                62.2         5.2 [5-6]        39.5         63.6
+policy                  40.3 [39-41]      28.8                69.1      15.2 [13-18]        24.5         60.8
+
+correct shown = a suggestion is on screen and equals the next characters of the message.
+Each mode samples its own suggestions, so small differences in 'correct shown' are noise.
+With reuse, a matching suggestion stays on screen while it is typed out, which raises 'correct shown'.
+Saved results/replay_demo_oasst2.csv
